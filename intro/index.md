@@ -29,8 +29,8 @@ Gründe
 
 ![Modularer Aufbau](figure/ModularerAufbau.PNG)
 
-[Die am meisten heruntergeladenen Pakete](https://gallery.shinyapps.io/cran-gauge/)
------------------------------------------------------------------------------------
+[Viel genutzte Pakete](https://gallery.shinyapps.io/cran-gauge/)
+----------------------------------------------------------------
 
 ![](figure/CRANdownloads.PNG)
 
@@ -57,8 +57,8 @@ Was folgt daraus
 4.  Nutzung von C++
 5.  Nutzung von Datenbanken
 
-Die Nutzung von Schnittstellen beim Import/Export
--------------------------------------------------
+Schnittstellen beim Import/Export
+---------------------------------
 
 -   Interaktion mit Excel, SPSS, Stata, ...
 
@@ -69,8 +69,8 @@ Die Nutzung von Schnittstellen beim Import/Export
 
 ![](figure/MiracleOccursImage.png)
 
-[Was wird bei Wikipedia unter Reproducibility verstanden?](https://en.wikipedia.org/wiki/Reproducibility)
----------------------------------------------------------------------------------------------------------
+[Wikipedia - Reproducibility](https://en.wikipedia.org/wiki/Reproducibility)
+----------------------------------------------------------------------------
 
 ![](figure/Spectrum_of_reproducible_research.png)
 
@@ -84,8 +84,8 @@ Darstellung von Ergebnissen
 
 ![](figure/visNetwork.jpg)
 
-[Warum die Schnittstelle zu C++?](http://dirk.eddelbuettel.com/papers/rcpp_workshop_introduction_user2012.pdf)
---------------------------------------------------------------------------------------------------------------
+[Warum C++ Schnittstelle ?](http://dirk.eddelbuettel.com/papers/rcpp_workshop_introduction_user2012.pdf)
+--------------------------------------------------------------------------------------------------------
 
 -   [Wenn Schnelligkeit wichtig ist, bietet sich C++
     an](http://www.stat.berkeley.edu/scf/paciorek-cppWorkshop.pdf).
