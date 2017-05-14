@@ -72,7 +72,7 @@ knitr::opts_chunk$set(echo = FALSE)
 4. Nutzung von C++
 5. Nutzung von Datenbanken
 
-## Schnittstellen beim Import/Export
+## Import/Export
 
 - Interaktion mit Excel, SPSS, Stata, ...
 
