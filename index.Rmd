@@ -10,22 +10,35 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## [Erste Schritte Datenimport](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.md) ([pdf](slides/RInterfaces_all2g_1.pdf))
+## [Erste Schritte Datenimport](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.md) 
 
-- [Einführung und Motivation](https://github.com/Japhilko/RInterfaces/blob/master/slides/Intro.md) ([pdf](slides/Intro.pdf))
+- Folien Datenimport als [pdf](slides/RInterfaces_all2g_1.pdf)
 
-Aufgabe: [Zusatzpakete](tutorial/Aufgabe_Zusatzpakete.md)
+[Einführung und Motivation](https://github.com/Japhilko/RInterfaces/blob/master/slides/Intro.md) 
 
-- [Datenimport](slides/Datenimport.md) ([pdf](slides/Datenimport.pdf) | [rcode](slides/Datenimport.R))
+- ([pdf](slides/Intro.pdf))
 
-Aufgabe: [Datenimport](tutorial/Aufgabe_Datenimport.md)
+- Aufgabe: [Zusatzpakete](tutorial/Aufgabe_Zusatzpakete.md)
 
-- [Datenexport](slides/Datenexport.md) ([pdf](slides/Datenexport.pdf) | [rcode](slides/Datenexport.R)) 
-- [R und Excel](slides/Rexcel.md) ([pdf](slides/Rexcel.pdf) | [rcode](slides/Rexcel.R))
+[Datenimport](slides/Datenimport.md) 
 
-Aufgabe: [Export nach Excel](tutorial/Aufgabe_Export2Excel.md)
+- ([pdf](slides/Datenimport.pdf) | [rcode](slides/Datenimport.R))
 
-## [Präsentation von Daten - Reproducible Research](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_2.md) ([pdf](slides/RInterfaces_all2g_2.pdf))
+- Aufgabe: [Datenimport](tutorial/Aufgabe_Datenimport.md)
+
+[Datenexport](slides/Datenexport.md) 
+
+- ([pdf](slides/Datenexport.pdf) | [rcode](slides/Datenexport.R)) 
+
+[R und Excel](slides/Rexcel.md) 
+
+- ([pdf](slides/Rexcel.pdf) | [rcode](slides/Rexcel.R))
+
+- Aufgabe: [Export nach Excel](tutorial/Aufgabe_Export2Excel.md)
+
+## [Präsentation von Daten - Reproducible Research](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_2.md) 
+
+- ([pdf](slides/RInterfaces_all2g_2.pdf))
 
 - [Word Dokumente mit R erstellen](slides/R2word.md) ([pdf](slides/R2word.pdf))
 -	[PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave](slides/R2pdf.md) ([pdf](slides/R2pdf.pdf))
