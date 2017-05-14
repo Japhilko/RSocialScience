@@ -3,6 +3,7 @@ title: "Intro - Erste Schritte"
 author: "Jan-Philipp Kolb"
 date: "08 Mai 2017"
 output:
+  md_document: default
   slidy_presentation: 
     keep_md: yes
   beamer_presentation:
