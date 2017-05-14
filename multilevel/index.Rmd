@@ -41,12 +41,15 @@ library(gridExtra)
 library(lme4)
 library(sjPlot)
 library(dplyr)
-
-set.seed(123)
 ```
 
 ```{r}
-N <- 100 #Number of students per school
+set.seed(123)
+```
+
+Anzahl der Schüler pro Schule
+```{r}
+N <- 100 
 sigma <- 200
 
 x1 <- runif(N, 10, 40)
@@ -74,11 +77,16 @@ test <- data.frame(SES = c(x1, x2, x3, x4, x5),
 HLM0 <- lmer(Score ~ (1 | ID), data = test)
 coef(HLM0)
 summary(HLM0)
+```
 
-# 96% - Between-schools variance
-# 4% - Within-schools variance
+- 96% - Between-schools variance
+- 4% - Within-schools variance
+
+
+```{r}
 100 * 87346 / (87346 + 1931757)
 ```
+
 
 
 ```{r}
