@@ -1,10 +1,7 @@
 ---
-title: "index"
+title: "R in den Sozialwissenschaften"
 author: "Jan-Philipp Kolb"
-date: "12 Mai 2017"
-output: 
-  html_document:
-    keep_md: true
+output: md_document
 ---
 
 ```{r setup, include=FALSE}

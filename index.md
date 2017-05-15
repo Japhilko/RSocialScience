@@ -1,157 +1,169 @@
-# index
-Jan-Philipp Kolb  
-12 Mai 2017  
+[Erste Schritte Datenimport](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.md)
+---------------------------------------------------------------------------------------------------------------
 
+-   Komplette Folien zum ersten Kapitel Datenimport als
+    [pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.pdf)
 
+-   [Einführung und
+    Motivation](https://github.com/Japhilko/RInterfaces/blob/master/slides/Intro.md)
 
+-   Einführungsfolien als
+    [pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/Intro.pdf)
 
-## [Erste Schritte Datenimport](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.md) 
+-   Aufgabe:
+    [Zusatzpakete](https://github.com/Japhilko/RInterfaces/blob/master/tutorial/Aufgabe_Zusatzpakete.md)
 
-- Komplette Folien zum ersten Kapitel Datenimport als [pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.pdf)
+[Datenimport](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.md)
 
-- [Einführung und Motivation](https://github.com/Japhilko/RInterfaces/blob/master/slides/Intro.md) 
+-   ([pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.pdf)
+    [rcode](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.R))
 
-- ([pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/Intro.pdf))
+-   Aufgabe: [Datenimport](tutorial/Aufgabe_Datenimport.md)
 
-- Aufgabe: [Zusatzpakete](tutorial/Aufgabe_Zusatzpakete.md)
+[Datenexport](slides/Datenexport.md)
 
-[Datenimport](slides/Datenimport.md) 
+-   ([pdf](slides/Datenexport.pdf) [rcode](slides/Datenexport.R))
 
-- ([pdf](slides/Datenimport.pdf)   [rcode](slides/Datenimport.R))
+[R und Excel](slides/Rexcel.md)
 
-- Aufgabe: [Datenimport](tutorial/Aufgabe_Datenimport.md)
+-   ([pdf](slides/Rexcel.pdf) [rcode](slides/Rexcel.R))
 
-[Datenexport](slides/Datenexport.md) 
+-   Aufgabe: [Export nach Excel](tutorial/Aufgabe_Export2Excel.md)
 
-- ([pdf](slides/Datenexport.pdf)   [rcode](slides/Datenexport.R)) 
+[Präsentation von Daten - Reproducible Research](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_2.md)
+-----------------------------------------------------------------------------------------------------------------------------------
 
-[R und Excel](slides/Rexcel.md) 
+-   ([pdf](slides/RInterfaces_all2g_2.pdf))
 
-- ([pdf](slides/Rexcel.pdf)   [rcode](slides/Rexcel.R))
+[Word Dokumente mit R erstellen](slides/R2word.md)
 
-- Aufgabe: [Export nach Excel](tutorial/Aufgabe_Export2Excel.md)
+-   ([pdf](slides/R2word.pdf))
 
-## [Präsentation von Daten - Reproducible Research](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_2.md) 
+[PDF Dokumente und Präsentationen mit LaTeX, Beamer und
+Sweave](slides/R2pdf.md)
 
-- ([pdf](slides/RInterfaces_all2g_2.pdf))
+-   ([pdf](slides/R2pdf.pdf))
 
-[Word Dokumente mit R erstellen](slides/R2word.md) 
+[HTML Dokumente, Präsentationen und Dashboards mit
+Rmarkdown](slides/Rmarkdown.md)
 
-- ([pdf](slides/R2word.pdf))
+-   ([pdf](slides/Rmarkdown.pdf))
 
-[PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave](slides/R2pdf.md) 
+[Notebooks](slides/Notebooks.md) zur Integration von anderen
+Programmiersprachen (Python,LaTeX,Julia)
 
-- ([pdf](slides/R2pdf.pdf))
+-   ([pdf](slides/Notebooks.pdf))
 
-[HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown](slides/Rmarkdown.md) 
+-   Aufgabe: [Bearbeiten Sie ein Notebook
+    weiter](tutorial/Aufgabe_Notebook.md)
 
-- ([pdf](slides/Rmarkdown.pdf))
+Liebe auf den ersten Plot – Grafiken mit R
+------------------------------------------
 
-[Notebooks](slides/Notebooks.md) zur Integration von anderen Programmiersprachen (Python,LaTeX,Julia) 
+[Einfache
+Grafiken](https://github.com/Japhilko/IntroR/blob/master/2017/slides/EinfacheGrafiken.md)
 
-- ([pdf](slides/Notebooks.pdf))
+-   [pdf](slides/EinfacheGrafiken.pdf)  
+-   [rcode](rcode/EinfacheGrafiken.R)
+-   [Aufgabe -
+    Barplot](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Barplot.md))
 
-- Aufgabe: [Bearbeiten Sie ein Notebook weiter](tutorial/Aufgabe_Notebook.md)
-
-
-## Liebe auf den ersten Plot – Grafiken mit R	
-
-[Einfache Grafiken](https://github.com/Japhilko/IntroR/blob/master/2017/slides/EinfacheGrafiken.md) 
-
-- [pdf](slides/EinfacheGrafiken.pdf)   
-- [rcode](rcode/EinfacheGrafiken.R)
-- [Aufgabe - Barplot](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Barplot.md))
-    
-
-
-## Noch mehr Grafiken - multidimensional
+Noch mehr Grafiken - multidimensional
+-------------------------------------
 
 [Zusammenhang](https://github.com/Japhilko/IntroR/blob/master/2017/slides/Multidimensional.md)
 
-- [pdf](slides/Multidimensional.pdf)   
-- [rcode](rcode/Multidimensional.R))
+-   [pdf](slides/Multidimensional.pdf)  
+-   [rcode](rcode/Multidimensional.R))
 
-[Das lattice Paket](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LatticePaket.md)   
+[Das lattice
+Paket](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LatticePaket.md)
 
-- [pdf](slides/LatticePaket.pdf)   
-- [rcode](rcode/LatticePaket.R))
-- Aufgabe - OECD Datensatz ([Browser](https://github.com/Japhilko/IntroR/blob/master/2017/slides/Aufgabe_OECDdata.md))
-    
+-   [pdf](slides/LatticePaket.pdf)  
+-   [rcode](rcode/LatticePaket.R))
+-   Aufgabe - OECD Datensatz
+    ([Browser](https://github.com/Japhilko/IntroR/blob/master/2017/slides/Aufgabe_OECDdata.md))
 
+Intro Regression
+----------------
 
-## Intro Regression 
+[Die lineare
+Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LineareRegression.md)
 
-[Die lineare Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LineareRegression.md)   
+-   [pdf](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LineareRegression.pdf)  
+-   [rcode](https://github.com/Japhilko/IntroR/blob/master/2017/rcode/LineareRegression.R))
 
-- [pdf](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LineareRegression.pdf)   
-- [rcode](https://github.com/Japhilko/IntroR/blob/master/2017/rcode/LineareRegression.R))
+-   [Aufgabe - lineare
+    Regression](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_LineareRegression.md))
 
-- [Aufgabe - lineare Regression](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_LineareRegression.md))
+-   [Die logistische
+    Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.md)
 
-- [Die logistische Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.md)   
+-   [pdf](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.pdf)  
+-   [rcode](https://github.com/Japhilko/IntroR/blob/master/2017/rcode/logistischeRegression.R)
 
-- [pdf](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.pdf)   
-- [rcode](https://github.com/Japhilko/IntroR/blob/master/2017/rcode/logistischeRegression.R)
+-   Aufgabe - Datenanalyse
+    ([Browser](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Datenanalyse.md))
 
-- Aufgabe - Datenanalyse ([Browser](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Datenanalyse.md))
+[Applikationen und Projektverwaltung mit Rstudio und git](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_5.md)
+--------------------------------------------------------------------------------------------------------------------------------------------
 
+-   [pdf](slides/RInterfaces_all2g_5.pdf)
 
+[Allgemein zur Versionsverwaltung](slides/Versionsverwaltung.md)
 
-## [Applikationen und Projektverwaltung mit Rstudio und git](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_5.md) 
+-   [pdf](slides/Versionsverwaltung.pdf)
 
-- [pdf](slides/RInterfaces_all2g_5.pdf)
+[R und Git](slides/Rgit.md)
 
-[Allgemein zur Versionsverwaltung](slides/Versionsverwaltung.md) 
+-   [pdf](slides/Rgit.pdf)  
+-   [rcode](rcode/Rgit.R)
 
-- [pdf](slides/Versionsverwaltung.pdf)
+[Shiny Apps](slides/shiny.md)
 
+-   [pdf](slides/shiny.pdf)  
+-   [rcode](rcode/shiny.R)
 
-[R und Git](slides/Rgit.md) 
+[Interaktive Darstellung mit Javascript und R](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_3.md)
+---------------------------------------------------------------------------------------------------------------------------------
 
-- [pdf](slides/Rgit.pdf)  
-- [rcode](rcode/Rgit.R)
+-   [pdf](slides/RInterfaces_all2g_3.pdf)
 
-[Shiny Apps](slides/shiny.md) 
+[Interaktive Karten mit dem Javascript Paket
+leaflet](https://github.com/Japhilko/RInterfaces/blob/master/slides/leaflet.md)
 
-- [pdf](slides/shiny.pdf)   
-- [rcode](rcode/shiny.R)
+-   [pdf](slides/leaflet.pdf)  
+-   [rcode](rcode/leaflet.R))
 
+-   Aufgabe: [Eine interaktive Karte
+    erzeugen](tutorial/Aufgabe_leaflet.md)
 
-## [Interaktive Darstellung mit Javascript und R](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_3.md) 
+[Interaktive Tabellen mit
+DataTables](https://github.com/Japhilko/RInterfaces/blob/master/slides/DataTables.md)
 
-- [pdf](slides/RInterfaces_all2g_3.pdf)
+-   [pdf](slides/DataTables.pdf)  
+-   [rcode](rcode/DataTables.R)
 
-[Interaktive Karten mit dem Javascript Paket leaflet](https://github.com/Japhilko/RInterfaces/blob/master/slides/leaflet.md) 
+[R und die Javascript Data-Driven Documents
+(D3)](https://github.com/Japhilko/RInterfaces/blob/master/slides/D3.md)
 
-- [pdf](slides/leaflet.pdf)   
-- [rcode](rcode/leaflet.R))
+-   [pdf](slides/D3.pdf)  
+-   [rcode](rcode/D3.R))
 
-- Aufgabe: [Eine interaktive Karte erzeugen](tutorial/Aufgabe_leaflet.md)
+[Interaktive Graphiken mit D3 und
+plotly](https://github.com/Japhilko/RInterfaces/blob/master/slides/plotly.md)
 
-[Interaktive Tabellen mit DataTables](https://github.com/Japhilko/RInterfaces/blob/master/slides/DataTables.md) 
+-   [pdf](slides/plotly.pdf)  
+-   [rcode](rcode/plotly.R))
 
-- [pdf](slides/DataTables.pdf)   
-- [rcode](rcode/DataTables.R)
+[Netzwerkgraphiken mit
+vis.js](https://github.com/Japhilko/RInterfaces/blob/master/slides/visNetwork.md)
 
-[R und die Javascript Data-Driven Documents (D3)](https://github.com/Japhilko/RInterfaces/blob/master/slides/D3.md) 
+-   [pdf](slides/visNetwork.pdf) [rcode](rcode/visNetwork.R)
 
-- [pdf](slides/D3.pdf)   
-- [rcode](rcode/D3.R))
+[Das Erstellen von Ablaufdiagrammen mit
+mermaid](https://github.com/Japhilko/RInterfaces/blob/master/slides/mermaid.md)
 
-[Interaktive Graphiken mit D3 und plotly](https://github.com/Japhilko/RInterfaces/blob/master/slides/plotly.md) 
+-   [pdf](slides/mermaid.pdf)
 
-- [pdf](slides/plotly.pdf)   
-- [rcode](rcode/plotly.R))
-
-[Netzwerkgraphiken mit vis.js](https://github.com/Japhilko/RInterfaces/blob/master/slides/visNetwork.md) 
-
-- [pdf](slides/visNetwork.pdf)   [rcode](rcode/visNetwork.R)
-
-
-[Das Erstellen von Ablaufdiagrammen mit mermaid](https://github.com/Japhilko/RInterfaces/blob/master/slides/mermaid.md)
-
-- [pdf](slides/mermaid.pdf)   
-
-- [rcode](rcode/mermaid.R))
-
-
+-   [rcode](rcode/mermaid.R))
