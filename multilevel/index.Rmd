@@ -9,6 +9,44 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Wie sehen die Daten aus?
+
+- Beispiel Mehrebenenstruktur der Daten
+
+![](figure/Multileveldata.png)
+
+## Beispiel Mehrebenenmodelle
+
+Untersuchungsgegenstand
+
+- Es sollen die Kenntnisse (Fähigkeiten) von Grundschülern in Mathematik gemessen werden. Dazu werden in einem Schulbezirk zunächst
+Schulen ausgewählt und anschließend Klassen. Innerhalb der Klassen soll schließlich jeweils eine Stichprobe gezogen und diese getestet werden.
+
+- Geht man zunächst von einer zufälligen Auswahl von Klassen aus, dann ist die Level-1-Variation durch die Schüler und die Level-2-Variation durch die Klassen bestimmt.
+
+## Fragen hierzu
+
+- Wie wäre die Auswahl der Schulen zu berücksichtigen?
+
+- Wie kann zusätzlich eine Unterscheidung nach privaten und staatlichen Schulen in die Modellierung eingebracht werden?
+
+## Beispiel in Goldstein (2010), Kapitel 1.2
+
+Evaluierung der Effektivität von Schulen
+
+Mehrebenen-Modelle:
+
+- Schüler
+- Klassenverbände
+- Schulamtsbezirke oder Bundesländer
+
+
+Unterscheidung
+
+- Modelle mit vielen Parametern, die wiederum modelliert werden können
+- Regressionen mit Koeffizienten, die zwischen Gruppen variieren können
+
+
 ## Basis Regression
 
 - [How to go about interpreting regression cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)

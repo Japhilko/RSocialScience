@@ -27,29 +27,8 @@ Basis Regression
     library(ggplot2)
     library(gridExtra)
     library(lme4)
-
-    ## Loading required package: Matrix
-
     library(sjPlot)
-
-    ## Warning: package 'sjPlot' was built under R version 3.3.3
-
     library(dplyr)
-
-    ## 
-    ## Attaching package: 'dplyr'
-
-    ## The following object is masked from 'package:gridExtra':
-    ## 
-    ##     combine
-
-    ## The following objects are masked from 'package:stats':
-    ## 
-    ##     filter, lag
-
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     intersect, setdiff, setequal, union
 
     set.seed(123)
 
