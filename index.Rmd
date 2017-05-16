@@ -21,13 +21,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [Datenimport](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.md) 
 
-- ([pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.pdf)   [rcode](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.R))
+- Folien zum Datenimport als [pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.pdf)   
+- [rcode](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.R) zum Datenimport
 
 - Aufgabe: [Datenimport](tutorial/Aufgabe_Datenimport.md)
 
 [Datenexport](slides/Datenexport.md) 
 
-- ([pdf](slides/Datenexport.pdf)   [rcode](slides/Datenexport.R)) 
+- Folien zum Datenexport als [pdf](slides/Datenexport.pdf)  
+- [rcode](slides/Datenexport.R) zum Datenexport
 
 [R und Excel](slides/Rexcel.md) 
 
