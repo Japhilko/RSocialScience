@@ -46,10 +46,25 @@ Unterscheidung
 - Modelle mit vielen Parametern, die wiederum modelliert werden können
 - Regressionen mit Koeffizienten, die zwischen Gruppen variieren können
 
+## Mehrebenen Modell - Beispiel 1
+
+- 100 Datenpunkte 
+
+- 4 Gruppen
+
+![](figure/Data2bw.png)
+
+## Mehrebenen Modell - Beispiel 1
+
+![](figure/Data1.png)
+
 
 ## Basis Regression
 
 - [How to go about interpreting regression cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)
+
+
+## Cross-Level-Interaktionseffekt
 
 
 ## [Ein Beispieldatensatz](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
@@ -64,7 +79,7 @@ install_github("lme4", user = "lme4")
 
 ## [Multilevel Modeling of Educational Data using R (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
 
-- [Original Blogg](http://hagutierrezro.blogspot.de/2016/10/multilevel-modeling-of-educational-data.html)
+- [Original Blog](http://hagutierrezro.blogspot.de/2016/10/multilevel-modeling-of-educational-data.html)
 
 ```{r,eval=F}
 install.packages("lme4")

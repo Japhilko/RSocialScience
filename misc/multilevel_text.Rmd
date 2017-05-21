@@ -1,0 +1,44 @@
+---
+title: "Multilevelmodelle"
+author: "Jan-Philipp Kolb"
+date: "21 Mai 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## [Hierachische lineare Modelle](https://portal.hogrefe.com/dorsch/mehrebenenanalyse/)
+
+- auch Mehrebenenregression, Gemischte Modelle genannt
+
+- ermöglicht die Analyse von Daten - Individuen gehören natürlichen Gruppen an
+
+- Gruppenzugehörigkeit hat Einfluss auf Merkmalsausprägungen 
+
+- Daten müssen als hierarchisch geschachtelt modelliert werden
+
+- Gruppenzugehörigkeit (bzw. Clusterzugehörigkeit) kann dazu führen, dass Individuen innerhalb einer Gruppe eine höhere Homogenität (geringere Varianz) haben
+
+- Individuen versch. Gruppen haben höhere Heterogenität als bei reiner Zufallsstichprobe 
+
+Beispiel
+
+- Schüler (Mitarbeiter/Patienten/Einwohner; Ebene 1) 
+- einer Klasse (eines Unternehmens, einer Station, eines Orts; Ebene 2) 
+
+- zeigen systematisch ähnlichere Merkmalsausprägungen, weil sie bspw. derselben Lehrkraft unterrichtet werden 
+
+- oder demselben Abteilungsleiter unterstellt sind
+- vom selben Personal behandelt werden
+- in derselben Umgebung leben
+
+## Drei-Ebenen-Struktur
+
+- Sind Cluster der Ebene 3 wieder Cluster in Ebene 2 eindeutig zugeordnet (z.B. Schule, Unternehmen, Krankenhaus, Landkreis), so müsste diese ebenfalls berücksichtigt werden (Drei-Ebenen-Struktur). 
+- Um eine M. durchführen zu können, muss die entspr. Gruppenzugehörigkeit bekannt sein.
+
+## Links
+
+[Youtube Video zu Multilevel Modellierung](https://www.youtube.com/watch?v=nPdrWq_Sb-U)
