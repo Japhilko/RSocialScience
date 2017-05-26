@@ -15,6 +15,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![](figure/Multileveldata.png)
 
+
+## [Andrés Gutiérrez - Multilevel Modeling of Educational Data using R](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
+
+- Lineare Modelle erkennen den Cluster-Effekt aufgrund der Intraklassen Korrelation nicht
+
+![ ](https://i0.wp.com/lh3.googleusercontent.com/-Fap5-jEG14g/V_2jQPgy8zI/AAAAAAAAAWk/cOwXtlj6TYk/Screen%252520Shot%2525202016-10-11%252520at%2525209.42.37%252520PM.png?w=450&ssl=1)
+
+
 ## Beispiel Mehrebenenmodelle
 
 Untersuchungsgegenstand
@@ -45,6 +53,50 @@ Unterscheidung
 
 - Modelle mit vielen Parametern, die wiederum modelliert werden können
 - Regressionen mit Koeffizienten, die zwischen Gruppen variieren können
+
+## Bibliotheken
+
+```{r}
+library(ggplot2)
+library(gridExtra)
+library(lme4)
+library(sjPlot)
+library(dplyr)
+```
+
+## Beispieldaten erzeugen
+
+```{r}
+set.seed(123)
+N <- 100 #Number of students per school
+sigma <- 200
+
+x1 <- runif(N, 10, 40)
+x2 <- runif(N, 25, 55)
+x3 <- runif(N, 40, 70)
+x4 <- runif(N, 55, 85)
+x5 <- runif(N, 70, 100)
+
+y1 <- 20 + 0 * x1 + rnorm(N, 0, sigma)
+y2 <- 40 + 10 * x2 + rnorm(N, 0, sigma)
+y3 <- 60 + 20 * x3 + rnorm(N, 0, sigma)
+y4 <- 80 + 30 * x4 + rnorm(N, 0, sigma)
+y5 <- 100 + 40 * x5 + rnorm(N, 0, sigma)
+
+ID <- rep(LETTERS[1:5], each = N)
+
+test <- data.frame(SES = c(x1, x2, x3, x4, x5), 
+ Score = c(y1, y2, y3, y4, y5), ID = ID)
+```
+
+## Formalistisch
+
+$$
+y_{ij} = \alpha_{j} + \varepsilon_{ij}
+
+\alpha_{j} = \alpha_0 + u_{j}
+$$
+
 
 ## Mehrebenen Modell - Beispiel 1
 
@@ -167,13 +219,12 @@ summary(HLM1)
 
 ## [Paket lmer](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
 
-
-
-
-
 ```{r,eval=F}
 lmer(y ~ 1 + (1 | subjects), data=data)
 # nlme
 lme(y ~ 1, random = ~ 1 | subjects, data=data)
 ```
 
+## Links
+
+- [Multilevel Modeling of Educational Data using R (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)

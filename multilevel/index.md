@@ -1,28 +1,60 @@
-Basis Regression
-----------------
+Wie sehen die Daten aus?
+------------------------
 
--   [How to go about interpreting regression
-    cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)
+-   Beispiel Mehrebenenstruktur der Daten
 
-[Ein Beispieldatensatz](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
-----------------------------------------------------------------------------------------------------------------------
+![](figure/Multileveldata.png)
 
-    install.packages("lme4")
+[Andrés Gutiérrez - Multilevel Modeling of Educational Data using R](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    # Or to install the dev version
-    library(devtools)
-    install_github("lme4", user = "lme4")
+-   Lineare Modelle erkennen den Cluster-Effekt aufgrund der
+    Intraklassen Korrelation nicht
 
-[Multilevel Modeling of Educational Data using R (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
-----------------------------------------------------------------------------------------------------------------------------------------------
+![](https://i0.wp.com/lh3.googleusercontent.com/-Fap5-jEG14g/V_2jQPgy8zI/AAAAAAAAAWk/cOwXtlj6TYk/Screen%252520Shot%2525202016-10-11%252520at%2525209.42.37%252520PM.png?w=450&ssl=1)
 
--   [Original
-    Blogg](http://hagutierrezro.blogspot.de/2016/10/multilevel-modeling-of-educational-data.html)
+Beispiel Mehrebenenmodelle
+--------------------------
 
-<!-- -->
+Untersuchungsgegenstand
 
-    install.packages("lme4")
-    install.packages("sjPlot")
+-   Es sollen die Kenntnisse (Fähigkeiten) von Grundschülern in
+    Mathematik gemessen werden. Dazu werden in einem Schulbezirk
+    zunächst Schulen ausgewählt und anschließend Klassen. Innerhalb der
+    Klassen soll schließlich jeweils eine Stichprobe gezogen und diese
+    getestet werden.
+
+-   Geht man zunächst von einer zufälligen Auswahl von Klassen aus, dann
+    ist die Level-1-Variation durch die Schüler und die
+    Level-2-Variation durch die Klassen bestimmt.
+
+Fragen hierzu
+-------------
+
+-   Wie wäre die Auswahl der Schulen zu berücksichtigen?
+
+-   Wie kann zusätzlich eine Unterscheidung nach privaten und
+    staatlichen Schulen in die Modellierung eingebracht werden?
+
+Beispiel in Goldstein (2010), Kapitel 1.2
+-----------------------------------------
+
+Evaluierung der Effektivität von Schulen
+
+Mehrebenen-Modelle:
+
+-   Schüler
+-   Klassenverbände
+-   Schulamtsbezirke oder Bundesländer
+
+Unterscheidung
+
+-   Modelle mit vielen Parametern, die wiederum modelliert werden können
+-   Regressionen mit Koeffizienten, die zwischen Gruppen variieren
+    können
+
+Bibliotheken
+------------
 
     library(ggplot2)
     library(gridExtra)
@@ -51,9 +83,89 @@ Basis Regression
     ## 
     ##     intersect, setdiff, setequal, union
 
+Beispieldaten erzeugen
+----------------------
+
+    set.seed(123)
+    N <- 100 #Number of students per school
+    sigma <- 200
+
+    x1 <- runif(N, 10, 40)
+    x2 <- runif(N, 25, 55)
+    x3 <- runif(N, 40, 70)
+    x4 <- runif(N, 55, 85)
+    x5 <- runif(N, 70, 100)
+
+    y1 <- 20 + 0 * x1 + rnorm(N, 0, sigma)
+    y2 <- 40 + 10 * x2 + rnorm(N, 0, sigma)
+    y3 <- 60 + 20 * x3 + rnorm(N, 0, sigma)
+    y4 <- 80 + 30 * x4 + rnorm(N, 0, sigma)
+    y5 <- 100 + 40 * x5 + rnorm(N, 0, sigma)
+
+    ID <- rep(LETTERS[1:5], each = N)
+
+    test <- data.frame(SES = c(x1, x2, x3, x4, x5), 
+     Score = c(y1, y2, y3, y4, y5), ID = ID)
+
+Formalistisch
+-------------
+
+$$ y\_{ij} = *{j} + *{ij}
+
+\_{j} = *0 + u*{j} $$
+
+Mehrebenen Modell - Beispiel 1
+------------------------------
+
+-   100 Datenpunkte
+
+-   4 Gruppen
+
+![](figure/Data2bw.png)
+
+Mehrebenen Modell - Beispiel 1
+------------------------------
+
+![](figure/Data1.png)
+
+Basis Regression
+----------------
+
+-   [How to go about interpreting regression
+    cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)
+
+Cross-Level-Interaktionseffekt
+------------------------------
+
+[Ein Beispieldatensatz](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
+----------------------------------------------------------------------------------------------------------------------
+
+    install.packages("lme4")
+
+    # Or to install the dev version
+    library(devtools)
+    install_github("lme4", user = "lme4")
+
+[Multilevel Modeling of Educational Data using R (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+-   [Original
+    Blog](http://hagutierrezro.blogspot.de/2016/10/multilevel-modeling-of-educational-data.html)
+
+<!-- -->
+
+    install.packages("lme4")
+    install.packages("sjPlot")
+
+    library(ggplot2)
+    library(gridExtra)
+    library(lme4)
+    library(sjPlot)
+    library(dplyr)
+
     set.seed(123)
 
-Anzahl der SchÃ¼ler pro Schule
+Anzahl der Schüler pro Schule
 
     N <- 100 
     sigma <- 200
@@ -193,3 +305,9 @@ Links
     lmer(y ~ 1 + (1 | subjects), data=data)
     # nlme
     lme(y ~ 1, random = ~ 1 | subjects, data=data)
+
+Links
+-----
+
+-   [Multilevel Modeling of Educational Data using R
+    (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
