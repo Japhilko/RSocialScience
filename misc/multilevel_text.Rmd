@@ -39,6 +39,19 @@ Beispiel
 - Sind Cluster der Ebene 3 wieder Cluster in Ebene 2 eindeutig zugeordnet (z.B. Schule, Unternehmen, Krankenhaus, Landkreis), so müsste diese ebenfalls berücksichtigt werden (Drei-Ebenen-Struktur). 
 - Um eine M. durchführen zu können, muss die entspr. Gruppenzugehörigkeit bekannt sein.
 
+## Intercept-only model 
+
+Modell zur Bestimmung ebenenspezifischer Varianzanteile (Leermodell bzw. intercept-only model, baseline model, one-way-ANOVA with random effects): Es wird angenommen, dass sich lediglich die Mittelwerte der Gruppen (z.B. Schulklassen) unterscheiden. Es wird also keine Prädiktorvariable im Modell berücksichtigt. Dieses Modell dient der Bestimmung der Varianzen der abhängigen Variablen auf Ebene 1 (Schüler) und Ebene 2 (Klasse). Aus diesen Informationen kann die Intraklassenkorrelation (ICC) berechnet werden. Die ICC gibt an, welcher Anteil der Merkmalsvarianz auf Gruppenebene lokalisiert ist: z.B. x Prozent der Varianz der Schülerleistungen sind durch Unterschiede zwischen den Schulklassen erklärbar. Ab einer ICC von 0.1 ist mit einer gravierenden Inflation der Alpha-Fehler-Wahrscheinlichkeit zu rechnen (Fehler erster Art).
+
+
+## Random-intercept model
+
+
+
 ## Links
 
 [Youtube Video zu Multilevel Modellierung](https://www.youtube.com/watch?v=nPdrWq_Sb-U)
+
+- [Statistics with R and S-Plus](https://cran.r-project.org/doc/contrib/Quene.pdf)
+
+- [R-Sessions 16: Multilevel Model Specification (lme4)](http://www.rensenieuwenhuis.nl/r-sessions-16-multilevel-model-specification-lme4/)
