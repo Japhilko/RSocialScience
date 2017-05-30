@@ -116,8 +116,6 @@ $$
 - [How to go about interpreting regression cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)
 
 
-## Cross-Level-Interaktionseffekt
-
 
 ## [Ein Beispieldatensatz](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
 
@@ -138,7 +136,7 @@ install.packages("lme4")
 install.packages("sjPlot")
 ```
 
-
+## Benötigte Bibliotheken
 
 ```{r}
 library(ggplot2)
@@ -147,6 +145,9 @@ library(lme4)
 library(sjPlot)
 library(dplyr)
 ```
+
+
+## Der Beispieldatensatz
 
 ```{r}
 set.seed(123)
@@ -177,6 +178,7 @@ test <- data.frame(SES = c(x1, x2, x3, x4, x5),
  Score = c(y1, y2, y3, y4, y5), ID = ID)
 ```
 
+## Das Nullmodell 
 
 ```{r}
 HLM0 <- lmer(Score ~ (1 | ID), data = test)
@@ -192,6 +194,12 @@ summary(HLM0)
 100 * 87346 / (87346 + 1931757)
 ```
 
+## Formal dargestellt
+
+$$y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$$
+$$\alpha_{j} = \alpha_0 + u_{j}$$
+
+$$\beta{j} = \beta_0 + v_{j}$$
 
 
 ```{r}
@@ -211,11 +219,69 @@ summary(HLM1)
 ```
 
 
+## [Multilevel Model Specification](http://www.rensenieuwenhuis.nl/r-sessions-16-multilevel-model-specification-lme4/)
+
+```{r}
+library(lme4)
+library(mlmRev)
+names(Exam)
+```
+
+## Nullmodell
+
+- das einfachste Multilevel Modell
+- nach dem vertikalen Strich wird die Gruppen Variable spezifiziert
+- die Default Schätzmethode ist restricted maximum likelihood (REML) 
+- Man kann aber auch maximum likelihood Schätzung spezifizieren (ML)
+
+```{r}
+lmer(normexam ~ 1 + (1 | school), data=Exam)
+```
+
+
+## random intercept, fixed predictor in individual level
+
+- Für das nächste Modell fügen wir dem einzelnen Level einen Prädiktor hinzu. 
+- Wir tun dies, indem wir die '1' im Nullmodell durch den Prädiktor (hier: standLRT) ersetzen. 
+- Es wird immer ein Intercept angenommen, also wird es noch hier geschätzt. 
+- Es muss nur angegeben werden, wenn keine anderen Prädiktoren angegeben sind. 
+- Da wir nicht wollen, dass der Effekt des Prädiktors zwischen den Gruppen variiert, bleibt die Spezifikation des zufälligen Teils des Modells mit dem vorherigen Modell identisch. 
+
+
+## Ein anderes Datenbeispiel
+
+```{r}
+library(lme4)  # load library
+library(arm)  # convenience functions for regression in R
+lmm.data <- read.table("http://www.unt.edu/rss/class/Jon/R_SC/Module9/lmm.data.txt", header = TRUE, sep = ",", na.strings = "NA", dec = ".", strip.white = TRUE)
+# summary(lmm.data)
+head(lmm.data)
+```
+
+
+
+## [Varying intercept model](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
+
+```{r}
+MLexamp.6 <- lmer(extro ~ open + agree + social + (1 | school), data = lmm.data)
+```
+
+## Varying slope model
+
+```{r}
+MLexamp.9 <- lmer(extro ~ open + agree + social + (1 + open | school/class), data = lmm.data)
+```
+
+
+
+## Cross-Level-Interaktionseffekt
+
+
 ## Links
 
 - [Uncertainty in parameter estimates using multilevel models](https://www.r-bloggers.com/uncertainty-in-parameter-estimates-using-multilevel-models/)
 
-## [Multilevel models with R](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
+- [Multilevel models with R](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
 
 ## [Paket lmer](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
 
@@ -228,3 +294,7 @@ lme(y ~ 1, random = ~ 1 | subjects, data=data)
 ## Links
 
 - [Multilevel Modeling of Educational Data using R (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
+
+- [Vignette für lme4](https://cran.r-project.org/web/packages/lme4/vignettes/lmer.pdf)
+
+- [Mixed model guide](http://ase.tufts.edu/gsc/gradresources/guidetomixedmodelsinr/mixed%20model%20guide.html)
