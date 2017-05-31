@@ -1,0 +1,19 @@
+---
+title: "Links to work with"
+author: "Jan-Philipp Kolb"
+date: "21 Mai 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Basis Programmierung
+
+- [How to write the first for loop in R](https://www.r-bloggers.com/how-to-write-the-first-for-loop-in-r/)
+
+
+
+
+- [Schöne Graphiken](https://www.r-bloggers.com/beautiful-boxplots-in-base-r/)
