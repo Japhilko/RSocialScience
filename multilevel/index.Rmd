@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ![](figure/Multileveldata.png)
 
 
-## [Andrés Gutiérrez - Multilevel Modeling of Educational Data using R](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
+## [Andres Gutierrez - Multilevel Modeling of Educational Data using R](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
 
 - Lineare Modelle erkennen den Cluster-Effekt aufgrund der Intraklassen Korrelation nicht
 
@@ -234,7 +234,7 @@ names(Exam)
 - die Default Schätzmethode ist restricted maximum likelihood (REML) 
 - Man kann aber auch maximum likelihood Schätzung spezifizieren (ML)
 
-```{r}
+```{r,eval=F}
 lmer(normexam ~ 1 + (1 | school), data=Exam)
 ```
 
@@ -246,6 +246,14 @@ lmer(normexam ~ 1 + (1 | school), data=Exam)
 - Es wird immer ein Intercept angenommen, also wird es noch hier geschätzt. 
 - Es muss nur angegeben werden, wenn keine anderen Prädiktoren angegeben sind. 
 - Da wir nicht wollen, dass der Effekt des Prädiktors zwischen den Gruppen variiert, bleibt die Spezifikation des zufälligen Teils des Modells mit dem vorherigen Modell identisch. 
+
+```{r,eval=F}
+lmer(normexam ~ standLRT + (1 | school), data=Exam)
+```
+
+## random intercept, random slope
+
+Das nächste Modell, das angegeben wird, ist ein Modell mit einem zufälligen Intercept auf individueller Ebene und ein Prädiktor, der zwischen Gruppen variieren darf. Mit anderen Worten, die Wirkung der Hausaufgaben auf die Partitur auf einem Mathe-Test variiert zwischen den Schulen. Um dieses Modell zu schätzen, wird das '1', das den Intercept im zufälligen Teil der Modellspezifikation angibt, durch die Variable ersetzt, von der wir den Effekt zwischen den Gruppen variieren wollen.
 
 
 ## Ein anderes Datenbeispiel
