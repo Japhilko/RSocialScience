@@ -15,14 +15,17 @@
 
 [Datenimport](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.md)
 
--   ([pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.pdf)
-    [rcode](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.R))
+-   Folien zum Datenimport als
+    [pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.pdf)  
+-   [rcode](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.R)
+    zum Datenimport
 
 -   Aufgabe: [Datenimport](tutorial/Aufgabe_Datenimport.md)
 
 [Datenexport](slides/Datenexport.md)
 
--   ([pdf](slides/Datenexport.pdf) [rcode](slides/Datenexport.R))
+-   Folien zum Datenexport als [pdf](slides/Datenexport.pdf)  
+-   [rcode](slides/Datenexport.R) zum Datenexport
 
 [R und Excel](slides/Rexcel.md)
 
@@ -52,7 +55,8 @@ Rmarkdown](slides/Rmarkdown.md)
 [Notebooks](slides/Notebooks.md) zur Integration von anderen
 Programmiersprachen (Python,LaTeX,Julia)
 
--   ([pdf](slides/Notebooks.pdf))
+-   Informationen ([pdf](slides/Notebooks.pdf)) zur Erstellung von
+    Notebooks
 
 -   Aufgabe: [Bearbeiten Sie ein Notebook
     weiter](tutorial/Aufgabe_Notebook.md)
@@ -63,17 +67,18 @@ Liebe auf den ersten Plot – Grafiken mit R
 [Einfache
 Grafiken](https://github.com/Japhilko/IntroR/blob/master/2017/slides/EinfacheGrafiken.md)
 
--   [pdf](slides/EinfacheGrafiken.pdf)  
--   [rcode](rcode/EinfacheGrafiken.R)
--   [Aufgabe -
-    Barplot](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Barplot.md))
+-   Erstellung von Basisgraphiken ([pdf](slides/EinfacheGrafiken.pdf))
+-   [rcode](rcode/EinfacheGrafiken.R) zur Erstellung von einfachen
+    Graphiken
+-   [Aufgabe - einen Barplot
+    erstellen](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Barplot.md))
 
 Noch mehr Grafiken - multidimensional
 -------------------------------------
 
 [Zusammenhang](https://github.com/Japhilko/IntroR/blob/master/2017/slides/Multidimensional.md)
 
--   [pdf](slides/Multidimensional.pdf)  
+-   Multidimensionale Zusammenhänge ([pdf](slides/Multidimensional.pdf))
 -   [rcode](rcode/Multidimensional.R))
 
 [Das lattice

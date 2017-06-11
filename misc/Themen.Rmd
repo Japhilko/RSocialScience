@@ -1,0 +1,32 @@
+---
+title: "Themen"
+author: "Jan-Philipp Kolb"
+date: "11 Juni 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wie bekommt man Hilfe 
+
+- Foren, Blogs und Supportmöglichkeiten
+
+## 
+
+- Wie gehe ich mit Variablen-Label/Value-Label um? D.h.: wie erstelle ich sie, wie greife ich darauf wieder zu, wie mache ich sie in Grafiken/Tabellen rein?
+- Wie genau ist das mit missing values in R? (Können die eigentlich auch Valuelabel haben?)
+
+
+- Mein konkretes Ziel: Wie kann ich eine Kreuztabelle mit R erstellen
+(mit Value und Variablenlabel)?
+ 
+ 
+## Rekodieren 
+
+
+## Labeln, Schleifenprogrammierung
+ 
+Scatterplots, Plots von Koeffizienten/marginalen Effekten/predicted probabilities 
+ 

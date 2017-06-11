@@ -37,6 +37,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - Aufgabe: [Export nach Excel](tutorial/Aufgabe_Export2Excel.md)
 
+
 ## [Präsentation von Daten - Reproducible Research](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_2.md) 
 
 - ([pdf](slides/RInterfaces_all2g_2.pdf))
@@ -55,7 +56,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [Notebooks](slides/Notebooks.md) zur Integration von anderen Programmiersprachen (Python,LaTeX,Julia) 
 
-- ([pdf](slides/Notebooks.pdf))
+- Informationen ([pdf](slides/Notebooks.pdf)) zur Erstellung von Notebooks 
 
 - Aufgabe: [Bearbeiten Sie ein Notebook weiter](tutorial/Aufgabe_Notebook.md)
 
@@ -64,17 +65,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [Einfache Grafiken](https://github.com/Japhilko/IntroR/blob/master/2017/slides/EinfacheGrafiken.md) 
 
-- [pdf](slides/EinfacheGrafiken.pdf)   
-- [rcode](rcode/EinfacheGrafiken.R)
-- [Aufgabe - Barplot](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Barplot.md))
+- Erstellung von Basisgraphiken ([pdf](slides/EinfacheGrafiken.pdf))
+- [rcode](rcode/EinfacheGrafiken.R) zur Erstellung von einfachen Graphiken
+- [Aufgabe - einen Barplot erstellen](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Barplot.md))
     
-
+[Exkurs - Labels wie verwenden]()
 
 ## Noch mehr Grafiken - multidimensional
 
 [Zusammenhang](https://github.com/Japhilko/IntroR/blob/master/2017/slides/Multidimensional.md)
 
-- [pdf](slides/Multidimensional.pdf)   
+- Multidimensionale Zusammenhänge ([pdf](slides/Multidimensional.pdf))
 - [rcode](rcode/Multidimensional.R))
 
 [Das lattice Paket](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LatticePaket.md)   
@@ -94,14 +95,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - [Aufgabe - lineare Regression](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_LineareRegression.md))
 
-- [Die logistische Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.md)   
+[Die logistische Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.md)   
 
 - [pdf](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.pdf)   
 - [rcode](https://github.com/Japhilko/IntroR/blob/master/2017/rcode/logistischeRegression.R)
 
 - Aufgabe - Datenanalyse ([Browser](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Datenanalyse.md))
 
-
+[Mehrebenenmodelle](slides/multilevel.html)
 
 ## [Applikationen und Projektverwaltung mit Rstudio und git](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_5.md) 
 
