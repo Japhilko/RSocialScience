@@ -1,7 +1,7 @@
 ---
-title: "Schnittstellen R"
+title: "R für die Sozialwissenschaften"
 author: "Jan-Philipp Kolb"
-date: "08/09 Mai 2017"
+date: "03/04 Juli 2017"
 output: 
   html_document: 
     keep_md: yes
@@ -18,7 +18,7 @@ library(knitr)
 
 ```{r}
 Zeit <- c("9.00 – 11.30","11.30 – 11.45","11.45  - 13.30","13.00 – 14.30","14.30 – 15.30","15.30 – 16.00","16.00 – 18.00")
-Thema <- c("Einführung - Austausch von Daten","Pause","Reproducible Research","Mittag","Interaktive Darstellung","Pause","Internetresourcen und APIs nutzen")
+Thema <- c("Einführung - Austausch von Daten","Pause","Liebe auf den ersten Plot – Grafiken mit R","Mittag","Noch mehr Grafiken - multidimensional","Pause","Intro Regression")
 kable(cbind(Zeit,Thema))
 ```
 
