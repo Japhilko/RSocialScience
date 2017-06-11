@@ -1,0 +1,20 @@
+---
+title: "Add On"
+author: "Jan-Philipp Kolb"
+date: "21 Mai 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Add On Gliederung 
+
+[R und Excel](slides/Rexcel.md) 
+
+- ([pdf](slides/Rexcel.pdf)   [rcode](slides/Rexcel.R))
+
+- Aufgabe: [Export nach Excel](tutorial/Aufgabe_Export2Excel.md)
+
+## Daten bearbeiten/bereinigen

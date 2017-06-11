@@ -21,6 +21,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - Mein konkretes Ziel: Wie kann ich eine Kreuztabelle mit R erstellen
 (mit Value und Variablenlabel)?
+
+
+## Präsentationen
+
+- Entscheidungshilfe slidy vs. ioslides
  
  
 ## Rekodieren 
@@ -29,4 +34,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Labeln, Schleifenprogrammierung
  
 Scatterplots, Plots von Koeffizienten/marginalen Effekten/predicted probabilities 
+
+## Zusammenfassung
+
+- Zusammenfassung mit den wichtigsten/nützlichsten R-Paketen
  
+ 
+## Pausen
+
+- längere Mittagspause
+- mehrere kürzere Pausen
+
+

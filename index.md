@@ -1,5 +1,5 @@
-[Erste Schritte Datenimport](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.md)
----------------------------------------------------------------------------------------------------------------
+[Einführung - Austausch von Daten](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.md)
+---------------------------------------------------------------------------------------------------------------------
 
 -   Komplette Folien zum ersten Kapitel Datenimport als
     [pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.pdf)
@@ -33,34 +33,6 @@
 
 -   Aufgabe: [Export nach Excel](tutorial/Aufgabe_Export2Excel.md)
 
-[Präsentation von Daten - Reproducible Research](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_2.md)
------------------------------------------------------------------------------------------------------------------------------------
-
--   ([pdf](slides/RInterfaces_all2g_2.pdf))
-
-[Word Dokumente mit R erstellen](slides/R2word.md)
-
--   ([pdf](slides/R2word.pdf))
-
-[PDF Dokumente und Präsentationen mit LaTeX, Beamer und
-Sweave](slides/R2pdf.md)
-
--   ([pdf](slides/R2pdf.pdf))
-
-[HTML Dokumente, Präsentationen und Dashboards mit
-Rmarkdown](slides/Rmarkdown.md)
-
--   ([pdf](slides/Rmarkdown.pdf))
-
-[Notebooks](slides/Notebooks.md) zur Integration von anderen
-Programmiersprachen (Python,LaTeX,Julia)
-
--   Informationen ([pdf](slides/Notebooks.pdf)) zur Erstellung von
-    Notebooks
-
--   Aufgabe: [Bearbeiten Sie ein Notebook
-    weiter](tutorial/Aufgabe_Notebook.md)
-
 Liebe auf den ersten Plot – Grafiken mit R
 ------------------------------------------
 
@@ -72,6 +44,8 @@ Grafiken](https://github.com/Japhilko/IntroR/blob/master/2017/slides/EinfacheGra
     Graphiken
 -   [Aufgabe - einen Barplot
     erstellen](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Barplot.md))
+
+[Exkurs - Labels wie verwenden]()
 
 Noch mehr Grafiken - multidimensional
 -------------------------------------
@@ -101,14 +75,16 @@ Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LineareRe
 -   [Aufgabe - lineare
     Regression](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_LineareRegression.md))
 
--   [Die logistische
-    Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.md)
+[Die logistische
+Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.md)
 
 -   [pdf](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.pdf)  
 -   [rcode](https://github.com/Japhilko/IntroR/blob/master/2017/rcode/logistischeRegression.R)
 
 -   Aufgabe - Datenanalyse
     ([Browser](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Datenanalyse.md))
+
+[Mehrebenenmodelle](slides/multilevel.html)
 
 [Applikationen und Projektverwaltung mit Rstudio und git](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_5.md)
 --------------------------------------------------------------------------------------------------------------------------------------------
@@ -149,26 +125,30 @@ DataTables](https://github.com/Japhilko/RInterfaces/blob/master/slides/DataTable
 -   [pdf](slides/DataTables.pdf)  
 -   [rcode](rcode/DataTables.R)
 
-[R und die Javascript Data-Driven Documents
-(D3)](https://github.com/Japhilko/RInterfaces/blob/master/slides/D3.md)
+[Präsentation von Daten - Reproducible Research](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_2.md)
+-----------------------------------------------------------------------------------------------------------------------------------
 
--   [pdf](slides/D3.pdf)  
--   [rcode](rcode/D3.R))
+-   ([pdf](slides/RInterfaces_all2g_2.pdf))
 
-[Interaktive Graphiken mit D3 und
-plotly](https://github.com/Japhilko/RInterfaces/blob/master/slides/plotly.md)
+[Word Dokumente mit R erstellen](slides/R2word.md)
 
--   [pdf](slides/plotly.pdf)  
--   [rcode](rcode/plotly.R))
+-   ([pdf](slides/R2word.pdf))
 
-[Netzwerkgraphiken mit
-vis.js](https://github.com/Japhilko/RInterfaces/blob/master/slides/visNetwork.md)
+[PDF Dokumente und Präsentationen mit LaTeX, Beamer und
+Sweave](slides/R2pdf.md)
 
--   [pdf](slides/visNetwork.pdf) [rcode](rcode/visNetwork.R)
+-   ([pdf](slides/R2pdf.pdf))
 
-[Das Erstellen von Ablaufdiagrammen mit
-mermaid](https://github.com/Japhilko/RInterfaces/blob/master/slides/mermaid.md)
+[HTML Dokumente, Präsentationen und Dashboards mit
+Rmarkdown](slides/Rmarkdown.md)
 
--   [pdf](slides/mermaid.pdf)
+-   ([pdf](slides/Rmarkdown.pdf))
 
--   [rcode](rcode/mermaid.R))
+[Notebooks](slides/Notebooks.md) zur Integration von anderen
+Programmiersprachen (Python,LaTeX,Julia)
+
+-   Informationen ([pdf](slides/Notebooks.pdf)) zur Erstellung von
+    Notebooks
+
+-   Aufgabe: [Bearbeiten Sie ein Notebook
+    weiter](tutorial/Aufgabe_Notebook.md)

@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## [Erste Schritte Datenimport](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.md) 
+## [Einführung - Austausch von Daten](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.md) 
 
 - Komplette Folien zum ersten Kapitel Datenimport als [pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.pdf)
 
@@ -36,29 +36,6 @@ knitr::opts_chunk$set(echo = TRUE)
 - ([pdf](slides/Rexcel.pdf)   [rcode](slides/Rexcel.R))
 
 - Aufgabe: [Export nach Excel](tutorial/Aufgabe_Export2Excel.md)
-
-
-## [Präsentation von Daten - Reproducible Research](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_2.md) 
-
-- ([pdf](slides/RInterfaces_all2g_2.pdf))
-
-[Word Dokumente mit R erstellen](slides/R2word.md) 
-
-- ([pdf](slides/R2word.pdf))
-
-[PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave](slides/R2pdf.md) 
-
-- ([pdf](slides/R2pdf.pdf))
-
-[HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown](slides/Rmarkdown.md) 
-
-- ([pdf](slides/Rmarkdown.pdf))
-
-[Notebooks](slides/Notebooks.md) zur Integration von anderen Programmiersprachen (Python,LaTeX,Julia) 
-
-- Informationen ([pdf](slides/Notebooks.pdf)) zur Erstellung von Notebooks 
-
-- Aufgabe: [Bearbeiten Sie ein Notebook weiter](tutorial/Aufgabe_Notebook.md)
 
 
 ## Liebe auf den ersten Plot – Grafiken mit R	
@@ -140,25 +117,26 @@ knitr::opts_chunk$set(echo = TRUE)
 - [pdf](slides/DataTables.pdf)   
 - [rcode](rcode/DataTables.R)
 
-[R und die Javascript Data-Driven Documents (D3)](https://github.com/Japhilko/RInterfaces/blob/master/slides/D3.md) 
 
-- [pdf](slides/D3.pdf)   
-- [rcode](rcode/D3.R))
+## [Präsentation von Daten - Reproducible Research](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_2.md) 
 
-[Interaktive Graphiken mit D3 und plotly](https://github.com/Japhilko/RInterfaces/blob/master/slides/plotly.md) 
+- ([pdf](slides/RInterfaces_all2g_2.pdf))
 
-- [pdf](slides/plotly.pdf)   
-- [rcode](rcode/plotly.R))
+[Word Dokumente mit R erstellen](slides/R2word.md) 
 
-[Netzwerkgraphiken mit vis.js](https://github.com/Japhilko/RInterfaces/blob/master/slides/visNetwork.md) 
+- ([pdf](slides/R2word.pdf))
 
-- [pdf](slides/visNetwork.pdf)   [rcode](rcode/visNetwork.R)
+[PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave](slides/R2pdf.md) 
 
+- ([pdf](slides/R2pdf.pdf))
 
-[Das Erstellen von Ablaufdiagrammen mit mermaid](https://github.com/Japhilko/RInterfaces/blob/master/slides/mermaid.md)
+[HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown](slides/Rmarkdown.md) 
 
-- [pdf](slides/mermaid.pdf)   
+- ([pdf](slides/Rmarkdown.pdf))
 
-- [rcode](rcode/mermaid.R))
+[Notebooks](slides/Notebooks.md) zur Integration von anderen Programmiersprachen (Python,LaTeX,Julia) 
 
+- Informationen ([pdf](slides/Notebooks.pdf)) zur Erstellung von Notebooks 
+
+- Aufgabe: [Bearbeiten Sie ein Notebook weiter](tutorial/Aufgabe_Notebook.md)
 
