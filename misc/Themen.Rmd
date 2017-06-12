@@ -46,3 +46,6 @@ Scatterplots, Plots von Koeffizienten/marginalen Effekten/predicted probabilitie
 - mehrere kürzere Pausen
 
 
+## Links
+
+- [Spatial R](http://slideplayer.com/slide/6133281/)

@@ -33,7 +33,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## [Warum R?](http://stats.idre.ucla.edu/r/seminars/intro/)
 
-![Modularer Aufbau](figure/ModularerAufbau.PNG)
+![Modularer Aufbau](http://revolution-computing.typepad.com/.a/6a010534b1db25970b01bb086253c2970d-500wi)
 
 
 ## [Viel genutzte Pakete](https://gallery.shinyapps.io/cran-gauge/)
@@ -99,7 +99,7 @@ Wen Github näher interessiert:
 
 - Wenn man nur R herunterlädt und installiert, sieht das so aus:
 
-![](figure/BasisR.PNG)
+![](http://i1.wp.com/www.rensenieuwenhuis.nl/wp-content/uploads/2008/11/2-r.jpg)
 
 - So habe ich bis 2012 mit R gearbeitet.
 
