@@ -14,8 +14,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/figure/Packages.PNG)
 
-## Modularer Aufbau
-
 - Viele Funktionen sind im Basis-R enthalten 
 - Viele spezifische Funktionen sind in zusätzlichen Bibliotheken integriert
 - R kann modular erweitert werden durch sog. packages bzw. libraries
