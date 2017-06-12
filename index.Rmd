@@ -15,12 +15,12 @@ knitr::opts_chunk$set(echo = TRUE)
 - Wie bekommt man Hilfe
 - [Modularer Aufbau](https://github.com/Japhilko/RInterfaces/blob/master/tutorial/Aufgabe_Zusatzpakete.md)
 - [Datenimport](https://japhilko.github.io/RSocialScience/import/) 
-- [Datenexport](slides/Datenexport.md) 
+- [Datenexport](https://japhilko.github.io/RSocialScience/export/) 
 - [R und Excel](slides/Rexcel.md) 
 
 ## Liebe auf den ersten Plot – Grafiken mit R	
 
-- [Erstellung von Basisgraphiken](https://github.com/Japhilko/IntroR/blob/master/2017/slides/EinfacheGrafiken.md) 
+- [Basisgrafiken](https://japhilko.github.io/RSocialScience/simpleGraphics) 
 - [Grafiken und Zusammenhang](https://github.com/Japhilko/IntroR/blob/master/2017/slides/Multidimensional.md)
 - [Das lattice Paket](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LatticePaket.md)   
 
