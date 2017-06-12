@@ -8,7 +8,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(echo = F,warning=F)
 library(knitr)
 ```
 
@@ -17,7 +17,7 @@ library(knitr)
 ## Tag 1 - 03. Juli 2017
 
 ```{r}
-Zeit <- c("9.00 – 11.30","11.30 – 11.45","11.45  - 13.30","13.00 – 14.30","14.30 – 15.30","15.30 – 16.00","16.00 – 18.00")
+Zeit <- c("9.00 – 10.30","10.30 – 11.00","11.00  - 12.30","12.30 – 14.00","14.00 – 15.30","15.30 – 16.00","16.00 – 17.30")
 Thema <- c("Einführung - Austausch von Daten","Pause","Liebe auf den ersten Plot – Grafiken mit R","Mittag","Noch mehr Grafiken - multidimensional","Pause","Intro Regression")
 kable(cbind(Zeit,Thema))
 ```
@@ -25,8 +25,8 @@ kable(cbind(Zeit,Thema))
 ## Tag 2 - 04. Juli 2017
 
 ```{r}
-Zeit <- c("9.00 – 10.30","10.30 – 10.45","10.45 – 12.30","12.30 – 13.30","13.30 - 16.00","16.00")
-Thema <- c("Applikationen und Projektverwaltung mit Rstudio und git","Pause","Hochperfomanter Code","Mittag","Integration von Datenbanken","Ende der Veranstaltung")
+Zeit <- c("9.00 – 10.30","10.30 – 11.00","11.00 – 12.30","12.30 – 14.00","14.00 - 15.30")
+Thema <- c("Arbeitsorganisation mit Rstudio und git","Pause","Präsentation von Daten - Reproducible Research","Mittag","Interaktive Darstellung mit Javascript und R")
 kable(cbind(Zeit,Thema))
 ```
 

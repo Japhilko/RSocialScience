@@ -74,7 +74,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [Mehrebenenmodelle](slides/multilevel.html)
 
-## [Applikationen und Projektverwaltung mit Rstudio und git](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_5.md) 
+## [Arbeitsorganisation mit Rstudio und git](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_5.md) 
 
 - [Allgemein zur Versionsverwaltung](slides/Versionsverwaltung.md) ([pdf](slides/Versionsverwaltung.pdf))
 
@@ -83,28 +83,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - [pdf](slides/Rgit.pdf)  
 - [rcode](rcode/Rgit.R)
-
-[Shiny Apps](slides/shiny.md) 
-
-- [pdf](slides/shiny.pdf)   
-- [rcode](rcode/shiny.R)
-
-
-## [Interaktive Darstellung mit Javascript und R](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_3.md) 
-
-- [pdf](slides/RInterfaces_all2g_3.pdf)
-
-[Interaktive Karten mit dem Javascript Paket leaflet](https://github.com/Japhilko/RInterfaces/blob/master/slides/leaflet.md) 
-
-- [pdf](slides/leaflet.pdf)   
-- [rcode](rcode/leaflet.R))
-
-- Aufgabe: [Eine interaktive Karte erzeugen](tutorial/Aufgabe_leaflet.md)
-
-[Interaktive Tabellen mit DataTables](https://github.com/Japhilko/RInterfaces/blob/master/slides/DataTables.md) 
-
-- [pdf](slides/DataTables.pdf)   
-- [rcode](rcode/DataTables.R)
 
 
 ## [Präsentation von Daten - Reproducible Research](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_2.md) 
@@ -128,4 +106,23 @@ knitr::opts_chunk$set(echo = TRUE)
 - Informationen ([pdf](slides/Notebooks.pdf)) zur Erstellung von Notebooks 
 
 - Aufgabe: [Bearbeiten Sie ein Notebook weiter](tutorial/Aufgabe_Notebook.md)
+
+
+
+
+## [Interaktive Darstellung mit Javascript und R](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_3.md) 
+
+- [pdf](slides/RInterfaces_all2g_3.pdf)
+
+[Interaktive Karten mit dem Javascript Paket leaflet](https://github.com/Japhilko/RInterfaces/blob/master/slides/leaflet.md) 
+
+- [pdf](slides/leaflet.pdf)   
+- [rcode](rcode/leaflet.R))
+
+- Aufgabe: [Eine interaktive Karte erzeugen](tutorial/Aufgabe_leaflet.md)
+
+[Interaktive Tabellen mit DataTables](https://github.com/Japhilko/RInterfaces/blob/master/slides/DataTables.md) 
+
+- [pdf](slides/DataTables.pdf)   
+- [rcode](rcode/DataTables.R)
 

@@ -22,12 +22,11 @@ Zeit             Thema
 ## Tag 2 - 04. Juli 2017
 
 
-Zeit            Thema                                                   
---------------  --------------------------------------------------------
-9.00 – 10.30    Applikationen und Projektverwaltung mit Rstudio und git 
-10.30 – 10.45   Pause                                                   
-10.45 – 12.30   Hochperfomanter Code                                    
-12.30 – 13.30   Mittag                                                  
-13.30 - 16.00   Integration von Datenbanken                             
-16.00           Ende der Veranstaltung                                  
+Zeit            Thema                                          
+--------------  -----------------------------------------------
+9.00 – 10.30    Arbeitsorganisation mit Rstudio und git        
+10.30 – 10.45   Pause                                          
+10.45 – 12.30   Präsentation von Daten - Reproducible Research 
+12.30 – 13.30   Mittag                                         
+13.30 - 16.00   Interaktive Darstellung mit Javascript und R   
 
