@@ -19,69 +19,34 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Liebe auf den ersten Plot – Grafiken mit R	
 
-- [Basisgrafiken](https://japhilko.github.io/RSocialScience/simpleGraphics) 
+- [Basisgrafiken](https://japhilko.github.io/RSocialScience/simpleGraphics/) 
 - [Grafiken und Zusammenhang](https://github.com/Japhilko/IntroR/blob/master/2017/slides/Multidimensional.md)
 - [Das lattice Paket](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LatticePaket.md)   
+- [ggplot und ggmap]()
 
-
-## Intro Regression 
+## Regression mit R
 
 - [Die lineare Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LineareRegression.md)   
 - [Die logistische Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.md)   
 - [Mehrebenenmodelle](slides/multilevel.html)
 
-## [Applikationen und Projektverwaltung mit Rstudio und git](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_5.md) 
+## Arbeitsorganisatuion mit Rstudio und git
 
-- [Allgemein zur Versionsverwaltung](slides/Versionsverwaltung.md) ([pdf](slides/Versionsverwaltung.pdf))
+- [Allgemein zur Versionsverwaltung](slides/Versionsverwaltung.md) 
+- [R und Git](slides/Rgit.md) 
 
+## Präsentation von Daten - Reproducible Research
 
-[R und Git](slides/Rgit.md) 
-
-- [pdf](slides/Rgit.pdf)  
-- [rcode](rcode/Rgit.R)
-
-[Shiny Apps](slides/shiny.md) 
-
-- [pdf](slides/shiny.pdf)   
-- [rcode](rcode/shiny.R)
+- [Word Dokumente mit R erstellen](slides/R2word.md) 
+- [PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave](slides/R2pdf.md) 
+- [HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown](slides/Rmarkdown.md) 
+- [Notebooks](slides/Notebooks.md) zur Integration von anderen Programmiersprachen (Python,LaTeX,Julia) 
 
 
-## [Interaktive Darstellung mit Javascript und R](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_3.md) 
 
-- [pdf](slides/RInterfaces_all2g_3.pdf)
+## Interaktive Grafiken
 
-[Interaktive Karten mit dem Javascript Paket leaflet](https://github.com/Japhilko/RInterfaces/blob/master/slides/leaflet.md) 
+- [Interaktive Tabellen mit DataTables](https://github.com/Japhilko/RInterfaces/blob/master/slides/DataTables.md) 
+- [Interaktive Karten mit dem Javascript Paket leaflet](https://github.com/Japhilko/RInterfaces/blob/master/slides/leaflet.md) 
 
-- [pdf](slides/leaflet.pdf)   
-- [rcode](rcode/leaflet.R))
-
-- Aufgabe: [Eine interaktive Karte erzeugen](tutorial/Aufgabe_leaflet.md)
-
-[Interaktive Tabellen mit DataTables](https://github.com/Japhilko/RInterfaces/blob/master/slides/DataTables.md) 
-
-- [pdf](slides/DataTables.pdf)   
-- [rcode](rcode/DataTables.R)
-
-
-## [Präsentation von Daten - Reproducible Research](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_2.md) 
-
-- ([pdf](slides/RInterfaces_all2g_2.pdf))
-
-[Word Dokumente mit R erstellen](slides/R2word.md) 
-
-- ([pdf](slides/R2word.pdf))
-
-[PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave](slides/R2pdf.md) 
-
-- ([pdf](slides/R2pdf.pdf))
-
-[HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown](slides/Rmarkdown.md) 
-
-- ([pdf](slides/Rmarkdown.pdf))
-
-[Notebooks](slides/Notebooks.md) zur Integration von anderen Programmiersprachen (Python,LaTeX,Julia) 
-
-- Informationen ([pdf](slides/Notebooks.pdf)) zur Erstellung von Notebooks 
-
-- Aufgabe: [Bearbeiten Sie ein Notebook weiter](tutorial/Aufgabe_Notebook.md)
 

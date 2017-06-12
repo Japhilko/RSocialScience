@@ -378,3 +378,7 @@ leaflet() %>% addTiles() %>%
 - <https://rstudio.github.io/leaflet/>
 
 
+## Aufgabe `leaflet`
+
+- Verwenden Sie die Adresse, die Sie zuvor geokodiert haben, um eine interaktive Karte um diesen Punkt herum zu erstellen.
+
