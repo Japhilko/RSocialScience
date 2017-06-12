@@ -57,8 +57,8 @@ Was folgt daraus
 4.  Nutzung von C++
 5.  Nutzung von Datenbanken
 
-Schnittstellen beim Import/Export
----------------------------------
+Import/Export
+-------------
 
 -   Interaktion mit Excel, SPSS, Stata, ...
 
@@ -67,12 +67,8 @@ Schnittstellen beim Import/Export
 [Reproducible Research](http://www.statsmakemecry.com/smmctheblog/the-time-for-reproducible-research-is-now)
 ------------------------------------------------------------------------------------------------------------
 
-![](figure/MiracleOccursImage.png)
-
-[Wikipedia - Reproducibility](https://en.wikipedia.org/wiki/Reproducibility)
-----------------------------------------------------------------------------
-
-![](figure/Spectrum_of_reproducible_research.png)
+-   [Wikipedia -
+    Reproducibility](https://en.wikipedia.org/wiki/Reproducibility)
 
 Darstellung von Ergebnissen
 ---------------------------
@@ -81,32 +77,6 @@ Darstellung von Ergebnissen
     Graphiken erzeugen
 -   Diese kann man auf Websites, in Präsentationen oder in Dashboards
     verwenden
-
-![](figure/visNetwork.jpg)
-
-[Warum C++ Schnittstelle ?](http://dirk.eddelbuettel.com/papers/rcpp_workshop_introduction_user2012.pdf)
---------------------------------------------------------------------------------------------------------
-
--   [Wenn Schnelligkeit wichtig ist, bietet sich C++
-    an](http://www.stat.berkeley.edu/scf/paciorek-cppWorkshop.pdf).
--   [Dies kann bspw. der Fall sein, wenn sich Schleifen nicht vermeiden
-    lassen](https://www.r-bloggers.com/calling-c-from-r-using-rcpp/).
--   [Man wird bei der Programmierung durch RStudio
-    unterstützt](https://support.rstudio.com/hc/en-us/articles/200486088-Using-Rcpp-with-RStudio).
--   Es gibt eine [Rcpp Galerie](http://gallery.rcpp.org/), wo man sich
-    Anregungen holen kann.
--   Allerdings sollte man zunächst versuchen den Rcode so schnell wie
-    möglich zu gestalten.
-
-Die Nutzung von Datenbanken
----------------------------
-
--   Wenn große Datenmengen anfallen, kann die zusätzliche Nutzung von
-    Datenbanken sinnvoll sein.
--   In R bestehen Schnittstellen sowohl zu relationalen als auch nicht
-    relationalen Datenbanken.
--   Datenbanken sollten allerdings erst genutzt werden, wenn alle
-    Möglichkeiten in R ausgeschöpft sind.
 
 Nutzung der Unterlagen auf GitHub
 ---------------------------------
@@ -139,16 +109,6 @@ Wie wird das Github Verzeichnis genutzt?
 
 -   Falls Links ins Leere führen - bitte Bescheid sagen.
 
-Informationen ausdrucken
-------------------------
-
--   Zum Ausdrucken eignen sich die pdf-Dateien besser.
-
--   Diese können mit dem Raw Button heruntergeladen werden.
-
-![Raw Button zum
-Download](https://raw.githubusercontent.com/Japhilko/GeoData/master/2016/slides/figure/GithubDownload.bmp)
-
 Weitere Dateien herunterladen
 -----------------------------
 
@@ -168,18 +128,14 @@ Weitere Dateien herunterladen
 -   Alle anderen Dateien (bspw. `.RData`) auch mittels Raw
     Button herunterladen.
 
-Organisatorisches
------------------
+-   Informationen ausdrucken
 
--   Zusätzlich gibt es in jedem Kapitel eine oder mehrere Aufgabe(n), da
-    man nur durch eigenes Trainieren auf der Lernkurve vorankommt.
--   Die Quellen für die Punkte auf den Folien sind als Link meist in der
-    Überschrift hinterlegt.
--   Die Links sind nur im HTML Dokument zu sehen aber auch in der
-    pdf vorhanden.
+-   Zum Ausdrucken eignen sich die pdf-Dateien besser.
 
-Links und Quellen
------------------
+-   Diese können mit dem Raw Button heruntergeladen werden.
+
+![Raw Button zum
+Download](https://raw.githubusercontent.com/Japhilko/GeoData/master/2016/slides/figure/GithubDownload.bmp)
 
 Wen Github näher interessiert:
 
