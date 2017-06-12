@@ -1,0 +1,45 @@
+---
+title: "Datenexport"
+author: "Jan-Philipp Kolb"
+date: "12 Juni 2017"
+output: md_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 
+
+```{r,echo=F,eval=F}
+setwd("D:/Daten/owncloud/Workshops/RSocialScience")
+```
+
+```{r,eval=F}
+gpanel <- read.csv2("ZA5666_d_gesis_panel_campus_file_b_2014.csv")
+head(gpanel)
+```
+
+```{r}
+head(gpanel)
+```
+
+
+
+
+```{r}
+library(tibble)
+
+gpanel1 <- as_tibble(gpanel)
+
+head(gpanel1)
+```
+
+
+## [Exkurs - Labels wie verwenden]()
+
+```{r}
+library("forcats")
+browseVignettes()
+```
+
