@@ -1,26 +1,20 @@
-[Einführung - Austausch von Daten](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.md)
----------------------------------------------------------------------------------------------------------------------
-
--   Komplette Folien zum ersten Kapitel Datenimport als
-    [pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.pdf)
+[Austausch von Daten](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.md)
+--------------------------------------------------------------------------------------------------------
 
 -   [Einführung und
-    Motivation](https://github.com/Japhilko/RInterfaces/blob/master/slides/Intro.md)
-
+    Motivation](https://japhilko.github.io/RSocialScience/intro/)
 -   Einführungsfolien als
     [pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/Intro.pdf)
-
 -   Aufgabe:
     [Zusatzpakete](https://github.com/Japhilko/RInterfaces/blob/master/tutorial/Aufgabe_Zusatzpakete.md)
-
-[Datenimport](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.md)
-
+    [Datenimport](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.md)
 -   Folien zum Datenimport als
     [pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.pdf)  
 -   [rcode](https://github.com/Japhilko/RInterfaces/blob/master/slides/Datenimport.R)
     zum Datenimport
-
 -   Aufgabe: [Datenimport](tutorial/Aufgabe_Datenimport.md)
+-   Komplette Folien zum ersten Kapitel Datenimport als
+    [pdf](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_1.pdf)
 
 [Datenexport](slides/Datenexport.md)
 
@@ -30,7 +24,6 @@
 [R und Excel](slides/Rexcel.md)
 
 -   ([pdf](slides/Rexcel.pdf) [rcode](slides/Rexcel.R))
-
 -   Aufgabe: [Export nach Excel](tutorial/Aufgabe_Export2Excel.md)
 
 Liebe auf den ersten Plot – Grafiken mit R
@@ -71,7 +64,6 @@ Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LineareRe
 
 -   [pdf](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LineareRegression.pdf)  
 -   [rcode](https://github.com/Japhilko/IntroR/blob/master/2017/rcode/LineareRegression.R))
-
 -   [Aufgabe - lineare
     Regression](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_LineareRegression.md))
 
@@ -80,7 +72,6 @@ Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistisc
 
 -   [pdf](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.pdf)  
 -   [rcode](https://github.com/Japhilko/IntroR/blob/master/2017/rcode/logistischeRegression.R)
-
 -   Aufgabe - Datenanalyse
     ([Browser](https://github.com/Japhilko/IntroR/blob/master/2017/tutorial/Aufgabe_Datenanalyse.md))
 
@@ -89,11 +80,8 @@ Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistisc
 [Applikationen und Projektverwaltung mit Rstudio und git](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g_5.md)
 --------------------------------------------------------------------------------------------------------------------------------------------
 
--   [pdf](slides/RInterfaces_all2g_5.pdf)
-
-[Allgemein zur Versionsverwaltung](slides/Versionsverwaltung.md)
-
--   [pdf](slides/Versionsverwaltung.pdf)
+-   [Allgemein zur Versionsverwaltung](slides/Versionsverwaltung.md)
+    ([pdf](slides/Versionsverwaltung.pdf))
 
 [R und Git](slides/Rgit.md)
 
