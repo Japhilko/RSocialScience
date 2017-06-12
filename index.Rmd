@@ -16,7 +16,6 @@ knitr::opts_chunk$set(echo = TRUE)
 - [Modularer Aufbau](https://github.com/Japhilko/RInterfaces/blob/master/tutorial/Aufgabe_Zusatzpakete.md)
 - [Datenimport](https://japhilko.github.io/RSocialScience/import/) 
 - [Datenexport](https://japhilko.github.io/RSocialScience/export/) 
-- [R und Excel](slides/Rexcel.md) 
 
 ## Liebe auf den ersten Plot – Grafiken mit R	
 
