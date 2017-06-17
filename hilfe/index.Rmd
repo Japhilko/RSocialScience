@@ -46,8 +46,37 @@ example(lm)
 
 ## Vignetten
 
+- Dokumente zur Veranschaulichung und Erläuterung von Funktionen im Paket 
 ```{r,eval=F}
 browseVignettes()
+```
+
+## Demos
+
+- zu manchem Paketen gibt es Demonstrationen, wie der Code zu verwenden ist
+
+```{r,eval=F}
+demo()
+demo(nlm)
+```
+
+## Die Funktion `apropos`
+
+- sucht alles, was mit dem eingegebenen String in Verbindung steht
+
+```{r}
+apropos("lm")
+```
+
+- man kann das auch in Verbindung mit regulären Ausdrücken verwenden
+
+```{r,eval=F}
+?"regular expression"
+```
+
+
+```{r,eval=F}
+help.search("^glm")
 ```
 
 

@@ -3,7 +3,8 @@ Einführung
 
 -   [Einführung und
     Motivation](https://japhilko.github.io/RSocialScience/intro/)
--   Wie bekommt man Hilfe
+-   [Wie bekommt man
+    Hilfe](https://japhilko.github.io/RSocialScience/hilfe/)
 -   [Modularer
     Aufbau](https://github.com/Japhilko/RInterfaces/blob/master/tutorial/Aufgabe_Zusatzpakete.md)
 -   [Datenimport](https://japhilko.github.io/RSocialScience/import/)
