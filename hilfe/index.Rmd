@@ -9,4 +9,75 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## 
+<!--
+
+## Wie bekommt man Hilfe 
+
+- Foren, Blogs und Supportmöglichkeiten
+
+-->
+
+## Wie bekommt man Hilfe?
+
+-  [Um generell Hilfe zu bekommen:](http://itfeature.com/tag/how-to-get-help-in-r)
+
+
+```{r,eval=F}
+help.start()
+```
+
+-  [Online Dokumentation für die meisten Funktionen:](https://www.r-project.org/help.html)
+
+```{r,eval=F}
+help(name)
+```
+
+-  Nutze ? um Hilfe zu bekommen.
+
+```{r,eval=F}
+?mean
+```
+
+-  example(lm) gibt ein Beispiel für die lineare Regression
+
+```{r,eval=F}
+example(lm)
+```
+
+## Vignetten
+
+```{r,eval=F}
+browseVignettes()
+```
+
+
+## Nutzung Suchmaschinen
+
+-  Ich nutze meistens google 
+-  Tippe:
+
+```
+R-project + Was ich schon immer wissen wollte
+```
+
+
+
+-  Das funktioniert natürlich mit jeder Suchmaschine!
+
+## [Stackoverflow](http://stackoverflow.com/)
+
+-  Für Fragen zum Programmieren
+-  Ist nicht auf R fokussiert
+-  Sehr detailierte Diskussionen
+
+![](https://github.com/Japhilko/IntroR/blob/master/2017/slides/figure/StackoverflowEx.PNG?raw=true)
+
+## Ein Schummelzettel - Cheatsheet
+
+<https://www.rstudio.com/resources/cheatsheets/>
+
+![](https://github.com/Japhilko/IntroR/blob/master/2017/slides/figure/cheatsheetBaseR.PNG?raw=true)
+
+## Links
+
+- [Eine Liste der wichtigsten R-Befehle](https://www.personality-project.org/r/r.commands.html)
