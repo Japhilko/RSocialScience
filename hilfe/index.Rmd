@@ -2,7 +2,7 @@
 title: "Wie bekommt man Hilfe"
 author: "Jan-Philipp Kolb"
 date: "17 Juni 2017"
-output: html_document
+output: md_document
 ---
 
 ```{r setup, include=FALSE}
