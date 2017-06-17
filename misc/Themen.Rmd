@@ -9,10 +9,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Wie bekommt man Hilfe 
-
-- Foren, Blogs und Supportmöglichkeiten
-
 ## 
 
 - Wie gehe ich mit Variablen-Label/Value-Label um? D.h.: wie erstelle ich sie, wie greife ich darauf wieder zu, wie mache ich sie in Grafiken/Tabellen rein?
@@ -49,3 +45,6 @@ Scatterplots, Plots von Koeffizienten/marginalen Effekten/predicted probabilitie
 ## Links
 
 - [Spatial R](http://slideplayer.com/slide/6133281/)
+
+
+- [Webseiten](http://rmarkdown.rstudio.com/lesson-13.html)

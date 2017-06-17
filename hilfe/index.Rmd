@@ -79,6 +79,12 @@ apropos("lm")
 help.search("^glm")
 ```
 
+## Suchmaschine für die R-Seite
+
+```{r,eval=F}
+RSiteSearch("glm")
+```
+
 
 ## Nutzung Suchmaschinen
 
@@ -88,18 +94,21 @@ help.search("^glm")
 ```
 R-project + Was ich schon immer wissen wollte
 ```
-
-
-
 -  Das funktioniert natürlich mit jeder Suchmaschine!
 
 ## [Stackoverflow](http://stackoverflow.com/)
 
 -  Für Fragen zum Programmieren
--  Ist nicht auf R fokussiert
+-  [Ist nicht auf R fokussiert, es gibt aber viele Diskussionen zu R](https://stackoverflow.com/tags/r/info)
 -  Sehr detailierte Diskussionen
 
 ![](https://github.com/Japhilko/IntroR/blob/master/2017/slides/figure/StackoverflowEx.PNG?raw=true)
+
+## [Quick R](http://www.statmethods.net/interface/help.html)
+
+- Immer eine Seite mit Beispielen und Hilfe zu einem Thema
+- Beispiel: [Quick R - Getting Help](http://www.statmethods.net/interface/help.html)
+
 
 ## Ein Schummelzettel - Cheatsheet
 

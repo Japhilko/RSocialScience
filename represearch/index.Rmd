@@ -324,3 +324,4 @@ install.packages("flexdashboard", type = "source")
 
 - [Improving automatic document production with R](https://www.r-bloggers.com/improving-automatic-document-production-with-r/)
 
+- [Reproducible Research bei Stackoverflow](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example)
