@@ -31,8 +31,9 @@ knitr::opts_chunk$set(echo = TRUE)
 - [Die logistische Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.md)   
 - [Mehrebenenmodelle](slides/multilevel.html)
 
-## Arbeitsorganisatuion mit Rstudio und git
+## Arbeitsorganisation mit Rstudio und git
 
+- [Wie ich mir die Arbeit mit R  leichter mache]()
 - [Allgemein zur Versionsverwaltung](slides/Versionsverwaltung.md) 
 - [R und Git](slides/Rgit.md) 
 
