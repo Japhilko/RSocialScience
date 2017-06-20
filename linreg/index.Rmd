@@ -5,11 +5,6 @@ date: "20 Juni 2017"
 output: md_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,warning=F,message=F,eval=T)
