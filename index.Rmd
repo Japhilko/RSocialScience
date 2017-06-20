@@ -43,12 +43,7 @@ knitr::opts_chunk$set(echo = TRUE)
 - [HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown](https://japhilko.github.io/RSocialScience/rmarkdown) 
 - [Notebooks](https://japhilko.github.io/RSocialScience/notebooks) zur Integration von anderen Programmiersprachen (Python,LaTeX,Julia) 
 
-## Interaktive Grafiken
-
-- [Interaktive Tabellen mit DataTables](https://github.com/Japhilko/RInterfaces/blob/master/slides/DataTables.md) 
-- [Interaktive Karten mit dem Javascript Paket leaflet](https://github.com/Japhilko/RInterfaces/blob/master/slides/leaflet.md) 
-
 ## Interaktive Darstellung mit Javascript und R
 
-- [Interaktive Tabellen mit DataTables](https://github.com/Japhilko/RInterfaces/blob/master/slides/DataTables.md) 
-- [Interaktive Karten mit dem Javascript Paket leaflet](https://github.com/Japhilko/RInterfaces/blob/master/slides/leaflet.md) 
+- [Interaktive Tabellen mit DataTables](https://japhilko.github.io/RSocialScience/DataTables) 
+- [Interaktive Karten mit dem Javascript Paket leaflet](https://japhilko.github.io/RSocialScience/leaflet) 

@@ -6,7 +6,7 @@ Einführung
 -   [Wie bekommt man
     Hilfe](https://japhilko.github.io/RSocialScience/hilfe/)
 -   [Modularer
-    Aufbau](https://github.com/Japhilko/RInterfaces/blob/master/tutorial/Aufgabe_Zusatzpakete.md)
+    Aufbau](https://japhilko.github.io/RSocialScience/Rmodular/)
 -   [Datenimport](https://japhilko.github.io/RSocialScience/import/)
 -   [Datenexport](https://japhilko.github.io/RSocialScience/export/)
 
@@ -15,49 +15,43 @@ Liebe auf den ersten Plot – Grafiken mit R
 
 -   [Basisgrafiken](https://japhilko.github.io/RSocialScience/simpleGraphics/)
 -   [Grafiken und
-    Zusammenhang](https://github.com/Japhilko/IntroR/blob/master/2017/slides/Multidimensional.md)
+    Zusammenhang](https://japhilko.github.io/RSocialScience/multidimensional)
 -   [Das lattice
-    Paket](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LatticePaket.md)  
--   [ggplot und ggmap]()
+    Paket](https://japhilko.github.io/RSocialScience/lattice)  
+-   [ggplot und ggmap](https://japhilko.github.io/RSocialScience/ggplot)
 
 Regression mit R
 ----------------
 
 -   [Die lineare
-    Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/LineareRegression.md)  
+    Regression](https://japhilko.github.io/RSocialScience/linreg)  
 -   [Die logistische
-    Regression](https://github.com/Japhilko/IntroR/blob/master/2017/slides/logistischeRegression.md)  
--   [Mehrebenenmodelle](slides/multilevel.html)
+    Regression](https://japhilko.github.io/RSocialScience/logreg)  
+-   [Mehrebenenmodelle](https://japhilko.github.io/RSocialScience/multilevel/)
 
 Arbeitsorganisatuion mit Rstudio und git
 ----------------------------------------
 
--   [Allgemein zur Versionsverwaltung](slides/Versionsverwaltung.md)
--   [R und Git](slides/Rgit.md)
+-   [Allgemein zur
+    Versionsverwaltung](https://japhilko.github.io/RSocialScience/Versionsverwaltung)
+-   [R und Git](https://japhilko.github.io/RSocialScience/rgit)
 
 Präsentation von Daten - Reproducible Research
 ----------------------------------------------
 
--   [Word Dokumente mit R erstellen](slides/R2word.md)
+-   [Word Dokumente mit R
+    erstellen](https://japhilko.github.io/RSocialScience/r2wd)
 -   [PDF Dokumente und Präsentationen mit LaTeX, Beamer und
-    Sweave](slides/R2pdf.md)
+    Sweave](https://japhilko.github.io/RSocialScience/r2pdf)
 -   [HTML Dokumente, Präsentationen und Dashboards mit
-    Rmarkdown](slides/Rmarkdown.md)
--   [Notebooks](slides/Notebooks.md) zur Integration von anderen
-    Programmiersprachen (Python,LaTeX,Julia)
-
-Interaktive Grafiken
---------------------
-
--   [Interaktive Tabellen mit
-    DataTables](https://github.com/Japhilko/RInterfaces/blob/master/slides/DataTables.md)
--   [Interaktive Karten mit dem Javascript Paket
-    leaflet](https://github.com/Japhilko/RInterfaces/blob/master/slides/leaflet.md)
+    Rmarkdown](https://japhilko.github.io/RSocialScience/rmarkdown)
+-   [Notebooks](https://japhilko.github.io/RSocialScience/notebooks) zur
+    Integration von anderen Programmiersprachen (Python,LaTeX,Julia)
 
 Interaktive Darstellung mit Javascript und R
 --------------------------------------------
 
 -   [Interaktive Tabellen mit
-    DataTables](https://github.com/Japhilko/RInterfaces/blob/master/slides/DataTables.md)
+    DataTables](https://japhilko.github.io/RSocialScience/DataTables)
 -   [Interaktive Karten mit dem Javascript Paket
-    leaflet](https://github.com/Japhilko/RInterfaces/blob/master/slides/leaflet.md)
+    leaflet](https://japhilko.github.io/RSocialScience/leaflet)

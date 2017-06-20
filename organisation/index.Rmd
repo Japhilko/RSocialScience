@@ -1,0 +1,16 @@
+---
+title: "Workorga"
+author: "Jan-Philipp Kolb"
+date: "17 Juni 2017"
+output: md_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Links
+
+- [Designing Projects](https://nicercode.github.io/blog/2013-04-05-projects/)
+
+- [My research workflow, based on Github](http://www.carlboettiger.info/2012/05/06/research-workflow.html)
