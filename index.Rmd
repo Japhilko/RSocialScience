@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - [Einführung und Motivation](https://japhilko.github.io/RSocialScience/intro/) 
 - [Wie bekommt man Hilfe](https://japhilko.github.io/RSocialScience/hilfe/)
-- [Modularer Aufbau](https://github.com/Japhilko/RInterfaces/blob/master/tutorial/Aufgabe_Zusatzpakete.md)
+- [Modularer Aufbau](https://japhilko.github.io/RSocialScience/Rmodular/)
 - [Datenimport](https://japhilko.github.io/RSocialScience/import/) 
 - [Datenexport](https://japhilko.github.io/RSocialScience/export/) 
 
