@@ -1,3 +1,5 @@
+    <a href="https://japhilko.github.io/RSocialScience/intro/" class="btn">Home</a>
+
 Einführung
 ----------
 
@@ -8,6 +10,7 @@ Einführung
 -   [Modularer
     Aufbau](https://japhilko.github.io/RSocialScience/Rmodular/)
 -   [Datenimport](https://japhilko.github.io/RSocialScience/import/)
+-   [Datenaufbereitung](https://japhilko.github.io/RSocialScience/Datenaufbereitung)
 -   [Datenexport](https://japhilko.github.io/RSocialScience/export/)
 
 Liebe auf den ersten Plot – Grafiken mit R
