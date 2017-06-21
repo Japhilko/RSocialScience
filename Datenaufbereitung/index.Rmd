@@ -49,6 +49,11 @@ dat$a11c019a[1:10]
 head(dat[,1])
 ```
 
+## Datentypen
+
+```{r}
+# as.numeric()
+```
 
 
 ## [Rekodieren](https://www.r-bloggers.com/recoding-variables-in-r-pedagogic-considerations/)
@@ -75,7 +80,27 @@ gpanel1 <- as_tibble(gpanel)
 head(gpanel1)
 ```
 
+## Schleifen
+
+```{r}
+erg <- vector()
+
+for (i in 1:ncol(dat)){
+  erg[i] <- length(table(dat[,i]))  
+}
+```
 
 
 
 ## Fehlende Werte
+
+```{r}
+dat$bazq020a[dat$bazq020a==-99] <- NA
+```
+
+
+
+
+- [Quick-R zu fehlenden Werten](http://www.statmethods.net/input/missingdata.html)
+
+- [Fehlende Werte rekodieren](http://uc-r.github.io/na_recode)
