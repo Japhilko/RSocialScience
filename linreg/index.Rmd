@@ -15,11 +15,11 @@ knitr::opts_chunk$set(echo = TRUE,warning=F,message=F,eval=F)
 
 Maindonald - [Data Analysis](https://cran.r-project.org/doc/contrib/usingR.pdf)
 
--  Einf¸hrung in R 
+-  Einf√ºhrung in R 
 -  Datenanalyse
 -  Statistische Modelle
 -  Inferenzkonzepte
--  Regression mit einem Pr‰diktor
+-  Regression mit einem Pr√§diktor
 -  Multiple lineare Regression
 -  Ausweitung des linearen Modells
 -  ...
@@ -48,19 +48,19 @@ help on roller data:
 
 ## Das lineare Regressionsmodell in R
 
-Sch‰tzen eines Regressionsmodells:
+Sch√§tzen eines Regressionsmodells:
 
 ```{r}
 roller.lm <- lm(depression ~ weight, data = roller)
 ```
 
-So bekommt man die Sch‰tzwerte:
+So bekommt man die Sch√§tzwerte:
 
 ```{r}
 summary(roller.lm)
 ```
 
-Falls das Modell ohne Intercept gesch‰tzt werden soll:
+Falls das Modell ohne Intercept gesch?tzt werden soll:
 
 ```{r}
 lm(depression ~ -1 + weight, data = roller)
@@ -76,7 +76,7 @@ summary(roller.lm)
 ## R arbeitet mit Objekten
 
 - `roller.lm` ist nun ein spezielles Regressions-Objekt
-- Auf dieses Objekt kˆnnen nun verschiedene Funktionen angewendet werden
+- Auf dieses Objekt k√∂nnen nun verschiedene Funktionen angewendet werden
 
 ```{r}
 predict(roller.lm) # Vorhersage
@@ -137,7 +137,7 @@ abline(mod1)
 segments(x1, y, x1, pre, col="red")
 ```
 
-## Beispieldaten Luftqualit‰t
+## Beispieldaten Luftqualit√§t
 
 ```{r,eval=F}
 library(datasets)
@@ -148,7 +148,7 @@ library(datasets)
 
 ## Das `visreg`-Paket 
 
-Ein Modell wird auf dem airquality Datensatz gesch‰tzt
+Ein Modell wird auf dem airquality Datensatz gesch√§tzt
 
 ```{r,eval=F}
 install.packages("visreg")
@@ -169,7 +169,7 @@ visreg(fit)
 
 ## [Und dann mit `visreg` visualisiert.](http://myweb.uiowa.edu/pbreheny/publications/visreg.pdf)
 
-- Zweites Argument -  Spezifikation erkl‰rende Variable f¸r Visualisierung
+- Zweites Argument -  Spezifikation erkl√§rende Variable f√ºr Visualisierung
 
 ```{r}
 visreg(fit, "Wind", type = "contrast")
@@ -184,7 +184,7 @@ visreg(fit, "Wind", type = "contrast")
 
 ## Das `visreg`-Paket 
 
-- Das Default-Argument f¸r type ist conditional.
+- Das Default-Argument f√ºr type ist conditional.
 
 ```{r}
 visreg(fit, "Wind", type = "conditional")
@@ -193,7 +193,7 @@ visreg(fit, "Wind", type = "conditional")
 
 ## Regression mit Faktoren
 
-Mit `visreg` kˆnnen die Effekte bei Faktoren visualisiert werden.
+Mit `visreg` k√∂nnen die Effekte bei Faktoren visualisiert werden.
 
 ```{r}
 airquality$Heat <- cut(airquality$Temp, 3, 
@@ -258,6 +258,6 @@ visreg2d(fit2, "Wind", "Temp", plot.type = "persp")
 
 -  Das Komplette Buch von [Faraway](http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf)- sehr intuitiv geschrieben.
 
--  Gute Einf¸hrung auf [Quick-R](http://www.statmethods.net/stats/regression.html)
+-  Gute Einf√ºhrung auf [Quick-R](http://www.statmethods.net/stats/regression.html)
 
 - [Multiple Regression](https://www.r-bloggers.com/multiple-regression-part-1/)

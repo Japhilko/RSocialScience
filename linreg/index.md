@@ -1,8 +1,8 @@
 Die lineare Regression
 ----------------------
 
-Maindonald -
-[DataAnalysis](https://cran.r-project.org/doc/contrib/usingR.pdf)
+Maindonald - [Data
+Analysis](https://cran.r-project.org/doc/contrib/usingR.pdf)
 
 -   Einführung in R
 -   Datenanalyse
@@ -41,60 +41,14 @@ So bekommt man die Schätzwerte:
 
     summary(roller.lm)
 
-    ## 
-    ## Call:
-    ## lm(formula = depression ~ weight, data = roller)
-    ## 
-    ## Residuals:
-    ##    Min     1Q Median     3Q    Max 
-    ## -8.180 -5.580 -1.346  5.920  8.020 
-    ## 
-    ## Coefficients:
-    ##             Estimate Std. Error t value Pr(>|t|)   
-    ## (Intercept)  -2.0871     4.7543  -0.439  0.67227   
-    ## weight        2.6667     0.7002   3.808  0.00518 **
-    ## ---
-    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    ## 
-    ## Residual standard error: 6.735 on 8 degrees of freedom
-    ## Multiple R-squared:  0.6445, Adjusted R-squared:  0.6001 
-    ## F-statistic:  14.5 on 1 and 8 DF,  p-value: 0.005175
-
-Falls das Modell ohne Intercept geschätzt werden soll:
+Falls das Modell ohne Intercept gesch?tzt werden soll:
 
     lm(depression ~ -1 + weight, data = roller)
-
-    ## 
-    ## Call:
-    ## lm(formula = depression ~ -1 + weight, data = roller)
-    ## 
-    ## Coefficients:
-    ## weight  
-    ##  2.392
 
 Summary des Modells
 -------------------
 
     summary(roller.lm)
-
-    ## 
-    ## Call:
-    ## lm(formula = depression ~ weight, data = roller)
-    ## 
-    ## Residuals:
-    ##    Min     1Q Median     3Q    Max 
-    ## -8.180 -5.580 -1.346  5.920  8.020 
-    ## 
-    ## Coefficients:
-    ##             Estimate Std. Error t value Pr(>|t|)   
-    ## (Intercept)  -2.0871     4.7543  -0.439  0.67227   
-    ## weight        2.6667     0.7002   3.808  0.00518 **
-    ## ---
-    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    ## 
-    ## Residual standard error: 6.735 on 8 degrees of freedom
-    ## Multiple R-squared:  0.6445, Adjusted R-squared:  0.6001 
-    ## F-statistic:  14.5 on 1 and 8 DF,  p-value: 0.005175
 
 R arbeitet mit Objekten
 -----------------------
@@ -106,18 +60,7 @@ R arbeitet mit Objekten
 <!-- -->
 
     predict(roller.lm) # Vorhersage
-
-    ##         1         2         3         4         5         6         7 
-    ##  2.979669  6.179765  6.713114 10.713233 12.046606 14.180002 14.980026 
-    ##         8         9        10 
-    ## 18.180121 24.046962 30.980502
-
     resid(roller.lm) # Residuen
-
-    ##          1          2          3          4          5          6 
-    ## -0.9796695 -5.1797646 -1.7131138 -5.7132327  7.9533944  5.8199976 
-    ##          7          8          9         10 
-    ##  8.0199738 -8.1801213  5.9530377 -5.9805017
 
 Residuenplot
 ------------
@@ -131,17 +74,137 @@ Residuenplot
 
     plot(roller.lm,1)
 
-![](index_files/figure-markdown_strict/unnamed-chunk-10-1.png)
-
 Residuenplot
 ------------
 
     plot(roller.lm,2)
 
-![](index_files/figure-markdown_strict/unnamed-chunk-11-1.png)
-
 -   Wenn die Residuen normalverteilt sind sollten sie auf einer
     Linie liegen.
+
+Regressionsdiagnostik mit Basis-R
+---------------------------------
+
+Ein einfaches Modell
+
+    N <- 5
+    x1 <- rnorm(N)
+    y <- runif(N)
+
+    par(mfrow=c(1,2))
+    plot(density(x1))
+    plot(density(y))
+
+Modellvorhersage machen
+-----------------------
+
+    mod1 <- lm(y~x1)
+    pre <- predict(mod1)
+    y
+    pre
+
+Regressionsdiagnostik mit Basis-R
+---------------------------------
+
+    plot(x1,y)
+    abline(mod1)
+    segments(x1, y, x1, pre, col="red")
+
+Beispieldaten Luftqualität
+--------------------------
+
+    library(datasets)
+    ?airquality
+
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/DataAirquality.PNG)
+
+Das `visreg`-Paket
+------------------
+
+Ein Modell wird auf dem airquality Datensatz geschätzt
+
+    install.packages("visreg")
+
+    library(visreg)
+    fit <- lm(Ozone ~ Solar.R + Wind + Temp, data = airquality)
+    summary(fit)
+
+Visualisierung
+--------------
+
+    visreg(fit)
+
+[Und dann mit `visreg` visualisiert.](http://myweb.uiowa.edu/pbreheny/publications/visreg.pdf)
+----------------------------------------------------------------------------------------------
+
+-   Zweites Argument - Spezifikation erklärende Variable für
+    Visualisierung
+
+<!-- -->
+
+    visreg(fit, "Wind", type = "contrast")
+
+Visualisierung mit dem Paket `visreg`
+-------------------------------------
+
+    visreg(fit, "Wind", type = "contrast")
+
+Das `visreg`-Paket
+------------------
+
+-   Das Default-Argument für type ist conditional.
+
+<!-- -->
+
+    visreg(fit, "Wind", type = "conditional")
+
+Regression mit Faktoren
+-----------------------
+
+Mit `visreg` können die Effekte bei Faktoren visualisiert werden.
+
+    airquality$Heat <- cut(airquality$Temp, 3, 
+        labels=c("Cool", "Mild", "Hot"))
+    fit.heat <- lm(Ozone ~ Solar.R + Wind + Heat, 
+        data = airquality)
+    summary(fit.heat)
+
+Effekte von Faktoren
+--------------------
+
+    par(mfrow=c(1,2))
+    visreg(fit.heat, "Heat", type = "contrast")
+    visreg(fit.heat, "Heat", type = "conditional")
+
+Das Paket visreg - Interaktionen
+--------------------------------
+
+    airquality$Heat <- cut(airquality$Temp, 3, 
+    labels=c("Cool", "Mild", "Hot"))
+    fit <- lm(Ozone ~ Solar.R + Wind * Heat, data = airquality)
+    summary(fit)
+
+Steuern der Graphikausgabe mittels `layout`
+-------------------------------------------
+
+    visreg(fit, "Wind", by = "Heat",layout=c(3,1))
+
+Das Paket `visreg` - Interaktionen overlay
+------------------------------------------
+
+    fit <- lm(Ozone ~ Solar.R + Wind * Heat, data = airquality)
+    visreg(fit, "Wind", by="Heat", overlay=TRUE, partial=FALSE)
+
+Das Paket `visreg` - `visreg2d`
+-------------------------------
+
+    fit2 <- lm(Ozone ~ Solar.R + Wind * Temp, data = airquality)
+    visreg2d(fit2, "Wind", "Temp", plot.type = "image")
+
+Das Paket visreg - surface
+--------------------------
+
+    visreg2d(fit2, "Wind", "Temp", plot.type = "persp")
 
 Linkliste - lineare Regression
 ------------------------------
