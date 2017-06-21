@@ -33,7 +33,7 @@ Aufbau](http://revolution-computing.typepad.com/.a/6a010534b1db25970b01bb086253c
 [Viel genutzte Pakete](https://gallery.shinyapps.io/cran-gauge/)
 ----------------------------------------------------------------
 
-![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/CRANdownloads.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/CRANdownloads.PNG)
 
 [CRAN Task Views](https://cran.r-project.org/web/views/)
 --------------------------------------------------------

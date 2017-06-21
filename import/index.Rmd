@@ -55,7 +55,7 @@ head(gpanel)
 So findet man heraus, in welchem Verzeichnis man sich gerade befindet
 
 
-```r
+```{r}
 getwd()
 ```
 
@@ -64,7 +64,7 @@ So kann man das Arbeitsverzeichnis ändern:
 Man erzeugt ein Objekt in dem man den Pfad abspeichert:
 
 
-```r
+```{r,eval=F}
 main.path <- "C:/" # Beispiel für Windows
 main.path <- "/users/Name/" # Beispiel für Mac
 main.path <- "/home/user/" # Beispiel für Linux
@@ -73,7 +73,7 @@ main.path <- "/home/user/" # Beispiel für Linux
 Und ändert dann den Pfad mit setwd()
 
 
-```r
+```{r}
 setwd(main.path)
 ```
 
@@ -86,12 +86,12 @@ Bei Windows ist es wichtig Slashs anstelle von Backslashs zu verwenden.
 ## Das Paket `readr`
 
 
-```r
+```{r}
 install.packages("readr")
 ```
 
 
-```r
+```{r}
 library(readr)
 ```
 
@@ -182,8 +182,14 @@ mtcars <- read_sav("https://github.com/Japhilko/RInterfaces/raw/master/data/mtca
 
 ## stata Dateien einlesen
 
+```{r,eval=F}
+library(foreign)
+dat <- read.dta("ZA5666_d_gesis_panel_campus_file_b_2014_STATA12.dta")
+```
 
-```r
+
+
+```{r}
 library(haven)
 oecd <- read_dta("https://github.com/Japhilko/IntroR/raw/master/2017/data/oecd.dta")
 ```

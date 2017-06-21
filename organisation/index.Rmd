@@ -14,3 +14,5 @@ knitr::opts_chunk$set(echo = TRUE)
 - [Designing Projects](https://nicercode.github.io/blog/2013-04-05-projects/)
 
 - [My research workflow, based on Github](http://www.carlboettiger.info/2012/05/06/research-workflow.html)
+
+- [Stata, SPSS, SAS und R im Vergleich](https://www.princeton.edu/~otorres/sessions/s2r.pdf)
