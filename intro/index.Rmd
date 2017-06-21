@@ -38,7 +38,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## [Viel genutzte Pakete](https://gallery.shinyapps.io/cran-gauge/)
 
-![](figure/CRANdownloads.PNG)
+![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/CRANdownloads.PNG)
 
 
 ## [CRAN Task Views](https://cran.r-project.org/web/views/)

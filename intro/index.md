@@ -27,35 +27,18 @@ Gründe
 [Warum R?](http://stats.idre.ucla.edu/r/seminars/intro/)
 --------------------------------------------------------
 
-![Modularer Aufbau](figure/ModularerAufbau.PNG)
+![Modularer
+Aufbau](http://revolution-computing.typepad.com/.a/6a010534b1db25970b01bb086253c2970d-500wi)
 
 [Viel genutzte Pakete](https://gallery.shinyapps.io/cran-gauge/)
 ----------------------------------------------------------------
 
-![](figure/CRANdownloads.PNG)
+![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/CRANdownloads.PNG)
 
 [CRAN Task Views](https://cran.r-project.org/web/views/)
 --------------------------------------------------------
 
 ![](figure/CRANTaskviews.PNG)
-
-Motivation - Nachteile von R
-----------------------------
-
-1.  Daten werden oft anderswo erfasst/eingegeben (oft Excel, SPSS etc.)
-2.  Nicht jeder ist bereit mit R zu arbeiten
-3.  Nicht auf jedem Rechner ist R installiert
-4.  R ist manchmal zu langsam
-5.  Schwierigkeiten bei der Arbeit mit großen Datenmengen
-
-Was folgt daraus
-----------------
-
-1.  Schnittstelle zu SPSS/Stata/Excel zum Import von Daten
-2.  Schnittstelle zu Word/LaTeX
-3.  Möglichkeit HTML Präsentationen zu erzeugen
-4.  Nutzung von C++
-5.  Nutzung von Datenbanken
 
 Import/Export
 -------------
@@ -70,47 +53,13 @@ Import/Export
 -   [Wikipedia -
     Reproducibility](https://en.wikipedia.org/wiki/Reproducibility)
 
-Darstellung von Ergebnissen
----------------------------
+[Wie bekommt man Hilfe](https://www.r-project.org/help.html)
+------------------------------------------------------------
 
--   Mit der Schnittstelle zu Javascript lassen sich interaktive
-    Graphiken erzeugen
--   Diese kann man auf Websites, in Präsentationen oder in Dashboards
-    verwenden
+-   [Vignetten](http://r-pkgs.had.co.nz/vignettes.html)
 
-Nutzung der Unterlagen auf GitHub
----------------------------------
-
--   Die folgende Seite ist die Startseite für den Kurs:
-
-<https://japhilko.github.io/Interfaces4R/>
-
-![](figure/Interfaces4r.PNG)
-
-Wo sind die Sourcecodes?
-------------------------
-
-Wie wird das Github Verzeichnis genutzt?
-
--   Auf der folgenden Seite sind alle Sourcecodes enthalten:
-
-<https://github.com/Japhilko/RInterfaces>
-
--   Es lohnt sich immer wieder zu dieser Seite zurückzukehren, weil auch
-    hier alle relevanten Dokumente verlinkt sind.
-
--   Grundsätzlich kann man der Veranstalung am Besten mit den
-    [kompletten
-    File](https://github.com/Japhilko/RInterfaces/blob/master/slides/RInterfaces_all2g.md)
-    oder der kompletten Browserversion eines Kapitels (sind unter den
-    Kapitelüberschriften verlinkt) folgen. Wenn Teile heruntergeladen
-    werden sollen, bietet es sich an, das entsprechende
-    pdf herunterzuladen.
-
--   Falls Links ins Leere führen - bitte Bescheid sagen.
-
-Weitere Dateien herunterladen
------------------------------
+Dateien herunterladen
+---------------------
 
 -   Begleitend zu den Folien wird meistens auch ein R-File angeboten.
 
@@ -149,7 +98,7 @@ Basis R ...
 
 -   Wenn man nur R herunterlädt und installiert, sieht das so aus:
 
-![](figure/BasisR.PNG)
+![](http://i1.wp.com/www.rensenieuwenhuis.nl/wp-content/uploads/2008/11/2-r.jpg)
 
 -   So habe ich bis 2012 mit R gearbeitet.
 
