@@ -12,13 +12,41 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## [Variablen Labels](https://stackoverflow.com/questions/2151147/using-stata-variable-labels-in-r)
 
-```{r,eval=F}
+```{r}
 library(foreign)
-dat <- read.dta("ZA5666_d_gesis_panel_campus_file_b_2014_STATA12.dta")
+dat <- read.dta("https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
 ```
 
-```{r,eval=F}
+```{r}
 var.labels <- attr(dat,"var.labels")
+```
+
+## Ein Überblick
+
+```{r}
+nrow(dat)
+ncol(dat)
+```
+
+```{r}
+head(dat)
+```
+
+
+## Indizieren
+
+- Das Dollarzeichen kann man nutzen um einzelne Spalten anzusprechen
+
+```{r}
+head(dat$a11c019a)
+
+dat$a11c019a[1:10]
+```
+
+- Man kann auch Zahlen nutzen um auf die Spalten zuzugreifen
+
+```{r}
+head(dat[,1])
 ```
 
 
