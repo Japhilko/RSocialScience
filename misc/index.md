@@ -1,57 +1,30 @@
-Einführung
+R Markdown
 ----------
 
--   [Einführung und
-    Motivation](https://japhilko.github.io/RSocialScience/intro/)
--   [Wie bekommt man
-    Hilfe](https://japhilko.github.io/RSocialScience/hilfe/)
--   [Modularer
-    Aufbau](https://japhilko.github.io/RSocialScience/Rmodular/)
--   [Datenimport](https://japhilko.github.io/RSocialScience/import/)
--   [Datenexport](https://japhilko.github.io/RSocialScience/export/)
+This is an R Markdown document. Markdown is a simple formatting syntax
+for authoring HTML, PDF, and MS Word documents. For more details on
+using R Markdown see <http://rmarkdown.rstudio.com>.
 
-Liebe auf den ersten Plot – Grafiken mit R
-------------------------------------------
+When you click the **Knit** button a document will be generated that
+includes both content as well as the output of any embedded R code
+chunks within the document. You can embed an R code chunk like this:
 
--   [Basisgrafiken](https://japhilko.github.io/RSocialScience/simpleGraphics/)
--   [Grafiken und
-    Zusammenhang](https://japhilko.github.io/RSocialScience/multidimensional)
--   [Das lattice
-    Paket](https://japhilko.github.io/RSocialScience/lattice)  
--   [ggplot und ggmap](https://japhilko.github.io/RSocialScience/ggplot)
+    summary(cars)
 
-Regression mit R
-----------------
+    ##      speed           dist       
+    ##  Min.   : 4.0   Min.   :  2.00  
+    ##  1st Qu.:12.0   1st Qu.: 26.00  
+    ##  Median :15.0   Median : 36.00  
+    ##  Mean   :15.4   Mean   : 42.98  
+    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
+    ##  Max.   :25.0   Max.   :120.00
 
--   [Die lineare
-    Regression](https://japhilko.github.io/RSocialScience/linreg)  
--   [Die logistische
-    Regression](https://japhilko.github.io/RSocialScience/logreg)  
--   [Mehrebenenmodelle](https://japhilko.github.io/RSocialScience/multilevel/)
+Including Plots
+---------------
 
-Arbeitsorganisatuion mit Rstudio und git
-----------------------------------------
+You can also embed plots, for example:
 
--   [Allgemein zur
-    Versionsverwaltung](https://japhilko.github.io/RSocialScience/Versionsverwaltung)
--   [R und Git](https://japhilko.github.io/RSocialScience/rgit)
+![](index_files/figure-markdown_strict/pressure-1.png)
 
-Präsentation von Daten - Reproducible Research
-----------------------------------------------
-
--   [Word Dokumente mit R
-    erstellen](https://japhilko.github.io/RSocialScience/r2wd)
--   [PDF Dokumente und Präsentationen mit LaTeX, Beamer und
-    Sweave](https://japhilko.github.io/RSocialScience/r2pdf)
--   [HTML Dokumente, Präsentationen und Dashboards mit
-    Rmarkdown](https://japhilko.github.io/RSocialScience/rmarkdown)
--   [Notebooks](https://japhilko.github.io/RSocialScience/notebooks) zur
-    Integration von anderen Programmiersprachen (Python,LaTeX,Julia)
-
-Interaktive Darstellung mit Javascript und R
---------------------------------------------
-
--   [Interaktive Tabellen mit
-    DataTables](https://japhilko.github.io/RSocialScience/DataTables)
--   [Interaktive Karten mit dem Javascript Paket
-    leaflet](https://japhilko.github.io/RSocialScience/leaflet)
+Note that the `echo = FALSE` parameter was added to the code chunk to
+prevent printing of the R code that generated the plot.
