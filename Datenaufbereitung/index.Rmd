@@ -1,0 +1,33 @@
+---
+title: "Datenaufbereitung"
+author: "Jan-Philipp Kolb"
+date: "21 Juni 2017"
+output: md_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## [Variablen Labels](https://stackoverflow.com/questions/2151147/using-stata-variable-labels-in-r)
+
+```{r,eval=F}
+library(foreign)
+dat <- read.dta("ZA5666_d_gesis_panel_campus_file_b_2014_STATA12.dta")
+```
+
+```{r,eval=F}
+var.labels <- attr(dat,"var.labels")
+```
+
+
+
+## [Rekodieren](https://www.r-bloggers.com/recoding-variables-in-r-pedagogic-considerations/)
+
+```{r}
+library(car)
+?recode
+```
+
+## Fehlende Werte
