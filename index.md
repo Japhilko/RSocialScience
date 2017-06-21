@@ -1,5 +1,3 @@
-    <a href="https://japhilko.github.io/RSocialScience/intro/" class="btn">Home</a>
-
 Einführung
 ----------
 

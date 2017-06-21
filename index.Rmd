@@ -8,7 +8,6 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-    <a href="https://japhilko.github.io/RSocialScience/intro/" class="btn">Home</a>
 
 ## Einführung
 
