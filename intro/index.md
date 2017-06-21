@@ -38,14 +38,14 @@ Aufbau](http://revolution-computing.typepad.com/.a/6a010534b1db25970b01bb086253c
 [CRAN Task Views](https://cran.r-project.org/web/views/)
 --------------------------------------------------------
 
-![](figure/CRANTaskviews.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/CRANTaskviews.PNG)
 
 Import/Export
 -------------
 
 -   Interaktion mit Excel, SPSS, Stata, ...
 
-![Import](figure/Import.PNG)
+![Import](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/Import.PNG)
 
 [Reproducible Research](http://www.statsmakemecry.com/smmctheblog/the-time-for-reproducible-research-is-now)
 ------------------------------------------------------------------------------------------------------------

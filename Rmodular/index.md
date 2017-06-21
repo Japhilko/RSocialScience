@@ -1,10 +1,7 @@
-Modularer Aufbau
-----------------
+Wo sind die Routinen enthalten
+------------------------------
 
 ![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/figure/Packages.PNG)
-
-Modularer Aufbau
-----------------
 
 -   Viele Funktionen sind im Basis-R enthalten
 -   Viele spezifische Funktionen sind in zusätzlichen Bibliotheken

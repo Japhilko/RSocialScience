@@ -1,190 +1,165 @@
-# Datenimport
-Jan-Philipp Kolb  
-8 Mai 2017  
+Dateiformate in R
+-----------------
 
+-   Von R werden quelloffene, nicht-proprietäre Formate bevorzugt
+-   Es können aber auch Formate von anderen Statistik Software Paketen
+    eingelesen werden
+-   R-user speichern Objekte gerne in sog. Workspaces ab
+-   Auch hier jedoch gilt: (fast) alles andere ist möglich
 
-
-
-## Dateiformate in R
-
--  Von R werden quelloffene, nicht-proprietäre Formate bevorzugt
--  Es können aber auch Formate von anderen Statistik Software Paketen eingelesen werden
--  R-user speichern Objekte gerne in sog. Workspaces ab
--  Auch hier jedoch gilt: (fast) alles andere ist möglich
-
-## Formate - base package
+Formate - base package
+----------------------
 
 R unterstützt von Haus aus schon einige wichtige Formate:
-		
--  CSV (Comma Separated Values): `read.csv()`
--  FWF (Fixed With Format): `read.fwf()`
--  Tab-getrennte Werte: `read.delim()`
 
+-   CSV (Comma Separated Values): `read.csv()`
 
+<!-- -->
 
-## Datenimport leicht gemacht mit Rstudio
+    gpanel <- read.csv2("ZA5666_d_gesis_panel_campus_file_b_2014.csv")
+    head(gpanel)
 
-![Import Button](https://i1.wp.com/thepracticalr.files.wordpress.com/2017/01/rstudio-old-import.png?w=456&ssl=1)
+Datenimport leicht gemacht mit Rstudio
+--------------------------------------
 
+![Import
+Button](https://i1.wp.com/thepracticalr.files.wordpress.com/2017/01/rstudio-old-import.png?w=456&ssl=1)
 
-## CSV aus dem Web einladen
+CSV aus dem Web einladen
+------------------------
 
-- Datensatz:
+-   Datensatz:
 
 <https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD>
 
-- [Datenimport mit Rstudio](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
+-   [Datenimport mit
+    Rstudio](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
 
-![](figure/ImportCSVPNG.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/ImportCSVPNG.PNG)
 
-
-## Der Arbeitsspeicher
+Der Arbeitsspeicher
+-------------------
 
 So findet man heraus, in welchem Verzeichnis man sich gerade befindet
 
-
-```r
-getwd()
-```
+    getwd()
 
 So kann man das Arbeitsverzeichnis ändern:
 
 Man erzeugt ein Objekt in dem man den Pfad abspeichert:
 
-
-```r
-main.path <- "C:/" # Beispiel für Windows
-main.path <- "/users/Name/" # Beispiel für Mac
-main.path <- "/home/user/" # Beispiel für Linux
-```
+    main.path <- "C:/" # Beispiel für Windows
+    main.path <- "/users/Name/" # Beispiel für Mac
+    main.path <- "/home/user/" # Beispiel für Linux
 
 Und ändert dann den Pfad mit setwd()
 
-
-```r
-setwd(main.path)
-```
+    setwd(main.path)
 
 Bei Windows ist es wichtig Slashs anstelle von Backslashs zu verwenden.
 
-## Alternative - Arbeitsspeicher
+Alternative - Arbeitsspeicher
+-----------------------------
 
-![](figure/SetWD.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/SetWD.PNG)
 
-## Das Paket `readr`
+Das Paket `readr`
+-----------------
 
+    install.packages("readr")
 
-```r
-install.packages("readr")
-```
+    library(readr)
 
+-   [`readr` auf dem Rstudio
+    Blogg](https://blog.rstudio.org/2015/10/28/readr-0-2-0/)
 
-```r
-library(readr)
-```
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/readrRstudioBlogg.PNG)
 
-- [`readr` auf dem Rstudio Blogg](https://blog.rstudio.org/2015/10/28/readr-0-2-0/)
+Import von Excel-Daten
+----------------------
 
-![](figure/readrRstudioBlogg.PNG)
+-   `library(readr)` ist für den Import von fremden Datenformaten
+    hilfreich
+-   Wenn Excel-Daten vorliegen - als .csv abspeichern
 
+<!-- -->
 
+    library(readr)
+    rows <- read_csv("https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD")
 
-## Import von Excel-Daten
+`.csv`-Daten aus dem Web importieren - zweites Beispiel
+-------------------------------------------------------
 
--  `library(readr)` ist für den Import von fremden Datenformaten hilfreich
--  Wenn Excel-Daten vorliegen - als .csv abspeichern
+    url <- "https://raw.githubusercontent.com/Japhilko/
+    GeoData/master/2015/data/whcSites.csv"
 
+    whcSites <- read.csv(url) 
 
-```r
-library(readr)
-rows <- read_csv("https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD")
-```
+    head(data.frame(whcSites$name_en,whcSites$category))
 
+    ##                                                      whcSites.name_en
+    ## 1 Cultural Landscape and Archaeological Remains of the Bamiyan Valley
+    ## 2                           Minaret and Archaeological Remains of Jam
+    ## 3                          Historic Centres of Berat and Gjirokastra 
+    ## 4                                                             Butrint
+    ## 5                                             Al Qal'a of Beni Hammad
+    ## 6                                                        M'Zab Valley
+    ##   whcSites.category
+    ## 1          Cultural
+    ## 2          Cultural
+    ## 3          Cultural
+    ## 4          Cultural
+    ## 5          Cultural
+    ## 6          Cultural
 
+Das Paket `haven`
+-----------------
 
-## `.csv`-Daten aus dem Web importieren - zweites Beispiel
+    install.packages("haven")
 
+    library(haven)
 
-```r
-url <- "https://raw.githubusercontent.com/Japhilko/
-GeoData/master/2015/data/whcSites.csv"
-
-whcSites <- read.csv(url) 
-```
-
-
-
-```r
-head(data.frame(whcSites$name_en,whcSites$category))
-```
-
-```
-##                                                      whcSites.name_en
-## 1 Cultural Landscape and Archaeological Remains of the Bamiyan Valley
-## 2                           Minaret and Archaeological Remains of Jam
-## 3                          Historic Centres of Berat and Gjirokastra 
-## 4                                                             Butrint
-## 5                                             Al Qal'a of Beni Hammad
-## 6                                                        M'Zab Valley
-##   whcSites.category
-## 1          Cultural
-## 2          Cultural
-## 3          Cultural
-## 4          Cultural
-## 5          Cultural
-## 6          Cultural
-```
-
-## Das Paket `haven`
-
-
-```r
-install.packages("haven")
-```
-
-
-```r
-library(haven)
-```
-
-- [Das R-Paket `haven` auf dem Rstudio Blogg](https://blog.rstudio.org/2016/10/04/haven-1-0-0/)
+-   [Das R-Paket `haven` auf dem Rstudio
+    Blogg](https://blog.rstudio.org/2016/10/04/haven-1-0-0/)
 
 ![](figure/havenRstudioBlogg.PNG)
 
-## SPSS Dateien einlesen
+SPSS Dateien einlesen
+---------------------
 
-- Zunächst muss wieder der Pfad zum Arbeitsverzeichnis angeben werden.
-- SPSS-Dateien können auch direkt aus dem Internet geladen werden:
+-   Zunächst muss wieder der Pfad zum Arbeitsverzeichnis angeben werden.
+-   SPSS-Dateien können auch direkt aus dem Internet geladen werden:
 
+<!-- -->
 
-```r
-install.packages("haven")
-```
+    install.packages("haven")
 
+    library(haven)
+    mtcars <- read_sav("https://github.com/Japhilko/RInterfaces/raw/master/data/mtcars.sav")
 
+stata Dateien einlesen
+----------------------
 
-```r
-library(haven)
-mtcars <- read_sav("https://github.com/Japhilko/RInterfaces/raw/master/data/mtcars.sav")
-```
+    library(foreign)
+    dat <- read.dta("ZA5666_d_gesis_panel_campus_file_b_2014_STATA12.dta")
 
-## stata Dateien einlesen
+    library(haven)
+    oecd <- read_dta("https://github.com/Japhilko/IntroR/raw/master/2017/data/oecd.dta")
 
+Links
+-----
 
-```r
-library(haven)
-oecd <- read_dta("https://github.com/Japhilko/IntroR/raw/master/2017/data/oecd.dta")
-```
+-   [Quick-R - Import
+    Data](http://www.statmethods.net/input/importingdata.html)
 
+-   [Datenimport bei
+    R-bloggers](https://www.r-bloggers.com/importing-data-into-r-part-ii/)
 
-## Links
+-   [Importing Data into
+    R](https://thepracticalr.wordpress.com/2016/09/23/importing-data-into-r/)
 
-- [Quick-R - Import Data](http://www.statmethods.net/input/importingdata.html)
+-   [Mapping von Arbeitslosendaten in den
+    USA](https://www.r-bloggers.com/mapping-unemployment-data-2016/)
 
-- [Datenimport bei R-bloggers](https://www.r-bloggers.com/importing-data-into-r-part-ii/)
-
-- [Importing Data into R](https://thepracticalr.wordpress.com/2016/09/23/importing-data-into-r/)
-
-- [Mapping von Arbeitslosendaten in den USA](https://www.r-bloggers.com/mapping-unemployment-data-2016/)
-
-- [Das Paket readr](https://www.r-bloggers.com/readrproblems-returns-tidy-data/)
+-   [Das Paket
+    readr](https://www.r-bloggers.com/readrproblems-returns-tidy-data/)

@@ -47,7 +47,7 @@ head(gpanel)
 
 - [Datenimport mit Rstudio](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
 
-![](figure/ImportCSVPNG.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/ImportCSVPNG.PNG)
 
 
 ## Der Arbeitsspeicher
@@ -81,7 +81,7 @@ Bei Windows ist es wichtig Slashs anstelle von Backslashs zu verwenden.
 
 ## Alternative - Arbeitsspeicher
 
-![](figure/SetWD.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/SetWD.PNG)
 
 ## Das Paket `readr`
 
@@ -97,7 +97,7 @@ library(readr)
 
 - [`readr` auf dem Rstudio Blogg](https://blog.rstudio.org/2015/10/28/readr-0-2-0/)
 
-![](figure/readrRstudioBlogg.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/readrRstudioBlogg.PNG)
 
 
 
