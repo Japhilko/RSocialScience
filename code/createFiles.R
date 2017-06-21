@@ -21,6 +21,10 @@ setwd(slidepath)
 
 
 
+rmarkdown::render("../intro/index.Rmd",
+                  output_format = "slidy_presentation",
+                  output_file="intro.html",
+                  output_dir=slidepath)
 
 
 # http://stackoverflow.com/questions/26174565/r-in-rstudio-how-do-i-make-knitr-output-to-a-different-folder-to-avoid-clutteri

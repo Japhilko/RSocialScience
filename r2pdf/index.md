@@ -1,12 +1,12 @@
 Präsentationen mit Rmarkdown - beamer Präsentationen
 ----------------------------------------------------
 
-![](figure/beamerexample.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/beamerexample.PNG)
 
 Beamer Optionen
 ---------------
 
-![](figure/beamerOptions.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/beamerOptions.PNG)
 
 Beamer Themen
 -------------
@@ -22,12 +22,12 @@ Chunks einfügen
 -   Es ist sinnvoll die Chunks zu benennen, dann findet man auch das
     Ergebnis einfacher
 
-![](figure/CacheBenennung.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/CacheBenennung.PNG)
 
 Ergebnis - Cache
 ----------------
 
-![](figure/ErgZufallszahlen.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ErgZufallszahlen.PNG)
 
 Wie man das im Header des Dokuments angibt
 ------------------------------------------
@@ -45,7 +45,7 @@ Wie man das im Header des Dokuments angibt
 Inhaltsverzeichnis I
 --------------------
 
-![](figure/BeamerInhaltsVZ.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/BeamerInhaltsVZ.PNG)
 
     output: 
       beamer_presentation: 
@@ -57,7 +57,7 @@ Optionen für die Graphikeinbindung
 -   *fig\_caption: false*, wenn man keine Bildunterschriften haben
     möchte
 
-![](figure/figOpts.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/figOpts.PNG)
 
 -   Man sollte keine Bilder im Format `.svg` einbinden
 
@@ -66,28 +66,28 @@ Präsentationen mit Sweave
 
 -   Das Dokument erstellen
 
-![](figure/BSPsweave.png)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/BSPsweave.png)
 
 Sweave Präsentation
 -------------------
 
 -   Ganz normaler LaTeX Code wird verwendet
 
-![](figure/Sweave1ex.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/Sweave1ex.PNG)
 
 Chunks bei Sweave
 -----------------
 
 -   Auch hier kann R-code verwendet werden
 
-![](figure/SweaveCodeChunk.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/SweaveCodeChunk.PNG)
 
 [Chunk Optionen](http://k-baeumchen.fuhlbrueck.net/R-und-LaTeX.html)
 --------------------------------------------------------------------
 
 -   Auch bei Sweave Chunks können Optionen mitgegeben werden
 
-![](figure/SweaveOptionen.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/SweaveOptionen.PNG)
 
 Inline Code
 -----------
@@ -98,19 +98,19 @@ Inline Code
 
     \Sexpr{}
 
-![](figure/CRANpackages.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/CRANpackages.PNG)
 
 Inline Code - das Ergebnis
 --------------------------
 
-![](figure/CRANmirror.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/CRANmirror.PNG)
 
     CRANmirror <- "http://cran.revolutionanalytics.com"
     cran <- contrib.url(repos = CRANmirror,type = "source")
     info <- available.packages(contriburl = cran, type = x)
     nrow(info)
 
-    ## [1] 10745
+    ## [1] 10758
 
 PDF Paper mit R
 ---------------
@@ -125,7 +125,7 @@ PDF Paper mit R
 
 -   Literaturverwaltungssystem
 
-![](figure/Exjabref.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/Exjabref.PNG)
 
 Referenz mit R bekommen
 -----------------------
@@ -156,12 +156,12 @@ Referenz mit R bekommen
     ##     url = {https://CRAN.R-project.org/package=RMySQL},
     ##   }
 
-![](figure/bibtexRmysql.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/bibtexRmysql.PNG)
 
 Das bibtex file einbinden I
 ---------------------------
 
-![](figure/LiteraturEinbinden.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/LiteraturEinbinden.PNG)
 
 Das bibtex file einbinden II
 ----------------------------
@@ -178,7 +178,7 @@ Das bibtex file einbinden II
 Das Ergebnis
 ------------
 
-![](figure/bibtexErgebnis.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/bibtexErgebnis.PNG)
 
 Links
 -----

@@ -22,15 +22,12 @@ Plot ist nicht gleich Plot
 Task View zu Thema [Graphiken](https://cran.r-project.org/web/views/Graphics.html)
 ----------------------------------------------------------------------------------
 
-![](figure/TaskViewGraphics.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/TaskViewGraphics.PNG)
 
 Datensatz
 ---------
 
     library(mlmRev)
-
-    ## Warning: package 'mlmRev' was built under R version 3.3.3
-
     data(Chem97)
 
 -   \[lea\] Local Education Authority - a factor
@@ -244,19 +241,12 @@ Die Bibliothek `vioplot`
 `vioplot` - Das Ergebnis
 ------------------------
 
-    ## Warning: package 'vioplot' was built under R version 3.3.3
-
-    ## Warning: package 'sm' was built under R version 3.3.3
-
 ![](index_files/figure-markdown_strict/unnamed-chunk-19-1.png)
 
 Alternativen zum Boxplot
 ------------------------
 
     library(beanplot)
-
-    ## Warning: package 'beanplot' was built under R version 3.3.3
-
     par(mfrow = c(1,2))
     boxplot(count~spray,data=InsectSprays,col="blue")
     beanplot(count~spray,data=InsectSprays,col="orange")

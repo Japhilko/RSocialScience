@@ -1,12 +1,12 @@
 [Präsentationen - Rpres der einfachste Weg](https://rstudio-pubs-static.s3.amazonaws.com/27777_55697c3a476640caa0ad2099fe914ae5.html#/)
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-![](figure/Rpresentations.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/Rpresentations.PNG)
 
 Eine erste Präsentation
 -----------------------
 
-![](figure/RpresStart.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RpresStart.PNG)
 
 Erste Daten eintragen
 ---------------------
@@ -17,7 +17,7 @@ Erste Daten eintragen
 
     date()
 
-    ## [1] "Tue Jun 20 13:52:19 2017"
+    ## [1] "Wed Jun 21 10:25:13 2017"
 
 Eine Folie mit Formel
 ---------------------
@@ -32,7 +32,7 @@ Eine Folie mit Formel
     \end{equation}
     $$
 
-![](figure/FolieLatexCode.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/FolieLatexCode.PNG)
 
 Zwei Spalten
 ------------
@@ -48,7 +48,7 @@ Folienübergänge
 
     transition: rotate
 
-![](figure/RpresRotate.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RpresRotate.PNG)
 
 [Weitere mögliche Folienübergänge](https://support.rstudio.com/hc/en-us/articles/200714013-Slide-Transitions-and-Navigation)
 ----------------------------------------------------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ Schrifttypen können auch importiert werden
     font-import: http://fonts.googleapis.com/css?family=Risque
     font-family: 'Risque'
 
-![](figure/SchriftartRisque.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/SchriftartRisque.PNG)
 
 Kleineren Text
 --------------
@@ -122,12 +122,12 @@ Eine ioslides Präsentation
 Eine ioslides Präsentation
 --------------------------
 
-![](figure/ioslidespres.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ioslidespres.PNG)
 
 [ioslides - Der Start](http://rmarkdown.rstudio.com/ioslides_presentation_format.html)
 --------------------------------------------------------------------------------------
 
-![](figure/ioslidesBSP.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ioslidesBSP.PNG)
 
 Weitere Dinge tun
 -----------------
@@ -150,7 +150,7 @@ Ein Logo hinzu
         logo: figure/Rlogo.png
     ---
 
-![](figure/ioslidesRlogo.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ioslidesRlogo.PNG)
 
 Tabellen
 --------
@@ -317,7 +317,7 @@ Eine slidy Präsentation
 slidy Präsentationen
 --------------------
 
-![](figure/sluidypresentations.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/sluidypresentations.PNG)
 
 \[Was sind Cascading Style Files ([CSS](https://de.wikipedia.org/wiki/Cascading_Style_Sheets))
 ----------------------------------------------------------------------------------------------
@@ -339,7 +339,7 @@ slidy Präsentationen
 Beispiel CSS
 ------------
 
-![](figure/cssRstudio.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/cssRstudio.PNG)
 
 Das CSS ändern
 --------------
@@ -364,12 +364,12 @@ HTML Dokumente
 Ein HTML Dokument erzeugen
 --------------------------
 
-![](figure/NewHTML.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/NewHTML.PNG)
 
 Ein Template verwenden
 ----------------------
 
-![](figure/UsingTemplate.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/UsingTemplate.PNG)
 
 [Weitere Vorlagen nutzen](http://rmarkdown.rstudio.com/developer_document_templates.html)
 -----------------------------------------------------------------------------------------
@@ -381,7 +381,7 @@ Ein Template verwenden
 
     install.packages("rticles")
 
-![](figure/ShortPaper.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ShortPaper.PNG)
 
 Vorlagen für Markdown
 ---------------------
@@ -415,14 +415,14 @@ Dashboards
 [Beispiel R-Pakete](https://gallery.shinyapps.io/cran-gauge/)
 -------------------------------------------------------------
 
-![](figure/CRANdownloads.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/CRANdownloads.PNG)
 
 [Paket installieren](https://blog.rstudio.org/2016/05/17/flexdashboard-easy-interactive-dashboards-for-r/)
 ----------------------------------------------------------------------------------------------------------
 
     install.packages("flexdashboard", type = "source")
 
-![](figure/flexdashboards.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/flexdashboards.PNG)
 
 Ein Dashboard erstellen mit Rstudio
 -----------------------------------
@@ -432,12 +432,12 @@ Ein Dashboard erstellen mit Rstudio
 [Mein erstes Dashboard](http://rpubs.com/Japhilko82/whcsites)
 -------------------------------------------------------------
 
-![](figure/MeinErstesDashboard.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/MeinErstesDashboard.PNG)
 
 [Gallerie](http://rmarkdown.rstudio.com/gallery.html)
 -----------------------------------------------------
 
-![](figure/RmarkdownGallery.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RmarkdownGallery.PNG)
 
 Links
 -----
@@ -445,7 +445,7 @@ Links
 -   [Verschiedene Markdown Dokumente zusammen
     fügen](http://stackoverflow.com/questions/25824795/how-to-combine-two-rmarkdown-rmd-files-into-a-single-output)
 
-![](figure/stackoverflowCombine.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/stackoverflowCombine.PNG)
 
 -   [Verschiedene CSS Fonts](http://www.cssfontstack.com/)
 

@@ -1,3 +1,8 @@
+Datenimport
+-----------
+
+![](figure/Datenimport.PNG)
+
 Dateiformate in R
 -----------------
 
@@ -13,29 +18,13 @@ Formate - base package
 R unterstützt von Haus aus schon einige wichtige Formate:
 
 -   CSV (Comma Separated Values): `read.csv()`
+-   FWF (Fixed With Format): `read.fwf()`
+-   Tab-getrennte Werte: `read.delim()`
 
 <!-- -->
 
     gpanel <- read.csv2("ZA5666_d_gesis_panel_campus_file_b_2014.csv")
     head(gpanel)
-
-Datenimport leicht gemacht mit Rstudio
---------------------------------------
-
-![Import
-Button](https://i1.wp.com/thepracticalr.files.wordpress.com/2017/01/rstudio-old-import.png?w=456&ssl=1)
-
-CSV aus dem Web einladen
-------------------------
-
--   Datensatz:
-
-<https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD>
-
--   [Datenimport mit
-    Rstudio](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
-
-![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/ImportCSVPNG.PNG)
 
 Der Arbeitsspeicher
 -------------------
@@ -63,103 +52,81 @@ Alternative - Arbeitsspeicher
 
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/SetWD.PNG)
 
-Das Paket `readr`
------------------
-
-    install.packages("readr")
-
-    library(readr)
-
--   [`readr` auf dem Rstudio
-    Blogg](https://blog.rstudio.org/2015/10/28/readr-0-2-0/)
-
-![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/readrRstudioBlogg.PNG)
-
 Import von Excel-Daten
 ----------------------
 
--   `library(readr)` ist für den Import von fremden Datenformaten
-    hilfreich
+-   `library(foreign)` ist für den Import von fremden Datenformaten
+    nötig
 -   Wenn Excel-Daten vorliegen - als .csv abspeichern
+-   Dann kann `read.csv()` genutzt werden um die Daten einzulesen.
+-   Bei Deutschen Daten kann es sein, dass man `read.csv2()` wegen der
+    Komma-Separierung braucht.
 
 <!-- -->
 
-    library(readr)
-    rows <- read_csv("https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD")
+    library(foreign)
+    ?read.csv
+    ?read.csv2
 
-`.csv`-Daten aus dem Web importieren - zweites Beispiel
--------------------------------------------------------
+CSV Dateien einlesen
+--------------------
 
-    url <- "https://raw.githubusercontent.com/Japhilko/
-    GeoData/master/2015/data/whcSites.csv"
+Zunächst muss das Arbeitsverzeichnis gesetzt werden, in dem sich die
+Daten befinden:
 
-    whcSites <- read.csv(url) 
+    Dat <- read.csv("schuldaten_export.csv")
 
-    head(data.frame(whcSites$name_en,whcSites$category))
+Wenn es sich um Deutsche Daten handelt:
 
-    ##                                                      whcSites.name_en
-    ## 1 Cultural Landscape and Archaeological Remains of the Bamiyan Valley
-    ## 2                           Minaret and Archaeological Remains of Jam
-    ## 3                          Historic Centres of Berat and Gjirokastra 
-    ## 4                                                             Butrint
-    ## 5                                             Al Qal'a of Beni Hammad
-    ## 6                                                        M'Zab Valley
-    ##   whcSites.category
-    ## 1          Cultural
-    ## 2          Cultural
-    ## 3          Cultural
-    ## 4          Cultural
-    ## 5          Cultural
-    ## 6          Cultural
-
-Das Paket `haven`
------------------
-
-    install.packages("haven")
-
-    library(haven)
-
--   [Das R-Paket `haven` auf dem Rstudio
-    Blogg](https://blog.rstudio.org/2016/10/04/haven-1-0-0/)
-
-![](figure/havenRstudioBlogg.PNG)
+    Dat <- read.csv2("schuldaten_export.csv")
 
 SPSS Dateien einlesen
 ---------------------
 
--   Zunächst muss wieder der Pfad zum Arbeitsverzeichnis angeben werden.
--   SPSS-Dateien können auch direkt aus dem Internet geladen werden:
+Dateien können auch direkt aus dem Internet geladen werden:
 
-<!-- -->
+    link<- "http://www.statistik.at/web_de/static/
+    mz_2013_sds_-_datensatz_080469.sav"
 
-    install.packages("haven")
-
-    library(haven)
-    mtcars <- read_sav("https://github.com/Japhilko/RInterfaces/raw/master/data/mtcars.sav")
+    ?read.spss
+    Dat <- read.spss(link,to.data.frame=T)
 
 stata Dateien einlesen
 ----------------------
 
-    library(foreign)
-    dat <- read.dta("ZA5666_d_gesis_panel_campus_file_b_2014_STATA12.dta")
+    MZ02 <- read.dta("MZ02.dta")
 
-    library(haven)
-    oecd <- read_dta("https://github.com/Japhilko/IntroR/raw/master/2017/data/oecd.dta")
+-   Einführung in Import mit R
+    ([is.R](http://is-r.tumblr.com/post/37181850668/reading-writing-stata-dta-files-with-foreign))
 
-Links
------
+[Das Paket `rio`](https://cran.r-project.org/web/packages/rio/vignettes/rio.html)
+---------------------------------------------------------------------------------
 
--   [Quick-R - Import
-    Data](http://www.statmethods.net/input/importingdata.html)
+    install.packages("rio")
 
--   [Datenimport bei
-    R-bloggers](https://www.r-bloggers.com/importing-data-into-r-part-ii/)
+    library("rio")
+    x <- import("mtcars.csv")
+    y <- import("mtcars.rds")
+    z <- import("mtcars.dta")
 
--   [Importing Data into
-    R](https://thepracticalr.wordpress.com/2016/09/23/importing-data-into-r/)
+-   [rio: A Swiss-Army Knife for Data
+    I/O](https://cran.r-project.org/web/packages/rio/README.html)
 
--   [Mapping von Arbeitslosendaten in den
-    USA](https://www.r-bloggers.com/mapping-unemployment-data-2016/)
+Datenmanagement ähnlich wie in SPSS oder Stata
+----------------------------------------------
 
--   [Das Paket
-    readr](https://www.r-bloggers.com/readrproblems-returns-tidy-data/)
+    install.packages("Rz")
+    library(Rz)
+
+[Weitere Alternative Rcmdr](https://cran.r-project.org/web/packages/Rcmdr/index.html)
+-------------------------------------------------------------------------------------
+
+    install.packages("Rcmdr")
+
+-   [Funktioniert auch mit Rstudio](http://www.rcommander.com/)
+
+<!-- -->
+
+    library(Rcmdr)
+
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/Rcommander.PNG)

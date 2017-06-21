@@ -20,7 +20,7 @@ Beispiel für interaktive Tabelle
 Hier ist das Ergebnis - [Beispiel für eine interaktive
 Tabelle](http://rpubs.com/Japhilko82/osmplzbe)
 
-![](figure/RpubsPLZBer.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RpubsPLZBer.PNG)
 
 [Default Optionen verändern](http://rstudio.github.io/DT/options.html)
 ----------------------------------------------------------------------
@@ -36,4 +36,4 @@ Tabelle](http://rpubs.com/Japhilko82/osmplzbe)
 
     datatable(exdat, options = list(searchHighlight = TRUE), filter = 'top')
 
-![](figure/tbHighlsearch.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/tbHighlsearch.PNG)

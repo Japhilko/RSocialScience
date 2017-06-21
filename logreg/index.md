@@ -1,7 +1,7 @@
 Agresti - [Categorical Data Analysis (2002)](https://mathdept.iut.ac.ir/sites/mathdept.iut.ac.ir/files/AGRESTI.PDF)
 -------------------------------------------------------------------------------------------------------------------
 
-![](figure/CDAagresti.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/CDAagresti.PNG)
 
 -   Sehr intiutiv geschriebenes Buch
 -   Sehr ausführliches begleitendes Skript von
@@ -12,7 +12,7 @@ Agresti - [Categorical Data Analysis (2002)](https://mathdept.iut.ac.ir/sites/ma
 Faraway Bücher zu Regression in R
 ---------------------------------
 
-![](figure/Faraway.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/Faraway.PNG)
 
 -   Logistische Regressionen gut erklärt
 -   Beispiele mit R-code
@@ -120,9 +120,9 @@ Linkliste - logistische Regression
 -   Einführung in [logistische
     Regression](http://ww2.coastal.edu/kingw/statistics/R-tutorials/logistic.html)
 
-![](figure/Rtutorials.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/Rtutorials.PNG)
 
 -   [Code zum Buch von
     Faraway](http://www.maths.bath.ac.uk/~jjf23/ELM/scripts/binary.R)
 
-![](figure/orings.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/orings.PNG)

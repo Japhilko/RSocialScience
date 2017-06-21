@@ -19,14 +19,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Ein Rnotebook anlegen
 
-![](figure/startNotebook.png)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/startNotebook.png)
 
 ## Rnotebook - erste Schritte
 
 - Es lassen sich so genannte Chunks einfügen
 - In diesen Chunks wird ganz normaler R-code geschrieben
 
-![](figure/NotebooksBasicEx.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/NotebooksBasicEx.PNG)
 
 
 ## Python Code integrieren
@@ -34,7 +34,7 @@ knitr::opts_chunk$set(echo = TRUE)
 - Ebenso lässt sich [Python code implementieren](https://support.rstudio.com/hc/en-us/articles/233066128-Do-Notebooks-support-other-languages-)
 
 
-![](figure/pythonCode.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/pythonCode.PNG)
 
 ```{python}
 import sys
@@ -45,16 +45,16 @@ print(sys.version)
 
 - LaTeX code wird mit zwei Dollarzeichen gekennzeichnet
 
-![](figure/LaTexCode.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/LaTexCode.PNG)
 
 
 ## Notebook veröffentlichen I
 
-![](figure/PublishNotebook.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/PublishNotebook.PNG)
 
 ## Notebook veröffentlichen II
 
-![](figure/PublishNotebook2.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/PublishNotebook2.PNG)
 
 
 # Andere Notebooks
@@ -70,11 +70,11 @@ jupyter notebook
 ```
 ## Start Jupyter Notebook
 
-![](figure/JupyterEx.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/JupyterEx.PNG)
 
 ## Beispiel Eingabe Code
 
-![](figure/JupyterNotebookQmap.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/JupyterNotebookQmap.PNG)
 
 
 # Beaker Notebook
@@ -83,14 +83,14 @@ jupyter notebook
 
 - Auch bei Beaker kann man R-code einbauen
 
-![](figure/Beaker.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/Beaker.PNG)
 
 ## Beaker starten
 
 - [Beaker installieren](http://beakernotebook.com/getting-started) ...
 - ... und mit `beaker.command.bat` starten
 
-![](figure/BeakerEx.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/BeakerEx.PNG)
 
 
 ## Links

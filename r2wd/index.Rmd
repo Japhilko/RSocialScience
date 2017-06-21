@@ -11,16 +11,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Ein Markdown Dokument mit Rstudio erzeugen
 
-![](figure/r2wordstart.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/r2wordstart.PNG)
 
 
 ## Mein erstes mit R erzeugtes Word Dokument
 
-![](figure/meinWord.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/meinWord.PNG)
 
 ## Erstes Beispiel
 
-![](figure/ErstesWord.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ErstesWord.PNG)
 
 
 ## Das Arbeiten mit Rmarkdown - erste Schritte
@@ -80,18 +80,18 @@ Markdown ist eine sehr einfache Syntax, die es Benutzern erlaubt, aus einfachen 
 - Es lassen sich so genannte Chunks einfügen
 - In diesen Chunks wird ganz normaler R-code geschrieben
 
-![](figure/NotebooksBasicEx.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/NotebooksBasicEx.PNG)
 
 ## Button um Chunks einzufügen
 
 - Die default Version eines Chunks ist R
 - Man hat aber auch die Möglichkeit andere Programmiersprachen einzubinden
 
-![](figure/ChunkButton.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ChunkButton.PNG)
 
 ## Inline Code
 
-![](figure/RinlineEx.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RinlineEx.PNG)
 
 ```{r}
 n=100
@@ -117,22 +117,22 @@ kable(dat_chunks)
 
 ## Optionen
 
-![](figure/RwordOptions.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RwordOptions.PNG)
 
 ## Optionen für Word Output
 
-![](figure/WordOutputOptions.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/WordOutputOptions.PNG)
 
 ## Code Hervorhebung
 
 - pygments Hervorhebung
 
-![](figure/pygmentsSnippet.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/pygmentsSnippet.PNG)
 
 
 - tango
 
-![](figure/tangoSnippet.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/tangoSnippet.PNG)
 
 
 ## Das Paket `knitr`
@@ -165,20 +165,20 @@ kable(ab)
 2. Das Dokument in Word öffnen und Format verändern 
 3. Vorlage als Referenz angeben
 
-![](figure/RefDoc.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RefDoc.PNG)
 
 ## [Immer das aktuelle Datum im Kopf](http://stackoverflow.com/questions/23449319/yaml-current-date-in-rmarkdown)
 
 ```
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 ```
-![](figure/rmdAktuellesDatum.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/rmdAktuellesDatum.PNG)
 
-![](figure/ErgebenisAktuellesDatum.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ErgebenisAktuellesDatum.PNG)
 
 ## [Ein Schummelzettel](https://www.rstudio.com/wp-content/uploads/2015/06/rmarkdown-german.pdf)
 
-![](figure/RmarkdownSchummelzettel.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RmarkdownSchummelzettel.PNG)
 
 ## Resourcen
 

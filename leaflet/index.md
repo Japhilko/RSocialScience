@@ -63,7 +63,7 @@ Eine erste interaktive Tabelle - [Das Paket `DT`](https://rstudio.github.io/DT/)
 
     install.packages("DT")
 
-![](figure/DTintro.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/DTintro.PNG)
 
 Weitere Variablen WHC Datensatz
 -------------------------------
@@ -84,7 +84,7 @@ Das Ergebnis bei Rpubs
 
 <http://rpubs.com/Japhilko82/WHCdata>
 
-![](figure/WHCRpubs.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/WHCRpubs.PNG)
 
 Das Paket `magrittr`
 --------------------
@@ -98,7 +98,7 @@ Das Paket `magrittr`
 
     library("magrittr")
 
-![](figure/Piping.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/Piping.PNG)
 
 [Die Pipes nutzen](https://www.r-bloggers.com/more-readable-code-with-pipes-in-r/)
 ----------------------------------------------------------------------------------
@@ -154,7 +154,7 @@ Eine interaktive Karte erstellen
 [Die Karte zeigen](https://rpubs.com/Japhilko82/WorldHeritageSites)
 -------------------------------------------------------------------
 
-![](figure/WHCPopUps.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/WHCPopUps.PNG)
 
 Farbe hinzu
 -----------
@@ -179,12 +179,12 @@ Farbe hinzu
 [Die Karte mit mehr Farbe](https://rpubs.com/Japhilko82/CatWHS)
 ---------------------------------------------------------------
 
-![Weltkulturerbe](figure/WHCcircles.PNG)
+![Weltkulturerbe](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/WHCcircles.PNG)
 
 [Die Karte abspeichern](http://www.r-bloggers.com/interactive-mapping-with-leaflet-in-r-2/)
 -------------------------------------------------------------------------------------------
 
-![](figure/Kartespeichern.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/Kartespeichern.PNG)
 
 <!--
 ![gui](http://i1.wp.com/spatialrecology.org/images/r_leaflet/snapshot2.png)
@@ -207,12 +207,12 @@ Farbe hinzu
       )
     m2
 
-![](figure/LayerSteuern.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/LayerSteuern.PNG)
 
 [Ein weiteres Beispiel mit Erdbebendaten](https://rstudio.github.io/leaflet/showhide.html)
 ------------------------------------------------------------------------------------------
 
-![](figure/LayersUmschalten.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/LayersUmschalten.PNG)
 
     outline <- quakes[chull(quakes$long, quakes$lat),]
 

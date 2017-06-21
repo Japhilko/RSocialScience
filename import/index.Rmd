@@ -5,10 +5,15 @@ date: "12 Juni 2017"
 output: md_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,eval=F)
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=F,warning=F)
 ```
 
+
+## Datenimport
+
+![](figure/Datenimport.PNG)
 
 
 ## Dateiformate in R
@@ -23,6 +28,10 @@ knitr::opts_chunk$set(echo = TRUE,eval=F)
 R unterstützt von Haus aus schon einige wichtige Formate:
 		
 -  CSV (Comma Separated Values): `read.csv()`
+-  FWF (Fixed With Format): `read.fwf()`
+-  Tab-getrennte Werte: `read.delim()`
+
+
 
 ```{r,echo=F,eval=F}
 setwd("D:/Daten/owncloud/Workshops/RSocialScience")
@@ -34,35 +43,18 @@ head(gpanel)
 ```
 
 
-## Datenimport leicht gemacht mit Rstudio
-
-![Import Button](https://i1.wp.com/thepracticalr.files.wordpress.com/2017/01/rstudio-old-import.png?w=456&ssl=1)
-
-
-## CSV aus dem Web einladen
-
-- Datensatz:
-
-<https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD>
-
-- [Datenimport mit Rstudio](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
-
-![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/ImportCSVPNG.PNG)
-
 
 ## Der Arbeitsspeicher
 
 So findet man heraus, in welchem Verzeichnis man sich gerade befindet
 
-
-```{r}
+```{r,eval=F}
 getwd()
 ```
 
 So kann man das Arbeitsverzeichnis ändern:
 
 Man erzeugt ein Objekt in dem man den Pfad abspeichert:
-
 
 ```{r,eval=F}
 main.path <- "C:/" # Beispiel für Windows
@@ -72,8 +64,7 @@ main.path <- "/home/user/" # Beispiel für Linux
 
 Und ändert dann den Pfad mit setwd()
 
-
-```{r}
+```{r,eval=F}
 setwd(main.path)
 ```
 
@@ -83,126 +74,85 @@ Bei Windows ist es wichtig Slashs anstelle von Backslashs zu verwenden.
 
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/SetWD.PNG)
 
-## Das Paket `readr`
-
-
-```{r}
-install.packages("readr")
-```
-
-
-```{r}
-library(readr)
-```
-
-- [`readr` auf dem Rstudio Blogg](https://blog.rstudio.org/2015/10/28/readr-0-2-0/)
-
-![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/readrRstudioBlogg.PNG)
-
-
-
 ## Import von Excel-Daten
 
--  `library(readr)` ist für den Import von fremden Datenformaten hilfreich
+-  `library(foreign)` ist für den Import von fremden Datenformaten nötig
 -  Wenn Excel-Daten vorliegen - als .csv abspeichern
+-  Dann kann `read.csv()` genutzt werden um die Daten einzulesen.
+- Bei Deutschen Daten kann es sein, dass man `read.csv2()` wegen der Komma-Separierung braucht.
 
-
-```r
-library(readr)
-rows <- read_csv("https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD")
+```{r,eval=F}
+library(foreign)
+?read.csv
+?read.csv2
 ```
 
+## CSV Dateien einlesen
 
+Zunächst muss das Arbeitsverzeichnis gesetzt werden, in dem sich die Daten befinden:
 
-## `.csv`-Daten aus dem Web importieren - zweites Beispiel
-
-
-```r
-url <- "https://raw.githubusercontent.com/Japhilko/
-GeoData/master/2015/data/whcSites.csv"
-
-whcSites <- read.csv(url) 
+```{r,eval=F}
+Dat <- read.csv("schuldaten_export.csv")
 ```
 
+Wenn es sich um Deutsche Daten handelt:
 
-
-```r
-head(data.frame(whcSites$name_en,whcSites$category))
+```{r,eval=F}
+Dat <- read.csv2("schuldaten_export.csv")
 ```
-
-```
-##                                                      whcSites.name_en
-## 1 Cultural Landscape and Archaeological Remains of the Bamiyan Valley
-## 2                           Minaret and Archaeological Remains of Jam
-## 3                          Historic Centres of Berat and Gjirokastra 
-## 4                                                             Butrint
-## 5                                             Al Qal'a of Beni Hammad
-## 6                                                        M'Zab Valley
-##   whcSites.category
-## 1          Cultural
-## 2          Cultural
-## 3          Cultural
-## 4          Cultural
-## 5          Cultural
-## 6          Cultural
-```
-
-## Das Paket `haven`
-
-
-```r
-install.packages("haven")
-```
-
-
-```r
-library(haven)
-```
-
-- [Das R-Paket `haven` auf dem Rstudio Blogg](https://blog.rstudio.org/2016/10/04/haven-1-0-0/)
-
-![](figure/havenRstudioBlogg.PNG)
 
 ## SPSS Dateien einlesen
 
-- Zunächst muss wieder der Pfad zum Arbeitsverzeichnis angeben werden.
-- SPSS-Dateien können auch direkt aus dem Internet geladen werden:
+Dateien können auch direkt aus dem Internet geladen werden:
 
+```{r,eval=F}
+link<- "http://www.statistik.at/web_de/static/
+mz_2013_sds_-_datensatz_080469.sav"
 
-```r
-install.packages("haven")
-```
-
-
-
-```r
-library(haven)
-mtcars <- read_sav("https://github.com/Japhilko/RInterfaces/raw/master/data/mtcars.sav")
+?read.spss
+Dat <- read.spss(link,to.data.frame=T)
 ```
 
 ## stata Dateien einlesen
 
 ```{r,eval=F}
-library(foreign)
-dat <- read.dta("ZA5666_d_gesis_panel_campus_file_b_2014_STATA12.dta")
+MZ02 <- read.dta("MZ02.dta")
 ```
 
+- Einführung in Import mit R ([is.R](http://is-r.tumblr.com/post/37181850668/reading-writing-stata-dta-files-with-foreign))
 
+## [Das Paket `rio`](https://cran.r-project.org/web/packages/rio/vignettes/rio.html)
 
-```{r}
-library(haven)
-oecd <- read_dta("https://github.com/Japhilko/IntroR/raw/master/2017/data/oecd.dta")
+```{r,eval=F}
+install.packages("rio")
 ```
 
+```{r,eval=F}
+library("rio")
+x <- import("mtcars.csv")
+y <- import("mtcars.rds")
+z <- import("mtcars.dta")
+```
 
-## Links
+- [rio: A Swiss-Army Knife for Data I/O](https://cran.r-project.org/web/packages/rio/README.html)
 
-- [Quick-R - Import Data](http://www.statmethods.net/input/importingdata.html)
+## Datenmanagement ähnlich wie in SPSS oder Stata
 
-- [Datenimport bei R-bloggers](https://www.r-bloggers.com/importing-data-into-r-part-ii/)
+```{r,eval=F}
+install.packages("Rz")
+library(Rz)
+```
 
-- [Importing Data into R](https://thepracticalr.wordpress.com/2016/09/23/importing-data-into-r/)
+## [Weitere Alternative Rcmdr](https://cran.r-project.org/web/packages/Rcmdr/index.html)
 
-- [Mapping von Arbeitslosendaten in den USA](https://www.r-bloggers.com/mapping-unemployment-data-2016/)
+```{r,eval=F}
+install.packages("Rcmdr")
+```
 
-- [Das Paket readr](https://www.r-bloggers.com/readrproblems-returns-tidy-data/)
+- [Funktioniert auch mit Rstudio](http://www.rcommander.com/)
+
+```{r,eval=F}
+library(Rcmdr)
+```
+
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/Rcommander.PNG)

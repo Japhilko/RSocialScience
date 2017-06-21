@@ -28,7 +28,7 @@ knitr::opts_chunk$set(echo = TRUE,warning=F)
 
 ##  Task View zu Thema [Graphiken](https://cran.r-project.org/web/views/Graphics.html)
 
-![](figure/TaskViewGraphics.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/TaskViewGraphics.PNG)
 
 
 ## Datensatz

@@ -1,17 +1,17 @@
 Ein Markdown Dokument mit Rstudio erzeugen
 ------------------------------------------
 
-![](figure/r2wordstart.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/r2wordstart.PNG)
 
 Mein erstes mit R erzeugtes Word Dokument
 -----------------------------------------
 
-![](figure/meinWord.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/meinWord.PNG)
 
 Erstes Beispiel
 ---------------
 
-![](figure/ErstesWord.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ErstesWord.PNG)
 
 Das Arbeiten mit Rmarkdown - erste Schritte
 -------------------------------------------
@@ -73,7 +73,7 @@ Chunks - Erste Schritte
 -   Es lassen sich so genannte Chunks einfügen
 -   In diesen Chunks wird ganz normaler R-code geschrieben
 
-![](figure/NotebooksBasicEx.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/NotebooksBasicEx.PNG)
 
 Button um Chunks einzufügen
 ---------------------------
@@ -82,12 +82,12 @@ Button um Chunks einzufügen
 -   Man hat aber auch die Möglichkeit andere Programmiersprachen
     einzubinden
 
-![](figure/ChunkButton.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ChunkButton.PNG)
 
 Inline Code
 -----------
 
-![](figure/RinlineEx.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RinlineEx.PNG)
 
     n=100
 
@@ -128,23 +128,23 @@ Chunk Optionen
 Optionen
 --------
 
-![](figure/RwordOptions.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RwordOptions.PNG)
 
 Optionen für Word Output
 ------------------------
 
-![](figure/WordOutputOptions.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/WordOutputOptions.PNG)
 
 Code Hervorhebung
 -----------------
 
 -   pygments Hervorhebung
 
-![](figure/pygmentsSnippet.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/pygmentsSnippet.PNG)
 
 -   tango
 
-![](figure/tangoSnippet.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/tangoSnippet.PNG)
 
 Das Paket `knitr`
 -----------------
@@ -173,44 +173,44 @@ Eine Tabelle mit `kable` erzeugen
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">0.4012446</td>
-<td align="right">1.0168201</td>
+<td align="right">0.6838240</td>
+<td align="right">-0.9628939</td>
 </tr>
 <tr class="even">
-<td align="right">0.4022838</td>
-<td align="right">0.4295618</td>
+<td align="right">0.1493693</td>
+<td align="right">0.5693462</td>
 </tr>
 <tr class="odd">
-<td align="right">0.8361277</td>
-<td align="right">-1.9060605</td>
+<td align="right">0.5953402</td>
+<td align="right">2.0618971</td>
 </tr>
 <tr class="even">
-<td align="right">0.6259655</td>
-<td align="right">0.3457002</td>
+<td align="right">0.7063234</td>
+<td align="right">1.5293877</td>
 </tr>
 <tr class="odd">
-<td align="right">0.8369269</td>
-<td align="right">0.4238907</td>
+<td align="right">0.8119966</td>
+<td align="right">-0.6299036</td>
 </tr>
 <tr class="even">
-<td align="right">0.1700379</td>
-<td align="right">-1.1017911</td>
+<td align="right">0.4833104</td>
+<td align="right">-0.1414238</td>
 </tr>
 <tr class="odd">
-<td align="right">0.3691587</td>
-<td align="right">-0.9834312</td>
+<td align="right">0.6648781</td>
+<td align="right">0.8746199</td>
 </tr>
 <tr class="even">
-<td align="right">0.6093906</td>
-<td align="right">-0.2671185</td>
+<td align="right">0.3971456</td>
+<td align="right">1.0252354</td>
 </tr>
 <tr class="odd">
-<td align="right">0.3380876</td>
-<td align="right">0.8914934</td>
+<td align="right">0.8268438</td>
+<td align="right">-1.1805359</td>
 </tr>
 <tr class="even">
-<td align="right">0.3517346</td>
-<td align="right">-0.5157786</td>
+<td align="right">0.3649160</td>
+<td align="right">-1.4463392</td>
 </tr>
 </tbody>
 </table>
@@ -224,21 +224,21 @@ Eine Tabelle mit `kable` erzeugen
 2.  Das Dokument in Word öffnen und Format verändern
 3.  Vorlage als Referenz angeben
 
-![](figure/RefDoc.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RefDoc.PNG)
 
 [Immer das aktuelle Datum im Kopf](http://stackoverflow.com/questions/23449319/yaml-current-date-in-rmarkdown)
 --------------------------------------------------------------------------------------------------------------
 
-    date: "20 Juni, 2017"
+    date: "21 Juni, 2017"
 
-![](figure/rmdAktuellesDatum.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/rmdAktuellesDatum.PNG)
 
-![](figure/ErgebenisAktuellesDatum.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ErgebenisAktuellesDatum.PNG)
 
 [Ein Schummelzettel](https://www.rstudio.com/wp-content/uploads/2015/06/rmarkdown-german.pdf)
 ---------------------------------------------------------------------------------------------
 
-![](figure/RmarkdownSchummelzettel.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RmarkdownSchummelzettel.PNG)
 
 Resourcen
 ---------

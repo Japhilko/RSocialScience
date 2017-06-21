@@ -58,4 +58,24 @@ library(car)
 ?recode
 ```
 
+
+## [Exkurs - Labels wie verwenden]()
+
+```{r}
+library("forcats")
+browseVignettes()
+```
+
+
+```{r}
+library(tibble)
+
+gpanel1 <- as_tibble(gpanel)
+
+head(gpanel1)
+```
+
+
+
+
 ## Fehlende Werte

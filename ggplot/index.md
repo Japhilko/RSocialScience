@@ -226,12 +226,13 @@ Links
 -   [Warum man ggplot2 für einfache Grafiken nutzen
     sollte](http://www.r-bloggers.com/why-i-use-ggplot2/)
 
-![](figure/WhyIuseggplot2.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/WhyIuseggplot2.PNG)
 
 -   [Einführung in
     ggplot2](https://opr.princeton.edu/workshops/Downloads/2015Jan_ggplot2Koffman.pdf)
 
-![](figure/introggplot2.PNG) - [ggplot2
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/introggplot2.PNG)
+- [ggplot2
 Basics](http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html)
 
 -   Noam Ross - [Quick Introduction to
@@ -346,7 +347,8 @@ Die Beispiele in der Hilfe
 
 Ausschnitt aus der Hilfe Seite zum Befehl `qmap`:
 
-![qmap Example](figure/qmapExample.PNG)
+![qmap
+Example](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/qmapExample.PNG)
 
 Das Beispiel kann man direkt in die Konsole kopieren:
 
@@ -414,7 +416,8 @@ ggmap - terrain map
 Abstrahierte Karten ([http://www.designfaves.com](http://www.designfaves.com/2014/03/abstracted-maps-reveal-cities-personalities))
 ----------------------------------------------------------------------------------------------------------------------------------
 
-![New York](figure/NYabstracted.jpg)
+![New
+York](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/NYabstracted.jpg)
 
 -   Abstraktion wird genutzt um nur die essentiellen Informationen einer
     Karte zu zeigen.
@@ -467,7 +470,7 @@ ggmap - maptype terrain-lines
 Graphiken speichern
 -------------------
 
-![RstudioExport](figure/RstudioExport.PNG)
+![RstudioExport](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/RstudioExport.PNG)
 
 ggmap - ein Objekt erzeugen
 ---------------------------
@@ -514,7 +517,7 @@ Geocoding](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#bloc
 Latitude und Longitude
 ----------------------
 
-![LatLon](figure/definition-of-latitude-longitude.jpg)
+![LatLon](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/definition-of-latitude-longitude.jpg)
 
 [http://modernsurvivalblog.com](http://modernsurvivalblog.com/survival-skills/basic-map-reading-latitude-longitude/)
 
@@ -682,7 +685,7 @@ Wie fügt man Punkte hinzu
 
 <http://i.stack.imgur.com>
 
-![pic](figure/q3euq.png)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/q3euq.png)
 
 Cheatsheet
 ----------
@@ -692,7 +695,7 @@ Cheatsheet
 
 <https://www.rstudio.com/>
 
-![Cheatsheet](figure/ggplot2-cheatsheet.png)
+![Cheatsheet](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/ggplot2-cheatsheet.png)
 
 Resourcen und Literatur
 -----------------------
