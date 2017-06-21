@@ -7,19 +7,19 @@ output: md_document
 
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,warning=F,message=F,eval=T)
+knitr::opts_chunk$set(echo = TRUE,warning=F,message=F,eval=F)
 ```
 
 
 ## Die lineare Regression
 
-Maindonald - [DataAnalysis](https://cran.r-project.org/doc/contrib/usingR.pdf)
+Maindonald - [Data Analysis](https://cran.r-project.org/doc/contrib/usingR.pdf)
 
--  Einf√ºhrung in R 
+-  Einf¸hrung in R 
 -  Datenanalyse
 -  Statistische Modelle
 -  Inferenzkonzepte
--  Regression mit einem Pr√§diktor
+-  Regression mit einem Pr‰diktor
 -  Multiple lineare Regression
 -  Ausweitung des linearen Modells
 -  ...
@@ -48,19 +48,19 @@ help on roller data:
 
 ## Das lineare Regressionsmodell in R
 
-Sch√§tzen eines Regressionsmodells:
+Sch‰tzen eines Regressionsmodells:
 
 ```{r}
 roller.lm <- lm(depression ~ weight, data = roller)
 ```
 
-So bekommt man die Sch√§tzwerte:
+So bekommt man die Sch‰tzwerte:
 
 ```{r}
 summary(roller.lm)
 ```
 
-Falls das Modell ohne Intercept gesch√§tzt werden soll:
+Falls das Modell ohne Intercept gesch‰tzt werden soll:
 
 ```{r}
 lm(depression ~ -1 + weight, data = roller)
@@ -76,7 +76,7 @@ summary(roller.lm)
 ## R arbeitet mit Objekten
 
 - `roller.lm` ist nun ein spezielles Regressions-Objekt
-- Auf dieses Objekt k√∂nnen nun verschiedene Funktionen angewendet werden
+- Auf dieses Objekt kˆnnen nun verschiedene Funktionen angewendet werden
 
 ```{r}
 predict(roller.lm) # Vorhersage
@@ -101,12 +101,163 @@ plot(roller.lm,2)
 
 - Wenn die Residuen normalverteilt sind sollten sie auf einer Linie liegen.
 
+
+
+## Regressionsdiagnostik mit Basis-R
+
+Ein einfaches Modell
+```{r}
+N <- 5
+x1 <- rnorm(N)
+y <- runif(N)
+```
+
+```{r}
+par(mfrow=c(1,2))
+plot(density(x1))
+plot(density(y))
+```
+
+
+
+## Modellvorhersage machen
+
+```{r}
+mod1 <- lm(y~x1)
+pre <- predict(mod1)
+y
+pre
+```
+
+## Regressionsdiagnostik mit Basis-R
+
+```{r}
+plot(x1,y)
+abline(mod1)
+segments(x1, y, x1, pre, col="red")
+```
+
+## Beispieldaten Luftqualit‰t
+
+```{r,eval=F}
+library(datasets)
+?airquality
+```
+
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/DataAirquality.PNG)
+
+## Das `visreg`-Paket 
+
+Ein Modell wird auf dem airquality Datensatz gesch‰tzt
+
+```{r,eval=F}
+install.packages("visreg")
+```
+
+
+```{r}
+library(visreg)
+fit <- lm(Ozone ~ Solar.R + Wind + Temp, data = airquality)
+summary(fit)
+```
+
+## Visualisierung
+
+```{r}
+visreg(fit)
+```
+
+## [Und dann mit `visreg` visualisiert.](http://myweb.uiowa.edu/pbreheny/publications/visreg.pdf)
+
+- Zweites Argument -  Spezifikation erkl‰rende Variable f¸r Visualisierung
+
+```{r}
+visreg(fit, "Wind", type = "contrast")
+```
+
+## Visualisierung mit dem Paket `visreg`
+
+```{r}
+visreg(fit, "Wind", type = "contrast")
+```
+
+
+## Das `visreg`-Paket 
+
+- Das Default-Argument f¸r type ist conditional.
+
+```{r}
+visreg(fit, "Wind", type = "conditional")
+```
+
+
+## Regression mit Faktoren
+
+Mit `visreg` kˆnnen die Effekte bei Faktoren visualisiert werden.
+
+```{r}
+airquality$Heat <- cut(airquality$Temp, 3, 
+	labels=c("Cool", "Mild", "Hot"))
+fit.heat <- lm(Ozone ~ Solar.R + Wind + Heat, 
+	data = airquality)
+summary(fit.heat)
+```
+
+## Effekte von Faktoren
+
+
+```{r}
+par(mfrow=c(1,2))
+visreg(fit.heat, "Heat", type = "contrast")
+visreg(fit.heat, "Heat", type = "conditional")
+```
+
+
+## Das Paket visreg - Interaktionen
+
+```{r}
+airquality$Heat <- cut(airquality$Temp, 3, 
+labels=c("Cool", "Mild", "Hot"))
+fit <- lm(Ozone ~ Solar.R + Wind * Heat, data = airquality)
+summary(fit)
+```
+
+## Steuern der Graphikausgabe mittels `layout`
+
+```{r}
+visreg(fit, "Wind", by = "Heat",layout=c(3,1))
+```
+
+
+## Das Paket `visreg` - Interaktionen overlay
+
+```{r}
+fit <- lm(Ozone ~ Solar.R + Wind * Heat, data = airquality)
+visreg(fit, "Wind", by="Heat", overlay=TRUE, partial=FALSE)
+```
+
+## Das Paket `visreg` - `visreg2d`
+
+```{r}
+fit2 <- lm(Ozone ~ Solar.R + Wind * Temp, data = airquality)
+visreg2d(fit2, "Wind", "Temp", plot.type = "image")
+```
+
+## Das Paket visreg - surface
+
+```{r}
+visreg2d(fit2, "Wind", "Temp", plot.type = "persp")
+```
+
+
+
+
 ## Linkliste - lineare Regression
 
 -  Regression - [r-bloggers](http://www.r-bloggers.com/r-tutorial-series-simple-linear-regression/)
 
 -  Das Komplette Buch von [Faraway](http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf)- sehr intuitiv geschrieben.
 
--  Gute Einf√ºhrung auf [Quick-R](http://www.statmethods.net/stats/regression.html)
+-  Gute Einf¸hrung auf [Quick-R](http://www.statmethods.net/stats/regression.html)
 
 - [Multiple Regression](https://www.r-bloggers.com/multiple-regression-part-1/)

@@ -19,11 +19,15 @@ slidepath <- "D:/GESIS/Workshops/RSocialScience/slides"
 
 setwd(slidepath)
 
-
-
 rmarkdown::render("../intro/index.Rmd",
                   output_format = "slidy_presentation",
                   output_file="intro.html",
+                  output_dir=slidepath)
+
+
+rmarkdown::render("../linreg/index.Rmd",
+                  output_format = "slidy_presentation",
+                  output_file="linreg.html",
                   output_dir=slidepath)
 
 

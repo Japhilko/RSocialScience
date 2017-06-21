@@ -312,3 +312,5 @@ install.packages("flexdashboard", type = "source")
 - [Verschiedene CSS Fonts](http://www.cssfontstack.com/)
 
 - [Überblick über die verschiedenen Rmarkdown Formate](http://rmarkdown.rstudio.com/formats.html)
+
+- [Umlaute in Markdown Dokumenten](https://stackoverflow.com/questions/41567549/german-umlauts-in-r-markdown-again)
