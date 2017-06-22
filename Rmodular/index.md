@@ -84,4 +84,4 @@ CRAN Task Views
     library("ctv")
     install.views("Bayesian")
 
-![](figure/CRANtaskViews.PNG)
+![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/figure/CRANtaskViews.PNG)

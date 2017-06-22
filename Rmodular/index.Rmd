@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Wo sind die Routinen enthalten
 
-![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/figure/Packages.PNG)
+![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/Packages.PNG)
 
 - Viele Funktionen sind im Basis-R enthalten 
 - Viele spezifische Funktionen sind in zusätzlichen Bibliotheken integriert
@@ -95,4 +95,4 @@ library("ctv")
 install.views("Bayesian")
 ```
 
-![](figure/CRANtaskViews.PNG)
+![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/CRANtaskViews.PNG)

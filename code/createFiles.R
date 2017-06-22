@@ -17,12 +17,28 @@ install.packages("tibble")
 slidepath <- "D:/Daten/GitHub/RSocialScience/slides"
 slidepath <- "D:/GESIS/Workshops/RSocialScience/slides"
 
+
 setwd(slidepath)
 
 rmarkdown::render("../intro/index.Rmd",
                   output_format = "slidy_presentation",
                   output_file="intro.html",
                   output_dir=slidepath)
+
+
+rmarkdown::render("../hilfe/index.Rmd",
+                  output_format = "slidy_presentation",
+                  output_file="hilfe.html",
+                  output_dir=slidepath)
+
+
+
+rmarkdown::render("../Rmodular/index.Rmd",
+                  output_format = "beamer_presentation",
+                  output_file="Rmodular.pdf",
+                  output_dir=slidepath)
+
+
 
 
 rmarkdown::render("../linreg/index.Rmd",
