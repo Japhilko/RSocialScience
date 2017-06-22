@@ -270,13 +270,13 @@ head(lmm.data)
 
 ## [Varying intercept model](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
 
-```{r}
+```{r,eval=F}
 MLexamp.6 <- lmer(extro ~ open + agree + social + (1 | school), data = lmm.data)
 ```
 
 ## Varying slope model
 
-```{r}
+```{r,eval=F}
 MLexamp.9 <- lmer(extro ~ open + agree + social + (1 + open | school/class), data = lmm.data)
 ```
 

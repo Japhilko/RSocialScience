@@ -17,7 +17,7 @@ Beispieldaten einlesen:
 
 ```{r}
 library(foreign)
-dat <- read.dta("https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
+dat <- read.dta("https://github.com/Japhilko/RSocialScience/raw/master/data/GPanel.dta")
 typeof(dat)
 ```
 

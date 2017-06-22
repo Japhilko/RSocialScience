@@ -396,9 +396,9 @@ d &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">len
 <li>Erstellen Sie ein erstes Script und finden Sie das Datum mit dem Befehl <code>date()</code> und die R-version mit <code>sessionInfo()</code> heraus.</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">date</span>()</code></pre></div>
-<pre><code>## [1] &quot;Thu Jun 22 12:58:22 2017&quot;</code></pre>
+<pre><code>## [1] &quot;Thu Jun 22 20:53:34 2017&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sessionInfo</span>()</code></pre></div>
-<pre><code>## R version 3.3.2 (2016-10-31)
+<pre><code>## R version 3.3.3 (2017-03-06)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
 ## Running under: Windows 7 x64 (build 7601) Service Pack 1
 ## 
@@ -411,9 +411,9 @@ d &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">len
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] backports_1.0.4 magrittr_1.5    rprojroot_1.1   tools_3.3.2    
-##  [5] htmltools_0.3.5 yaml_2.1.14     Rcpp_0.12.9     stringi_1.1.2  
-##  [9] rmarkdown_1.3   knitr_1.15.1    stringr_1.2.0   digest_0.6.11  
+##  [1] backports_1.0.5 magrittr_1.5    rprojroot_1.2   tools_3.3.3    
+##  [5] htmltools_0.3.6 yaml_2.1.14     Rcpp_0.12.10    stringi_1.1.1  
+##  [9] rmarkdown_1.5   knitr_1.15.20   stringr_1.2.0   digest_0.6.12  
 ## [13] evaluate_0.10</code></pre>
 </div>
 <div id="wie-bekommt-man-hilfe" class="slide section level2">
@@ -626,6 +626,21 @@ d &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">len
 <li>um fremde Datensätze einzulesen (z.B. SPSS-Daten)</li>
 <li>um mit großen Datenmengen umzugehen</li>
 </ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>40a0d5d9ea9584ae891a8d28ddd15cdc9d04175e</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 </div>
 <div id="datenimport" class="slide section level2">
 <h1>Datenimport</h1>
@@ -747,7 +762,7 @@ z &lt;-<span class="st"> </span><span class="kw">import</span>(<span class="st">
 <h1>Data Frames</h1>
 <p>Beispieldaten einlesen:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(foreign)
-dat &lt;-<span class="st"> </span><span class="kw">read.dta</span>(<span class="st">&quot;https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true&quot;</span>)
+dat &lt;-<span class="st"> </span><span class="kw">read.dta</span>(<span class="st">&quot;https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta&quot;</span>)
 <span class="kw">typeof</span>(dat)</code></pre></div>
 <p>Diese beiden Vektoren zu einem data.frame verbinden:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Daten &lt;-<span class="st"> </span><span class="kw">data.frame</span>(dat)</code></pre></div>
@@ -828,16 +843,16 @@ dat$a11c019a[<span class="dv">1</span>:<span class="dv">10</span>]</code></pre><
 </div>
 <div id="rekodieren" class="slide section level2">
 <h1><a href="https://www.r-bloggers.com/recoding-variables-in-r-pedagogic-considerations/">Rekodieren</a></h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(car)
-?recode</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(car)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?recode</code></pre></div>
 </div>
 <div id="exkurs---labels-wie-verwenden" class="slide section level2">
-<h1><a href>Exkurs - Labels wie verwenden</a></h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;forcats&quot;</span>)
-<span class="kw">browseVignettes</span>()</code></pre></div>
+<h1>Exkurs - Labels wie verwenden</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;forcats&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">browseVignettes</span>()</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tibble)
 
-gpanel1 &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(gpanel)
+gpanel1 &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(Daten)
 
 <span class="kw">head</span>(gpanel1)</code></pre></div>
 </div>
@@ -851,7 +866,7 @@ for (i in <span class="dv">1</span>:<span class="kw">ncol</span>(dat)){
 </div>
 <div id="fehlende-werte" class="slide section level2">
 <h1>Fehlende Werte</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat$bazq020a[dat$bazq020a==-<span class="dv">99</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Daten$bazq020a[Daten$bazq020a==-<span class="dv">99</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></code></pre></div>
 <ul>
 <li><p><a href="http://www.statmethods.net/input/missingdata.html">Quick-R zu fehlenden Werten</a></p></li>
 <li><p><a href="http://uc-r.github.io/na_recode">Fehlende Werte rekodieren</a></p></li>
@@ -860,13 +875,46 @@ for (i in <span class="dv">1</span>:<span class="kw">ncol</span>(dat)){
 <div id="datenexport" class="slide section level2">
 <h1>Datenexport</h1>
 </div>
+<div id="basisgrafiken" class="slide section level2">
+<h1>Basisgrafiken</h1>
+</div>
+<div id="datenanalyse" class="slide section level2">
+<h1>Datenanalyse</h1>
+</div>
+<div id="grafiken-und-zusammenhang" class="slide section level2">
+<h1>Grafiken und Zusammenhang</h1>
+</div>
+<div id="das-lattice-paket" class="slide section level2">
+<h1>Das lattice Paket</h1>
+</div>
+<div id="ggplot-und-ggmap" class="slide section level2">
+<h1>ggplot und ggmap</h1>
+</div>
+<div id="die-lineare-regression" class="slide section level2">
+<h1>Die lineare Regression</h1>
+</div>
+<div id="die-logistische-regression" class="slide section level2">
+<h1>Die logistische Regression</h1>
+</div>
+<div id="mehrebenenmodelle" class="slide section level2">
+<h1>Mehrebenenmodelle</h1>
+</div>
+<div id="allgemein-zur-versionsverwaltung" class="slide section level2">
+<h1>Allgemein zur Versionsverwaltung</h1>
+</div>
+<div id="r-und-git" class="slide section level2">
+<h1>R und Git</h1>
+</div>
+<div id="word-dokumente-mit-r-erstellen" class="slide section level2">
+<h1>Word Dokumente mit R erstellen</h1>
+</div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->
   <script>
     (function () {
       var script = document.createElement("script");
       script.type = "text/javascript";
-      script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
       document.getElementsByTagName("head")[0].appendChild(script);
     })();
   </script>

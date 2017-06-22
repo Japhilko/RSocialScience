@@ -20,3 +20,12 @@ ggplot2
 knitr
 RColorBrewer
 ggmap
+DAAG
+visreg
+HSAUR
+faraway
+MASS
+gridExtra
+sjPlot
+dplyr
+arm
