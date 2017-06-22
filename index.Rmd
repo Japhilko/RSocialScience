@@ -4,14 +4,15 @@ author: "Jan-Philipp Kolb"
 output: md_document
 ---
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Einführung
 
 - [Einführung und Motivation](https://japhilko.github.io/RSocialScience/intro/) 
-- [Wie bekommt man Hilfe](https://japhilko.github.io/RSocialScience/hilfe/)
+- [Erste Schritte mit R](https://japhilko.github.io/RSocialScience/ersteSchritte)
+- [Wie bekommt man Hilfe?](https://japhilko.github.io/RSocialScience/hilfe/)
 - [Modularer Aufbau](https://japhilko.github.io/RSocialScience/Rmodular/)
 - [Datenimport](https://japhilko.github.io/RSocialScience/import/) 
 - [Datenaufbereitung](https://japhilko.github.io/RSocialScience/Datenaufbereitung)

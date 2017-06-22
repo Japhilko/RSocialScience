@@ -1,5 +1,5 @@
 ---
-title: "Zusammenhänge"
+title: "Kreuztabellen und Zusammenhänge"
 author: "Jan-Philipp Kolb"
 date: "20 Juni 2017"
 output: md_document
@@ -8,6 +8,10 @@ output: md_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+
+
+
 
 
 ## Edgar Anderson's Iris Daten

@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE,message=F,warning=F)
 
 ## Datenimport
 
-![](figure/Datenimport.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/Datenimport.PNG)
 
 
 ## Dateiformate in R
