@@ -6,6 +6,9 @@ Die Exportformate von R
     Funktionen zur Verfügung
 -   Das eigene Format von R sind sog. Workspaces (`.RData`)
 
+Die Gesis Panel Daten
+---------------------
+
     gpanel <- read.csv2("ZA5666_d_gesis_panel_campus_file_b_2014.csv")
     head(gpanel)
 

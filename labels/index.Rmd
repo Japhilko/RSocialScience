@@ -2,10 +2,10 @@
 title: "Labels"
 author: "Jan-Philipp Kolb"
 date: "11 Juni 2017"
-output: html_document
+output: md_document
 ---
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 

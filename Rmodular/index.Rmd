@@ -5,14 +5,14 @@ date: "12 Juni 2017"
 output: md_document
 ---
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
 ## Wo sind die Routinen enthalten
 
-![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/figure/Packages.PNG)
+![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/Packages.PNG)
 
 - Viele Funktionen sind im Basis-R enthalten 
 - Viele spezifische Funktionen sind in zusätzlichen Bibliotheken integriert
@@ -65,7 +65,25 @@ Weitere interessante Pakete:
 
 - [Paket für Karten](http://www.r-bloggers.com/tag/maptools/)
 
-## Pakete von Github installieren
+
+## Pakete installieren
+
+### Pakete von CRAN Server installieren
+
+```{r,eval=F}
+install.packages("lme4")
+```
+
+### Pakete von Bioconductor Server installieren
+
+```{r,eval=F}
+source("https://bioconductor.org/biocLite.R")
+biocLite(c("GenomicFeatures", "AnnotationDbi"))
+```
+
+
+
+### Pakete von Github installieren
 
 ```{r,eval=F}
 install.packages("devtools")
@@ -78,10 +96,15 @@ install_github("hadley/ggplot2")
 
 ## Wie bekomme ich einen Überblick
 
-- [Explore Packages Currently on CRAN
-](https://mran.microsoft.com/packages/)
+- [Pakete entdecken, die neulich auf CRAN hochgeladen wurden](https://mran.microsoft.com/packages/)
 
 - [Pakete die in letzter Zeit von CRAN heruntergeladen wurden](https://gallery.shinyapps.io/cran-gauge/)
+
+- [Quick-list nützlicher Pakete](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages)
+
+- [Beste Pakete für Datenbearbeitung und Analyse](http://www.computerworld.com/article/2921176/business-intelligence/great-r-packages-for-data-import-wrangling-visualization.html)
+
+- [Die 50 meist genutzten Pakete](https://www.r-bloggers.com/the-50-most-used-r-packages/)
 
 ## CRAN Task Views		
 		
@@ -95,23 +118,15 @@ library("ctv")
 install.views("Bayesian")
 ```
 
-![](figure/CRANtaskViews.PNG)
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/CRANtaskViews.PNG)
 
 
-## Aufgabe - Vorbereitung
+## Aufgabe - Zusatzpakete
 
-- Prüfen Sie, ob eine Version von R auf Rechner installiert ist.
-- Falls dies nicht der Fall ist, laden Sie [R](r-project.org)  runter und installieren Sie R.
-- Prüfen Sie, ob Rstudio installiert ist.
-- Falls nicht - [Installieren](http://www.rstudio.com/) sie Rstudio.
-- Laden Sie die R-Skripte von meinem GitHub-Account
-- Erstellen Sie ein erstes Script und finden Sie das Datum mit dem Befehl `date()` und die R-version mit `sessionInfo()` heraus.
+Gehen Sie auf <https://cran.r-project.org/> und suchen Sie in dem Bereich, wo die Pakete vorgestellt werden, nach Paketen,...
 
-```{r}
-date()
-```
-
-```{r}
-sessionInfo()
-```
+-  die für die deskriptive Datenanalyse geeignet sind.
+-  um Regressionen zu berechnen
+-  um fremde Datensätze einzulesen (z.B. SPSS-Daten)
+-  um mit großen Datenmengen umzugehen
 

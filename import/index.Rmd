@@ -72,7 +72,7 @@ Bei Windows ist es wichtig Slashs anstelle von Backslashs zu verwenden.
 
 ## Alternative - Arbeitsspeicher
 
-![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/SetWD.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/SetWD.png)
 
 ## Import von Excel-Daten
 

@@ -18,9 +18,10 @@ knitr::opts_chunk$set(echo = TRUE)
 - [Datenaufbereitung](https://japhilko.github.io/RSocialScience/Datenaufbereitung)
 - [Datenexport](https://japhilko.github.io/RSocialScience/export/) 
 
-## Liebe auf den ersten Plot – Grafiken mit R	
+## Liebe auf den ersten Plot – Grafiken und Datenanalyse mit R	
    
 - [Basisgrafiken](https://japhilko.github.io/RSocialScience/simpleGraphics/) 
+- [Datenanalyse](https://japhilko.github.io/RSocialScience/Datenanalyse)
 - [Grafiken und Zusammenhang](https://japhilko.github.io/RSocialScience/multidimensional)
 - [Das lattice Paket](https://japhilko.github.io/RSocialScience/lattice)   
 - [ggplot und ggmap](https://japhilko.github.io/RSocialScience/ggplot)

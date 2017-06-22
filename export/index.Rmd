@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE,eval=T)
 -  Das eigene Format von R sind sog. Workspaces (`.RData`)
 
 
-## 
+## Die Gesis Panel Daten
 
 ```{r,echo=F,eval=F}
 setwd("D:/Daten/owncloud/Workshops/RSocialScience")

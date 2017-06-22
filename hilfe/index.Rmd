@@ -116,6 +116,6 @@ R-project + Was ich schon immer wissen wollte
 
 ![](https://github.com/Japhilko/IntroR/blob/master/2017/slides/figure/cheatsheetBaseR.PNG?raw=true)
 
-## Links
+### Weitere Links
 
 - [Eine Liste der wichtigsten R-Befehle](https://www.personality-project.org/r/r.commands.html)
