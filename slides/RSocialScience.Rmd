@@ -2,31 +2,31 @@
 title: "RSocialScience"
 author: "Jan-Philipp Kolb"
 date: "22 Juni 2017"
-output: ioslides_presentation
+output: slidy_presentation
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Einführung und Motivation
+## Einführung und Motivation
 
 ```{r child = '../intro/index.Rmd'}
 ```
 
-# Erste Schritte mit R
+## Erste Schritte mit R
 
 ```{r child = '../ersteSchritte/index.Rmd'}
 ```
 
 
-# Wie bekommt man Hilfe
+## Wie bekommt man Hilfe
 
 ```{r child = '../hilfe/index.Rmd'}
 ```
 
 
-# Die logistische Regression
+## Die logistische Regression
 
 ```{r child = '../logreg/index.Rmd'}
 ```

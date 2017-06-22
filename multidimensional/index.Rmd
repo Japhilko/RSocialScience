@@ -21,10 +21,34 @@ dat <- read.dta("https://github.com/Japhilko/RSocialScience/blob/master/data/GPa
 ## Eine Kreuztabelle erstellen
 
 ```{r}
+Beruf_Gefordert <- dat$a11c109a
+Beruf_Anerkannt <- dat$a11c111a
+
+
+table(Beruf_Gefordert,Beruf_Anerkannt)
+```
+
+```{r,eval=F,echo=F}
 Berufsgruppe <- dat$a11d092a
 FreizeitWichtigkeit <- dat$a11c100a
 
 table(Berufsgruppe,FreizeitWichtigkeit)
+```
+
+## Eine Dreidimensionale Kreuztabelle - Array
+
+```{r}
+Geschlecht <- dat$a11d054a
+tab3 <- table(Beruf_Gefordert,Beruf_Anerkannt,Geschlecht)
+tab3
+```
+
+## Indizieren eines Arrays
+
+- nun muss man mit zwei Kommas arbeiten beim Indizieren
+
+```{r}
+tab3[,,1]
 ```
 
 
