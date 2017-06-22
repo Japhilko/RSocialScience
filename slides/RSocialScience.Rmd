@@ -1,0 +1,116 @@
+---
+title: "RSocialScience"
+author: "Jan-Philipp Kolb"
+date: "22 Juni 2017"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Einführung und Motivation
+
+```{r child = '../intro/index.Rmd'}
+```
+
+## Erste Schritte mit R
+
+```{r child = '../ersteSchritte/index.Rmd'}
+```
+
+
+## Wie bekommt man Hilfe
+
+```{r child = '../hilfe/index.Rmd'}
+```
+
+
+## Modularer Aufbau
+
+```{r child = '../Rmodular/index.Rmd'}
+```
+
+## Datenimport
+
+```{r child = '../import/index.Rmd'}
+```
+
+
+## Datenaufbereitung
+
+```{r child = '../Datenaufbereitung/index.Rmd'}
+```
+
+
+## Datenexport
+
+```{r child = '../export/index.Rmd'}
+```
+
+
+## Basisgrafiken
+
+```{r child = '../simpleGraphics/index.Rmd'}
+```
+
+## Datenanalyse
+
+```{r child = '../Datenanalyse/index.Rmd'}
+```
+
+## Grafiken und Zusammenhang
+
+```{r child = '../multidimensional/index.Rmd'}
+```
+
+## Das lattice Paket
+
+
+```{r child = '../lattice/index.Rmd'}
+```
+
+## ggplot und ggmap
+
+
+```{r child = '../ggplot/index.Rmd'}
+```
+
+## Die lineare Regression
+
+
+```{r child = '../linreg/index.Rmd'}
+```
+
+
+
+## Die logistische Regression
+
+```{r child = '../logreg/index.Rmd'}
+```
+
+## Mehrebenenmodelle
+
+
+```{r child = '../multilevel/index.Rmd'}
+```
+
+
+## Allgemein zur Versionsverwaltung
+
+
+```{r child = '../Versionsverwaltung/index.Rmd'}
+```
+
+## R und Git
+
+
+```{r child = '../rgit/index.Rmd'}
+```
+
+## Word Dokumente mit R erstellen
+
+
+```{r child = '../r2wd/index.Rmd'}
+```
+

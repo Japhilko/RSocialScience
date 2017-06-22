@@ -1,0 +1,46 @@
+---
+title: "AddOn"
+author: "Jan-Philipp Kolb"
+date: "22 Juni 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Ein Array erzeugen
+
+```{r}
+A3 <- array(1:8,c(2,2,2))
+A3
+```
+
+## Indizieren eines Array
+
+```{r}
+A3[,,2]
+```
+
+<!--
+Warum braucht man Matrizen
+Was kann man mit diesen machen
+--> 
+
+## Matrizen und Arrays
+
+-  In Matrizen und Arrays stehen meist nur numerische Werte.
+-  Dadurch wird beispielsweise Matrix Multiplikation möglich.
+-  Anders als beim data.frame sind mehr als zwei Dimensionen möglich.
+
+```{r}
+A <- matrix(seq(1,100), nrow = 4)
+dim(A)
+```
+
+
+
+
+## Links
+
+- [Output Formats](http://rmarkdown.rstudio.com/authoring_quick_tour.html#output_formats)

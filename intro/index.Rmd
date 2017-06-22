@@ -41,30 +41,6 @@ knitr::opts_chunk$set(echo = FALSE)
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/CRANdownloads.PNG)
 
 
-## [CRAN Task Views](https://cran.r-project.org/web/views/)
-
-![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/CRANTaskviews.PNG)
-
-
-## Import/Export
-
-- Interaktion mit Excel, SPSS, Stata, ...
-
-![Import](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/Import.PNG)
-
-## [Reproducible Research](http://www.statsmakemecry.com/smmctheblog/the-time-for-reproducible-research-is-now)
-
-- [Wikipedia - Reproducibility](https://en.wikipedia.org/wiki/Reproducibility)
-
-## [Wie bekommt man Hilfe](https://www.r-project.org/help.html)
-
-- [Vignetten](http://r-pkgs.had.co.nz/vignettes.html)
-
-```{r,eval=F}
-browseVignettes()
-```
-
-
 ## Dateien herunterladen
 
 - Begleitend zu den Folien wird meistens auch ein R-File angeboten. 

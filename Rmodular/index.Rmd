@@ -5,7 +5,7 @@ date: "12 Juni 2017"
 output: md_document
 ---
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -65,7 +65,25 @@ Weitere interessante Pakete:
 
 - [Paket für Karten](http://www.r-bloggers.com/tag/maptools/)
 
-## Pakete von Github installieren
+
+## Pakete installieren
+
+### Pakete von CRAN Server installieren
+
+```{r,eval=F}
+install.packages("lme4")
+```
+
+### Pakete von Bioconductor Server installieren
+
+```{r,eval=F}
+source("https://bioconductor.org/biocLite.R")
+biocLite(c("GenomicFeatures", "AnnotationDbi"))
+```
+
+
+
+### Pakete von Github installieren
 
 ```{r,eval=F}
 install.packages("devtools")
@@ -78,10 +96,15 @@ install_github("hadley/ggplot2")
 
 ## Wie bekomme ich einen Überblick
 
-- [Explore Packages Currently on CRAN
-](https://mran.microsoft.com/packages/)
+- [Pakete entdecken, die neulich auf CRAN hochgeladen wurden](https://mran.microsoft.com/packages/)
 
 - [Pakete die in letzter Zeit von CRAN heruntergeladen wurden](https://gallery.shinyapps.io/cran-gauge/)
+
+- [Quick-list nützlicher Pakete](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages)
+
+- [Beste Pakete für Datenbearbeitung und Analyse](http://www.computerworld.com/article/2921176/business-intelligence/great-r-packages-for-data-import-wrangling-visualization.html)
+
+- [Die 50 meist genutzten Pakete](https://www.r-bloggers.com/the-50-most-used-r-packages/)
 
 ## CRAN Task Views		
 		
@@ -96,3 +119,14 @@ install.views("Bayesian")
 ```
 
 ![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/CRANtaskViews.PNG)
+
+## Aufgabe - Zusatzpakete
+
+Gehen Sie auf <https://cran.r-project.org/> und suchen Sie in dem Bereich, wo die Pakete vorgestellt werden, nach Paketen,...
+
+-  die für die deskriptive Datenanalyse geeignet sind.
+-  um Regressionen zu berechnen
+-  um fremde Datensätze einzulesen (z.B. SPSS-Daten)
+-  um mit großen Datenmengen umzugehen
+
+>>>>>>> 40a0d5d9ea9584ae891a8d28ddd15cdc9d04175e

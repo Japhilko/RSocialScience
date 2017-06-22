@@ -5,9 +5,98 @@ date: "21 Juni 2017"
 output: md_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,eval=T)
 ```
+
+
+
+## Data Frames
+
+Beispieldaten einlesen:
+
+```{r}
+library(foreign)
+dat <- read.dta("https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
+typeof(dat)
+```
+
+Diese beiden Vektoren zu einem data.frame verbinden:
+
+```{r}
+Daten <- data.frame(dat)
+```
+
+Anzahl der Zeilen/Spalten herausfinden
+
+```{r}
+nrow(Daten) # Zeilen
+ncol(Daten) # Spalten
+```
+
+## Indizieren
+
+Indizieren eines dataframe:
+
+```{r}
+Daten[1,1]
+Daten[2,]
+Daten[,1]
+Daten[,1:2]
+```
+
+## Logische Operatoren
+
+```{r}
+# Ist 1 größer als 2?
+1>2
+1<2
+
+1==2
+```
+
+
+
+## Operatoren um Subset für Datensatz zu bekommen
+
+Diese Operatoren eignen sich gut um Datensätze einzuschränken
+
+```{r}
+Dauer <- as.numeric(Daten$bazq020a)
+head(Daten[Dauer>20,])
+```
+
+## Datensätze einschränken
+
+```{r}
+SEX <- Daten$a11d054a
+
+Daten[SEX=="Männlich",]
+# gleiches Ergebnis:
+Daten[SEX!="Weiblich",]
+```
+
+
+## Weitere wichtige Optionen
+
+```{r}
+# Ergebnis in ein Objekt speichern
+subDat <- Daten[Dauer>20,]
+```
+
+```{r}
+# mehrere Bedingeungen können mit
+# & verknüpft werden:
+Daten[Dauer>18 & SEX=="Männlich",]
+```
+
+## Die Nutzung einer Sequenz
+
+
+```{r}
+Daten[1:3,]
+```
+
 
 
 ## [Variablen Labels](https://stackoverflow.com/questions/2151147/using-stata-variable-labels-in-r)
@@ -60,22 +149,29 @@ head(dat[,1])
 
 ```{r}
 library(car)
+```
+
+```{r,eval=F}
 ?recode
 ```
 
 
-## [Exkurs - Labels wie verwenden]()
+## Exkurs - Labels wie verwenden
 
 ```{r}
 library("forcats")
+```
+
+```{r,eval=F}
 browseVignettes()
 ```
+
 
 
 ```{r}
 library(tibble)
 
-gpanel1 <- as_tibble(gpanel)
+gpanel1 <- as_tibble(Daten)
 
 head(gpanel1)
 ```
@@ -95,11 +191,8 @@ for (i in 1:ncol(dat)){
 ## Fehlende Werte
 
 ```{r}
-dat$bazq020a[dat$bazq020a==-99] <- NA
+Daten$bazq020a[Daten$bazq020a==-99] <- NA
 ```
-
-
-
 
 - [Quick-R zu fehlenden Werten](http://www.statmethods.net/input/missingdata.html)
 

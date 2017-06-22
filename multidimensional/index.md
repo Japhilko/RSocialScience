@@ -1,3 +1,66 @@
+Die Daten laden
+---------------
+
+    library(foreign)
+    dat <- read.dta("https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
+
+Eine Kreuztabelle erstellen
+---------------------------
+
+    Beruf_Gefordert <- dat$a11c109a
+    Beruf_Anerkannt <- dat$a11c111a
+
+
+    table(Beruf_Gefordert,Beruf_Anerkannt)
+
+    ##                    Beruf_Anerkannt
+    ## Beruf_Gefordert     Missing by design Ja Nein Weiß nicht
+    ##   Missing by design                93  0    0          0
+    ##   Ja                                0  7    0          0
+    ##   Nein                              0  0    0          0
+    ##   Weiß nicht                        0  0    0          0
+
+Eine Dreidimensionale Kreuztabelle - Array
+------------------------------------------
+
+    Geschlecht <- dat$a11d054a
+    tab3 <- table(Beruf_Gefordert,Beruf_Anerkannt,Geschlecht)
+    tab3
+
+    ## , , Geschlecht = Männlich
+    ## 
+    ##                    Beruf_Anerkannt
+    ## Beruf_Gefordert     Missing by design Ja Nein Weiß nicht
+    ##   Missing by design                41  0    0          0
+    ##   Ja                                0  2    0          0
+    ##   Nein                              0  0    0          0
+    ##   Weiß nicht                        0  0    0          0
+    ## 
+    ## , , Geschlecht = Weiblich
+    ## 
+    ##                    Beruf_Anerkannt
+    ## Beruf_Gefordert     Missing by design Ja Nein Weiß nicht
+    ##   Missing by design                52  0    0          0
+    ##   Ja                                0  5    0          0
+    ##   Nein                              0  0    0          0
+    ##   Weiß nicht                        0  0    0          0
+
+Indizieren eines Arrays
+-----------------------
+
+-   nun muss man mit zwei Kommas arbeiten beim Indizieren
+
+<!-- -->
+
+    tab3[,,1]
+
+    ##                    Beruf_Anerkannt
+    ## Beruf_Gefordert     Missing by design Ja Nein Weiß nicht
+    ##   Missing by design                41  0    0          0
+    ##   Ja                                0  2    0          0
+    ##   Nein                              0  0    0          0
+    ##   Weiß nicht                        0  0    0          0
+
 Edgar Anderson's Iris Daten
 ---------------------------
 
@@ -36,7 +99,7 @@ Zusammenhang zwischen mehreren Variablen
 
     pairs(iris[,1:4])
 
-![](index_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-8-1.png)
 
 Zusammenhang zwischen mehreren Variablen
 ----------------------------------------
@@ -48,7 +111,7 @@ Zusammenhang zwischen mehreren Variablen
     pairs.panels(iris[1:4],bg=c("red","yellow","blue")
     [iris$Species],pch=21,main="")
 
-![](index_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-9-1.png)
 
 Verschiedene Korrelationskoeffizienten
 --------------------------------------
@@ -103,7 +166,7 @@ Levelplot
     data(BankWages)
     levelplot(table(BankWages$education,BankWages$job))
 
-![](index_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-13-1.png)
 
 Visualisierung von Zusammenhängen zwischen kategorialen Variablen
 -----------------------------------------------------------------
@@ -111,7 +174,7 @@ Visualisierung von Zusammenhängen zwischen kategorialen Variablen
     mosaicplot(~ Sex + Age + Survived, 
                data = Titanic, color = TRUE)
 
-![](index_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-14-1.png)
 
 Shading
 -------
@@ -121,7 +184,7 @@ Flächen werden entsprechend der Residuen eingefärbt:
     mosaicplot(~ Sex + Age + Survived, 
                data = Titanic, shade = TRUE)
 
-![](index_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-15-1.png)
 
 Literatur zu Zusammenhangsmaßen
 -------------------------------

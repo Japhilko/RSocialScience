@@ -18,3 +18,20 @@ knitr::opts_chunk$set(echo = TRUE)
 - Aufgabe: [Export nach Excel](tutorial/Aufgabe_Export2Excel.md)
 
 ## Daten bearbeiten/bereinigen
+
+
+
+## [Reproducible Research](http://www.statsmakemecry.com/smmctheblog/the-time-for-reproducible-research-is-now)
+
+- [Wikipedia - Reproducibility](https://en.wikipedia.org/wiki/Reproducibility)
+
+
+
+## [Wie bekommt man Hilfe](https://www.r-project.org/help.html)
+
+- [Vignetten](http://r-pkgs.had.co.nz/vignettes.html)
+
+```{r,eval=F}
+browseVignettes()
+```
+

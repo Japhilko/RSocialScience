@@ -39,7 +39,7 @@ infodat <- data.frame(Variablen=colnames(dat),
                       Erhebungsjahr=Jahr)
 
 
-datatable(infodat)
+datatable(infodat,filter="top")
 
 
 # https://dbk.gesis.org/dbksearch/SDesc2.asp?DB=D&no=5982
