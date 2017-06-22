@@ -15,7 +15,7 @@ var.labels <- attr(dat,"var.labels")
 
 samp <- sample(1:nrow(dat),100)
 
-GPanel <- dat[samp,c(colnames(dat)[5:20],c("bazq020a","a11d054a","a11d056z"))]
+GPanel <- dat[samp,c(colnames(dat)[5:20],c("bazq020a","a11d054a","a11d056z","a11d092a","a11c100a"))]
 
 datapath <- "D:/Daten/GitHub/RSocialScience/data"
 

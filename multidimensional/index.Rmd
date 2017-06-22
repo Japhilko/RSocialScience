@@ -10,8 +10,22 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+## Die Daten laden
+
+```{r}
+library(foreign)
+dat <- read.dta("https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
+```
 
 
+## Eine Kreuztabelle erstellen
+
+```{r}
+Berufsgruppe <- dat$a11d092a
+FreizeitWichtigkeit <- dat$a11c100a
+
+table(Berufsgruppe,FreizeitWichtigkeit)
+```
 
 
 ## Edgar Anderson's Iris Daten
