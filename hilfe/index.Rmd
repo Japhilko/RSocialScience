@@ -118,4 +118,8 @@ R-project + Was ich schon immer wissen wollte
 
 ### Weitere Links
 
+- [Übersicht - Hilfe bekommen in R](https://www.r-project.org/help.html)
+
+- [Eine Liste mit HowTo`s](http://rprogramming.net/)
+
 - [Eine Liste der wichtigsten R-Befehle](https://www.personality-project.org/r/r.commands.html)

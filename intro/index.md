@@ -35,28 +35,13 @@ Aufbau](http://revolution-computing.typepad.com/.a/6a010534b1db25970b01bb086253c
 
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/CRANdownloads.PNG)
 
-[CRAN Task Views](https://cran.r-project.org/web/views/)
---------------------------------------------------------
+Organisation des Kurses
+-----------------------
 
-![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/CRANTaskviews.PNG)
-
-Import/Export
--------------
-
--   Interaktion mit Excel, SPSS, Stata, ...
-
-![Import](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/Import.PNG)
-
-[Reproducible Research](http://www.statsmakemecry.com/smmctheblog/the-time-for-reproducible-research-is-now)
-------------------------------------------------------------------------------------------------------------
-
--   [Wikipedia -
-    Reproducibility](https://en.wikipedia.org/wiki/Reproducibility)
-
-[Wie bekommt man Hilfe](https://www.r-project.org/help.html)
-------------------------------------------------------------
-
--   [Vignetten](http://r-pkgs.had.co.nz/vignettes.html)
+-   Unterlagen sind komplett auf Github hinterlegt, damit man den Kurs
+    gleich mitverfolgen kann (mehr dazu gleich)
+-   Es werden viele verschiedene kleine Beispieldatensätze verwendet um
+    spezifische Dinge zu zeigen
 
 Dateien herunterladen
 ---------------------
@@ -82,6 +67,9 @@ Dateien herunterladen
 -   Zum Ausdrucken eignen sich die pdf-Dateien besser.
 
 -   Diese können mit dem Raw Button heruntergeladen werden.
+
+Raw Button bei Github
+---------------------
 
 ![Raw Button zum
 Download](https://raw.githubusercontent.com/Japhilko/GeoData/master/2016/slides/figure/GithubDownload.bmp)

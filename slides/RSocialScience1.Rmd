@@ -1,5 +1,5 @@
 ---
-title: "RSocialScience Tag 1"
+title: "R für die Sozialwissenschaften - Teil 1"
 author: "Jan-Philipp Kolb"
 date: "22 Juni 2017"
 output: slidy_presentation

@@ -1,0 +1,26 @@
+---
+title: "MetaDoc"
+author: "Jan-Philipp Kolb"
+date: "23 Juni 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Mein Hintergund
+
+- mir macht es Spaß anderen R beizubringen
+
+## Generelle Hinweise
+
+- Heterogenes Teilnehmerfeld
+- Bescheid sagen, wenn es zu schnell oder zu langsam geht
+
+
+## Fragen an die Teilnehmer
+
+- Welche Erfahrungen mit welcher Statistik Software
+- Wo soll R verwendet werden
+- Was ist die Erwartung von diesem Kurs

@@ -40,6 +40,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/CRANdownloads.PNG)
 
+## Organisation des Kurses
+
+- Unterlagen sind komplett auf Github hinterlegt, damit man den Kurs gleich mitverfolgen kann (mehr dazu gleich)
+- Es werden viele verschiedene kleine Beispieldatensätze verwendet um spezifische Dinge zu zeigen
 
 ## Dateien herunterladen
 
@@ -60,6 +64,8 @@ knitr::opts_chunk$set(echo = FALSE)
 -   Zum Ausdrucken eignen sich die pdf-Dateien besser. 
 
 -   Diese können mit dem Raw Button heruntergeladen werden. 
+
+## Raw Button bei Github
 
 ![Raw Button zum Download](https://raw.githubusercontent.com/Japhilko/GeoData/master/2016/slides/figure/GithubDownload.bmp)
 
