@@ -147,7 +147,7 @@ summary(HLM0)
 
 - Das Null Modell schließt keine erklärenden Variablen ein. 
 - Allerdings könnte der sozioökonomischen Status (SES) der Schüler auch eine Rolle spielen. 
-- Die folgenden Ausdrücke geben ein verfeinertes Modell mit zufälligen Achsenabschnitten und zufälligen  für jede der Schulen:
+- Die folgenden Ausdrücke geben ein verfeinertes Modell mit zufälligen Achsenabschnitten und Steigung  für jede der Schulen:
 
 $$y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$$
 
@@ -162,7 +162,11 @@ $$\beta{j} = \beta_0 + v_{j}$$
 HLM1 <- lmer(Score ~ SES + (SES | ID), data = mlexdat)
 coef(HLM1)
 summary(HLM1)
+```
 
+## 
+
+```{r}
 # 1% - BS variance
 # 99% - WS variance
 100 * 40400.24 / (40400.24 + 257.09 + 1.65)
@@ -172,11 +176,17 @@ summary(HLM1)
 
 # Percentage of variation explained by SES within schools
 1 - (40400.24 / 87346)
+
 ```
+
 
 Auf der einen Seite stellen wir fest, dass die SES 99 Prozent der Unterschiede zwischen den Schulen erklärt; Auf der anderen Seite erklärt die SES 53 Prozent der Abweichungen innerhalb der Schulen. 
 
-Was heißt das? Schulsegregation Das heißt, wohlhabende Studenten gehören zu reichen Schulen, und arme Studenten gehören zu armen Schulen. Darüber hinaus übertreffen wohlhabende Studenten weit über die Leistung der armen Studenten.
+Was heißt das? Schulsegregation 
+
+Das heißt, wohlhabende Studenten gehören zu reichen Schulen, und arme Studenten gehören zu armen Schulen. 
+
+Darüber hinaus übertreffen wohlhabende Studenten weit über die Leistung der armen Studenten.
 
 
 

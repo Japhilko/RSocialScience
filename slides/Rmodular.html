@@ -102,8 +102,14 @@ Jan-Philipp Kolb
 <li><p><a href="http://www.r-bloggers.com/tag/maptools/">Paket fÃ¼r Karten</a></p></li>
 </ul>
 </div>
-<div id="pakete-von-github-installieren" class="slide section level2">
-<h1>Pakete von Github installieren</h1>
+<div id="pakete-installieren" class="slide section level2">
+<h1>Pakete installieren</h1>
+<h3 id="pakete-von-cran-server-installieren">Pakete von CRAN Server installieren</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;lme4&quot;</span>)</code></pre></div>
+<h3 id="pakete-von-bioconductor-server-installieren">Pakete von Bioconductor Server installieren</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">&quot;https://bioconductor.org/biocLite.R&quot;</span>)
+<span class="kw">biocLite</span>(<span class="kw">c</span>(<span class="st">&quot;GenomicFeatures&quot;</span>, <span class="st">&quot;AnnotationDbi&quot;</span>))</code></pre></div>
+<h3 id="pakete-von-github-installieren">Pakete von Github installieren</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)
 <span class="kw">library</span>(devtools)
 
@@ -112,8 +118,11 @@ Jan-Philipp Kolb
 <div id="wie-bekomme-ich-einen-aberblick" class="slide section level2">
 <h1>Wie bekomme ich einen Ãœberblick</h1>
 <ul>
-<li><p><a href="https://mran.microsoft.com/packages/">Explore Packages Currently on CRAN</a></p></li>
+<li><p><a href="https://mran.microsoft.com/packages/">Pakete entdecken, die neulich auf CRAN hochgeladen wurden</a></p></li>
 <li><p><a href="https://gallery.shinyapps.io/cran-gauge/">Pakete die in letzter Zeit von CRAN heruntergeladen wurden</a></p></li>
+<li><p><a href="https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages">Quick-list nÃ¼tzlicher Pakete</a></p></li>
+<li><p><a href="http://www.computerworld.com/article/2921176/business-intelligence/great-r-packages-for-data-import-wrangling-visualization.html">Beste Pakete fÃ¼r Datenbearbeitung und Analyse</a></p></li>
+<li><p><a href="https://www.r-bloggers.com/the-50-most-used-r-packages/">Die 50 meist genutzten Pakete</a></p></li>
 </ul>
 </div>
 <div id="cran-task-views" class="slide section level2">
@@ -131,43 +140,15 @@ Jan-Philipp Kolb
 
 </div>
 </div>
-<div id="aufgabe---vorbereitung" class="slide section level2">
-<h1>Aufgabe - Vorbereitung</h1>
+<div id="aufgabe---zusatzpakete" class="slide section level2">
+<h1>Aufgabe - Zusatzpakete</h1>
+<p>Gehen Sie auf <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> und suchen Sie in dem Bereich, wo die Pakete vorgestellt werden, nach Paketen,…</p>
 <ul>
-<li>PrÃ¼fen Sie, ob eine Version von R auf Rechner installiert ist.</li>
-<li>Falls dies nicht der Fall ist, laden Sie <a href="r-project.org">R</a> runter und installieren Sie R.</li>
-<li>PrÃ¼fen Sie, ob Rstudio installiert ist.</li>
-<li>Falls nicht - <a href="http://www.rstudio.com/">Installieren</a> sie Rstudio.</li>
-<li>Laden Sie die R-Skripte von meinem GitHub-Account</li>
-<li>Erstellen Sie ein erstes Script und finden Sie das Datum mit dem Befehl <code>date()</code> und die R-version mit <code>sessionInfo()</code> heraus.</li>
+<li>die fÃ¼r die deskriptive Datenanalyse geeignet sind.</li>
+<li>um Regressionen zu berechnen</li>
+<li>um fremde DatensÃ¤tze einzulesen (z.B. SPSS-Daten)</li>
+<li>um mit groÃŸen Datenmengen umzugehen</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">date</span>()</code></pre></div>
-<pre><code>## [1] &quot;Thu Jun 22 11:49:54 2017&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sessionInfo</span>()</code></pre></div>
-<pre><code>## R version 3.3.2 (2016-10-31)
-## Platform: x86_64-w64-mingw32/x64 (64-bit)
-## Running under: Windows 7 x64 (build 7601) Service Pack 1
-## 
-## locale:
-## [1] LC_COLLATE=German_Germany.1252  LC_CTYPE=German_Germany.1252   
-## [3] LC_MONETARY=German_Germany.1252 LC_NUMERIC=C                   
-## [5] LC_TIME=German_Germany.1252    
-## 
-## attached base packages:
-## [1] tools     stats     graphics  grDevices utils     datasets  methods  
-## [8] base     
-## 
-## other attached packages:
-## [1] DT_0.2         foreign_0.8-67 MASS_7.3-47    knitr_1.15.1  
-## [5] faraway_1.0.7  HSAUR_1.3-7   
-## 
-## loaded via a namespace (and not attached):
-##  [1] Rcpp_0.12.9     magrittr_1.5    splines_3.3.2   lattice_0.20-35
-##  [5] minqa_1.2.4     stringr_1.2.0   highr_0.6       grid_3.3.2     
-##  [9] nlme_3.1-128    htmltools_0.3.5 yaml_2.1.14     lme4_1.1-12    
-## [13] rprojroot_1.1   digest_0.6.11   Matrix_1.2-7.1  nloptr_1.0.4   
-## [17] htmlwidgets_0.8 rsconnect_0.7   evaluate_0.10   rmarkdown_1.3  
-## [21] stringi_1.1.2   backports_1.0.4 jsonlite_1.4</code></pre>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->
