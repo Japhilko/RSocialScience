@@ -24,6 +24,7 @@ rmarkdown::render(c("../simpleGraphics/index.Rmd"),
 
 
 # http://rpubs.com/Japhilko82/VarsGesisPanel
+# https://datatables.net/manual/styling/classes
 
 # https://stackoverflow.com/questions/25824795/how-to-combine-two-rmarkdown-rmd-files-into-a-single-output
 # https://github.com/lmmx/devnotes/wiki/Rmarkdown-custom-knit-hook-to-compile-a-multi-part-document

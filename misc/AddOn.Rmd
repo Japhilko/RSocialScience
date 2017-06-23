@@ -39,6 +39,22 @@ dim(A)
 ```
 
 
+## Listen
+
+-  Eine Liste in R entspricht einem geschachtelten Array in anderen Programmiersprachen
+-  Listen können alles enthalten
+-  Listen können geschachtelt sein
+-  Listen sollte man sehr bedacht verwenden
+			
+## Indizieren einer Liste
+
+```{r}
+A4 <- list(A1,1)
+A4
+A4[[2]]
+```
+
+
 
 
 ## Links
