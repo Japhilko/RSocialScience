@@ -55,6 +55,8 @@ Dauer <- as.numeric(Daten$bazq020a)
 head(Daten[Dauer>20,])
 ```
 
+- einfacher geht es mit dem Paket `tidyverse`
+
 ```{r}
 library(tidyverse)
 filter(Daten, Dauer>20)
