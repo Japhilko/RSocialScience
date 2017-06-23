@@ -129,7 +129,6 @@ library(readr)
 
 - [`readr` auf dem Rstudio Blogg](https://blog.rstudio.org/2015/10/28/readr-0-2-0/)
 
-![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/readrRstudioBlogg.PNG)
 
 
 ## Import von Excel-Daten
@@ -169,8 +168,6 @@ library(haven)
 ```
 
 - [Das R-Paket `haven` auf dem Rstudio Blogg](https://blog.rstudio.org/2016/10/04/haven-1-0-0/)
-
-![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/havenRstudioBlogg.PNG)
 
 
 ## SPSS Dateien einlesen

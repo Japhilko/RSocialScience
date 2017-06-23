@@ -1,40 +1,36 @@
 ---
-title: "RSocialScience Tag 2"
+title: "RSocialScience 2"
 author: "Jan-Philipp Kolb"
 date: "23 Juni 2017"
-output: slidy_presentation
+output: slidy_document
 ---
 
-```{r, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## ggplot und ggmap
+
+
+```{r child = '../ggplot/index.Rmd'}
+```
+
+## Die lineare Regression
+
+
+```{r child = '../linreg/index.Rmd'}
 ```
 
 
-## Allgemein zur Versionsverwaltung
 
+## Die logistische Regression
 
-```{r child = '../Versionsverwaltung/index.Rmd'}
+```{r child = '../logreg/index.Rmd'}
 ```
 
-## R und Git
+## Mehrebenenmodelle
 
 
-```{r child = '../rgit/index.Rmd'}
+```{r child = '../multilevel/index.Rmd'}
 ```
 
-## Word Dokumente mit R erstellen
-
-
-```{r child = '../r2wd/index.Rmd'}
-```
-
-## PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave
-
-
-```{r child = '../r2pdf/index.Rmd'}
-```
-
-## HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown
-
-```{r child = '../rmarkdown/index.Rmd'}
-```

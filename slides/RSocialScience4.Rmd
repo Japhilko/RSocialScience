@@ -1,0 +1,36 @@
+---
+title: "RSocialScience 3"
+author: "Jan-Philipp Kolb"
+date: "23 Juni 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown
+
+```{r child = '../rmarkdown/index.Rmd'}
+```
+
+
+## Notebooks
+
+```{r child = '../notebooks/index.Rmd'}
+```
+
+
+## Interaktive Tabellen mit DataTables
+
+
+
+```{r child = '../DataTables/index.Rmd'}
+```
+
+
+## Interaktive Karten mit dem Javascript Paket leaflet
+
+```{r child = '../leaflet/index.Rmd'}
+```

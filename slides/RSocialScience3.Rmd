@@ -1,30 +1,35 @@
 ---
-title: "RSocialScience 3"
+title: "RSocialScience Tag 2"
 author: "Jan-Philipp Kolb"
 date: "23 Juni 2017"
-output: html_document
+output: slidy_presentation
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## Notebooks
+## Allgemein zur Versionsverwaltung
 
-```{r child = '../notebooks/index.Rmd'}
+
+```{r child = '../Versionsverwaltung/index.Rmd'}
 ```
 
-
-## Interaktive Tabellen mit DataTables
-
+## R und Git
 
 
-```{r child = '../DataTables/index.Rmd'}
+```{r child = '../rgit/index.Rmd'}
 ```
 
+## Word Dokumente mit R erstellen
 
-## Interaktive Karten mit dem Javascript Paket leaflet
 
-```{r child = '../leaflet/index.Rmd'}
+```{r child = '../r2wd/index.Rmd'}
+```
+
+## PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave
+
+
+```{r child = '../r2pdf/index.Rmd'}
 ```
