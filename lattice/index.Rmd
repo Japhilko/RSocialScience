@@ -110,7 +110,3 @@ splom(~iris[1:4], groups = Species, data = iris,
 ```{r}
 parallelplot(~iris[1:4] | Species, iris)
 ```
-
-## Lattice Befehle
-
-- [Übersicht aller Lattice Befehle](http://www.isid.ac.in/~deepayan/R-tutorials/labs/04_lattice_lab.pdf)
