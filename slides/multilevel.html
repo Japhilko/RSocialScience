@@ -66,8 +66,8 @@ Jan-Philipp Kolb
 
 </div>
 </div>
-<div id="andras-gutiarrez---multilevel-modeling-of-educational-data-using-r" class="slide section level2">
-<h1><a href="https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/">AndrÃ©s GutiÃ©rrez - Multilevel Modeling of Educational Data using R</a></h1>
+<div id="andres-gutierrez---multilevel-modeling-of-educational-data-using-r" class="slide section level2">
+<h1><a href="https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/">Andres Gutierrez - Multilevel Modeling of Educational Data using R</a></h1>
 <ul>
 <li>Lineare Modelle erkennen den Cluster-Effekt aufgrund der Intraklassen Korrelation nicht</li>
 </ul>
@@ -111,6 +111,7 @@ Jan-Philipp Kolb
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
 <span class="kw">library</span>(gridExtra)
 <span class="kw">library</span>(lme4)</code></pre></div>
+<pre><code>## Warning: package 'lme4' was built under R version 3.3.3</code></pre>
 <pre><code>## Loading required package: Matrix</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sjPlot)</code></pre></div>
 <pre><code>## Warning: package 'sjPlot' was built under R version 3.3.3</code></pre>
@@ -179,9 +180,6 @@ test &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span clas
 <li><a href="https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/">How to go about interpreting regression cofficients</a></li>
 </ul>
 </div>
-<div id="cross-level-interaktionseffekt" class="slide section level2">
-<h1>Cross-Level-Interaktionseffekt</h1>
-</div>
 <div id="ein-beispieldatensatz" class="slide section level2">
 <h1><a href="https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r">Ein Beispieldatensatz</a></h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;lme4&quot;</span>)
@@ -197,11 +195,17 @@ test &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span clas
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;lme4&quot;</span>)
 <span class="kw">install.packages</span>(<span class="st">&quot;sjPlot&quot;</span>)</code></pre></div>
+</div>
+<div id="benatigte-bibliotheken" class="slide section level2">
+<h1>BenÃ¶tigte Bibliotheken</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
 <span class="kw">library</span>(gridExtra)
 <span class="kw">library</span>(lme4)
 <span class="kw">library</span>(sjPlot)
 <span class="kw">library</span>(dplyr)</code></pre></div>
+</div>
+<div id="der-beispieldatensatz" class="slide section level2">
+<h1>Der Beispieldatensatz</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">123</span>)</code></pre></div>
 <p>Anzahl der SchÃ¼ler pro Schule</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">N &lt;-<span class="st"> </span><span class="dv">100</span> 
@@ -222,6 +226,9 @@ ID &lt;-<span class="st"> </span><span class="kw">rep</span>(LETTERS[<span class
 
 test &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">SES =</span> <span class="kw">c</span>(x1, x2, x3, x4, x5), 
  <span class="dt">Score =</span> <span class="kw">c</span>(y1, y2, y3, y4, y5), <span class="dt">ID =</span> ID)</code></pre></div>
+</div>
+<div id="das-nullmodell" class="slide section level2">
+<h1>Das Nullmodell</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">HLM0 &lt;-<span class="st"> </span><span class="kw">lmer</span>(Score ~<span class="st"> </span>(<span class="dv">1</span> |<span class="st"> </span>ID), <span class="dt">data =</span> test)
 <span class="kw">coef</span>(HLM0)</code></pre></div>
 <pre><code>## $ID
@@ -260,6 +267,11 @@ test &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span clas
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">100</span> *<span class="st"> </span><span class="dv">87346</span> /<span class="st"> </span>(<span class="dv">87346</span> +<span class="st"> </span><span class="dv">1931757</span>)</code></pre></div>
 <pre><code>## [1] 4.32598</code></pre>
+</div>
+<div id="formal-dargestellt" class="slide section level2">
+<h1>Formal dargestellt</h1>
+<p><span class="math display">\[y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}\]</span> <span class="math display">\[\alpha_{j} = \alpha_0 + u_{j}\]</span></p>
+<p><span class="math display">\[\beta{j} = \beta_0 + v_{j}\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">HLM1 &lt;-<span class="st"> </span><span class="kw">lmer</span>(Score ~<span class="st"> </span>SES +<span class="st"> </span>(SES |<span class="st"> </span>ID), <span class="dt">data =</span> test)
 <span class="kw">coef</span>(HLM1)</code></pre></div>
 <pre><code>## $ID
@@ -309,14 +321,83 @@ test &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span clas
 <span class="dv">1</span> -<span class="st"> </span>(<span class="fl">40400.24</span> /<span class="st"> </span><span class="dv">87346</span>)</code></pre></div>
 <pre><code>## [1] 0.5374689</code></pre>
 </div>
+<div id="multilevel-model-specification" class="slide section level2">
+<h1><a href="http://www.rensenieuwenhuis.nl/r-sessions-16-multilevel-model-specification-lme4/">Multilevel Model Specification</a></h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lme4)
+<span class="kw">library</span>(mlmRev)</code></pre></div>
+<pre><code>## Warning: package 'mlmRev' was built under R version 3.3.3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(Exam)</code></pre></div>
+<pre><code>##  [1] &quot;school&quot;   &quot;normexam&quot; &quot;schgend&quot;  &quot;schavg&quot;   &quot;vr&quot;       &quot;intake&quot;  
+##  [7] &quot;standLRT&quot; &quot;sex&quot;      &quot;type&quot;     &quot;student&quot;</code></pre>
+</div>
+<div id="nullmodell" class="slide section level2">
+<h1>Nullmodell</h1>
+<ul>
+<li>das einfachste Multilevel Modell</li>
+<li>nach dem vertikalen Strich wird die Gruppen Variable spezifiziert</li>
+<li>die Default SchÃ¤tzmethode ist restricted maximum likelihood (REML)</li>
+<li>Man kann aber auch maximum likelihood SchÃ¤tzung spezifizieren (ML)</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lmer</span>(normexam ~<span class="st"> </span><span class="dv">1</span> +<span class="st"> </span>(<span class="dv">1</span> |<span class="st"> </span>school), <span class="dt">data=</span>Exam)</code></pre></div>
+</div>
+<div id="random-intercept-fixed-predictor-in-individual-level" class="slide section level2">
+<h1>random intercept, fixed predictor in individual level</h1>
+<ul>
+<li>FÃ¼r das nÃ¤chste Modell fÃ¼gen wir dem einzelnen Level einen PrÃ¤diktor hinzu.</li>
+<li>Wir tun dies, indem wir die ‘1’ im Nullmodell durch den PrÃ¤diktor (hier: standLRT) ersetzen.</li>
+<li>Es wird immer ein Intercept angenommen, also wird es noch hier geschÃ¤tzt.</li>
+<li>Es muss nur angegeben werden, wenn keine anderen PrÃ¤diktoren angegeben sind.</li>
+<li>Da wir nicht wollen, dass der Effekt des PrÃ¤diktors zwischen den Gruppen variiert, bleibt die Spezifikation des zufÃ¤lligen Teils des Modells mit dem vorherigen Modell identisch.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lmer</span>(normexam ~<span class="st"> </span>standLRT +<span class="st"> </span>(<span class="dv">1</span> |<span class="st"> </span>school), <span class="dt">data=</span>Exam)</code></pre></div>
+</div>
+<div id="random-intercept-random-slope" class="slide section level2">
+<h1>random intercept, random slope</h1>
+<p>Das nÃ¤chste Modell, das angegeben wird, ist ein Modell mit einem zufÃ¤lligen Intercept auf individueller Ebene und ein PrÃ¤diktor, der zwischen Gruppen variieren darf. Mit anderen Worten, die Wirkung der Hausaufgaben auf die Partitur auf einem Mathe-Test variiert zwischen den Schulen. Um dieses Modell zu schÃ¤tzen, wird das ‘1’, das den Intercept im zufÃ¤lligen Teil der Modellspezifikation angibt, durch die Variable ersetzt, von der wir den Effekt zwischen den Gruppen variieren wollen.</p>
+</div>
+<div id="ein-anderes-datenbeispiel" class="slide section level2">
+<h1>Ein anderes Datenbeispiel</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lme4)  <span class="co"># load library</span>
+<span class="kw">library</span>(arm)  <span class="co"># convenience functions for regression in R</span></code></pre></div>
+<pre><code>## Warning: package 'arm' was built under R version 3.3.3</code></pre>
+<pre><code>## Loading required package: MASS</code></pre>
+<pre><code>## Warning: package 'MASS' was built under R version 3.3.3</code></pre>
+<pre><code>## 
+## Attaching package: 'MASS'</code></pre>
+<pre><code>## The following object is masked from 'package:dplyr':
+## 
+##     select</code></pre>
+<pre><code>## 
+## arm (Version 1.9-3, built: 2016-11-21)</code></pre>
+<pre><code>## Working directory is D:/Daten/GitHub/RSocialScience/multilevel</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lmm.data &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;http://www.unt.edu/rss/class/Jon/R_SC/Module9/lmm.data.txt&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">na.strings =</span> <span class="st">&quot;NA&quot;</span>, <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="dt">strip.white =</span> <span class="ot">TRUE</span>)
+<span class="co"># summary(lmm.data)</span>
+<span class="kw">head</span>(lmm.data)</code></pre></div>
+<pre><code>##                                                                                                                                                                                                                                                                                                                                                       X..DOCTYPE.html.
+## 1 &lt;html lang=en dir=ltr prefix=content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#&gt;
+## 2                                                                                                                                                                                                                                                                                                                                                               &lt;head&gt;
+## 3                                                                                                                                                                                                                                                                                                                    &lt;meta http-equiv=X-UA-Compatible content=IE=edge&gt;
+## 4                                                                                                                                                                                                                                                                                                    &lt;meta http-equiv=Content-Type content=text/html; charset=utf-8 /&gt;
+## 5                                                                                                                                                                                                                                               &lt;meta name=viewport content=width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no /&gt;
+## 6                                                                                                                                                                                                                                               &lt;link rel=shortcut icon href=//it.unt.edu/sites/all/themes/greenlight_sub/favicon.ico type=image/vnd.microsoft.icon /&gt;</code></pre>
+</div>
+<div id="varying-intercept-model" class="slide section level2">
+<h1><a href="https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r">Varying intercept model</a></h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MLexamp<span class="fl">.6</span> &lt;-<span class="st"> </span><span class="kw">lmer</span>(extro ~<span class="st"> </span>open +<span class="st"> </span>agree +<span class="st"> </span>social +<span class="st"> </span>(<span class="dv">1</span> |<span class="st"> </span>school), <span class="dt">data =</span> lmm.data)</code></pre></div>
+</div>
+<div id="varying-slope-model" class="slide section level2">
+<h1>Varying slope model</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MLexamp<span class="fl">.9</span> &lt;-<span class="st"> </span><span class="kw">lmer</span>(extro ~<span class="st"> </span>open +<span class="st"> </span>agree +<span class="st"> </span>social +<span class="st"> </span>(<span class="dv">1</span> +<span class="st"> </span>open |<span class="st"> </span>school/class), <span class="dt">data =</span> lmm.data)</code></pre></div>
+</div>
+<div id="cross-level-interaktionseffekt" class="slide section level2">
+<h1>Cross-Level-Interaktionseffekt</h1>
+</div>
 <div id="links" class="slide section level2">
 <h1>Links</h1>
 <ul>
-<li><a href="https://www.r-bloggers.com/uncertainty-in-parameter-estimates-using-multilevel-models/">Uncertainty in parameter estimates using multilevel models</a></li>
+<li><p><a href="https://www.r-bloggers.com/uncertainty-in-parameter-estimates-using-multilevel-models/">Uncertainty in parameter estimates using multilevel models</a></p></li>
+<li><p><a href="https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf">Multilevel models with R</a></p></li>
 </ul>
-</div>
-<div id="multilevel-models-with-r" class="slide section level2">
-<h1><a href="https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf">Multilevel models with R</a></h1>
 </div>
 <div id="paket-lmer" class="slide section level2">
 <h1><a href="https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf">Paket lmer</a></h1>
@@ -327,7 +408,9 @@ test &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span clas
 <div id="links-1" class="slide section level2">
 <h1>Links</h1>
 <ul>
-<li><a href="https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/">Multilevel Modeling of Educational Data using R (Part 1)</a></li>
+<li><p><a href="https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/">Multilevel Modeling of Educational Data using R (Part 1)</a></p></li>
+<li><p><a href="https://cran.r-project.org/web/packages/lme4/vignettes/lmer.pdf">Vignette fÃ¼r lme4</a></p></li>
+<li><p><a href="http://ase.tufts.edu/gsc/gradresources/guidetomixedmodelsinr/mixed%20model%20guide.html">Mixed model guide</a></p></li>
 </ul>
 </div>
 
