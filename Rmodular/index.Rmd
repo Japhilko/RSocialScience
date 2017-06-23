@@ -129,4 +129,4 @@ Gehen Sie auf <https://cran.r-project.org/> und suchen Sie in dem Bereich, wo di
 -  um fremde Datensätze einzulesen (z.B. SPSS-Daten)
 -  um mit großen Datenmengen umzugehen
 
->>>>>>> 40a0d5d9ea9584ae891a8d28ddd15cdc9d04175e
+

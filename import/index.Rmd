@@ -43,6 +43,21 @@ head(gpanel)
 ```
 
 
+## Datenimport leicht gemacht mit Rstudio
+
+![Import Button](https://i1.wp.com/thepracticalr.files.wordpress.com/2017/01/rstudio-old-import.png?w=456&ssl=1)
+
+
+## CSV aus dem Web einladen
+
+- Datensatz:
+
+<https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD>
+
+- [Datenimport mit Rstudio](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
+
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/ImportCSVPNG.PNG)
+
 
 ## Der Arbeitsspeicher
 
@@ -101,13 +116,87 @@ Wenn es sich um Deutsche Daten handelt:
 Dat <- read.csv2("schuldaten_export.csv")
 ```
 
+
+## Das Paket `readr`
+
+```{r,eval=F}
+install.packages("readr")
+```
+
+```{r}
+library(readr)
+```
+
+- [`readr` auf dem Rstudio Blogg](https://blog.rstudio.org/2015/10/28/readr-0-2-0/)
+
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/readrRstudioBlogg.PNG)
+
+
+## Import von Excel-Daten
+
+-  `library(readr)` ist für den Import von fremden Datenformaten hilfreich
+-  Wenn Excel-Daten vorliegen - als .csv abspeichern
+
+```{r,eval=F}
+library(readr)
+rows <- read_csv("https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD")
+```
+
+
+## `.csv`-Daten aus dem Web importieren - zweites Beispiel
+
+```{r}
+url <- "https://raw.githubusercontent.com/Japhilko/
+GeoData/master/2015/data/whcSites.csv"
+
+whcSites <- read.csv(url) 
+```
+
+
+```{r}
+head(data.frame(whcSites$name_en,whcSites$category))
+```
+
+
+## Das Paket `haven`
+
+```{r,eval=F}
+install.packages("haven")
+```
+
+```{r}
+library(haven)
+```
+
+- [Das R-Paket `haven` auf dem Rstudio Blogg](https://blog.rstudio.org/2016/10/04/haven-1-0-0/)
+
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/havenRstudioBlogg.PNG)
+
+
 ## SPSS Dateien einlesen
+
+- Zunächst muss wieder der Pfad zum Arbeitsverzeichnis angeben werden.
+- SPSS-Dateien können auch direkt aus dem Internet geladen werden:
+
+```{r,eval=F}
+install.packages("haven")
+```
+
+
+```{r,eval=F}
+library(haven)
+mtcars <- read_sav("https://github.com/Japhilko/RInterfaces/raw/master/data/mtcars.sav")
+```
+
+
+
+## SPSS Dateien aus dem Internet einlesen
 
 Dateien können auch direkt aus dem Internet geladen werden:
 
 ```{r,eval=F}
-link<- "http://www.statistik.at/web_de/static/
-mz_2013_sds_-_datensatz_080469.sav"
+library(foreign)
+link<- "http://www.statistik.at/web_de/static/mz_2013_sds_-_datensatz_080469.sav"
 
 ?read.spss
 Dat <- read.spss(link,to.data.frame=T)
@@ -116,8 +205,10 @@ Dat <- read.spss(link,to.data.frame=T)
 ## stata Dateien einlesen
 
 ```{r,eval=F}
-MZ02 <- read.dta("MZ02.dta")
+library(haven)
+oecd <- read_dta("https://github.com/Japhilko/IntroR/raw/master/2017/data/oecd.dta")
 ```
+
 
 - Einführung in Import mit R ([is.R](http://is-r.tumblr.com/post/37181850668/reading-writing-stata-dta-files-with-foreign))
 
