@@ -29,3 +29,8 @@ gridExtra
 sjPlot
 dplyr
 arm
+readr
+haven
+tidyverse
+tidyr
+purrr

@@ -22,13 +22,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![ ](https://i0.wp.com/lh3.googleusercontent.com/-Fap5-jEG14g/V_2jQPgy8zI/AAAAAAAAAWk/cOwXtlj6TYk/Screen%252520Shot%2525202016-10-11%252520at%2525209.42.37%252520PM.png?w=450&ssl=1)
 
+- [Original Blog](http://hagutierrezro.blogspot.de/2016/10/multilevel-modeling-of-educational-data.html)
 
 ## Beispiel Mehrebenenmodelle
 
 Untersuchungsgegenstand
 
-- Es sollen die Kenntnisse (Fähigkeiten) von Grundschülern in Mathematik gemessen werden. Dazu werden in einem Schulbezirk zunächst
-Schulen ausgewählt und anschließend Klassen. Innerhalb der Klassen soll schließlich jeweils eine Stichprobe gezogen und diese getestet werden.
+- Es sollen die Kenntnisse (Fähigkeiten) von Grundschülern in Mathematik gemessen werden. 
+- Dazu werden in einem Schulbezirk zunächst Schulen ausgewählt und anschließend Klassen. 
+- Innerhalb der Klassen soll schließlich jeweils eine Stichprobe gezogen und diese getestet werden.
 
 - Geht man zunächst von einer zufälligen Auswahl von Klassen aus, dann ist die Level-1-Variation durch die Schüler und die Level-2-Variation durch die Klassen bestimmt.
 
@@ -56,88 +58,12 @@ Unterscheidung
 
 ## Bibliotheken
 
-```{r}
-library(ggplot2)
-library(gridExtra)
-library(lme4)
-library(sjPlot)
-library(dplyr)
-```
-
-## Beispieldaten erzeugen
-
-```{r}
-set.seed(123)
-N <- 100 #Number of students per school
-sigma <- 200
-
-x1 <- runif(N, 10, 40)
-x2 <- runif(N, 25, 55)
-x3 <- runif(N, 40, 70)
-x4 <- runif(N, 55, 85)
-x5 <- runif(N, 70, 100)
-
-y1 <- 20 + 0 * x1 + rnorm(N, 0, sigma)
-y2 <- 40 + 10 * x2 + rnorm(N, 0, sigma)
-y3 <- 60 + 20 * x3 + rnorm(N, 0, sigma)
-y4 <- 80 + 30 * x4 + rnorm(N, 0, sigma)
-y5 <- 100 + 40 * x5 + rnorm(N, 0, sigma)
-
-ID <- rep(LETTERS[1:5], each = N)
-
-test <- data.frame(SES = c(x1, x2, x3, x4, x5), 
- Score = c(y1, y2, y3, y4, y5), ID = ID)
-```
-
-## Formalistisch
-
-$$
-y_{ij} = \alpha_{j} + \varepsilon_{ij}
-
-\alpha_{j} = \alpha_0 + u_{j}
-$$
-
-
-## Mehrebenen Modell - Beispiel 1
-
-- 100 Datenpunkte 
-
-- 4 Gruppen
-
-![](figure/Data2bw.png)
-
-## Mehrebenen Modell - Beispiel 1
-
-![](figure/Data1.png)
-
-
-## Basis Regression
-
-- [How to go about interpreting regression cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)
-
-
-
-## [Ein Beispieldatensatz](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
-
-```{r,eval=F}
-install.packages("lme4")
-
-# Or to install the dev version
-library(devtools)
-install_github("lme4", user = "lme4")
-```
-
-## [Multilevel Modeling of Educational Data using R (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
-
-- [Original Blog](http://hagutierrezro.blogspot.de/2016/10/multilevel-modeling-of-educational-data.html)
 
 ```{r,eval=F}
 install.packages("lme4")
 install.packages("sjPlot")
 ```
 
-## Benötigte Bibliotheken
-
 ```{r}
 library(ggplot2)
 library(gridExtra)
@@ -146,64 +72,90 @@ library(sjPlot)
 library(dplyr)
 ```
 
-
-## Der Beispieldatensatz
+## Beispieldaten
 
 ```{r}
-set.seed(123)
+mlexdat <- read.csv("https://github.com/Japhilko/RSocialScience/raw/master/data/mlexdat.csv") 
 ```
 
-Anzahl der Schüler pro Schule
-```{r}
-N <- 100 
-sigma <- 200
-
-x1 <- runif(N, 10, 40)
-x2 <- runif(N, 25, 55)
-x3 <- runif(N, 40, 70)
-x4 <- runif(N, 55, 85)
-x5 <- runif(N, 70, 100)
+```{r,echo=F}
+library(knitr)
+kable(head(mlexdat))
 ```
 
+
+
+## Formalistisch
+
+- Bei der Analyse von Daten mit diesen hierarchischen Strukturen, sollte man immer zunächst ein Null-Modell anpassen
+- Somit kann man die Variation erfassen, die auf die Schulen zurückzuführen ist:
+
+- Das passende Modell sieht folgendermaßen aus:
+
+$$
+y_{ij} = \alpha_{j} + \varepsilon_{ij}
+
+\alpha_{j} = \alpha_0 + u_{j}
+$$
+Die Gesamtvariation wird in zwei Teile zerlegt: 
+
+- Variation zwischen Schülern (innerhalb der Schulen) und
+- zwischen den Schulen (zwischen den Schulen). 
+
+
+
+## Der R-code für dieses Nullmodell 
+
+- das einfachste Multilevel Modell
+- nach dem vertikalen Strich wird die Gruppen Variable spezifiziert
+- die Default Schätzmethode ist restricted maximum likelihood (REML) 
+- Man kann aber auch maximum likelihood Schätzung spezifizieren (ML)
+
 ```{r}
-y1 <- 20 + 0 * x1 + rnorm(N, 0, sigma)
-y2 <- 40 + 10 * x2 + rnorm(N, 0, sigma)
-y3 <- 60 + 20 * x3 + rnorm(N, 0, sigma)
-y4 <- 80 + 30 * x4 + rnorm(N, 0, sigma)
-y5 <- 100 + 40 * x5 + rnorm(N, 0, sigma)
-
-ID <- rep(LETTERS[1:5], each = N)
-
-test <- data.frame(SES = c(x1, x2, x3, x4, x5), 
- Score = c(y1, y2, y3, y4, y5), ID = ID)
+HLM0 <- lmer(Score ~ (1 | ID), data = mlexdat)
 ```
 
-## Das Nullmodell 
+
+## Nullmodell Ergebnis 
 
 ```{r}
-HLM0 <- lmer(Score ~ (1 | ID), data = test)
 coef(HLM0)
 summary(HLM0)
 ```
 
-- 96% - Between-schools variance
-- 4% - Within-schools variance
+
+- 96% Variation zwischen den Schulen
+- 4% Variation innerhalb der Schulen
 
 
 ```{r}
 100 * 87346 / (87346 + 1931757)
 ```
 
-## Formal dargestellt
+
+
+## 
+
+Die Schätzung der zufälligen Effekte zeigt, dass die Variation zwischen den Schulen (Intraklassrn Korrelation) fast 96 Prozent beträgt 
+
+Während der Anteil der Abweichung für Studenten beträgt fast 4%. Das null-Modell behauptet, dass hohe Leistungsträger zu bestimmten Schulen gehören und niedrige Leistungserbringer nicht Teil dieser spezifischen Schulen sind. Mit anderen Worten, die Schule bestimmt das Testergebnis.
+
+## Ein weiteres Modell
+
+- Das vorherige bedingungslose Modell schließt keine relevanten Variablen ein, wie zB den sozioökonomischen Status (SES), der jedem Schüler zugeordnet ist. 
+- Die folgenden Ausdrücke geben ein ausgearbeitetes Modell mit zufälligen Abschnitten und zufälligen Pisten für jede der Schulen:
 
 $$y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$$
-$$\alpha_{j} = \alpha_0 + u_{j}$$
 
+$$\alpha_{j} = \alpha_0 + u_{j}$$
 $$\beta{j} = \beta_0 + v_{j}$$
 
 
+## Rcode für dieses Modell
+
+
 ```{r}
-HLM1 <- lmer(Score ~ SES + (SES | ID), data = test)
+HLM1 <- lmer(Score ~ SES + (SES | ID), data = mlexdat)
 coef(HLM1)
 summary(HLM1)
 
@@ -218,6 +170,12 @@ summary(HLM1)
 1 - (40400.24 / 87346)
 ```
 
+Auf der einen Seite stellen wir fest, dass die SES 99 Prozent der Unterschiede zwischen den Schulen erklärt; Auf der anderen Seite erklärt die SES 53 Prozent der Abweichungen innerhalb der Schulen. 
+
+Was heißt das? Schulsegregation Das heißt, wohlhabende Studenten gehören zu reichen Schulen, und arme Studenten gehören zu armen Schulen. Darüber hinaus übertreffen wohlhabende Studenten weit über die Leistung der armen Studenten.
+
+
+
 
 ## [Multilevel Model Specification](http://www.rensenieuwenhuis.nl/r-sessions-16-multilevel-model-specification-lme4/)
 
@@ -225,17 +183,6 @@ summary(HLM1)
 library(lme4)
 library(mlmRev)
 names(Exam)
-```
-
-## Nullmodell
-
-- das einfachste Multilevel Modell
-- nach dem vertikalen Strich wird die Gruppen Variable spezifiziert
-- die Default Schätzmethode ist restricted maximum likelihood (REML) 
-- Man kann aber auch maximum likelihood Schätzung spezifizieren (ML)
-
-```{r,eval=F}
-lmer(normexam ~ 1 + (1 | school), data=Exam)
 ```
 
 
@@ -255,16 +202,6 @@ lmer(normexam ~ standLRT + (1 | school), data=Exam)
 
 Das nächste Modell, das angegeben wird, ist ein Modell mit einem zufälligen Intercept auf individueller Ebene und ein Prädiktor, der zwischen Gruppen variieren darf. Mit anderen Worten, die Wirkung der Hausaufgaben auf die Partitur auf einem Mathe-Test variiert zwischen den Schulen. Um dieses Modell zu schätzen, wird das '1', das den Intercept im zufälligen Teil der Modellspezifikation angibt, durch die Variable ersetzt, von der wir den Effekt zwischen den Gruppen variieren wollen.
 
-
-## Ein anderes Datenbeispiel
-
-```{r}
-library(lme4)  # load library
-library(arm)  # convenience functions for regression in R
-lmm.data <- read.table("http://www.unt.edu/rss/class/Jon/R_SC/Module9/lmm.data.txt", header = TRUE, sep = ",", na.strings = "NA", dec = ".", strip.white = TRUE)
-# summary(lmm.data)
-head(lmm.data)
-```
 
 
 
@@ -300,6 +237,10 @@ lme(y ~ 1, random = ~ 1 | subjects, data=data)
 ```
 
 ## Links
+
+- 
+## [Ein Beispieldatensatz](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
+
 
 - [Multilevel Modeling of Educational Data using R (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
 

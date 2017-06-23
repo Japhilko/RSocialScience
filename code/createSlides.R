@@ -3,6 +3,7 @@
 slidepath <- "D:/Daten/GitHub/RSocialScience/slides"
 setwd(slidepath)
 
+chapters <- c("intro","ersteSchritte")
 
 rmarkdown::render(c("../Rmodular/index.Rmd"),
                   output_format = "slidy_presentation",
@@ -21,6 +22,14 @@ rmarkdown::render(c("../simpleGraphics/index.Rmd"),
                   output_format = "slidy_presentation",
                   output_file="simpleGraphics.html",
                   output_dir=slidepath)
+
+
+
+rmarkdown::render(c("../multilevel/index.Rmd"),
+                  output_format = "slidy_presentation",
+                  output_file="multilevel.html",
+                  output_dir=slidepath)
+
 
 
 # http://rpubs.com/Japhilko82/VarsGesisPanel

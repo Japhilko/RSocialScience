@@ -27,4 +27,4 @@ mlexdat <- data.frame(SES = c(x1, x2, x3, x4, x5),
                    Score = c(y1, y2, y3, y4, y5), ID = ID)
 
 setwd(datapath)
-save(mlexdat,file="mlexdat.RData")
+write.csv(mlexdat,file="mlexdat.csv")

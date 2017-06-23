@@ -261,3 +261,10 @@ visreg2d(fit2, "Wind", "Temp", plot.type = "persp")
 -  Gute Einführung auf [Quick-R](http://www.statmethods.net/stats/regression.html)
 
 - [Multiple Regression](https://www.r-bloggers.com/multiple-regression-part-1/)
+
+
+
+
+
+- Basis Regression - [How to go about interpreting regression cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)
+
