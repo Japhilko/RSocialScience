@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Ein Markdown Dokument mit Rstudio erzeugen
 
-![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/r2wordstart.PNG)
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/r2wordstart.PNG)
 
 
 ## Mein erstes mit R erzeugtes Word Dokument
@@ -117,17 +117,17 @@ kable(dat_chunks)
 
 ## Optionen
 
-![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RwordOptions.PNG)
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/RwordOptions.png)
 
 ## Optionen für Word Output
 
-![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/WordOutputOptions.PNG)
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/WordOutputOptions.PNG)
 
 ## Code Hervorhebung
 
 - pygments Hervorhebung
 
-![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/pygmentsSnippet.PNG)
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/pygmentsSnippet.PNG)
 
 
 - tango

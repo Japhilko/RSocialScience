@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - Beispiel Mehrebenenstruktur der Daten
 
-![](figure/Multileveldata.png)
+![](https://raw.githubusercontent.com/Japhilko/RSocialScience/master/multilevel/figure/Multileveldata.png)
 
 
 ## [Andres Gutierrez - Multilevel Modeling of Educational Data using R](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
@@ -124,6 +124,9 @@ summary(HLM0)
 ```
 
 
+## Interpratation des Nullmodells
+
+
 - 96% Variation zwischen den Schulen
 - 4% Variation innerhalb der Schulen
 
@@ -132,18 +135,19 @@ summary(HLM0)
 100 * 87346 / (87346 + 1931757)
 ```
 
+- Die Schätzung der zufälligen Effekte zeigt, dass die Variation zwischen den Schulen (Intraklassen Korrelation) fast 96 Prozent beträgt 
 
+- Während der Anteil der Variation zwischen den Studierenden nur etwas mehr als 4 Prozent ausmacht. 
 
-## 
+- Das Null-Modell behauptet also , dass Leistungsträger zu bestimmten Schulen gehen und Studierende mit geringerem Leistungsniveau nicht diese Schulen besuchen. 
 
-Die Schätzung der zufälligen Effekte zeigt, dass die Variation zwischen den Schulen (Intraklassrn Korrelation) fast 96 Prozent beträgt 
-
-Während der Anteil der Abweichung für Studenten beträgt fast 4%. Das null-Modell behauptet, dass hohe Leistungsträger zu bestimmten Schulen gehören und niedrige Leistungserbringer nicht Teil dieser spezifischen Schulen sind. Mit anderen Worten, die Schule bestimmt das Testergebnis.
+- Mit anderen Worten, die Schule bestimmt das Testergebnis.
 
 ## Ein weiteres Modell
 
-- Das vorherige bedingungslose Modell schließt keine relevanten Variablen ein, wie zB den sozioökonomischen Status (SES), der jedem Schüler zugeordnet ist. 
-- Die folgenden Ausdrücke geben ein ausgearbeitetes Modell mit zufälligen Abschnitten und zufälligen Pisten für jede der Schulen:
+- Das Null Modell schließt keine erklärenden Variablen ein. 
+- Allerdings könnte der sozioökonomischen Status (SES) der Schüler auch eine Rolle spielen. 
+- Die folgenden Ausdrücke geben ein verfeinertes Modell mit zufälligen Achsenabschnitten und zufälligen  für jede der Schulen:
 
 $$y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$$
 

@@ -20,26 +20,26 @@ knitr::opts_chunk$set(echo = FALSE)
 
 [Wikipedia Artikel zu Versionsverwaltung](https://de.wikipedia.org/wiki/Versionsverwaltung)
 
-![](figure/Versionsverwaltung.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/Versionsverwaltung.PNG)
 
 ## [Gründe für die Nutzung von Versionskontrolle](http://stackoverflow.com/questions/1408450/why-should-i-use-version-control)
 
-![](figure/ReasonsVersionControl.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ReasonsVersionControl.PNG)
 
 
 ## [GitHub](https://github.com/)
 
-![](figure/GitBuuild.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/GitBuuild.PNG)
 
 ## [GitHub Konferenz](https://githubuniverse.com/satellite/?utm_source=github&utm_medium=banner&utm_campaign=ww-satellite-20170405)
 
 London 22 und 23 Mai 2017
 
-![](figure/githubSattelite.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/githubSattelite.PNG)
 
 ## [GitLab](https://about.gitlab.com/)
 
-![](figure/GitlabPicture.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/GitlabPicture.PNG)
 
 ## [Git installieren](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 

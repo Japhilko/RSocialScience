@@ -1,5 +1,5 @@
 ---
-title: "RSocialScience"
+title: "RSocialScience Tag 1"
 author: "Jan-Philipp Kolb"
 date: "22 Juni 2017"
 output: slidy_presentation
@@ -93,24 +93,5 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ```{r child = '../multilevel/index.Rmd'}
-```
-
-
-## Allgemein zur Versionsverwaltung
-
-
-```{r child = '../Versionsverwaltung/index.Rmd'}
-```
-
-## R und Git
-
-
-```{r child = '../rgit/index.Rmd'}
-```
-
-## Word Dokumente mit R erstellen
-
-
-```{r child = '../r2wd/index.Rmd'}
 ```
 

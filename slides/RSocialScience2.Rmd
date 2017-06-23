@@ -1,0 +1,40 @@
+---
+title: "RSocialScience Tag 2"
+author: "Jan-Philipp Kolb"
+date: "23 Juni 2017"
+output: slidy_presentation
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Allgemein zur Versionsverwaltung
+
+
+```{r child = '../Versionsverwaltung/index.Rmd'}
+```
+
+## R und Git
+
+
+```{r child = '../rgit/index.Rmd'}
+```
+
+## Word Dokumente mit R erstellen
+
+
+```{r child = '../r2wd/index.Rmd'}
+```
+
+## PDF Dokumente und Präsentationen mit LaTeX, Beamer und Sweave
+
+
+```{r child = '../r2pdf/index.Rmd'}
+```
+
+## HTML Dokumente, Präsentationen und Dashboards mit Rmarkdown
+
+```{r child = '../rmarkdown/index.Rmd'}
+```

@@ -11,19 +11,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Rstudio und git - ein Projekt anlegen
 
-![](figure/NeuesProjekt.PNG)
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/NeuesProjekt.png)
 
 
 ## Ein Projekt mit Versionskontrolle
 
-![](figure/VersionControl.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/VersionControl.PNG)
 
 
 ## Auswahl Versionskontrolle
 
-![](figure/gitSVN.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/gitSVN.PNG)
 
 
 ## Ein Projekt clonen
 
-![](figure/CloneProject.PNG)
+![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/CloneProject.PNG)
