@@ -2,7 +2,7 @@
 title: "Die Pakete ggplot und ggmap"
 author: "Jan-Philipp Kolb"
 date: "20 Juni 2017"
-output: md_document
+output: pdf_document
 ---
 
 ```{r, include=FALSE}

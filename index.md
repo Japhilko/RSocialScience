@@ -3,18 +3,21 @@ Einführung
 
 -   [Einführung und
     Motivation](https://japhilko.github.io/RSocialScience/intro/)
+-   [Erste Schritte mit
+    R](https://japhilko.github.io/RSocialScience/ersteSchritte)
 -   [Wie bekommt man
-    Hilfe](https://japhilko.github.io/RSocialScience/hilfe/)
+    Hilfe?](https://japhilko.github.io/RSocialScience/hilfe/)
 -   [Modularer
     Aufbau](https://japhilko.github.io/RSocialScience/Rmodular/)
 -   [Datenimport](https://japhilko.github.io/RSocialScience/import/)
 -   [Datenaufbereitung](https://japhilko.github.io/RSocialScience/Datenaufbereitung)
 -   [Datenexport](https://japhilko.github.io/RSocialScience/export/)
 
-Liebe auf den ersten Plot – Grafiken mit R
-------------------------------------------
+Liebe auf den ersten Plot – Grafiken und Datenanalyse mit R
+-----------------------------------------------------------
 
 -   [Basisgrafiken](https://japhilko.github.io/RSocialScience/simpleGraphics/)
+-   [Datenanalyse](https://japhilko.github.io/RSocialScience/Datenanalyse)
 -   [Grafiken und
     Zusammenhang](https://japhilko.github.io/RSocialScience/multidimensional)
 -   [Das lattice

@@ -6,7 +6,7 @@ Das Paket `ggplot2`
 -   <http://ggplot2.org/>
 -   Den Graphiken liegt eine eigene Grammitik zu Grunde
 
-![](figure/GalleryGGplot2.PNG)
+![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/GalleryGGplot2.PNG)
 
 [Basiseinführung `ggplot2`](www.r-bloggers.com/basic-introduction-to-ggplot2/)
 ------------------------------------------------------------------------------

@@ -20,6 +20,24 @@ slidepath <- "D:/GESIS/Workshops/RSocialScience/slides"
 
 setwd(slidepath)
 
+
+chapters <- c("intro","ersteSchritte","hilfe","Rmodular","import","Datenaufbereitung","export","simpleGraphics","Datenanalyse","multidimensional","lattice","ggplot","linreg", "logreg", "multilevel","Versionsverwaltung","rgit","r2wd","r2pdf","rmarkdown","notebooks","DataTables","leaflet")
+
+for ( i in 1:length(chapters)){
+  rmarkdown::render(paste0("../",chapters[i],"/index.Rmd"),
+                    output_format = "slidy_presentation",
+                    output_file=paste0(chapters[i],".html"),
+                    output_dir=slidepath)
+}
+
+
+for ( i in 1:length(chapters)){
+  rmarkdown::render(paste0("../",chapters[i],"/index.Rmd"),
+                    output_format = "md_document",
+                    output_file=paste0(chapters[i],".md"))
+}
+
+
 rmarkdown::render("../intro/index.Rmd",
                   output_format = "slidy_presentation",
                   output_file="intro.html",
