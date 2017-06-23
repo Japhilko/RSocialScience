@@ -45,17 +45,6 @@ Daten[,1]
 Daten[,1:2]
 ```
 
-## Logische Operatoren
-
-```{r}
-# Ist 1 größer als 2?
-1>2
-1<2
-
-1==2
-```
-
-
 
 ## Operatoren um Subset für Datensatz zu bekommen
 
@@ -65,6 +54,13 @@ Diese Operatoren eignen sich gut um Datensätze einzuschränken
 Dauer <- as.numeric(Daten$bazq020a)
 head(Daten[Dauer>20,])
 ```
+
+```{r}
+library(tidyverse)
+filter(Daten, Dauer>20)
+```
+
+
 
 ## Datensätze einschränken
 

@@ -149,6 +149,19 @@ A1[1:3]
 A1[-4]
 ```
 
+
+## Logische Operatoren
+
+```{r}
+# Ist 1 größer als 2?
+1>2
+1<2
+
+1==2
+```
+
+
+
 ## Sequenzen
 
 ```{r}
