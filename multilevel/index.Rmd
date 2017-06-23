@@ -232,16 +232,6 @@ MLexamp.9 <- lmer(extro ~ open + agree + social + (1 + open | school/class), dat
 ```
 
 
-
-## Cross-Level-Interaktionseffekt
-
-
-## Links
-
-- [Uncertainty in parameter estimates using multilevel models](https://www.r-bloggers.com/uncertainty-in-parameter-estimates-using-multilevel-models/)
-
-- [Multilevel models with R](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
-
 ## [Paket lmer](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
 
 ```{r,eval=F}
@@ -252,8 +242,13 @@ lme(y ~ 1, random = ~ 1 | subjects, data=data)
 
 ## Links
 
-- 
-## [Ein Beispieldatensatz](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
+
+- [Uncertainty in parameter estimates using multilevel models](https://www.r-bloggers.com/uncertainty-in-parameter-estimates-using-multilevel-models/)
+
+- [Multilevel models with R](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
+
+
+- [Ein Beispieldatensatz](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
 
 
 - [Multilevel Modeling of Educational Data using R (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)

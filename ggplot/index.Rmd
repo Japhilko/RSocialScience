@@ -19,9 +19,9 @@ knitr::opts_chunk$set(echo = TRUE,warning=F,message=F,eval=T,cache=T)
 
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/GalleryGGplot2.PNG)
 
-## [Basiseinführung `ggplot2`](www.r-bloggers.com/basic-introduction-to-ggplot2/)
+## Das Paket `ggplot2` installieren und laden 
 
-<www.r-bloggers.com/basic-introduction-to-ggplot2/>
+- [Basiseinführung `ggplot2`](www.r-bloggers.com/basic-introduction-to-ggplot2/)
 
 ```{r,eval=F}
 install.packages("ggplot2")

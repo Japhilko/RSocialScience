@@ -1,0 +1,17 @@
+---
+title: "ToDo Liste"
+author: "Jan-Philipp Kolb"
+date: "23 Juni 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 
+
+- aggregate Befehl - Variable für Gruppieung verändern
+
+- Kapitel logistische Regression verbessern
+- Multilevel Kapitel abschließen
