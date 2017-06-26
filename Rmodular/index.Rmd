@@ -10,9 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## Wo sind die Routinen enthalten
-
-![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/Packages.PNG)
+## [Wo sind die Routinen enthalten](https://stats.idre.ucla.edu/r/seminars/intro/)
 
 - Viele Funktionen sind im Basis-R enthalten 
 - Viele spezifische Funktionen sind in zusätzlichen Bibliotheken integriert
@@ -29,6 +27,11 @@ info <- available.packages(contriburl = cran, type = "source")
 length(cran)
 ```
 
+## Übersicht R-Pakete
+
+![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/Packages.PNG)
+
+## Installation
 
 ```{r,eval=F}
 install.packages("lme4")

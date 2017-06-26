@@ -15,11 +15,21 @@ knitr::opts_chunk$set(echo = TRUE,eval=T)
 
 Beispieldaten einlesen:
 
-```{r}
+```{r,echo=F}
 library(foreign)
-dat <- read.dta("https://github.com/Japhilko/RSocialScience/raw/master/data/GPanel.dta")
+dat<-read.dta("https://github.com/Japhilko/RSocialScience/raw/master/data/GPanel.dta")
 typeof(dat)
 ```
+
+```{r,eval=F}
+library(foreign)
+dat<-read.dta("https://github.com/Japhilko/RSocialScience/
+              raw/master/data/GPanel.dta")
+typeof(dat)
+```
+
+
+## In Dataframe übertragen
 
 Diese beiden Vektoren zu einem data.frame verbinden:
 

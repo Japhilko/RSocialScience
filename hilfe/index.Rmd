@@ -79,7 +79,7 @@ apropos("lm")
 help.search("^glm")
 ```
 
-## Suchmaschine für die R-Seite
+## [Suchmaschine für die R-Seite](http://search.r-project.org/cgi-bin/namazu.cgi?query=glm&max=20&result=normal&sort=score&idxname=functions&idxname=vignettes&idxname=views)
 
 ```{r,eval=F}
 RSiteSearch("glm")
@@ -109,13 +109,6 @@ R-project + Was ich schon immer wissen wollte
 - Immer eine Seite mit Beispielen und Hilfe zu einem Thema
 - Beispiel: [Quick R - Getting Help](http://www.statmethods.net/interface/help.html)
 
-
-## Ein Schummelzettel - Cheatsheet
-
-<https://www.rstudio.com/resources/cheatsheets/>
-
-![](https://github.com/Japhilko/IntroR/blob/master/2017/slides/figure/cheatsheetBaseR.PNG?raw=true)
-
 ### Weitere Links
 
 - [Übersicht - Hilfe bekommen in R](https://www.r-project.org/help.html)
@@ -123,3 +116,9 @@ R-project + Was ich schon immer wissen wollte
 - [Eine Liste mit HowTo`s](http://rprogramming.net/)
 
 - [Eine Liste der wichtigsten R-Befehle](https://www.personality-project.org/r/r.commands.html)
+
+## Ein Schummelzettel - Cheatsheet
+
+<https://www.rstudio.com/resources/cheatsheets/>
+
+![](https://github.com/Japhilko/IntroR/blob/master/2017/slides/figure/cheatsheetBaseR.PNG?raw=true)

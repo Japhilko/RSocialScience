@@ -31,18 +31,6 @@ R unterstützt von Haus aus schon einige wichtige Formate:
 -  FWF (Fixed With Format): `read.fwf()`
 -  Tab-getrennte Werte: `read.delim()`
 
-
-
-```{r,echo=F,eval=F}
-setwd("D:/Daten/owncloud/Workshops/RSocialScience")
-```
-
-```{r,eval=F}
-gpanel <- read.csv2("ZA5666_d_gesis_panel_campus_file_b_2014.csv")
-head(gpanel)
-```
-
-
 ## Datenimport leicht gemacht mit Rstudio
 
 ![Import Button](https://i1.wp.com/thepracticalr.files.wordpress.com/2017/01/rstudio-old-import.png?w=456&ssl=1)
@@ -136,14 +124,6 @@ library(readr)
 -  `library(readr)` ist für den Import von fremden Datenformaten hilfreich
 -  Wenn Excel-Daten vorliegen - als .csv abspeichern
 
-```{r,eval=F}
-library(readr)
-rows <- read_csv("https://data.montgomerycountymd.gov/api/views/6rqk-pdub/rows.csv?accessType=DOWNLOAD")
-```
-
-
-## `.csv`-Daten aus dem Web importieren - zweites Beispiel
-
 ```{r}
 url <- "https://raw.githubusercontent.com/Japhilko/
 GeoData/master/2015/data/whcSites.csv"
@@ -152,12 +132,16 @@ whcSites <- read.csv(url)
 ```
 
 
+## Der Beispieldatensatz
+
 ```{r}
 head(data.frame(whcSites$name_en,whcSites$category))
 ```
 
 
 ## Das Paket `haven`
+
+> Import and Export 'SPSS', 'Stata' and 'SAS' Files
 
 ```{r,eval=F}
 install.packages("haven")
@@ -176,20 +160,13 @@ library(haven)
 - SPSS-Dateien können auch direkt aus dem Internet geladen werden:
 
 ```{r,eval=F}
-install.packages("haven")
-```
-
-
-```{r,eval=F}
 library(haven)
 mtcars <- read_sav("https://github.com/Japhilko/RInterfaces/raw/master/data/mtcars.sav")
 ```
 
 
 
-## SPSS Dateien aus dem Internet einlesen
-
-Dateien können auch direkt aus dem Internet geladen werden:
+## `foreign` kann ebenfalls zum Import genutzt werden
 
 ```{r,eval=F}
 library(foreign)
@@ -205,7 +182,6 @@ Dat <- read.spss(link,to.data.frame=T)
 library(haven)
 oecd <- read_dta("https://github.com/Japhilko/IntroR/raw/master/2017/data/oecd.dta")
 ```
-
 
 - Einführung in Import mit R ([is.R](http://is-r.tumblr.com/post/37181850668/reading-writing-stata-dta-files-with-foreign))
 
@@ -244,3 +220,13 @@ library(Rcmdr)
 ```
 
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/Rcommander.PNG)
+
+
+## Aufgabe
+
+- Gehen Sie auf meine Github Seite
+
+<https://github.com/Japhilko/RSocialScience/tree/master/data>
+
+- Importieren Sie den Datensatz `GPanel.dta`
+
