@@ -213,14 +213,12 @@ install.packages("tibble")
 ```
 
 
-
-
 ```{r}
 library(tibble)
 
 gpanel1 <- as_tibble(dat)
 
-head(gpanel1)
+gpanel1
 ```
 
 ## Schleifen
@@ -233,8 +231,10 @@ for (i in 1:ncol(dat)){
 }
 ```
 
+## [Fehlende Werte ausschließen](http://faculty.nps.edu/sebuttre/home/R/missings.html)
 
-
+- Mathe-Funktionen haben in der Regel einen Weg, um fehlende Werte in ihren Berechnungen auszuschließen.
+- `mean(), median(), colSums(), var(), sd(), min()` und `max() all take the na.rm argument.
 ## Fehlende Werte
 
 ```{r}
@@ -244,3 +244,8 @@ Daten$bazq020a[Daten$bazq020a==-99] <- NA
 - [Quick-R zu fehlenden Werten](http://www.statmethods.net/input/missingdata.html)
 
 - [Fehlende Werte rekodieren](http://uc-r.github.io/na_recode)
+
+## Weitere Links
+
+- [Tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) - das Paket `tidyr`
+
