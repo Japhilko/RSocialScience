@@ -33,6 +33,23 @@ for ( i in 1:length(chapters)){
 
 for ( i in 1:length(chapters)){
   rmarkdown::render(paste0("../",chapters[i],"/index.Rmd"),
+                    output_format = "ioslides_presentation",
+                    output_file=paste0(chapters[i],".html"),
+                    output_dir=slidepath)
+}
+
+
+for ( i in 1:length(chapters)){
+  rmarkdown::render(paste0("../",chapters[i],"/index.Rmd"),
+                    output_format = "beamer_presentation",
+                    output_file=paste0(chapters[i],".pdf"),
+                    output_dir=slidepath)
+}
+
+
+
+for ( i in 1:length(chapters)){
+  rmarkdown::render(paste0("../",chapters[i],"/index.Rmd"),
                     output_format = "md_document",
                     output_file=paste0(chapters[i],".md"))
 }
