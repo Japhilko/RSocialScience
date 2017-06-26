@@ -10,13 +10,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-
 ## R ist eine Objekt-orientierte Sprache
 
 Vektoren und Zuweisungen
 
 -  R ist eine Objekt-orientierte Sprache
--  `<-` ist der Zuweisungsoperator
+-  `<-` ist der Zuweisungsoperator (Shortcut: "Alt" + "-")
 
 ```{r}
 b <- c(1,2) # erzeugt ein Objekt mit den Zahlen 1 und 2
@@ -34,12 +33,13 @@ length(b) # b hat die Länge 2
 ```
 
 
-## Objektstruktur
+## Objektstruktur - Datentypen
 
 ```{r}
 str(b) # b ist ein numerischer Vektor
 ```
 
+- mehr zu den [möglichen Datentypen](http://www.statmethods.net/management/typeconversion.html) später
 
 ## Funktionen im base-Paket
 
@@ -167,6 +167,8 @@ A1[-4]
 ```{r}
 # Sequenz von 1 bis 10
 1:10
+# das gleiche Ergebnis
+seq(1,10)
 ```
 
 ## Weitere Sequenzen
@@ -175,13 +177,21 @@ A1[-4]
 seq(-2,8,by=1.5)
 
 a <-seq(3,12,length=12)
+a
 
 b <- seq(to=5,length=12,by=0.2)
-
-d <- 1:10
-d <- seq(1,10,1)
-d <- seq(length=10,from=1,by=1)
+b
 ```
+
+
+## Reihenfolge von Argumenten
+
+```{r}
+1:10
+seq(1,10,1)
+seq(length=10,from=1,by=1)
+```
+
 
 ## Wiederholungen
 
@@ -209,21 +219,4 @@ paste("A", 1:6, sep = "")
 paste0("A", 1:6)
 ```
 
-
-## Aufgabe - Vorbereitung
-
-- Prüfen Sie, ob eine Version von R auf Rechner installiert ist.
-- Falls dies nicht der Fall ist, laden Sie [R](r-project.org)  runter und installieren Sie R.
-- Prüfen Sie, ob Rstudio installiert ist.
-- Falls nicht - [Installieren](http://www.rstudio.com/) sie Rstudio.
-- Laden Sie die R-Skripte von meinem GitHub-Account
-- Erstellen Sie ein erstes Script und finden Sie das Datum mit dem Befehl `date()` und die R-version mit `sessionInfo()` heraus.
-
-```{r}
-date()
-```
-
-```{r}
-sessionInfo()
-```
 

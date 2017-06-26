@@ -27,3 +27,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Ein Projekt clonen
 
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/CloneProject.PNG)
+
+
+Wen Github näher interessiert:
+
+- [Hello World](https://guides.github.com/activities/hello-world/)
+
+- [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
+

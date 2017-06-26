@@ -55,13 +55,21 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Die kompletten Foliensätze kann man hier herunterladen:
 
-- [Teil 1]()
+- Teil 1 - [Von der Einführung bis Graphiken mit `lattice`](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience1.pdf)
+- Teil 2 - [Von den Paketen ggplot2 und ggmap bis zu Mehrebenenmodellen ](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience2.pdf)
+- Teil 3 - [Die Arbeitsorganisation mit Rstudio und Rmarkdown](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience3.pdf)
+- Teil 4 - [Präsentationen, Dashboards, Notebooks und Interaktivität](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience4.pdf)
 
 ## Der R-code
 
 - Den R-code kann man direkt in die R-Konsole kopieren und ausführen.
-- Begleitend zu den Folien wird meistens auch ein R-File angeboten. 
+- Begleitend zu den Folien wird meistens auch jweils ein R-File angeboten. 
+- Der R-code befindet sich in folgendem Ordner:
 
+<https://github.com/Japhilko/RSocialScience/tree/master/code>
+
+
+## Daten herunterladen
 
 - Vereinzelt sind auch Datensätze vorhanden. 
 
@@ -71,37 +79,46 @@ Die kompletten Foliensätze kann man hier herunterladen:
 
 - Alle anderen Dateien (bspw. `.RData`) auch mittels Raw Button herunterladen.
 
--  Informationen ausdrucken
 
--   Zum Ausdrucken eignen sich die pdf-Dateien besser. 
+## Ausdrucken
+
+-   Zum Ausdrucken eignen sich die pdf-Dateien am besten. 
 
 -   Diese können mit dem Raw Button heruntergeladen werden. 
 
-## Raw Button bei Github
+### Raw Button bei Github
 
 ![Raw Button zum Download](https://raw.githubusercontent.com/Japhilko/GeoData/master/2016/slides/figure/GithubDownload.bmp)
-
-
-
-Wen Github näher interessiert:
-
-- [Hello World](https://guides.github.com/activities/hello-world/)
-
-- [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
 
 ## Basis R ...
 
 - Wenn man nur R herunterlädt und installiert, sieht das so aus:
+- So habe ich bis 2012 mit R gearbeitet.
 
 ![](http://i1.wp.com/www.rensenieuwenhuis.nl/wp-content/uploads/2008/11/2-r.jpg)
-
-- So habe ich bis 2012 mit R gearbeitet.
 
 ## ... und Rstudio
 
 - Rstudio bietet Heute sehr viel Unterstützung:
+- und macht einige Themen dieses Workshops erst möglich
 
 ![](http://rprogramming.net/wp-content/uploads/2012/10/RStudio-Screenshot.png)
 
-- und macht einige Themen dieses Workshops erst möglich
+
+## Aufgabe - Vorbereitung
+
+- Prüfen Sie, ob eine Version von R auf Rechner installiert ist.
+- Falls dies nicht der Fall ist, laden Sie [R](r-project.org)  runter und installieren Sie R.
+- Prüfen Sie, ob Rstudio installiert ist.
+- Falls nicht - [Installieren](http://www.rstudio.com/) sie Rstudio.
+- Laden Sie die R-Skripte von meinem GitHub-Account
+- Erstellen Sie ein erstes Script und finden Sie das Datum mit dem Befehl `date()` und die R-version mit `sessionInfo()` heraus.
+
+```{r}
+date()
+```
+
+```{r}
+sessionInfo()
+```
 

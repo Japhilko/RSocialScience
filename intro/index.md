@@ -2,7 +2,8 @@ Pluspunkte von R
 ----------------
 
 -   Als Weg kreativ zu sein ...
--   Graphiken, Graphiken, Graphiken
+-   [Graphiken](http://www.sr.bham.ac.uk/~ajrs/R/r-gallery.html),
+    Graphiken, Graphiken
 -   In Kombination mit anderen Programmen nutzbar
 -   Zur Verbindung von Datenstrukturen
 -   Zum Automatisieren
@@ -14,21 +15,15 @@ Gründe
 
 -   R ist [frei verfügbar](https://www.r-project.org/). Es kann umsonst
     [runtergeladen](http://www.inside-r.org/why-use-r) werden.
--   R ist eine Skriptsprache
--   Gute Möglichkeiten für die
-    [Visualisierung](http://www.sr.bham.ac.uk/~ajrs/R/r-gallery.html)
--   R wird immer
-    [populärer](https://twitter.com/josiahjdavis/status/559778930476220418)
--   [Popularität von R](http://blog.revolutionanalytics.com/popularity/)
-    ist in vielen Bereichen sehr hoch.
+-   R ist eine Skriptsprache / [Popularität von
+    R](http://blog.revolutionanalytics.com/popularity/)
 
 ![](http://d287f0h5fel5hu.cloudfront.net/blog/wp-content/uploads/2013/06/bar-learn-r-img11.png)
 
-[Warum R?](http://stats.idre.ucla.edu/r/seminars/intro/)
---------------------------------------------------------
+[Modularer Aufbau](http://stats.idre.ucla.edu/r/seminars/intro/)
+----------------------------------------------------------------
 
-![Modularer
-Aufbau](http://revolution-computing.typepad.com/.a/6a010534b1db25970b01bb086253c2970d-500wi)
+![](http://revolution-computing.typepad.com/.a/6a010534b1db25970b01bb086253c2970d-500wi)
 
 [Viel genutzte Pakete](https://gallery.shinyapps.io/cran-gauge/)
 ----------------------------------------------------------------
@@ -42,14 +37,43 @@ Organisation des Kurses
     gleich mitverfolgen kann (mehr dazu gleich)
 -   Es werden viele verschiedene kleine Beispieldatensätze verwendet um
     spezifische Dinge zu zeigen
+-   Alle Funktionen in R sind mit diesen kleinen Beispielen hinterlegt
+-   An geeigneten Stellen verwende ich auch
+    größere (sozialwissenschaftliche) Datensätze
 
-Dateien herunterladen
+Dem Kurs folgen
+---------------
+
+-   <https://japhilko.github.io/RSocialScience/>
+
+![](https://raw.githubusercontent.com/Japhilko/RSocialScience/master/slides/figure/HP_RSocialscience.PNG)
+
+Komplette Foliensätze
 ---------------------
 
--   Begleitend zu den Folien wird meistens auch ein R-File angeboten.
+Die kompletten Foliensätze kann man hier herunterladen:
 
--   Hier können Sie entweder das gesamte R-File herunterladen und in R
-    ausführen oder einzelne Befehle per Copy/Paste übernehmen.
+-   Teil 1 - [Von der Einführung bis Graphiken mit
+    `lattice`](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience1.pdf)
+-   Teil 2 - [Von den Paketen ggplot2 und ggmap bis zu
+    Mehrebenenmodellen](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience2.pdf)
+-   Teil 3 - [Die Arbeitsorganisation mit Rstudio und
+    Rmarkdown](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience3.pdf)
+-   Teil 4 - [Präsentationen, Dashboards, Notebooks und
+    Interaktivität](https://github.com/Japhilko/RSocialScience/blob/master/slides/RSocialScience4.pdf)
+
+Der R-code
+----------
+
+-   Den R-code kann man direkt in die R-Konsole kopieren und ausführen.
+-   Begleitend zu den Folien wird meistens auch jweils ein
+    R-File angeboten.
+-   Der R-code befindet sich in folgendem Ordner:
+
+<https://github.com/Japhilko/RSocialScience/tree/master/code>
+
+Daten herunterladen
+-------------------
 
 -   Vereinzelt sind auch Datensätze vorhanden.
 
@@ -62,39 +86,30 @@ Dateien herunterladen
 -   Alle anderen Dateien (bspw. `.RData`) auch mittels Raw
     Button herunterladen.
 
--   Informationen ausdrucken
+Ausdrucken
+----------
 
--   Zum Ausdrucken eignen sich die pdf-Dateien besser.
+-   Zum Ausdrucken eignen sich die pdf-Dateien am besten.
 
 -   Diese können mit dem Raw Button heruntergeladen werden.
 
-Raw Button bei Github
----------------------
+### Raw Button bei Github
 
 ![Raw Button zum
 Download](https://raw.githubusercontent.com/Japhilko/GeoData/master/2016/slides/figure/GithubDownload.bmp)
-
-Wen Github näher interessiert:
-
--   [Hello World](https://guides.github.com/activities/hello-world/)
-
--   [Understanding the GitHub
-    flow](https://guides.github.com/introduction/flow/)
 
 Basis R ...
 -----------
 
 -   Wenn man nur R herunterlädt und installiert, sieht das so aus:
+-   So habe ich bis 2012 mit R gearbeitet.
 
 ![](http://i1.wp.com/www.rensenieuwenhuis.nl/wp-content/uploads/2008/11/2-r.jpg)
-
--   So habe ich bis 2012 mit R gearbeitet.
 
 ... und Rstudio
 ---------------
 
 -   Rstudio bietet Heute sehr viel Unterstützung:
+-   und macht einige Themen dieses Workshops erst möglich
 
 ![](http://rprogramming.net/wp-content/uploads/2012/10/RStudio-Screenshot.png)
-
--   und macht einige Themen dieses Workshops erst möglich
