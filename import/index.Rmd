@@ -170,7 +170,8 @@ mtcars <- read_sav("https://github.com/Japhilko/RInterfaces/raw/master/data/mtca
 
 ```{r,eval=F}
 library(foreign)
-link<- "http://www.statistik.at/web_de/static/mz_2013_sds_-_datensatz_080469.sav"
+link<- "http://www.statistik.at/web_de/static/
+mz_2013_sds_-_datensatz_080469.sav"
 
 ?read.spss
 Dat <- read.spss(link,to.data.frame=T)
@@ -180,7 +181,8 @@ Dat <- read.spss(link,to.data.frame=T)
 
 ```{r,eval=F}
 library(haven)
-oecd <- read_dta("https://github.com/Japhilko/IntroR/raw/master/2017/data/oecd.dta")
+oecd <- read_dta("https://github.com/Japhilko/IntroR/
+                 raw/master/2017/data/oecd.dta")
 ```
 
 - Einführung in Import mit R ([is.R](http://is-r.tumblr.com/post/37181850668/reading-writing-stata-dta-files-with-foreign))

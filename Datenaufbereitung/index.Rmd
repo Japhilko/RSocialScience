@@ -18,13 +18,16 @@ Beispieldaten einlesen:
 ```{r,echo=F}
 library(foreign)
 dat<-read.dta("https://github.com/Japhilko/RSocialScience/raw/master/data/GPanel.dta")
-typeof(dat)
 ```
 
 ```{r,eval=F}
 library(foreign)
 dat<-read.dta("https://github.com/Japhilko/RSocialScience/
               raw/master/data/GPanel.dta")
+```
+
+
+```{r}
 typeof(dat)
 ```
 
@@ -44,17 +47,35 @@ nrow(Daten) # Zeilen
 ncol(Daten) # Spalten
 ```
 
+## Die Daten anschauen
+
+- die ersten zeilen anschauen
+
+```{r,eval=F}
+head(Daten)
+```
+
+- Übersicht mittels Rstudio
+
+![](https://github.com/Japhilko/RSocialScience/raw/master/slides/figure/DatenAnschauen.PNG)
+
+
 ## Indizieren
 
 Indizieren eines dataframe:
 
 ```{r}
 Daten[1,1]
-Daten[2,]
-Daten[,1]
-Daten[,1:2]
 ```
 
+```{r}
+Daten[2,]
+Daten[,1]
+```
+
+```{r}
+Daten[,1:2]
+```
 
 ## Operatoren um Subset für Datensatz zu bekommen
 
@@ -64,6 +85,9 @@ Diese Operatoren eignen sich gut um Datensätze einzuschränken
 Dauer <- as.numeric(Daten$bazq020a)
 head(Daten[Dauer>20,])
 ```
+
+
+## Einschränken mit dem Paket `tidyverse`
 
 - einfacher geht es mit dem Paket `tidyverse`
 
@@ -93,13 +117,12 @@ subDat <- Daten[Dauer>20,]
 ```
 
 ```{r}
-# mehrere Bedingeungen können mit
+# mehrere Bedingungen können mit
 # & verknüpft werden:
 Daten[Dauer>18 & SEX=="Männlich",]
 ```
 
 ## Die Nutzung einer Sequenz
-
 
 ```{r}
 Daten[1:3,]
@@ -114,25 +137,35 @@ library(foreign)
 dat <- read.dta("https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
 ```
 
-```{r}
+```{r,eval=F}
+attributes(dat)
+```
+
+
+
+```{r,eval=F}
 var.labels <- attr(dat,"var.labels")
 ```
 
-## Ein Überblick
+- Genauso funktioniert es auch mit dem Paket `haven`
 
-```{r}
-nrow(dat)
-ncol(dat)
+```{r,eval=F,echo=T}
+library(haven)
+dat2 <- read_dta(
+"https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
+var.labels2 <- attr(dat,"var.labels")
 ```
 
+## Die Spaltennamen umbenennen
+
 ```{r}
-head(dat)
+colnames(dat) <-var.labels
 ```
 
 
 ## Indizieren
 
-- Das Dollarzeichen kann man nutzen um einzelne Spalten anzusprechen
+- Das Dollarzeichen kann man auch nutzen um einzelne Spalten anzusprechen
 
 ```{r}
 head(dat$a11c019a)
@@ -140,29 +173,15 @@ head(dat$a11c019a)
 dat$a11c019a[1:10]
 ```
 
-- Man kann auch Zahlen nutzen um auf die Spalten zuzugreifen
+- Wie bereits beschrieben kann man auch Zahlen nutzen um auf die Spalten zuzugreifen
 
-```{r}
-head(dat[,1])
-```
+## Auf Spalten zugreifen
 
-## Datentypen
-
-```{r}
-# as.numeric()
-```
-
-
-## [Rekodieren](https://www.r-bloggers.com/recoding-variables-in-r-pedagogic-considerations/)
-
-```{r}
-library(car)
-```
 
 ```{r,eval=F}
-?recode
+head(dat[,1])
+head(dat[,"a11c019a"]) # liefert das gleiche Ergebnis
 ```
-
 
 ## Exkurs - Labels wie verwenden
 
@@ -176,10 +195,30 @@ browseVignettes()
 
 
 
+## [Rekodieren](https://www.r-bloggers.com/recoding-variables-in-r-pedagogic-considerations/)
+
+```{r}
+library(car)
+```
+
+```{r,eval=F}
+head(dat$a11c020a)
+head(recode(dat$a11c020a,"'Eher unzufrieden'='A';else='B'"))
+```
+
+## Das Paket `tibble`
+
+```{r,eval=F}
+install.packages("tibble")
+```
+
+
+
+
 ```{r}
 library(tibble)
 
-gpanel1 <- as_tibble(Daten)
+gpanel1 <- as_tibble(dat)
 
 head(gpanel1)
 ```
