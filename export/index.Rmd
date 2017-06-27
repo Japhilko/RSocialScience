@@ -15,19 +15,6 @@ knitr::opts_chunk$set(echo = TRUE,eval=T)
 -  Genauso wie `read.X()` Funktionen stehen viele `write.X()` Funktionen zur Verfügung
 -  Das eigene Format von R sind sog. Workspaces (`.RData`)
 
-
-## Die Gesis Panel Daten
-
-```{r,echo=F,eval=F}
-setwd("D:/Daten/owncloud/Workshops/RSocialScience")
-```
-
-```{r,eval=F}
-gpanel <- read.csv2("ZA5666_d_gesis_panel_campus_file_b_2014.csv")
-head(gpanel)
-```
-
-
 ## Beispieldatensatz erzeugen
 
 ```{r}
@@ -38,7 +25,7 @@ mydata <- data.frame(A,B)
 ```
 
 
-```{r,eval=F,echo=F}
+```{r,eval=T,echo=F}
 library(knitr)
 kable(mydata)
 ```
@@ -52,6 +39,13 @@ kable(mydata)
 ```{r,eval=F}
 save(mydata, file="mydata.RData")
 ```
+
+- Der Datensatz kann dann mit `load` wieder eingelesen werden
+
+```{r,eval=F}
+load("mydata.RData")
+```
+
 
 ## Daten in `.csv` Format abspeichern
 

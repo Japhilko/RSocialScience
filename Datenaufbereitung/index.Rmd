@@ -143,7 +143,7 @@ attributes(dat)
 
 
 
-```{r,eval=F}
+```{r,eval=T}
 var.labels <- attr(dat,"var.labels")
 ```
 
@@ -158,8 +158,22 @@ var.labels2 <- attr(dat,"var.labels")
 
 ## Die Spaltennamen umbenennen
 
+- Mit `colnames` bekommt man die Spaltennamen angezeigt
+
+```{r}
+colnames(dat)
+```
+
+- So kann man die Spaltennamen umbenennen:
+
 ```{r}
 colnames(dat) <-var.labels
+```
+
+- Analog geht das für die Reihennamen
+
+```{r}
+rownames(dat)
 ```
 
 
@@ -173,9 +187,9 @@ head(dat$a11c019a)
 dat$a11c019a[1:10]
 ```
 
-- Wie bereits beschrieben kann man auch Zahlen nutzen um auf die Spalten zuzugreifen
-
 ## Auf Spalten zugreifen
+
+- Wie bereits beschrieben kann man auch Zahlen nutzen um auf die Spalten zuzugreifen
 
 
 ```{r,eval=F}
@@ -185,15 +199,15 @@ head(dat[,"a11c019a"]) # liefert das gleiche Ergebnis
 
 ## Exkurs - Labels wie verwenden
 
+> Tools for Working with Categorical Variables (Factors) 
+
 ```{r}
 library("forcats")
 ```
 
-```{r,eval=F}
-browseVignettes()
-```
-
-
+- `fct_collapse` -  um Faktorlevel zusammenzufassen
+- `fct_count` - um die Einträge in einem Faktor zu zählen
+- `fct_drop`	- Unbenutzte Levels raus nehmen
 
 ## [Rekodieren](https://www.r-bloggers.com/recoding-variables-in-r-pedagogic-considerations/)
 
@@ -201,7 +215,7 @@ browseVignettes()
 library(car)
 ```
 
-```{r,eval=F}
+```{r,eval=T}
 head(dat$a11c020a)
 head(recode(dat$a11c020a,"'Eher unzufrieden'='A';else='B'"))
 ```
@@ -215,9 +229,7 @@ install.packages("tibble")
 
 ```{r}
 library(tibble)
-
 gpanel1 <- as_tibble(dat)
-
 gpanel1
 ```
 
@@ -235,7 +247,9 @@ for (i in 1:ncol(dat)){
 
 - Mathe-Funktionen haben in der Regel einen Weg, um fehlende Werte in ihren Berechnungen auszuschließen.
 - `mean(), median(), colSums(), var(), sd(), min()` und `max() all take the na.rm argument.
-## Fehlende Werte
+
+
+## Fehlende Werte umkodieren
 
 ```{r}
 Daten$bazq020a[Daten$bazq020a==-99] <- NA
@@ -249,3 +263,6 @@ Daten$bazq020a[Daten$bazq020a==-99] <- NA
 
 - [Tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) - das Paket `tidyr`
 
+- [Die `tidyverse` Sammlung](http://tidyverse.org/)
+
+- [Data wrangling with R and RStudio](https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/)
