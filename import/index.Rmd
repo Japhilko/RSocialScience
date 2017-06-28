@@ -161,7 +161,9 @@ library(haven)
 
 ```{r,eval=F}
 library(haven)
-mtcars <- read_sav("https://github.com/Japhilko/RInterfaces/raw/master/data/mtcars.sav")
+mtcars <- read_sav(
+"https://github.com/Japhilko/RInterfaces/raw/master/
+data/mtcars.sav")
 ```
 
 

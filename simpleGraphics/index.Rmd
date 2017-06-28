@@ -151,6 +151,41 @@ barplot(tabScore,col=rgb(1,0,0))
 barplot(tabScore,col=rgb(1,0,0,.3))
 ```
 
+
+## Scatterplots
+
+- Ein einfacher two-way Scatterplot kann mit der Funktion plot() erstellt werden
+-  plot() muss mindestens ein x und ein y Beobachtungsvektor übergeben werden
+-  Um die Farbe der Plot-Symbole anzupassen gibt es die Option col (Farbe als character oder numerisch)
+-  Die Plot-Symbole selbst können mit pch (plotting character) angepasst werden (character oder numerisch)
+-  Die Achenbeschriftungen (labels) werden mit xlab und ylab definiert
+
+## Beispieldaten für Scatterplot
+
+```{r}
+x <- runif(100)
+y <- runif(100)
+```
+
+## Einfacher Scatterplot
+
+```{r}
+plot(x,y)
+```
+
+## Einfacher Scatterplot II
+
+```{r}
+plot(x,y,pch=20)
+```
+
+## Einfacher Scatterplot III
+
+```{r}
+plot(x,y,pch=20)
+```
+
+
 ## Boxplot
 
 -  Einen einfachen Boxplot erstellt man mit `boxplot()`
@@ -230,12 +265,3 @@ boxplot(count~spray,data=InsectSprays,col="blue")
 beanplot(count~spray,data=InsectSprays,col="orange")
 ```
 
-# Grafiken für bedingte, bi- und multivariate Verteilungen
-
-## Scatterplots
-
-- Ein einfacher two-way scatterplot kann mit der Funktion plot() erstellt werden
--  plot() muss mindestens ein x und ein y Beobachtungsvektor übergeben werden
--  Um die Farbe der Plot-Symbole anzupassen gibt es die Option col (Farbe als character oder numerisch)
--  Die Plot-Symbole selbst können mit pch} (plotting character) angepasst werden (character oder numerisch)
--  Die Achenbeschriftungen (labels) werden mit xlab und ylab definiert
