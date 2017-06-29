@@ -16,12 +16,25 @@ knitr::opts_chunk$set(echo = TRUE,message=F,warning = F)
 
 <http://stat.ethz.ch/R-manual/R-devel/library/lattice/html/Lattice.html>
 
+## Der Datensatz - Scores on A-level Chemistry in 1997
+
+```{r}
+library("mlmRev")
+data(Chem97)
+```
+
+```{r,echo=F}
+library(knitr)
+cats <- c("Local Education Authority","School identifier","Student identifier","Point score on A-level Chemistry in 1997","Student's gender","Age in month, centred at 222 months or 18.5 years","Average GCSE score of individual","Average GCSE score of individual, centered at mean")
+c97dat <- data.frame(variables=colnames(Chem97),categories=cats)
+kable(c97dat)
+```
+
+
 ## Histogramm mit Lattice
 
 ```{r,message=F}
 library("lattice")
-library("mlmRev")
-data(Chem97)
 histogram(~ gcsescore, data = Chem97)
 ```
 
@@ -67,8 +80,9 @@ barchart(yield ~ variety | site, data = barley,
 ## Densityplot
 
 ```{r}
-densityplot( ~ height | voice.part, data = singer, layout = c(2, 4),  
-            xlab = "Height (inches)", bw = 5)
+densityplot( ~ height | voice.part, data = singer, 
+             layout = c(2, 4),xlab = "Height (inches)", 
+             bw = 5)
 ```
 
 ## Bivariate Plots

@@ -12,11 +12,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Die Daten laden
 
-```{r}
+```{r,eval=F}
+library(foreign)
+dat <- read.dta("https://github.com/Japhilko/RSocialScience/
+                blob/master/data/GPanel.dta?raw=true")
+```
+
+```{r,echo=F}
 library(foreign)
 dat <- read.dta("https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
 ```
-
 
 ## Eine Kreuztabelle erstellen
 
@@ -65,6 +70,14 @@ sepal length and width - Kelchblatt Länge und Breite
 
 - [Wikipedia Artikel zum IRIS Datensatz](https://en.wikipedia.org/wiki/Iris_flower_data_set)
 
+## Die Variable Species
+
+```{r}
+table(iris$Species)
+```
+
+
+
 ## Zusammenhang zwischen stetigen Variablen
 
 ```{r}
@@ -85,7 +98,7 @@ pairs(iris[,1:4])
 
 ```{r}
 library("psych")
-pairs.panels(iris[1:4],bg=c("red","yellow","blue")
+pairs.panels(iris[,1:4],bg=c("red","yellow","blue")
 [iris$Species],pch=21,main="")
 ```
 
@@ -107,20 +120,49 @@ cor(iris[,1:4], method = "kendall")
 cor(iris[,1:4], method = "spearman") 
 ```
 
-## Zusammenhang zwischen kategorialen Variablen
+## Der `BankWages` Datensatz
 
-- `chisq.test()` testet, ob zwei kategoriale Merkmale stochastisch unabhängig sind.
-- Getestet wird gegen die Nullhypothese der Gleichverteilung
-
-
-## Levelplot
+> Wages of employees of a US bank
 
 ```{r,message=F}
 library("lattice")
 library("AER")
 data(BankWages)
+```
+
+```{r,echo=F}
+library(knitr)
+cat <- c("job category, with levels 'custodial', 'admin' and 'manage'","Education in years","Factor indicating gender","Factor. Is the employee member of a minority?")
+bwdat <- data.frame(variables=colnames(BankWages),categories=cat)
+kable(bwdat)
+```
+
+
+
+## Levelplot
+
+```{r}
 levelplot(table(BankWages$education,BankWages$job))
 ```
+
+## [Levelplot mit anderen Farben](http://r.789695.n4.nabble.com/adjusting-levelplot-color-scale-to-data-td3997342.html)
+
+```{r}
+levelplot(table(BankWages$education,BankWages$job),
+          col.regions=colorRampPalette(c("blue","red","white")))
+```
+
+
+
+## Zusammenhang zwischen kategorialen Variablen
+
+- `chisq.test()` testet, ob zwei kategoriale Merkmale stochastisch unabhängig sind.
+- Getestet wird gegen die Nullhypothese der Gleichverteilung
+
+```{r}
+chisq.test(BankWages$education,BankWages$job)
+```
+
 
 ## Visualisierung von Zusammenhängen zwischen kategorialen Variablen
 
