@@ -9,6 +9,14 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Den Datensatz laden
+
+```{r}
+library(foreign)
+dat <- read.dta(
+"https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
+dat$bazq020a <- as.numeric(dat$bazq020a)
+```
 
 
 ## Streuungsmaße
@@ -21,18 +29,18 @@ In Basis R sind die wichtigsten Streuungsmaße enthalten:
 -  Range: `range()`
 
 ```{r}
-ab <- rnorm(100)
-var(ab)
-sd(ab)
-range(ab)
+var(dat$bazq020a)
+var(dat$bazq020a,na.rm=T)
+sd(dat$bazq020a,na.rm=T)
+range(dat$bazq020a,na.rm=T)
 ```
 
 ## Extremwerte
 
 ```{r}
-min(ab)
+min(dat$bazq020a)
 
-max(ab)
+max(dat$bazq020a)
 ```
 
 
@@ -41,6 +49,7 @@ max(ab)
 - Sind `NA`s vorhanden muss dies der Funktion mitgeteilt werden
 
 ```{r}
+ab <- 1:10
 ab[10] <- NA
 var(ab)
 ```
@@ -57,44 +66,25 @@ var(ab,na.rm=T)
 -  Mit `table()` sind auch Kreuztabellierungen möglich indem zwei Variablen durch Komma getrennt werden: `table(x,y)` liefert Häufigkeiten von `y` für gegebene Ausprägungen von `x`
 
 ```{r}
-x <- sample(1:10,100,replace=T)
-table(x)
+table(dat$a11d054a)
 ```
 
 ## Tabellieren - weiteres Beispiel
-
-```{r}
-musician <- sample(c("yes","no"),100,replace=T)
-```
 
 ```{r,eval=F}
 ?table
 ```
 
 ```{r}
-table(x)
-table(x,musician)
+table(dat$a11d054a)
+table(dat$a11d054a,dat$a11d056z)
 ```
-
-## Eine weitere Tabelle
-
-```{r}
-data(esoph)
-table(esoph$agegp)
-```
-
 
 
 ## Häufigkeitstabellen
 
 - `prop.table()` liefert die relativen Häufigkeiten
 - Wird die Funktion  außerhalb einer `table()` Funktion geschrieben erhält man die relativen Häufigkeiten bezogen auf alle Zellen
-
-Die Funktion ``prop.table()`
-
-```{r,eval=T}
-table(esoph$agegp,esoph$alcgp)
-```
 
 ## Die Funktion `prop.table`
 
@@ -103,7 +93,7 @@ table(esoph$agegp,esoph$alcgp)
 ```
 
 ```{r}
-prop.table(table(esoph$agegp,esoph$alcgp),1)
+prop.table(table(dat$a11d054a,dat$a11d056z),1)
 ```
 
 
@@ -113,7 +103,7 @@ prop.table(table(esoph$agegp,esoph$alcgp),1)
 - `aggregate(x,by,FUN)` müssen mindestens drei Argumente übergeben werden:
 
 ```{r}
-aggregate(state.x77,by=list(state.region),mean)
+aggregate(dat$bazq020a,by=list(dat$a11d054a),mean,na.rm=T)
 ```
 
 			
@@ -157,27 +147,18 @@ apply(ApplyDat,1,length)
 
 ## Die Funktion tapply
 
-```{r}
-ApplyDat <- data.frame(Income=rnorm(5,1400,200),
-                       Sex=sample(c(1,2),5,replace=T))
-```
-
 
 - Auch andere Funktionen können eingesetzt werden.... - Auch selbst programmierte Funktionen
 - Im Beispiel wird die einfachste eigene Funktion angewendet.
-
-```{r}
-ApplyDat
-```
 
 ## Beispiel Funktion tapply
 
 
 ```{r}
-tapply(ApplyDat$Income,ApplyDat$Sex,mean)
+tapply(dat$a11d054a,dat$a11d056z,mean)
 
-tapply(ApplyDat$Income,
-       ApplyDat$Sex,function(x)x)
+tapply(dat$a11d054a,
+       dat$a11d056z,function(x)x)
 ```
 
 ## Links Datenanalyse
