@@ -2,7 +2,12 @@
 title: "R für die Sozialwissenschaften - Teil 2"
 author: "Jan-Philipp Kolb"
 date: "23 Juni 2017"
-output: slidy_presentation
+output: 
+  beamer_presentation:
+    colortheme: beaver
+    highlight: pygments
+    theme: CambridgeUS
+    fig_caption: false
 ---
 
 ```{r setup, include=FALSE}
@@ -27,10 +32,3 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r child = '../logreg/index.Rmd'}
 ```
-
-## Mehrebenenmodelle
-
-
-```{r child = '../multilevel/index.Rmd'}
-```
-

@@ -3,9 +3,9 @@ Wie sehen die Daten aus?
 
 -   Beispiel Mehrebenenstruktur der Daten
 
-![](figure/Multileveldata.png)
+![](https://raw.githubusercontent.com/Japhilko/RSocialScience/master/multilevel/figure/Multileveldata.png)
 
-[Andrés Gutiérrez - Multilevel Modeling of Educational Data using R](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
+[Andres Gutierrez - Multilevel Modeling of Educational Data using R](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -   Lineare Modelle erkennen den Cluster-Effekt aufgrund der
@@ -13,16 +13,20 @@ Wie sehen die Daten aus?
 
 ![](https://i0.wp.com/lh3.googleusercontent.com/-Fap5-jEG14g/V_2jQPgy8zI/AAAAAAAAAWk/cOwXtlj6TYk/Screen%252520Shot%2525202016-10-11%252520at%2525209.42.37%252520PM.png?w=450&ssl=1)
 
+-   [Original
+    Blog](http://hagutierrezro.blogspot.de/2016/10/multilevel-modeling-of-educational-data.html)
+
 Beispiel Mehrebenenmodelle
 --------------------------
 
 Untersuchungsgegenstand
 
 -   Es sollen die Kenntnisse (Fähigkeiten) von Grundschülern in
-    Mathematik gemessen werden. Dazu werden in einem Schulbezirk
-    zunächst Schulen ausgewählt und anschließend Klassen. Innerhalb der
-    Klassen soll schließlich jeweils eine Stichprobe gezogen und diese
-    getestet werden.
+    Mathematik gemessen werden.
+-   Dazu werden in einem Schulbezirk zunächst Schulen ausgewählt und
+    anschließend Klassen.
+-   Innerhalb der Klassen soll schließlich jeweils eine Stichprobe
+    gezogen und diese getestet werden.
 
 -   Geht man zunächst von einer zufälligen Auswahl von Klassen aus, dann
     ist die Level-1-Variation durch die Schüler und die
@@ -56,6 +60,9 @@ Unterscheidung
 Bibliotheken
 ------------
 
+    install.packages("lme4")
+    install.packages("sjPlot")
+
     library(ggplot2)
     library(gridExtra)
     library(lme4)
@@ -63,9 +70,6 @@ Bibliotheken
     ## Loading required package: Matrix
 
     library(sjPlot)
-
-    ## Warning: package 'sjPlot' was built under R version 3.3.3
-
     library(dplyr)
 
     ## 
@@ -83,111 +87,92 @@ Bibliotheken
     ## 
     ##     intersect, setdiff, setequal, union
 
-Beispieldaten erzeugen
-----------------------
+Beispieldaten
+-------------
 
-    set.seed(123)
-    N <- 100 #Number of students per school
-    sigma <- 200
+    mlexdat <- read.csv("https://github.com/Japhilko/RSocialScience/raw/master/data/mlexdat.csv") 
 
-    x1 <- runif(N, 10, 40)
-    x2 <- runif(N, 25, 55)
-    x3 <- runif(N, 40, 70)
-    x4 <- runif(N, 55, 85)
-    x5 <- runif(N, 70, 100)
-
-    y1 <- 20 + 0 * x1 + rnorm(N, 0, sigma)
-    y2 <- 40 + 10 * x2 + rnorm(N, 0, sigma)
-    y3 <- 60 + 20 * x3 + rnorm(N, 0, sigma)
-    y4 <- 80 + 30 * x4 + rnorm(N, 0, sigma)
-    y5 <- 100 + 40 * x5 + rnorm(N, 0, sigma)
-
-    ID <- rep(LETTERS[1:5], each = N)
-
-    test <- data.frame(SES = c(x1, x2, x3, x4, x5), 
-     Score = c(y1, y2, y3, y4, y5), ID = ID)
+<table>
+<thead>
+<tr class="header">
+<th align="right">X</th>
+<th align="right">SES</th>
+<th align="right">Score</th>
+<th align="left">ID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">18.62733</td>
+<td align="right">-55.120574</td>
+<td align="left">A</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">33.64915</td>
+<td align="right">-92.375273</td>
+<td align="left">A</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">22.26931</td>
+<td align="right">-48.783447</td>
+<td align="left">A</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">36.49052</td>
+<td align="right">38.099329</td>
+<td align="left">A</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">38.21402</td>
+<td align="right">339.701754</td>
+<td align="left">A</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">11.36669</td>
+<td align="right">2.286978</td>
+<td align="left">A</td>
+</tr>
+</tbody>
+</table>
 
 Formalistisch
 -------------
 
+-   Bei der Analyse von Daten mit diesen hierarchischen Strukturen,
+    sollte man immer zunächst ein Null-Modell anpassen
+-   Somit kann man die Variation erfassen, die auf die Schulen
+    zurückzuführen ist:
+
+-   Das passende Modell sieht folgendermaßen aus:
+
 $$ y\_{ij} = *{j} + *{ij}
 
-\_{j} = *0 + u*{j} $$
+\_{j} = *0 + u*{j} $$ Die Gesamtvariation wird in zwei Teile zerlegt:
 
-Mehrebenen Modell - Beispiel 1
-------------------------------
+-   Variation zwischen Schülern (innerhalb der Schulen) und
+-   zwischen den Schulen (zwischen den Schulen).
 
--   100 Datenpunkte
+Der R-code für dieses Nullmodell
+--------------------------------
 
--   4 Gruppen
-
-![](figure/Data2bw.png)
-
-Mehrebenen Modell - Beispiel 1
-------------------------------
-
-![](figure/Data1.png)
-
-Basis Regression
-----------------
-
--   [How to go about interpreting regression
-    cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)
-
-Cross-Level-Interaktionseffekt
-------------------------------
-
-[Ein Beispieldatensatz](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
-----------------------------------------------------------------------------------------------------------------------
-
-    install.packages("lme4")
-
-    # Or to install the dev version
-    library(devtools)
-    install_github("lme4", user = "lme4")
-
-[Multilevel Modeling of Educational Data using R (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
-----------------------------------------------------------------------------------------------------------------------------------------------
-
--   [Original
-    Blog](http://hagutierrezro.blogspot.de/2016/10/multilevel-modeling-of-educational-data.html)
+-   das einfachste Multilevel Modell
+-   nach dem vertikalen Strich wird die Gruppen Variable spezifiziert
+-   die Default Schätzmethode ist restricted maximum likelihood (REML)
+-   Man kann aber auch maximum likelihood Schätzung spezifizieren (ML)
 
 <!-- -->
 
-    install.packages("lme4")
-    install.packages("sjPlot")
+    HLM0 <- lmer(Score ~ (1 | ID), data = mlexdat)
 
-    library(ggplot2)
-    library(gridExtra)
-    library(lme4)
-    library(sjPlot)
-    library(dplyr)
+Nullmodell Ergebnis
+-------------------
 
-    set.seed(123)
-
-Anzahl der Schüler pro Schule
-
-    N <- 100 
-    sigma <- 200
-
-    x1 <- runif(N, 10, 40)
-    x2 <- runif(N, 25, 55)
-    x3 <- runif(N, 40, 70)
-    x4 <- runif(N, 55, 85)
-    x5 <- runif(N, 70, 100)
-
-    y1 <- 20 + 0 * x1 + rnorm(N, 0, sigma)
-    y2 <- 40 + 10 * x2 + rnorm(N, 0, sigma)
-    y3 <- 60 + 20 * x3 + rnorm(N, 0, sigma)
-    y4 <- 80 + 30 * x4 + rnorm(N, 0, sigma)
-    y5 <- 100 + 40 * x5 + rnorm(N, 0, sigma)
-
-    ID <- rep(LETTERS[1:5], each = N)
-
-    test <- data.frame(SES = c(x1, x2, x3, x4, x5), 
-     Score = c(y1, y2, y3, y4, y5), ID = ID)
-
-    HLM0 <- lmer(Score ~ (1 | ID), data = test)
     coef(HLM0)
 
     ## $ID
@@ -205,7 +190,7 @@ Anzahl der Schüler pro Schule
 
     ## Linear mixed model fit by REML ['lmerMod']
     ## Formula: Score ~ (1 | ID)
-    ##    Data: test
+    ##    Data: mlexdat
     ## 
     ## REML criterion at convergence: 7130.6
     ## 
@@ -215,7 +200,7 @@ Anzahl der Schüler pro Schule
     ## 
     ## Random effects:
     ##  Groups   Name        Variance Std.Dev.
-    ##  ID       (Intercept) 1931757  1389.9  
+    ##  ID       (Intercept) 1931758  1389.9  
     ##  Residual               87346   295.5  
     ## Number of obs: 500, groups:  ID, 5
     ## 
@@ -223,8 +208,11 @@ Anzahl der Schüler pro Schule
     ##             Estimate Std. Error t value
     ## (Intercept)   1458.6      621.7   2.346
 
--   96% - Between-schools variance
--   4% - Within-schools variance
+Interpratation des Nullmodells
+------------------------------
+
+-   96 Prozent Variation zwischen den Schulen
+-   4 Prozent Variation innerhalb der Schulen
 
 <!-- -->
 
@@ -232,16 +220,46 @@ Anzahl der Schüler pro Schule
 
     ## [1] 4.32598
 
-    HLM1 <- lmer(Score ~ SES + (SES | ID), data = test)
+-   Die Schätzung der zufälligen Effekte zeigt, dass die Variation
+    zwischen den Schulen (Intraklassen Korrelation) fast 96 Prozent
+    beträgt
+
+-   Während der Anteil der Variation zwischen den Studierenden nur etwas
+    mehr als 4 Prozent ausmacht.
+
+-   Das Null-Modell behauptet also , dass Leistungsträger zu bestimmten
+    Schulen gehen und Studierende mit geringerem Leistungsniveau nicht
+    diese Schulen besuchen.
+
+-   Mit anderen Worten, die Schule bestimmt das Testergebnis.
+
+Ein weiteres Modell
+-------------------
+
+-   Das Null Modell schließt keine erklärenden Variablen ein.
+-   Allerdings könnte der sozioökonomischen Status (SES) der Schüler
+    auch eine Rolle spielen.
+-   Die folgenden Ausdrücke geben ein verfeinertes Modell mit zufälligen
+    Achsenabschnitten und Steigung für jede der Schulen:
+
+*y*<sub>*i**j*</sub> = *α*<sub>*j*</sub> + *β*<sub>*j*</sub> \* *S**E**S*<sub>*i**j*</sub> + *ε*<sub>*i**j*</sub>
+
+*α*<sub>*j*</sub> = *α*<sub>0</sub> + *u*<sub>*j*</sub>
+*β**j* = *β*<sub>0</sub> + *v*<sub>*j*</sub>
+
+Rcode für dieses Modell
+-----------------------
+
+    HLM1 <- lmer(Score ~ SES + (SES | ID), data = mlexdat)
     coef(HLM1)
 
     ## $ID
     ##   (Intercept)        SES
-    ## A    36.46403  0.3798176
-    ## B    37.21548  9.7596238
-    ## C    38.10716 20.8897251
-    ## D    38.85560 30.2320140
-    ## E    39.70150 40.7907396
+    ## A    36.46401  0.3798185
+    ## B    37.21549  9.7596237
+    ## C    38.10719 20.8897245
+    ## D    38.85566 30.2320132
+    ## E    39.70159 40.7907386
     ## 
     ## attr(,"class")
     ## [1] "coef.mer"
@@ -250,7 +268,7 @@ Anzahl der Schüler pro Schule
 
     ## Linear mixed model fit by REML ['lmerMod']
     ## Formula: Score ~ SES + (SES | ID)
-    ##    Data: test
+    ##    Data: mlexdat
     ## 
     ## REML criterion at convergence: 6742.1
     ## 
@@ -290,14 +308,67 @@ Anzahl der Schüler pro Schule
 
     ## [1] 0.5374689
 
-Links
------
+Auf der einen Seite stellen wir fest, dass die SES 99 Prozent der
+Unterschiede zwischen den Schulen erklärt; Auf der anderen Seite erklärt
+die SES 53 Prozent der Abweichungen innerhalb der Schulen.
 
--   [Uncertainty in parameter estimates using multilevel
-    models](https://www.r-bloggers.com/uncertainty-in-parameter-estimates-using-multilevel-models/)
+Was heißt das? Schulsegregation
 
-[Multilevel models with R](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
-----------------------------------------------------------------------------------------
+Das heißt, wohlhabende Studenten gehören zu reichen Schulen, und arme
+Studenten gehören zu armen Schulen.
+
+Darüber hinaus übertreffen wohlhabende Studenten weit über die Leistung
+der armen Studenten.
+
+[Multilevel Model Specification](http://www.rensenieuwenhuis.nl/r-sessions-16-multilevel-model-specification-lme4/)
+-------------------------------------------------------------------------------------------------------------------
+
+    library(lme4)
+    library(mlmRev)
+    names(Exam)
+
+    ##  [1] "school"   "normexam" "schgend"  "schavg"   "vr"       "intake"  
+    ##  [7] "standLRT" "sex"      "type"     "student"
+
+random intercept, fixed predictor in individual level
+-----------------------------------------------------
+
+-   Für das nächste Modell fügen wir dem einzelnen Level einen
+    Prädiktor hinzu.
+-   Wir tun dies, indem wir die '1' im Nullmodell durch den Prädiktor
+    (hier: standLRT) ersetzen.
+-   Es wird immer ein Intercept angenommen, also wird es noch
+    hier geschätzt.
+-   Es muss nur angegeben werden, wenn keine anderen Prädiktoren
+    angegeben sind.
+-   Da wir nicht wollen, dass der Effekt des Prädiktors zwischen den
+    Gruppen variiert, bleibt die Spezifikation des zufälligen Teils des
+    Modells mit dem vorherigen Modell identisch.
+
+<!-- -->
+
+    lmer(normexam ~ standLRT + (1 | school), data=Exam)
+
+random intercept, random slope
+------------------------------
+
+Das nächste Modell, das angegeben wird, ist ein Modell mit einem
+zufälligen Intercept auf individueller Ebene und ein Prädiktor, der
+zwischen Gruppen variieren darf. Mit anderen Worten, die Wirkung der
+Hausaufgaben auf die Partitur auf einem Mathe-Test variiert zwischen den
+Schulen. Um dieses Modell zu schätzen, wird das '1', das den Intercept
+im zufälligen Teil der Modellspezifikation angibt, durch die Variable
+ersetzt, von der wir den Effekt zwischen den Gruppen variieren wollen.
+
+[Varying intercept model](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
+------------------------------------------------------------------------------------------------------------------------
+
+    MLexamp.6 <- lmer(extro ~ open + agree + social + (1 | school), data = lmm.data)
+
+Varying slope model
+-------------------
+
+    MLexamp.9 <- lmer(extro ~ open + agree + social + (1 + open | school/class), data = lmm.data)
 
 [Paket lmer](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
 --------------------------------------------------------------------------
@@ -309,5 +380,20 @@ Links
 Links
 -----
 
+-   [Uncertainty in parameter estimates using multilevel
+    models](https://www.r-bloggers.com/uncertainty-in-parameter-estimates-using-multilevel-models/)
+
+-   [Multilevel models with
+    R](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
+
+-   [Ein
+    Beispieldatensatz](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
+
 -   [Multilevel Modeling of Educational Data using R
     (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
+
+-   [Vignette für
+    lme4](https://cran.r-project.org/web/packages/lme4/vignettes/lmer.pdf)
+
+-   [Mixed model
+    guide](http://ase.tufts.edu/gsc/gradresources/guidetomixedmodelsinr/mixed%20model%20guide.html)

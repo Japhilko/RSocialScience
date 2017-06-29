@@ -8,10 +8,13 @@ Das Paket `ggplot2`
 
 ![](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/GalleryGGplot2.PNG)
 
-[Basiseinführung `ggplot2`](www.r-bloggers.com/basic-introduction-to-ggplot2/)
-------------------------------------------------------------------------------
+Das Paket `ggplot2` installieren und laden
+------------------------------------------
 
-&lt;www.r-bloggers.com/basic-introduction-to-ggplot2/&gt;
+-   [Basiseinführung
+    `ggplot2`](www.r-bloggers.com/basic-introduction-to-ggplot2/)
+
+<!-- -->
 
     install.packages("ggplot2")
 
@@ -241,8 +244,8 @@ Basics](http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html)
 -   [Plugin
     ggplot2](https://www.r-bloggers.com/rcmdrplugin-kmggplot2_0-2-4-is-on-cran/)
 
-Gliederung
-----------
+Verschiedene Kartentypen
+------------------------
 
 Arten von räumlichen Daten:
 

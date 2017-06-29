@@ -80,9 +80,8 @@ barchart(yield ~ variety | site, data = barley,
 ## Densityplot
 
 ```{r}
-densityplot( ~ height | voice.part, data = singer, 
-             layout = c(2, 4),xlab = "Height (inches)", 
-             bw = 5)
+densityplot(~height|voice.part,data=singer,layout = c(2,4),
+            xlab = "Height (inches)",bw = 5)
 ```
 
 ## Bivariate Plots

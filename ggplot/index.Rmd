@@ -7,6 +7,7 @@ output: md_document
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,warning=F,message=F,eval=T,cache=T)
+internet=F
 ```
 
 
@@ -171,7 +172,7 @@ library(knitr)
 
 
 
-## Gliederung
+## Verschiedene Kartentypen
 
 Arten von räumlichen Daten: 
 
@@ -214,17 +215,17 @@ library(ggmap)
 
 Und schon kann die erste Karte erstellt werden:
 
-```{r,message=F,eval=T }
+```{r,message=F,eval=internet }
 qmap("Mannheim")
 ```
 
-```{r,echo=F,message=F,warning=F,cache=T}
+```{r,echo=F,message=F,warning=F,cache=T,eval=internet}
 MA_map <- qmap("Mannheim")
 ```
 
 ## Karte für eine Sehenswürdigkeit
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 BBT <- qmap("Berlin Brandenburger Tor")
 BBT
 ```
@@ -232,7 +233,7 @@ BBT
 
 ## Karte für einen ganzen Staat
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 qmap("Germany")
 ```
 
@@ -244,7 +245,7 @@ qmap("Germany")
 - level 10 - Stadt
 - level 21 - Gebäude
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 qmap("Germany", zoom = 6)
 ```
 
@@ -279,7 +280,7 @@ Ausschnitt aus der Hilfe Seite zum Befehl `qmap`:
 
 Das Beispiel kann man direkt in die Konsole kopieren:
 
-```{r,eval=F}
+```{r,eval=F,eval=internet}
 # qmap("baylor university")
 qmap("baylor university", zoom = 14)
 # und so weiter
@@ -287,40 +288,40 @@ qmap("baylor university", zoom = 14)
 
 ## Ein anderes *zoom level*
 
-```{r,message=F }
+```{r,message=F,eval=internet }
 qmap("Mannheim", zoom = 12)
 ```
 
 ## Näher rankommen
 
-```{r,message=F }
+```{r,message=F,eval=internet }
 qmap('Mannheim', zoom = 13)
 ```
 
 
 ## Ganz nah dran
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 qmap('Mannheim', zoom = 20)
 ```
 
 
 ## ggmap - maptype satellite
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 qmap('Mannheim', zoom = 14, maptype="satellite")
 ```
 
 ## ggmap - maptype satellite zoom 20
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 qmap('Mannheim', zoom = 20, maptype="hybrid")
 ```
 
 
 ## ggmap - maptype hybrid
 
-```{r,message=F }
+```{r,message=F,eval=internet}
 qmap("Mannheim", zoom = 14, maptype="hybrid")
 ```
 
@@ -333,7 +334,7 @@ qmap("Mannheim", zoom = 14, maptype="hybrid")
 
 ## ggmap - terrain map
 
-```{r,message=F,cache=T}
+```{r,message=F,cache=T,eval=internet}
 qmap('Schriesheim', zoom = 14,maptype="terrain")
 ```
 
@@ -351,14 +352,14 @@ qmap('Schriesheim', zoom = 14,maptype="terrain")
 
 ## ggmap - maptype watercolor
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 qmap('Mannheim', zoom = 14,maptype="watercolor",source="stamen")
 ```
 
 
 ## ggmap - source stamen
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 qmap('Mannheim', zoom = 14,
  maptype="toner",source="stamen")
 ```
@@ -366,14 +367,14 @@ qmap('Mannheim', zoom = 14,
 
 ## ggmap - maptype toner-lite
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 qmap('Mannheim', zoom = 14,
  maptype="toner-lite",source="stamen")
 ```
 
 ## ggmap - maptype toner-hybrid
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 qmap('Mannheim', zoom = 14,
  maptype="toner-hybrid",source="stamen")
 ```
@@ -381,7 +382,7 @@ qmap('Mannheim', zoom = 14,
 
 ## ggmap - maptype terrain-lines
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 qmap('Mannheim', zoom = 14,
  maptype="terrain-lines",source="stamen")
 ```
@@ -397,7 +398,7 @@ qmap('Mannheim', zoom = 14,
 - `<-` ist der Zuweisungspfeil um ein Objekt zu erzeugen
 - Dieses Vorgehen macht bspw. Sinn, wenn mehrere Karten nebeneinander gebraucht werden.
 
-```{r,warning=F,message=F}
+```{r,warning=F,message=F,eval=internet}
 MA_map <- qmap('Mannheim', 
                zoom = 14,
                maptype="toner",
@@ -416,7 +417,7 @@ library(ggmap)
 geocode("Mannheim",source="google")
 ```
 
-```{r,echo=F,message=F,warning=F}
+```{r,echo=F,message=F,warning=F,eval=internet}
 MAgc <- geocode("Mannheim B2,5",source="google")
 kable(MAgc)
 ```
@@ -430,7 +431,7 @@ kable(MAgc)
 
 ## Koordinaten verschiedener Orte in Deutschland
 
-```{r,echo=F,message=F}
+```{r,echo=F,message=F,eval=internet}
 cities <- c("Hamburg","Koeln","Dresden","Muenchen")
 lon <- vector()
 lat <- vector()
@@ -451,7 +452,7 @@ kable(Dat)
 
 Quelle: [Wikipedia](https://en.wikipedia.org/wiki/Reverse_geocoding)
 
-```{r,cache=T,message=F}
+```{r,cache=T,message=F,eval=internet}
 revgeocode(c(48,8))
 ```
 
@@ -459,25 +460,25 @@ revgeocode(c(48,8))
 
 ## Die Distanz zwischen zwei Punkten
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 mapdist("Q1, 4 Mannheim","B2, 1 Mannheim")
 ```
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 mapdist("Q1, 4 Mannheim","B2, 1 Mannheim",mode="walking")
 ```
 
 
 ## Eine andere Distanz bekommen
 
-```{r,message=F}
+```{r,message=F,eval=internet}
 mapdist("Q1, 4 Mannheim","B2, 1 Mannheim",mode="bicycling")
 ```
 
 
 ## Geokodierung - verschiedene Punkte von Interesse
 
-```{r,message=F,warning=F}
+```{r,message=F,warning=F,eval=internet}
 POI1 <- geocode("B2, 1 Mannheim",source="google")
 POI2 <- geocode("Hbf Mannheim",source="google")
 POI3 <- geocode("Mannheim, Friedrichsplatz",source="google")
@@ -488,7 +489,7 @@ POI1;POI2;POI3
 
 ## Punkte in der Karte
 
-```{r,message=F,warning=F }
+```{r,message=F,warning=F,eval=internet }
 MA_map +
 geom_point(aes(x = lon, y = lat),
 data = ListPOI)
@@ -496,7 +497,7 @@ data = ListPOI)
 
 ## Punkte in der Karte
 
-```{r,message=F,warning=F }
+```{r,message=F,warning=F,eval=internet }
 MA_map +
 geom_point(aes(x = lon, y = lat),col="red",
 data = ListPOI)
@@ -505,7 +506,7 @@ data = ListPOI)
 
 ## ggmap - verschiedene Farben
 
-```{r }
+```{r,eval=internet }
 ListPOI$color <- c("A","B","C")
 MA_map +
 geom_point(aes(x = lon, y = lat,col=color),
@@ -514,7 +515,7 @@ data = ListPOI)
 
 ## ggmap - größere Punkte
 
-```{r }
+```{r,eval=internet }
 ListPOI$size <- c(10,20,30)
 MA_map +
 geom_point(aes(x = lon, y = lat,col=color,size=size),
@@ -524,7 +525,7 @@ data = ListPOI)
 
 ## Eine Route von Google maps bekommen
 
-```{r,message=F,warning=F,cache=T}
+```{r,message=F,warning=F,cache=T,eval=internet}
 from <- "Mannheim Hbf"
 to <- "Mannheim B2 , 1"
 route_df <- route(from, to, structure = "route")
@@ -536,7 +537,7 @@ route_df <- route(from, to, structure = "route")
 
 ## Eine Karte mit dieser Information zeichnen
 
-```{r,message=F,warning=F,cache=T}
+```{r,message=F,warning=F,cache=T,eval=internet}
 qmap("Mannheim Hbf", zoom = 14) +
   geom_path(
     aes(x = lon, y = lat),  colour = "red", size = 1.5,
