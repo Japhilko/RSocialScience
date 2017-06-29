@@ -85,21 +85,184 @@ kable(head(mlexdat))
 
 
 
-## Formalistisch
+## [Formalistisch](http://kesdev.com/you-got-latex-in-my-markdown/)
 
 - Bei der Analyse von Daten mit diesen hierarchischen Strukturen, sollte man immer zunächst ein Null-Modell anpassen
 - Somit kann man die Variation erfassen, die auf die Schulen zurückzuführen ist:
 
 - Das passende Modell sieht folgendermaßen aus:
 
+
+<!--
 $$
 y_{ij} = \alpha_{j} + \varepsilon_{ij}
 
 \alpha_{j} = \alpha_0 + u_{j}
 $$
+-->
+
+![](figure/formulas1.PNG)
+
+
 Die Gesamtvariation wird in zwei Teile zerlegt: 
 
 - Variation zwischen Schülern (innerhalb der Schulen) und
 - zwischen den Schulen (zwischen den Schulen). 
 
 
+
+## Der R-code für dieses Nullmodell 
+
+- das einfachste Multilevel Modell
+- nach dem vertikalen Strich wird die Gruppen Variable spezifiziert
+- die Default Schätzmethode ist restricted maximum likelihood (REML) 
+- Man kann aber auch maximum likelihood Schätzung spezifizieren (ML)
+
+```{r}
+HLM0 <- lmer(Score ~ (1 | ID), data = mlexdat)
+```
+
+
+## Nullmodell Ergebnis 
+
+```{r}
+coef(HLM0)
+summary(HLM0)
+```
+
+
+## Interpratation des Nullmodells
+
+
+- 96 Prozent Variation zwischen den Schulen
+- 4 Prozent Variation innerhalb der Schulen
+
+
+```{r}
+100 * 87346 / (87346 + 1931757)
+```
+
+- Die Schätzung der zufälligen Effekte zeigt, dass die Variation zwischen den Schulen (Intraklassen Korrelation) fast 96 Prozent beträgt 
+
+- Während der Anteil der Variation zwischen den Studierenden nur etwas mehr als 4 Prozent ausmacht. 
+
+- Das Null-Modell behauptet also , dass Leistungsträger zu bestimmten Schulen gehen und Studierende mit geringerem Leistungsniveau nicht diese Schulen besuchen. 
+
+- Mit anderen Worten, die Schule bestimmt das Testergebnis.
+
+## Ein weiteres Modell
+
+- Das Null Modell schließt keine erklärenden Variablen ein. 
+- Allerdings könnte der sozioökonomischen Status (SES) der Schüler auch eine Rolle spielen. 
+- Die folgenden Ausdrücke geben ein verfeinertes Modell mit zufälligen Achsenabschnitten und Steigung  für jede der Schulen:
+
+<!--
+$$y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$$
+
+$$\alpha_{j} = \alpha_0 + u_{j}$$
+$$\beta{j} = \beta_0 + v_{j}$$
+-->
+
+![](figure/formulas3.PNG)
+
+## Rcode für dieses Modell
+
+
+```{r}
+HLM1 <- lmer(Score ~ SES + (SES | ID), data = mlexdat)
+coef(HLM1)
+summary(HLM1)
+```
+
+## 
+
+```{r}
+# 1% - BS variance
+# 99% - WS variance
+100 * 40400.24 / (40400.24 + 257.09 + 1.65)
+
+# Percentage of variation explained by SES between schools
+1 - ((257.09 + 1.65) / 1931757)
+
+# Percentage of variation explained by SES within schools
+1 - (40400.24 / 87346)
+
+```
+
+
+Auf der einen Seite stellen wir fest, dass die SES 99 Prozent der Unterschiede zwischen den Schulen erklärt; Auf der anderen Seite erklärt die SES 53 Prozent der Abweichungen innerhalb der Schulen. 
+
+Was heißt das? Schulsegregation 
+
+Das heißt, wohlhabende Studenten gehören zu reichen Schulen, und arme Studenten gehören zu armen Schulen. 
+
+Darüber hinaus übertreffen wohlhabende Studenten weit über die Leistung der armen Studenten.
+
+
+
+
+## [Multilevel Model Specification](http://www.rensenieuwenhuis.nl/r-sessions-16-multilevel-model-specification-lme4/)
+
+```{r}
+library(lme4)
+library(mlmRev)
+names(Exam)
+```
+
+
+## random intercept, fixed predictor in individual level
+
+- Für das nächste Modell fügen wir dem einzelnen Level einen Prädiktor hinzu. 
+- Wir tun dies, indem wir die '1' im Nullmodell durch den Prädiktor (hier: standLRT) ersetzen. 
+- Es wird immer ein Intercept angenommen, also wird es noch hier geschätzt. 
+- Es muss nur angegeben werden, wenn keine anderen Prädiktoren angegeben sind. 
+- Da wir nicht wollen, dass der Effekt des Prädiktors zwischen den Gruppen variiert, bleibt die Spezifikation des zufälligen Teils des Modells mit dem vorherigen Modell identisch. 
+
+```{r,eval=F}
+lmer(normexam ~ standLRT + (1 | school), data=Exam)
+```
+
+## random intercept, random slope
+
+Das nächste Modell, das angegeben wird, ist ein Modell mit einem zufälligen Intercept auf individueller Ebene und ein Prädiktor, der zwischen Gruppen variieren darf. Mit anderen Worten, die Wirkung der Hausaufgaben auf die Partitur auf einem Mathe-Test variiert zwischen den Schulen. Um dieses Modell zu schätzen, wird das '1', das den Intercept im zufälligen Teil der Modellspezifikation angibt, durch die Variable ersetzt, von der wir den Effekt zwischen den Gruppen variieren wollen.
+
+
+
+
+## [Varying intercept model](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
+
+```{r,eval=F}
+MLexamp.6 <- lmer(extro ~ open + agree + social + (1 | school), data = lmm.data)
+```
+
+## Varying slope model
+
+```{r,eval=F}
+MLexamp.9 <- lmer(extro ~ open + agree + social + (1 + open | school/class), data = lmm.data)
+```
+
+
+## [Paket lmer](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
+
+```{r,eval=F}
+lmer(y ~ 1 + (1 | subjects), data=data)
+# nlme
+lme(y ~ 1, random = ~ 1 | subjects, data=data)
+```
+
+## Links
+
+
+- [Uncertainty in parameter estimates using multilevel models](https://www.r-bloggers.com/uncertainty-in-parameter-estimates-using-multilevel-models/)
+
+- [Multilevel models with R](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
+
+
+- [Ein Beispieldatensatz](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
+
+
+- [Multilevel Modeling of Educational Data using R (Part 1)](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
+
+- [Vignette für lme4](https://cran.r-project.org/web/packages/lme4/vignettes/lmer.pdf)
+
+- [Mixed model guide](http://ase.tufts.edu/gsc/gradresources/guidetomixedmodelsinr/mixed%20model%20guide.html)
