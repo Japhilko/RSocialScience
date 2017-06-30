@@ -31,12 +31,12 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/GitBuuild.PNG)
 
-## [GitHub Konferenz](https://githubuniverse.com/satellite/?utm_source=github&utm_medium=banner&utm_campaign=ww-satellite-20170405)
-
+-  [GitHub Konferenz](https://githubuniverse.com/satellite/?utm_source=github&utm_medium=banner&utm_campaign=ww-satellite-20170405)
+<!--
 London 22 und 23 Mai 2017
 
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/githubSattelite.PNG)
-
+-->
 ## [GitLab](https://about.gitlab.com/)
 
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/GitlabPicture.PNG)

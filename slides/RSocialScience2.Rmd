@@ -14,7 +14,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## ggplot und ggmap
+## Die Pakete `ggplot` und `ggmap`
 
 
 ```{r child = '../ggplot/index.Rmd'}
