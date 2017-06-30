@@ -99,9 +99,11 @@ y_{ij} = \alpha_{j} + \varepsilon_{ij}
 
 \alpha_{j} = \alpha_0 + u_{j}
 $$
--->
 
 ![](figure/formulas1.PNG)
+-->
+
+
 
 
 Die Gesamtvariation wird in zwei Teile zerlegt: 
@@ -161,9 +163,11 @@ $$y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$$
 
 $$\alpha_{j} = \alpha_0 + u_{j}$$
 $$\beta{j} = \beta_0 + v_{j}$$
--->
 
 ![](figure/formulas3.PNG)
+-->
+
+
 
 ## Rcode für dieses Modell
 
