@@ -37,6 +37,7 @@ London 22 und 23 Mai 2017
 
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/githubSattelite.PNG)
 -->
+
 ## [GitLab](https://about.gitlab.com/)
 
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/GitlabPicture.PNG)

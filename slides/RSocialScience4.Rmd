@@ -2,7 +2,7 @@
 title: "R für die Sozialwissenschaften - Teil 4"
 author: "Jan-Philipp Kolb"
 date: "23 Juni 2017"
-output: html_document
+output: beamer_presentation
 ---
 
 ```{r setup, include=FALSE}
