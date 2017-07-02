@@ -1,0 +1,17 @@
+base
+ggplot2
+knitr
+RColorBrewer
+ggmap
+lattice
+DAAG
+visreg
+HSAUR
+faraway
+MASS
+gridExtra
+Matrix
+lme4
+sjPlot
+dplyr
+mlmRev

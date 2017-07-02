@@ -3,16 +3,16 @@ title: "R für die Sozialwissenschaften - Teil 3"
 author: "Jan-Philipp Kolb"
 date: "23 Juni 2017"
 output: 
-  ioslides_presentation: 
-    highlight: pygments
-    keep_md: yes
-    smaller: yes
-    widescreen: yes
   beamer_presentation:
     colortheme: beaver
     highlight: pygments
     theme: CambridgeUS
     fig_caption: false
+  ioslides_presentation: 
+    highlight: pygments
+    keep_md: yes
+    smaller: yes
+    widescreen: yes
 ---
 
 ```{r, include=FALSE}

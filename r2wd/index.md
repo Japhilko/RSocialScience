@@ -1,7 +1,7 @@
 Ein Markdown Dokument mit Rstudio erzeugen
 ------------------------------------------
 
-![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/r2wordstart.PNG)
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/r2wordstart.png)
 
 Mein erstes mit R erzeugtes Word Dokument
 -----------------------------------------
@@ -128,19 +128,19 @@ Chunk Optionen
 Optionen
 --------
 
-![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/RwordOptions.PNG)
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/RwordOptions.png)
 
 Optionen für Word Output
 ------------------------
 
-![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/WordOutputOptions.PNG)
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/WordOutputOptions.PNG)
 
 Code Hervorhebung
 -----------------
 
 -   pygments Hervorhebung
 
-![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/pygmentsSnippet.PNG)
+![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/pygmentsSnippet.PNG)
 
 -   tango
 
@@ -173,44 +173,44 @@ Eine Tabelle mit `kable` erzeugen
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">0.6838240</td>
-<td align="right">-0.9628939</td>
+<td align="right">0.4808006</td>
+<td align="right">0.0063986</td>
 </tr>
 <tr class="even">
-<td align="right">0.1493693</td>
-<td align="right">0.5693462</td>
+<td align="right">0.5237829</td>
+<td align="right">-0.6437899</td>
 </tr>
 <tr class="odd">
-<td align="right">0.5953402</td>
-<td align="right">2.0618971</td>
+<td align="right">0.8292806</td>
+<td align="right">-0.4820105</td>
 </tr>
 <tr class="even">
-<td align="right">0.7063234</td>
-<td align="right">1.5293877</td>
+<td align="right">0.6637304</td>
+<td align="right">-0.7185337</td>
 </tr>
 <tr class="odd">
-<td align="right">0.8119966</td>
-<td align="right">-0.6299036</td>
+<td align="right">0.3664614</td>
+<td align="right">-1.2950448</td>
 </tr>
 <tr class="even">
-<td align="right">0.4833104</td>
-<td align="right">-0.1414238</td>
+<td align="right">0.4841956</td>
+<td align="right">0.2250230</td>
 </tr>
 <tr class="odd">
-<td align="right">0.6648781</td>
-<td align="right">0.8746199</td>
+<td align="right">0.2497810</td>
+<td align="right">-0.4480269</td>
 </tr>
 <tr class="even">
-<td align="right">0.3971456</td>
-<td align="right">1.0252354</td>
+<td align="right">0.3013822</td>
+<td align="right">0.9912420</td>
 </tr>
 <tr class="odd">
-<td align="right">0.8268438</td>
-<td align="right">-1.1805359</td>
+<td align="right">0.8768059</td>
+<td align="right">1.4190630</td>
 </tr>
 <tr class="even">
-<td align="right">0.3649160</td>
-<td align="right">-1.4463392</td>
+<td align="right">0.7241111</td>
+<td align="right">0.4804800</td>
 </tr>
 </tbody>
 </table>
@@ -229,7 +229,7 @@ Eine Tabelle mit `kable` erzeugen
 [Immer das aktuelle Datum im Kopf](http://stackoverflow.com/questions/23449319/yaml-current-date-in-rmarkdown)
 --------------------------------------------------------------------------------------------------------------
 
-    date: "21 Juni, 2017"
+    date: "01 Juli, 2017"
 
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/rmdAktuellesDatum.PNG)
 

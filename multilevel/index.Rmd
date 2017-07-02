@@ -74,9 +74,16 @@ library(dplyr)
 
 ## Beispieldaten
 
-```{r}
+```{r,echo=F}
 mlexdat <- read.csv("https://github.com/Japhilko/RSocialScience/raw/master/data/mlexdat.csv") 
 ```
+
+```{r,eval=F}
+mlexdat <- read.csv(
+"https://github.com/Japhilko/RSocialScience/
+raw/master/data/mlexdat.csv") 
+```
+
 
 ```{r,echo=F}
 library(knitr)
@@ -92,14 +99,14 @@ kable(head(mlexdat))
 
 - Das passende Modell sieht folgendermaßen aus:
 
-
-<!--
 $$
 y_{ij} = \alpha_{j} + \varepsilon_{ij}
 
 \alpha_{j} = \alpha_0 + u_{j}
 $$
 
+
+<!--
 ![](figure/formulas1.PNG)
 -->
 
@@ -158,12 +165,13 @@ summary(HLM0)
 - Allerdings könnte der sozioökonomischen Status (SES) der Schüler auch eine Rolle spielen. 
 - Die folgenden Ausdrücke geben ein verfeinertes Modell mit zufälligen Achsenabschnitten und Steigung  für jede der Schulen:
 
-<!--
 $$y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$$
 
 $$\alpha_{j} = \alpha_0 + u_{j}$$
 $$\beta{j} = \beta_0 + v_{j}$$
 
+
+<!--
 ![](figure/formulas3.PNG)
 -->
 
@@ -194,43 +202,61 @@ summary(HLM1)
 ```
 
 
-Auf der einen Seite stellen wir fest, dass die SES 99 Prozent der Unterschiede zwischen den Schulen erklärt; Auf der anderen Seite erklärt die SES 53 Prozent der Abweichungen innerhalb der Schulen. 
+- die Variable `SES` erklärt 99 Prozent der Unterschiede zwischen den Schulen
+- diese Variable `SES` erklärt 53 Prozent der Abweichungen innerhalb der Schulen. 
 
-Was heißt das? Schulsegregation 
+## Was heißt das? - Schulsegregation 
 
-Das heißt, wohlhabende Studenten gehören zu reichen Schulen, und arme Studenten gehören zu armen Schulen. 
+- wohlhabende Studenten gehören zu reichen Schulen
+- arme Studenten gehören zu armen Schulen. 
 
-Darüber hinaus übertreffen wohlhabende Studenten weit über die Leistung der armen Studenten.
+- Die Leistung der wohlhabenden Studenten ist höher als die der armen Studenten.
 
 
+## Ein weiteres Beispiel zur [Spezifikation von Multilevel Modellen](http://www.rensenieuwenhuis.nl/r-sessions-16-multilevel-model-specification-lme4/)
 
-
-## [Multilevel Model Specification](http://www.rensenieuwenhuis.nl/r-sessions-16-multilevel-model-specification-lme4/)
+- benötigte Bibliotheken:
 
 ```{r}
 library(lme4)
 library(mlmRev)
-names(Exam)
+```
+
+## Der Datensatz
+
+```{r}
+data(Exam)
+# names(Exam)
+```
+
+```{r,echo=F}
+library(knitr)
+kable(head(Exam))
 ```
 
 
-## random intercept, fixed predictor in individual level
 
-- Für das nächste Modell fügen wir dem einzelnen Level einen Prädiktor hinzu. 
-- Wir tun dies, indem wir die '1' im Nullmodell durch den Prädiktor (hier: standLRT) ersetzen. 
-- Es wird immer ein Intercept angenommen, also wird es noch hier geschätzt. 
-- Es muss nur angegeben werden, wenn keine anderen Prädiktoren angegeben sind. 
+## Zufälliger Intercept und fixed predictor auf individeller Ebene
+
+- Ein Prädiktor wird auf jeder Ebene hinzugefügt 
+- Dazu wird die '1' im Nullmodell durch den Prädiktor (hier: `standLRT`) ersetzen. 
+- Es wird immer ein Intercept angenommen 
 - Da wir nicht wollen, dass der Effekt des Prädiktors zwischen den Gruppen variiert, bleibt die Spezifikation des zufälligen Teils des Modells mit dem vorherigen Modell identisch. 
 
 ```{r,eval=F}
 lmer(normexam ~ standLRT + (1 | school), data=Exam)
 ```
 
-## random intercept, random slope
+## Random intercept, Random slope
 
-Das nächste Modell, das angegeben wird, ist ein Modell mit einem zufälligen Intercept auf individueller Ebene und ein Prädiktor, der zwischen Gruppen variieren darf. Mit anderen Worten, die Wirkung der Hausaufgaben auf die Partitur auf einem Mathe-Test variiert zwischen den Schulen. Um dieses Modell zu schätzen, wird das '1', das den Intercept im zufälligen Teil der Modellspezifikation angibt, durch die Variable ersetzt, von der wir den Effekt zwischen den Gruppen variieren wollen.
+- Modell mit zufälligen Intercept auf individueller Ebene und 
+- einem Prädiktor, der zwischen Gruppen variieren darf. 
+
+- Mit anderen Worten: die Wirkung der Hausaufgaben auf das Ergebnis der Klausur (Mathe-Test) variiert zwischen den Schulen. 
 
 
+- Zur Schätzung wird '1' - der Intercept im zufälligen Teil der Modellspezifikation
+- ...durch die Variable ersetzt, von der wir den Effekt zwischen den Gruppen variieren wollen.
 
 
 ## [Varying intercept model](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
@@ -246,17 +272,17 @@ MLexamp.9 <- lmer(extro ~ open + agree + social + (1 + open | school/class), dat
 ```
 
 
-## [Paket lmer](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
-
+<!--
 ```{r,eval=F}
 lmer(y ~ 1 + (1 | subjects), data=data)
 # nlme
 lme(y ~ 1, random = ~ 1 | subjects, data=data)
 ```
+-->
 
 ## Links
 
-
+- [Paket lmer](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
 - [Uncertainty in parameter estimates using multilevel models](https://www.r-bloggers.com/uncertainty-in-parameter-estimates-using-multilevel-models/)
 
 - [Multilevel models with R](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)

@@ -7,27 +7,28 @@ output: md_document
 
 ```{r, include=FALSE}
 pdfP <- F
-knitr::opts_chunk$set(echo = TRUE,warning=F,message = F,eval=F)
+knitr::opts_chunk$set(echo = TRUE,warning=F,message = F)
+internet =F
 ```
 
 ## The R-package DT
 
 - [DT: An R interface to the DataTables library](https://rstudio.github.io/DT/)
 
-```{r,eval=F}
+```{r,eval=F,eval=internet}
 install.packages('DT')
 ```
 
 
-```{r}
+```{r,eval=internet}
 library('DT')
 ```
 
-```{r}
+```{r,eval=internet}
 exdat <- read.csv("data/exdat.csv")
 ```
 
-```{r,eval=pdfP}
+```{r,eval=internet}
 datatable(exdat)
 ```
 
@@ -40,7 +41,7 @@ Hier ist das Ergebnis - [Beispiel für eine interaktive Tabelle](http://rpubs.co
 
 ## [Default Optionen verändern](http://rstudio.github.io/DT/options.html)
 
-```{r,eval=pdfP}
+```{r,eval=internet}
 datatable(head(exdat, 20), options = list(
   columnDefs = list(list(className = 'dt-center', targets = 5)),
   pageLength = 5,
@@ -51,8 +52,9 @@ datatable(head(exdat, 20), options = list(
 
 ## [Suchoptionen kennzeichnen](http://rstudio.github.io/DT/006-highlight.html)
 
-```{r,eval=pdfP}
-datatable(exdat, options = list(searchHighlight = TRUE), filter = 'top')
+```{r,eval=internet}
+datatable(exdat, options = list(searchHighlight = TRUE), 
+          filter = 'top')
 ```
 
 ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/tbHighlsearch.PNG)

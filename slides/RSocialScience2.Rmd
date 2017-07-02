@@ -1,13 +1,15 @@
 ---
-title: "R für die Sozialwissenschaften - Teil 2"
+title: "R fÃ¼r die Sozialwissenschaften - Teil 2"
 author: "Jan-Philipp Kolb"
 date: "23 Juni 2017"
-output: 
+output:
+  ioslides_presentation:
+    highlight: pygments
   beamer_presentation:
     colortheme: beaver
+    fig_caption: no
     highlight: pygments
     theme: CambridgeUS
-    fig_caption: false
 ---
 
 ```{r setup, include=FALSE}

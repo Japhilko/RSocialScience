@@ -1,14 +1,6 @@
 # Jan-Philipp Kolb
 # Tue May 16 09:31:46 2017
 
-#----------------------------------#
-# Install packages
-#----------------------------------#
-
-install.packages("sjPlot")
-install.packages("tibble")
-
-
 
 #----------------------------------#
 # Set paths
@@ -91,9 +83,17 @@ rmarkdown::render("../multilevel/index.Rmd",
 
 
 
+
+
 #----------------------------------#
 # Create R files
 #----------------------------------#
 
 
 
+#----------------------------------#
+# Install packages
+#----------------------------------#
+
+install.packages("sjPlot")
+install.packages("tibble")
