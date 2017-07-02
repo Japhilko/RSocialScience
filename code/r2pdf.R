@@ -1,0 +1,176 @@
+#' ---
+#' title: "R und pdf"
+#' author: "Jan-Philipp Kolb"
+#' date: "20 Juni 2017"
+#' output: md_document
+#' ---
+#' 
+## ---- include=FALSE------------------------------------------------------
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+
+#' 
+#' 
+#' 
+#' ## Präsentationen mit Rmarkdown - beamer Präsentationen
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/beamerexample.PNG)
+#' 
+#' ## Beamer Optionen
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/beamerOptions.PNG)
+#' 
+#' ## Beamer Themen
+#' 
+#' ![](http://1.bp.blogspot.com/-ZTtDq0hOkqY/Ti0Z3WwoIJI/AAAAAAAAAPc/HM3t4j4t7h0/s1600/Screenshot%2B-%2B07252011%2B-%2B03%253A22%253A15%2BAM.png)
+#' 
+#' ## Chunks einfügen
+#' 
+#' - Auch hier lassen sich natürlich Chunks einfügen
+#' - Wenn `cache=T` angegeben ist, wird das Ergebnis des Chunks abgespeichert
+#' - Es ist sinnvoll die Chunks zu benennen, dann findet man auch das Ergebnis einfacher
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/CacheBenennung.PNG)
+#' 
+#' ## Ergebnis - Cache
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/ErgZufallszahlen.PNG)
+#' 
+#' ## Wie man das im Header des Dokuments angibt
+#' 
+#' ```
+#' ---
+#' title: "Intro - Erste Schritte"
+#' author: "Jan-Philipp Kolb"
+#' date: "10 April 2017"
+#' output:
+#'   beamer_presentation: 
+#'     colortheme: beaver
+#'     theme: CambridgeUS
+#' ---
+#' ```
+#' 
+#' ## Inhaltsverzeichnis I
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/BeamerInhaltsVZ.PNG)
+#' 
+#' ```
+#' output: 
+#'   beamer_presentation: 
+#'     toc: yes
+#' ```
+#' 
+#' 
+#' ## Optionen für die Graphikeinbindung
+#' 
+#' - *fig_caption: false*, wenn man keine Bildunterschriften haben möchte
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/figOpts.PNG)
+#' 
+#' - Man sollte keine Bilder im Format `.svg` einbinden
+#' 
+#' ## Präsentationen mit Sweave
+#' 
+#' - Das Dokument erstellen
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/BSPsweave.png)
+#' 
+#' ## Sweave Präsentation
+#' 
+#' - Ganz normaler LaTeX Code wird verwendet
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/Sweave1ex.PNG)
+#' 
+#' ## Chunks bei Sweave
+#' 
+#' - Auch hier kann R-code verwendet werden
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/SweaveCodeChunk.PNG)
+#' 
+#' ## [Chunk Optionen](http://k-baeumchen.fuhlbrueck.net/R-und-LaTeX.html)
+#' 
+#' - Auch bei Sweave Chunks können Optionen mitgegeben werden
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/SweaveOptionen.PNG)
+#' 
+#' ## Inline Code
+#' 
+#' - Manchmal braucht man das Ergebnis direkt auf der Folie
+#' 
+#' ```
+#' \Sexpr{}
+#' ```
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/CRANpackages.PNG)
+#' 
+#' ## Inline Code - das Ergebnis
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/CRANmirror.PNG)
+#' 
+## ------------------------------------------------------------------------
+CRANmirror <- "http://cran.revolutionanalytics.com"
+cran <- contrib.url(repos = CRANmirror,type = "source")
+info <- available.packages(contriburl = cran, type = x)
+nrow(info)
+
+#' 
+#' 
+#' 
+#' ## PDF Paper mit R
+#' 
+#' - Mit R ist es möglich Berichte oder Paper zu erzeugen
+#' - Dies eignet sich besonders gut, wenn man viel Code hat oder einen Bericht sehr oft erzeugen muss
+#' - Literatur lässt sich am Besten mit einem bibtex file einbauen
+#' 
+#' 
+#' ## [Jabref](http://www.jabref.org/)
+#' 
+#' - Literaturverwaltungssystem
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/Exjabref.PNG)
+#' 
+#' ## Referenz mit R bekommen
+#' 
+#' - Mit dem Befehl `citation()` bekommt man sehr schnell die Referenz
+#' 
+## ----eval=F--------------------------------------------------------------
+## install.packages("RMySQL")
+
+#' 
+#' 
+## ------------------------------------------------------------------------
+citation("RMySQL")
+
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/bibtexRmysql.PNG)
+#' 
+#' 
+#' ## Das bibtex file einbinden I
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/LiteraturEinbinden.PNG)
+#' 
+#' ## Das bibtex file einbinden II
+#' 
+#' ```
+#' ---
+#' title: "R Schnittstellen"
+#' author: "Jan-Philipp Kolb"
+#' date: "21 April 2017"
+#' output: 
+#'   pdf_document: default
+#' bibliography: Rschnittstellen.bib
+#' ---
+#' ```
+#' 
+#' 
+#' ## Das Ergebnis
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/bibtexErgebnis.PNG)
+#' 
+#' 
+#' ## Links
+#' 
+#' - [Optionen für Beamer Präsentationen](http://rmarkdown.rstudio.com/beamer_presentation_format.html)
+#' 
+#' - [Wie R und LaTeX zusammen funktionieren](https://www.r-bloggers.com/from-openoffice-noob-to-control-freak-a-love-story-with-r-latex-and-knitr/)
+#' 

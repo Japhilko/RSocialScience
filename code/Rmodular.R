@@ -1,0 +1,135 @@
+#' ---
+#' title: "Modularer Aufbau"
+#' author: "Jan-Philipp Kolb"
+#' date: "12 Juni 2017"
+#' output: md_document
+#' ---
+#' 
+## ---- include=FALSE------------------------------------------------------
+knitr::opts_chunk$set(echo = TRUE)
+
+#' 
+#' 
+#' ## [Wo sind die Routinen enthalten](https://stats.idre.ucla.edu/r/seminars/intro/)
+#' 
+#' - Viele Funktionen sind im Basis-R enthalten 
+#' - Viele spezifische Funktionen sind in zusätzlichen Bibliotheken integriert
+#' - R kann modular erweitert werden durch sog. packages bzw. libraries
+#' - Auf CRAN werden die wichtigsten packages gehostet (im Moment 10430)
+#' - Weitergehende Pakete finden sich z.B. bei [bioconductor](www.bioconductor.org)
+#' 
+## ----eval=F,echo=F-------------------------------------------------------
+## # http://blog.revolutionanalytics.com/2015/06/how-many-packages-are-there-really-on-cran.html
+## CRANmirror <- "http://cran.revolutionanalytics.com"
+## cran <- contrib.url(repos = CRANmirror,
+##                       type = "source")
+## info <- available.packages(contriburl = cran, type = "source")
+## length(cran)
+
+#' 
+#' ## Übersicht R-Pakete
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/Packages.PNG)
+#' 
+#' ## Installation
+#' 
+## ----eval=F--------------------------------------------------------------
+## install.packages("lme4")
+## 
+## library(lme4)
+
+#' 
+#' ## Installation von Paketen mit RStudio
+#' 
+#' ![](https://github.com/Japhilko/IntroR/blob/master/2017/slides/figure/PaketeRstudio.PNG?raw=true)
+#' 
+#' 
+#' ## Vorhandene Pakete und Installation
+#' 
+#' ![](https://github.com/Japhilko/IntroR/blob/master/2017/slides/figure/packages3.PNG?raw=true)
+#' 
+#' 
+#' ## Übersicht viele nützliche Pakete:
+#' 
+#' - Luhmann - [Tabelle mit vielen nützlichen Paketen](http://www.beltz.de/fileadmin/beltz/downloads/OnlinematerialienPVU/28090_Luhmann/Verwendete%20Pakete.pdf)
+#' 
+#' Weitere interessante Pakete:
+#' 
+#' - Paket für den Import/Export - [foreign](http://cran.r-project.org/web/packages/foreign/foreign.pdf)
+#' 
+#' - [Pakete für Survey Sampling](http://iase-web.org/documents/papers/icots8/ICOTS8_4J1_TILLE.pdf)
+#' 
+#' - `xtable` Paket für die Integration von Latex und R ([xtable Galerie](http://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf))
+#' 
+#' - [Paket zur Erzeugung von Dummies](http://cran.r-project.org/web/packages/dummies/dummies.pdf)
+#' 
+#' - [Multivariate Normalverteilung](http://cran.r-project.org/web/packages/mvtnorm/index.html)
+#' 
+#' 
+#' - [Paket für Karten](http://www.r-bloggers.com/tag/maptools/)
+#' 
+#' 
+#' ## Pakete installieren
+#' 
+#' ### Pakete von CRAN Server installieren
+#' 
+## ----eval=F--------------------------------------------------------------
+## install.packages("lme4")
+
+#' 
+#' ### Pakete von Bioconductor Server installieren
+#' 
+## ----eval=F--------------------------------------------------------------
+## source("https://bioconductor.org/biocLite.R")
+## biocLite(c("GenomicFeatures", "AnnotationDbi"))
+
+#' 
+#' 
+#' 
+#' ### Pakete von Github installieren
+#' 
+## ----eval=F--------------------------------------------------------------
+## install.packages("devtools")
+## library(devtools)
+## 
+## install_github("hadley/ggplot2")
+
+#' 
+#' 
+#' 
+#' ## Wie bekomme ich einen Überblick
+#' 
+#' - [Pakete entdecken, die neulich auf CRAN hochgeladen wurden](https://mran.microsoft.com/packages/)
+#' 
+#' - [Pakete die in letzter Zeit von CRAN heruntergeladen wurden](https://gallery.shinyapps.io/cran-gauge/)
+#' 
+#' - [Quick-list nützlicher Pakete](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages)
+#' 
+#' - [Beste Pakete für Datenbearbeitung und Analyse](http://www.computerworld.com/article/2921176/business-intelligence/great-r-packages-for-data-import-wrangling-visualization.html)
+#' 
+#' - [Die 50 meist genutzten Pakete](https://www.r-bloggers.com/the-50-most-used-r-packages/)
+#' 
+#' ## CRAN Task Views		
+#' 		
+#' -  Zu einigen Themen sind alle Möglichkeiten in R zusammengestellt. ([Übersicht der Task Views](https://cran.r-project.org/web/views/))
+#' - Zur Zeit gibt es 35 Task Views
+#' - [Alle Pakete eines Task Views können mit folgendem Befehl installiert werden:](https://mran.microsoft.com/rpackages/)
+#' 
+## ----eval=F--------------------------------------------------------------
+## install.packages("ctv")
+## library("ctv")
+## install.views("Bayesian")
+
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/IntroR/master/2017/slides/figure/CRANtaskViews.PNG)
+#' 
+#' ## Aufgabe - Zusatzpakete
+#' 
+#' Gehen Sie auf <https://cran.r-project.org/> und suchen Sie in dem Bereich, wo die Pakete vorgestellt werden, nach Paketen,...
+#' 
+#' -  die für die deskriptive Datenanalyse geeignet sind.
+#' -  um Regressionen zu berechnen
+#' -  um fremde Datensätze einzulesen (z.B. SPSS-Daten)
+#' -  um mit großen Datenmengen umzugehen
+#' 
+#' 

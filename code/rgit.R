@@ -1,0 +1,37 @@
+#' ---
+#' title: "rgit"
+#' author: "Jan-Philipp Kolb"
+#' date: "12 Mai 2017"
+#' output: md_document
+#' ---
+#' 
+## ---- include=FALSE------------------------------------------------------
+knitr::opts_chunk$set(echo = TRUE)
+
+#' 
+#' ## Rstudio und git - ein Projekt anlegen
+#' 
+#' ![](https://github.com/Japhilko/RInterfaces/raw/master/slides/figure/NeuesProjekt.png)
+#' 
+#' 
+#' ## Ein Projekt mit Versionskontrolle
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/VersionControl.PNG)
+#' 
+#' 
+#' ## Auswahl Versionskontrolle
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/gitSVN.PNG)
+#' 
+#' 
+#' ## Ein Projekt clonen
+#' 
+#' ![](https://raw.githubusercontent.com/Japhilko/RInterfaces/master/slides/figure/CloneProject.PNG)
+#' 
+#' 
+#' Wen Github näher interessiert:
+#' 
+#' - [Hello World](https://guides.github.com/activities/hello-world/)
+#' 
+#' - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
+#' 

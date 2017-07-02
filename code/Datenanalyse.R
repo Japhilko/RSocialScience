@@ -1,0 +1,170 @@
+#' ---
+#' title: "Datenanalyse"
+#' author: "Jan-Philipp Kolb"
+#' date: "22 Juni 2017"
+#' output: md_document
+#' ---
+#' 
+## ---- include=FALSE------------------------------------------------------
+knitr::opts_chunk$set(echo = TRUE)
+
+#' 
+#' ## Den Datensatz laden
+#' 
+## ------------------------------------------------------------------------
+library(foreign)
+dat <- read.dta(
+"https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
+dat$bazq020a <- as.numeric(dat$bazq020a)
+
+#' 
+#' 
+#' ## Streuungsmaße
+#' 
+#' In Basis R sind die wichtigsten Streuungsmaße enthalten:
+#' 
+#' -  Varianz: `var()`
+#' -  Standardabweichung: `sd()`
+#' -  Minimum und Maximum: `min()` und `max()`
+#' -  Range: `range()`
+#' 
+## ------------------------------------------------------------------------
+var(dat$bazq020a)
+var(dat$bazq020a,na.rm=T)
+sd(dat$bazq020a,na.rm=T)
+range(dat$bazq020a,na.rm=T)
+
+#' 
+#' ## Extremwerte
+#' 
+## ------------------------------------------------------------------------
+min(dat$bazq020a)
+
+max(dat$bazq020a)
+
+#' 
+#' 
+#' ## Fehlende Werte
+#' 
+#' - Sind `NA`s vorhanden muss dies der Funktion mitgeteilt werden
+#' 
+## ------------------------------------------------------------------------
+ab <- 1:10
+ab[10] <- NA
+var(ab)
+
+#' 
+#' Bei fehlenden Werten muss ein weiteres Argument mitgegeben werden:
+#' 
+## ------------------------------------------------------------------------
+var(ab,na.rm=T)
+
+#' 
+#' ## Häufigkeiten und gruppierte Kennwerte
+#' 
+#' -  Eine Auszählung der Häufigkeiten der Merkmale einer Variable liefert `table()`
+#' -  Mit `table()` sind auch Kreuztabellierungen möglich indem zwei Variablen durch Komma getrennt werden: `table(x,y)` liefert Häufigkeiten von `y` für gegebene Ausprägungen von `x`
+#' 
+## ------------------------------------------------------------------------
+table(dat$a11d054a)
+
+#' 
+#' ## Tabellieren - weiteres Beispiel
+#' 
+## ----eval=F--------------------------------------------------------------
+## ?table
+
+#' 
+## ------------------------------------------------------------------------
+table(dat$a11d054a)
+table(dat$a11d054a,dat$a11d056z)
+
+#' 
+#' 
+#' ## Häufigkeitstabellen
+#' 
+#' - `prop.table()` liefert die relativen Häufigkeiten
+#' - Wird die Funktion  außerhalb einer `table()` Funktion geschrieben erhält man die relativen Häufigkeiten bezogen auf alle Zellen
+#' 
+#' ## Die Funktion `prop.table`
+#' 
+## ----eval=F--------------------------------------------------------------
+## ?prop.table
+
+#' 
+## ------------------------------------------------------------------------
+prop.table(table(dat$a11d054a,dat$a11d056z),1)
+
+#' 
+#' 
+#' ## Die aggregate Funktion
+#' 
+#' - Mit der `aggregate()` Funktion können Kennwerte für Untergruppen erstellt werden
+#' - `aggregate(x,by,FUN)` müssen mindestens drei Argumente übergeben werden:
+#' 
+## ------------------------------------------------------------------------
+aggregate(dat$bazq020a,by=list(dat$a11d054a),mean,na.rm=T)
+
+#' 
+#' 			
+#' `x`: ein oder mehrere Beobachtungsvektor(en) für den der Kennwert berechnet werden soll
+#' 
+#' `by`: eine oder mehrere bedingende Variable(n)
+#' 
+#' `FUN`: die Funktion welche den Kennwert berechnet (z.B. `mean` oder `sd`)
+#' 			
+#' 			
+#' - Die Ausgabe kann mit Hilfe von `xtabs()` in eine schöne zweidimensionale Tabelle überführt werden
+#' 
+#' ## Beispieldatensatz - apply Funktion
+#' 
+## ------------------------------------------------------------------------
+ApplyDat <- cbind(1:4,runif(4),rnorm(4))
+
+#' 
+## ------------------------------------------------------------------------
+apply(ApplyDat,1,mean)
+apply(ApplyDat,2,mean)
+
+#' 
+#' 
+#' ## Die Funktion apply
+#' 
+## ------------------------------------------------------------------------
+apply(ApplyDat,1,var)
+apply(ApplyDat,1,sd)
+apply(ApplyDat,1,range)
+apply(ApplyDat,1,length)
+
+#' 
+#' ## Argumente der Funktion apply
+#' 
+#' - Für `margin=1` die Funktion `mean` auf die Reihen angewendet,
+#' 
+#' - Für `margin=2` die Funktion `mean` auf die Spalten angewendet,
+#' 
+#' - Anstatt `mean` können auch andere Funktionen wie `var`, `sd` oder `length` verwendet werden.
+#' 
+#' ## Die Funktion tapply
+#' 
+#' 
+#' - Auch andere Funktionen können eingesetzt werden.... - Auch selbst programmierte Funktionen
+#' - Im Beispiel wird die einfachste eigene Funktion angewendet.
+#' 
+#' ## Beispiel Funktion tapply
+#' 
+#' 
+## ------------------------------------------------------------------------
+tapply(dat$a11d054a,dat$a11d056z,mean)
+
+tapply(dat$a11d054a,
+       dat$a11d056z,function(x)x)
+
+#' 
+#' ## Links Datenanalyse
+#' 
+#' - Die Benutzung von `apply`, `tapply`, etc. (Artikel bei [R-bloggers](http://www.r-bloggers.com/using-apply-sapply-lapply-in-r/)) 
+#' 
+#' - [Quick-R zu deskriptiver Statistik](http://www.statmethods.net/stats/descriptives.html)
+#' 
+#' - [Quick-R zur Funktion `aggregate`](http://www.statmethods.net/management/aggregate.html)

@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - Beispiel Mehrebenenstruktur der Daten
 
-![](https://raw.githubusercontent.com/Japhilko/RSocialScience/master/multilevel/figure/Multileveldata.png)
+![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Multileveldata.png)
 
 
 ## [Andres Gutierrez - Multilevel Modeling of Educational Data using R](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
@@ -104,9 +104,13 @@ kable(head(mlexdat))
 ## [Formalistisch](http://kesdev.com/you-got-latex-in-my-markdown/)
 
 - Bei der Analyse von Daten mit diesen hierarchischen Strukturen, sollte man immer zunächst ein Null-Modell anpassen
-- Somit kann man die Variation erfassen, die auf die Schulen zurückzuführen ist:
+- Somit kann man die Variation erfassen, die auf die Schulen zurückzuführen ist.
 
 - Das passende Modell sieht folgendermaßen aus:
+
+![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Formel113.PNG)
+<!--
+
 
 $$
 y_{ij} = \alpha_{j} + \varepsilon_{ij}
@@ -114,8 +118,6 @@ y_{ij} = \alpha_{j} + \varepsilon_{ij}
 \alpha_{j} = \alpha_0 + u_{j}
 $$
 
-
-<!--
 ![](figure/formulas1.PNG)
 -->
 
@@ -174,15 +176,23 @@ summary(HLM0)
 - Allerdings könnte der sozioökonomischen Status (SES) der Schüler auch eine Rolle spielen. 
 - Die folgenden Ausdrücke geben ein verfeinertes Modell mit zufälligen Achsenabschnitten und Steigung  für jede der Schulen:
 
+
+![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Formel180.PNG)
+
+![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Formel182.PNG)
+
+![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Formel183.PNG)
+
+<!--
 $$y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$$
 
 $$\alpha_{j} = \alpha_0 + u_{j}$$
 $$\beta{j} = \beta_0 + v_{j}$$
-
-
-<!--
-![](figure/formulas3.PNG)
 -->
+  
+  <!--
+  ![](figure/formulas3.PNG)
+  -->
 
 
 
