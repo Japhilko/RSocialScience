@@ -60,15 +60,24 @@ Unterscheidung
 
 
 ```{r,eval=F}
+# Linear Mixed-Effects Models using 'Eigen' and S4
 install.packages("lme4")
+
+# Data Visualization for Statistics in Social Science
 install.packages("sjPlot")
 ```
 
+- Nötige Pakete werden geladen
+
 ```{r}
 library(ggplot2)
+
+# Miscellaneous Functions for "Grid" Graphics
 library(gridExtra)
 library(lme4)
 library(sjPlot)
+
+# A Grammar of Data Manipulation
 library(dplyr)
 ```
 

@@ -95,12 +95,11 @@ plot(roller.lm,1)
 
 ## Residuenplot
 
+- Wenn die Residuen normalverteilt sind sollten sie auf einer Linie liegen.
+
 ```{r}
 plot(roller.lm,2)
 ```
-
-- Wenn die Residuen normalverteilt sind sollten sie auf einer Linie liegen.
-
 
 
 ## Regressionsdiagnostik mit Basis-R
@@ -111,6 +110,9 @@ N <- 5
 x1 <- rnorm(N)
 y <- runif(N)
 ```
+
+
+## Die Dichte der beiden Vektoren
 
 ```{r}
 par(mfrow=c(1,2))
@@ -164,6 +166,7 @@ summary(fit)
 ## Visualisierung
 
 ```{r}
+par(mfrow=c(2,2))
 visreg(fit)
 ```
 
@@ -232,15 +235,15 @@ visreg(fit, "Wind", by = "Heat",layout=c(3,1))
 ## Das Paket `visreg` - Interaktionen overlay
 
 ```{r}
-fit <- lm(Ozone ~ Solar.R + Wind * Heat, data = airquality)
-visreg(fit, "Wind", by="Heat", overlay=TRUE, partial=FALSE)
+fit<-lm(Ozone~Solar.R+Wind*Heat,data=airquality)
+visreg(fit,"Wind",by="Heat",overlay=TRUE,partial=FALSE)
 ```
 
 ## Das Paket `visreg` - `visreg2d`
 
 ```{r}
-fit2 <- lm(Ozone ~ Solar.R + Wind * Temp, data = airquality)
-visreg2d(fit2, "Wind", "Temp", plot.type = "image")
+fit2<-lm(Ozone~Solar.R+Wind*Temp,data=airquality)
+visreg2d(fit2,"Wind","Temp",plot.type="image")
 ```
 
 ## Das Paket visreg - surface

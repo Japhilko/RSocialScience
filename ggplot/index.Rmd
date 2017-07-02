@@ -47,8 +47,8 @@ kable(head(diamonds))
 
 ## Wie nutzt man `qplot`
 
-- Die Funktion `qplot` wird für schnelle Graphiken verwendet (quick plots)
-- bei der Funktion `ggplot` kann man alles bis ins Detail kontrollieren
+- `qplot` wird für schnelle Graphiken verwendet (quick plots)
+- bei `ggplot` kann man alles bis ins Detail kontrollieren
 
 ```{r,message=F}
 # histogram
@@ -338,17 +338,15 @@ qmap("Mannheim", zoom = 14, maptype="hybrid")
 qmap('Schriesheim', zoom = 14,maptype="terrain")
 ```
 
-## Abstrahierte Karten ([http://www.designfaves.com](http://www.designfaves.com/2014/03/abstracted-maps-reveal-cities-personalities))
+## [Abstrahierte Karten](http://www.designfaves.com/2014/03/abstracted-maps-reveal-cities-personalities))
 
 
 ![New York](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/NYabstracted.jpg)
 
 
-- Abstraktion wird genutzt um nur die essentiellen Informationen einer Karte zu zeigen. 
-
+- Abstraktion wird genutzt um nur essentielle Informationen zu zeigen. 
 - Bsp. U-Bahn Karten - wichtig sind Richtungen und wenig Infos zur Orientierung
-
-- Im folgenden werden Karten vorgestellt, die sich gut als Hintergrundkarten eignen.
+- Nun kommen Karten, die sich als Hintergrund eignen.
 
 ## ggmap - maptype watercolor
 
@@ -550,7 +548,9 @@ Wie fügt man Punkte hinzu
 - Nutzung von [geom_point](http://zevross.com/blog/2014/07/16/mapping-in-r-using-the-ggplot2-package/)
 
 
-- Question on [stackoverflow](http://stackoverflow.com/questions/15069963/getting-a-map-with-points-using-ggmap-and-ggplot2)
+- Frage auf [stackoverflow](http://stackoverflow.com/questions/15069963/getting-a-map-with-points-using-ggmap-and-ggplot2)
+
+## Bubbles auf einer Karte
 
 <http://i.stack.imgur.com>
 

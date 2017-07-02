@@ -136,12 +136,14 @@ Residuenplot
 Residuenplot
 ------------
 
+-   Wenn die Residuen normalverteilt sind sollten sie auf einer
+    Linie liegen.
+
+<!-- -->
+
     plot(roller.lm,2)
 
 ![](index_files/figure-markdown_strict/unnamed-chunk-11-1.png)
-
--   Wenn die Residuen normalverteilt sind sollten sie auf einer
-    Linie liegen.
 
 Regressionsdiagnostik mit Basis-R
 ---------------------------------
@@ -151,6 +153,9 @@ Ein einfaches Modell
     N <- 5
     x1 <- rnorm(N)
     y <- runif(N)
+
+Die Dichte der beiden Vektoren
+------------------------------
 
     par(mfrow=c(1,2))
     plot(density(x1))
@@ -165,12 +170,12 @@ Modellvorhersage machen
     pre <- predict(mod1)
     y
 
-    ## [1] 0.1332516 0.9226137 0.6865139 0.9331032 0.9011071
+    ## [1] 0.2046691 0.8972158 0.7185365 0.4764891 0.4037503
 
     pre
 
     ##         1         2         3         4         5 
-    ## 0.4992639 0.5877924 0.9314648 0.7629763 0.7950920
+    ## 0.5016584 0.6041987 0.7897905 0.4575561 0.3474571
 
 Regressionsdiagnostik mit Basis-R
 ---------------------------------
@@ -225,9 +230,10 @@ Ein Modell wird auf dem airquality Datensatz geschätzt
 Visualisierung
 --------------
 
+    par(mfrow=c(2,2))
     visreg(fit)
 
-![](index_files/figure-markdown_strict/unnamed-chunk-19-1.png)![](index_files/figure-markdown_strict/unnamed-chunk-19-2.png)![](index_files/figure-markdown_strict/unnamed-chunk-19-3.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-19-1.png)
 
 [Und dann mit `visreg` visualisiert.](http://myweb.uiowa.edu/pbreheny/publications/visreg.pdf)
 ----------------------------------------------------------------------------------------------
@@ -345,16 +351,16 @@ Steuern der Graphikausgabe mittels `layout`
 Das Paket `visreg` - Interaktionen overlay
 ------------------------------------------
 
-    fit <- lm(Ozone ~ Solar.R + Wind * Heat, data = airquality)
-    visreg(fit, "Wind", by="Heat", overlay=TRUE, partial=FALSE)
+    fit<-lm(Ozone~Solar.R+Wind*Heat,data=airquality)
+    visreg(fit,"Wind",by="Heat",overlay=TRUE,partial=FALSE)
 
 ![](index_files/figure-markdown_strict/unnamed-chunk-27-1.png)
 
 Das Paket `visreg` - `visreg2d`
 -------------------------------
 
-    fit2 <- lm(Ozone ~ Solar.R + Wind * Temp, data = airquality)
-    visreg2d(fit2, "Wind", "Temp", plot.type = "image")
+    fit2<-lm(Ozone~Solar.R+Wind*Temp,data=airquality)
+    visreg2d(fit2,"Wind","Temp",plot.type="image")
 
 ![](index_files/figure-markdown_strict/unnamed-chunk-28-1.png)
 
@@ -380,3 +386,6 @@ Linkliste - lineare Regression
 
 -   [Multiple
     Regression](https://www.r-bloggers.com/multiple-regression-part-1/)
+
+-   Basis Regression - [How to go about interpreting regression
+    cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)
