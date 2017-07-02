@@ -63,7 +63,7 @@ Die kompletten Foliensätze kann man hier herunterladen:
 ## Der R-code
 
 - Den R-code kann man direkt in die R-Konsole kopieren und ausführen.
-- Begleitend zu den Folien wird meistens auch jweils ein R-File angeboten. 
+- Begleitend zu den Folien wird meistens auch jeweils ein R-File angeboten. 
 - Der R-code befindet sich in folgendem Ordner:
 
 <https://github.com/Japhilko/RSocialScience/tree/master/code>
