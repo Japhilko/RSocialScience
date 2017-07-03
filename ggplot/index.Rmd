@@ -41,6 +41,7 @@ head(diamonds)
 
 ```{r,echo=F}
 library(knitr)
+diamonds2 <- diamonds[1:1000,]
 kable(head(diamonds))
 ```
 
@@ -52,14 +53,14 @@ kable(head(diamonds))
 
 ```{r,message=F}
 # histogram
-qplot(depth, data=diamonds)
+qplot(depth, data=diamonds2)
 ```
 
 
 ## Ein Balkendiagramm
 
 ```{r}
-qplot(cut, depth, data=diamonds)
+qplot(cut, depth, data=diamonds2)
 ```
 
 ## Ein weiteres Balkendiagramm
@@ -72,7 +73,7 @@ qplot(factor(cyl), data=mtcars,geom="bar")
 ## Boxplot
 
 ```{r}
-qplot(data=diamonds,x=cut,y=depth,geom="boxplot")
+qplot(data=diamonds2,x=cut,y=depth,geom="boxplot")
 ```
 
 
@@ -80,21 +81,21 @@ qplot(data=diamonds,x=cut,y=depth,geom="boxplot")
 
 ```{r}
 # scatterplot
-qplot(carat, depth, data=diamonds)
+qplot(carat, depth, data=diamonds2)
 ```
 
 
 ## Farbe hinzu:
 
 ```{r}
-qplot(carat, depth, data=diamonds,color=cut)
+qplot(carat, depth, data=diamonds2,color=cut)
 ```
 
 
 ## Trendlinie hinzufügen
 
 ```{r}
-myGG<-qplot(data=diamonds,x=carat,y=depth,color=carat) 
+myGG<-qplot(data=diamonds2,x=carat,y=depth,color=carat) 
 myGG + stat_smooth(method="lm")
 ```
 
@@ -111,7 +112,7 @@ coord_flip()
 - die aestetics:
 
 ```{r}
-ggplot(diamonds, aes(clarity, fill=cut)) + geom_bar()
+ggplot(diamonds2, aes(clarity, fill=cut)) + geom_bar()
 ```
 
 
@@ -128,7 +129,7 @@ install.packages("RColorBrewer")
 ```{r}
 library(RColorBrewer)
 myColors <- brewer.pal(5,"Accent")
-names(myColors) <- levels(diamonds$cut)
+names(myColors) <- levels(diamonds2$cut)
 colScale <- scale_colour_manual(name = "cut",
                                 values = myColors)
 ```
@@ -138,7 +139,7 @@ colScale <- scale_colour_manual(name = "cut",
 ## Eine Graphik mit den gewählten Farben
 
 ```{r}
-p <- ggplot(diamonds,aes(carat, depth,colour = cut)) + 
+p <- ggplot(diamonds2,aes(carat, depth,colour = cut)) + 
   geom_point()
 p + colScale
 ```
