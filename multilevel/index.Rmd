@@ -174,16 +174,19 @@ summary(HLM0)
 
 - Das Null Modell schließt keine erklärenden Variablen ein. 
 - Allerdings könnte der sozioökonomischen Status (SES) der Schüler auch eine Rolle spielen. 
-- Die folgenden Ausdrücke geben ein verfeinertes Modell mit zufälligen Achsenabschnitten und Steigung  für jede der Schulen:
+- Die folgenden Ausdrücke geben ein verfeinertes Modell mit zufälligen Achsenabschnitten und Steigung  für jede der Schulen.
 
 
+
+<!--
 ![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Formel180.PNG)
 
-![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Formel182.PNG)
+![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/formel182.PNG)
 
 ![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Formel183.PNG)
 
-<!--
+
+
 $$y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$$
 
 $$\alpha_{j} = \alpha_0 + u_{j}$$
