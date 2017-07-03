@@ -47,6 +47,16 @@ for ( i in 1:length(chapters)){
 }
 
 
+
+setwd("D:/GESIS/Workshops/RSocialScience/code")
+for ( i in 1:length(chapters)){
+  purl(paste0("../",chapters[i],"/index.Rmd"),documentation=2,
+       output=paste0(chapters[i],".R"))
+}
+
+
+
+
 rmarkdown::render("../intro/index.Rmd",
                   output_format = "slidy_presentation",
                   output_file="intro.html",

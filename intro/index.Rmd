@@ -73,9 +73,9 @@ Die kompletten Foliensätze kann man hier herunterladen:
 
 - Vereinzelt sind auch Datensätze vorhanden. 
 
-- `.csv` Dateien können direkt von R eingelesen werden (wie das geht werde ich noch zeigen).
+- `.csv` Dateien können direkt von R eingelesen werden (wie das geht, werde ich noch zeigen).
 
-- Wenn die `.csv` Dateien heruntergeladen werden sollen auch den Raw Button verwenden.
+- Wenn die `.csv` Dateien heruntergeladen werden sollen - den Raw Button verwenden.
 
 - Alle anderen Dateien (bspw. `.RData`) auch mittels Raw Button herunterladen.
 
