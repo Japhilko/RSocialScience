@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r,eval=F}
 library(foreign)
 dat <- read.dta("https://github.com/Japhilko/RSocialScience/
-                blob/master/data/GPanel.dta?raw=true")
+      blob/master/data/GPanel.dta?raw=true")
 ```
 
 ```{r,echo=F}
