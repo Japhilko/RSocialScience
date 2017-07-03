@@ -119,10 +119,8 @@ Der `diamonds` Datensatz
 Wie nutzt man `qplot`
 ---------------------
 
--   Die Funktion `qplot` wird für schnelle Graphiken verwendet
-    (quick plots)
--   bei der Funktion `ggplot` kann man alles bis ins Detail
-    kontrollieren
+-   `qplot` wird für schnelle Graphiken verwendet (quick plots)
+-   bei `ggplot` kann man alles bis ins Detail kontrollieren
 
 <!-- -->
 
@@ -357,6 +355,9 @@ Das Beispiel kann man direkt in die Konsole kopieren:
 
     # qmap("baylor university")
     qmap("baylor university", zoom = 14)
+
+![](index_files/figure-markdown_strict/unnamed-chunk-29-1.png)
+
     # und so weiter
 
 Ein anderes *zoom level*
@@ -416,20 +417,16 @@ ggmap - terrain map
 
 ![](index_files/figure-markdown_strict/unnamed-chunk-36-1.png)
 
-Abstrahierte Karten ([http://www.designfaves.com](http://www.designfaves.com/2014/03/abstracted-maps-reveal-cities-personalities))
-----------------------------------------------------------------------------------------------------------------------------------
+[Abstrahierte Karten](http://www.designfaves.com/2014/03/abstracted-maps-reveal-cities-personalities))
+------------------------------------------------------------------------------------------------------
 
 ![New
 York](https://github.com/Japhilko/IntroR/raw/master/2017/slides/figure/NYabstracted.jpg)
 
--   Abstraktion wird genutzt um nur die essentiellen Informationen einer
-    Karte zu zeigen.
-
+-   Abstraktion wird genutzt um nur essentielle Informationen zu zeigen.
 -   Bsp. U-Bahn Karten - wichtig sind Richtungen und wenig Infos zur
     Orientierung
-
--   Im folgenden werden Karten vorgestellt, die sich gut als
-    Hintergrundkarten eignen.
+-   Nun kommen Karten, die sich als Hintergrund eignen.
 
 ggmap - maptype watercolor
 --------------------------
@@ -543,8 +540,8 @@ Koordinaten verschiedener Orte in Deutschland
 </tr>
 <tr class="even">
 <td align="left">Koeln</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<td align="right">6.960279</td>
+<td align="right">50.93753</td>
 </tr>
 <tr class="odd">
 <td align="left">Dresden</td>
@@ -615,7 +612,7 @@ Geokodierung - verschiedene Punkte von Interesse
     ## 1 8.469879 49.47972
 
     ##        lon      lat
-    ## 1 8.475208 49.48326
+    ## 1 8.475754 49.48304
 
 Punkte in der Karte
 -------------------
@@ -683,8 +680,11 @@ Wie fügt man Punkte hinzu
 -   Nutzung von
     [geom\_point](http://zevross.com/blog/2014/07/16/mapping-in-r-using-the-ggplot2-package/)
 
--   Question on
+-   Frage auf
     [stackoverflow](http://stackoverflow.com/questions/15069963/getting-a-map-with-points-using-ggmap-and-ggplot2)
+
+Bubbles auf einer Karte
+-----------------------
 
 <http://i.stack.imgur.com>
 

@@ -38,12 +38,16 @@ for ( i in 1:length(chapters)){
                     output_dir=slidepath)
 }
 
+# markdown files
+
+
+
 
 
 for ( i in 1:length(chapters)){
   rmarkdown::render(paste0("../",chapters[i],"/index.Rmd"),
                     output_format = "md_document",
-                    output_file=paste0(chapters[i],".md"))
+                    output_file=paste0("../",chapters[i],".md"))
 }
 
 
