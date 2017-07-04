@@ -11,17 +11,26 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Den Datensatz laden
 
-```{r}
+```{r,echo=F}
 library(foreign)
 dat <- read.dta(
 "https://github.com/Japhilko/RSocialScience/blob/master/data/GPanel.dta?raw=true")
 dat$bazq020a <- as.numeric(dat$bazq020a)
 ```
 
+```{r,eval=F}
+library(foreign)
+dat <- read.dta(
+"https://github.com/Japhilko/RSocialScience/blob/master/data/
+GPanel.dta?raw=true")
+dat$bazq020a <- as.numeric(dat$bazq020a)
+```
 
 ## Streuungsmaße
 
+<!--
 In Basis R sind die wichtigsten Streuungsmaße enthalten:
+-->
 
 -  Varianz: `var()`
 -  Standardabweichung: `sd()`
@@ -35,6 +44,7 @@ sd(dat$bazq020a,na.rm=T)
 range(dat$bazq020a,na.rm=T)
 ```
 
+<!--
 ## Extremwerte
 
 ```{r}
@@ -59,6 +69,7 @@ Bei fehlenden Werten muss ein weiteres Argument mitgegeben werden:
 ```{r}
 var(ab,na.rm=T)
 ```
+-->
 
 ## Häufigkeiten und gruppierte Kennwerte
 
@@ -113,14 +124,39 @@ aggregate(dat$bazq020a,by=list(dat$a11d054a),mean,na.rm=T)
 
 `FUN`: die Funktion welche den Kennwert berechnet (z.B. `mean` oder `sd`)
 			
-			
+<!--			
 - Die Ausgabe kann mit Hilfe von `xtabs()` in eine schöne zweidimensionale Tabelle überführt werden
+-->
+
 
 ## Beispieldatensatz - apply Funktion
 
 ```{r}
 ApplyDat <- cbind(1:4,runif(4),rnorm(4))
 ```
+
+```{r,echo=F}
+library(knitr)
+kable(ApplyDat)
+```
+
+
+## Argumente der Funktion apply
+
+```{r,eval=F}
+?apply
+```
+
+
+- Für `margin=1` die Funktion `mean` auf die Reihen angewendet,
+
+- Für `margin=2` die Funktion `mean` auf die Spalten angewendet,
+
+- Anstatt `mean` können auch andere Funktionen wie `var`, `sd` oder `length` verwendet werden.
+
+
+## Die `apply` Funktion anwenden
+
 
 ```{r}
 apply(ApplyDat,1,mean)
@@ -137,15 +173,11 @@ apply(ApplyDat,1,range)
 apply(ApplyDat,1,length)
 ```
 
-## Argumente der Funktion apply
-
-- Für `margin=1` die Funktion `mean` auf die Reihen angewendet,
-
-- Für `margin=2` die Funktion `mean` auf die Spalten angewendet,
-
-- Anstatt `mean` können auch andere Funktionen wie `var`, `sd` oder `length` verwendet werden.
-
 ## Die Funktion tapply
+
+```{r,eval=F}
+?tapply
+```
 
 
 - Auch andere Funktionen können eingesetzt werden.... - Auch selbst programmierte Funktionen

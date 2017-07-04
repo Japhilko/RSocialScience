@@ -3,7 +3,7 @@ Wie sehen die Daten aus?
 
 -   Beispiel Mehrebenenstruktur der Daten
 
-![](https://raw.githubusercontent.com/Japhilko/RSocialScience/master/multilevel/figure/Multileveldata.png)
+![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Multileveldata.png)
 
 [Andres Gutierrez - Multilevel Modeling of Educational Data using R](https://www.r-bloggers.com/multilevel-modeling-of-educational-data-using-r-part-1/)
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -60,16 +60,25 @@ Unterscheidung
 Bibliotheken
 ------------
 
+    # Linear Mixed-Effects Models using 'Eigen' and S4
     install.packages("lme4")
+
+    # Data Visualization for Statistics in Social Science
     install.packages("sjPlot")
 
+-   Nötige Pakete werden geladen
+
+<!-- -->
+
     library(ggplot2)
+    # Miscellaneous Functions for "Grid" Graphics
     library(gridExtra)
     library(lme4)
 
     ## Loading required package: Matrix
 
     library(sjPlot)
+    # A Grammar of Data Manipulation
     library(dplyr)
 
     ## 
@@ -90,7 +99,9 @@ Bibliotheken
 Beispieldaten
 -------------
 
-    mlexdat <- read.csv("https://github.com/Japhilko/RSocialScience/raw/master/data/mlexdat.csv") 
+    mlexdat <- read.csv(
+    "https://github.com/Japhilko/RSocialScience/
+    raw/master/data/mlexdat.csv") 
 
 <table>
 <thead>
@@ -141,19 +152,30 @@ Beispieldaten
 </tbody>
 </table>
 
-Formalistisch
--------------
+[Formalistisch](http://kesdev.com/you-got-latex-in-my-markdown/)
+----------------------------------------------------------------
 
 -   Bei der Analyse von Daten mit diesen hierarchischen Strukturen,
     sollte man immer zunächst ein Null-Modell anpassen
 -   Somit kann man die Variation erfassen, die auf die Schulen
-    zurückzuführen ist:
+    zurückzuführen ist.
 
 -   Das passende Modell sieht folgendermaßen aus:
 
-$$ y\_{ij} = *{j} + *{ij}
+![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Formel113.PNG)
+<!--
 
-\_{j} = *0 + u*{j} $$ Die Gesamtvariation wird in zwei Teile zerlegt:
+
+$$
+y_{ij} = \alpha_{j} + \varepsilon_{ij}
+
+\alpha_{j} = \alpha_0 + u_{j}
+$$
+
+![](figure/formulas1.PNG)
+-->
+
+Die Gesamtvariation wird in zwei Teile zerlegt:
 
 -   Variation zwischen Schülern (innerhalb der Schulen) und
 -   zwischen den Schulen (zwischen den Schulen).
@@ -170,8 +192,8 @@ Der R-code für dieses Nullmodell
 
     HLM0 <- lmer(Score ~ (1 | ID), data = mlexdat)
 
-Nullmodell Ergebnis
--------------------
+Nullmodell Ergebnis - Koeffizienten
+-----------------------------------
 
     coef(HLM0)
 
@@ -185,6 +207,9 @@ Nullmodell Ergebnis
     ## 
     ## attr(,"class")
     ## [1] "coef.mer"
+
+Nullmodell Ergebnis - Zusammenfassung
+-------------------------------------
 
     summary(HLM0)
 
@@ -240,12 +265,25 @@ Ein weiteres Modell
 -   Allerdings könnte der sozioökonomischen Status (SES) der Schüler
     auch eine Rolle spielen.
 -   Die folgenden Ausdrücke geben ein verfeinertes Modell mit zufälligen
-    Achsenabschnitten und Steigung für jede der Schulen:
+    Achsenabschnitten und Steigung für jede der Schulen.
 
-*y*<sub>*i**j*</sub> = *α*<sub>*j*</sub> + *β*<sub>*j*</sub> \* *S**E**S*<sub>*i**j*</sub> + *ε*<sub>*i**j*</sub>
+<!--
+![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Formel180.PNG)
 
-*α*<sub>*j*</sub> = *α*<sub>0</sub> + *u*<sub>*j*</sub>
-*β**j* = *β*<sub>0</sub> + *v*<sub>*j*</sub>
+![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/formel182.PNG)
+
+![](https://github.com/Japhilko/RSocialScience/raw/master/multilevel/figure/Formel183.PNG)
+
+
+
+$$y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$$
+
+$$\alpha_{j} = \alpha_0 + u_{j}$$
+$$\beta{j} = \beta_0 + v_{j}$$
+-->
+<!--
+  ![](figure/formulas3.PNG)
+  -->
 
 Rcode für dieses Modell
 -----------------------
@@ -263,6 +301,9 @@ Rcode für dieses Modell
     ## 
     ## attr(,"class")
     ## [1] "coef.mer"
+
+Zusammenfassung zweites Modell
+------------------------------
 
     summary(HLM1)
 
@@ -308,39 +349,134 @@ Rcode für dieses Modell
 
     ## [1] 0.5374689
 
-Auf der einen Seite stellen wir fest, dass die SES 99 Prozent der
-Unterschiede zwischen den Schulen erklärt; Auf der anderen Seite erklärt
-die SES 53 Prozent der Abweichungen innerhalb der Schulen.
+-   die Variable `SES` erklärt 99 Prozent der Unterschiede zwischen den
+    Schulen
+-   diese Variable `SES` erklärt 53 Prozent der Abweichungen innerhalb
+    der Schulen.
 
-Was heißt das? Schulsegregation
+Was heißt das? - Schulsegregation
+---------------------------------
 
-Das heißt, wohlhabende Studenten gehören zu reichen Schulen, und arme
-Studenten gehören zu armen Schulen.
+-   wohlhabende Studenten gehören zu reichen Schulen
+-   arme Studenten gehören zu armen Schulen.
 
-Darüber hinaus übertreffen wohlhabende Studenten weit über die Leistung
-der armen Studenten.
+-   Die Leistung der wohlhabenden Studenten ist höher als die der
+    armen Studenten.
 
-[Multilevel Model Specification](http://www.rensenieuwenhuis.nl/r-sessions-16-multilevel-model-specification-lme4/)
--------------------------------------------------------------------------------------------------------------------
+Ein weiteres Beispiel zur [Spezifikation von Multilevel Modellen](http://www.rensenieuwenhuis.nl/r-sessions-16-multilevel-model-specification-lme4/)
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+-   benötigte Bibliotheken:
+
+<!-- -->
 
     library(lme4)
     library(mlmRev)
-    names(Exam)
 
-    ##  [1] "school"   "normexam" "schgend"  "schavg"   "vr"       "intake"  
-    ##  [7] "standLRT" "sex"      "type"     "student"
+Der Datensatz
+-------------
 
-random intercept, fixed predictor in individual level
------------------------------------------------------
+    data(Exam)
+    # names(Exam)
 
--   Für das nächste Modell fügen wir dem einzelnen Level einen
-    Prädiktor hinzu.
--   Wir tun dies, indem wir die '1' im Nullmodell durch den Prädiktor
-    (hier: standLRT) ersetzen.
--   Es wird immer ein Intercept angenommen, also wird es noch
-    hier geschätzt.
--   Es muss nur angegeben werden, wenn keine anderen Prädiktoren
-    angegeben sind.
+<table>
+<thead>
+<tr class="header">
+<th align="left">school</th>
+<th align="right">normexam</th>
+<th align="left">schgend</th>
+<th align="right">schavg</th>
+<th align="left">vr</th>
+<th align="left">intake</th>
+<th align="right">standLRT</th>
+<th align="left">sex</th>
+<th align="left">type</th>
+<th align="left">student</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">0.2613242</td>
+<td align="left">mixed</td>
+<td align="right">0.1661752</td>
+<td align="left">mid 50%</td>
+<td align="left">bottom 25%</td>
+<td align="right">0.6190592</td>
+<td align="left">F</td>
+<td align="left">Mxd</td>
+<td align="left">143</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="right">0.1340672</td>
+<td align="left">mixed</td>
+<td align="right">0.1661752</td>
+<td align="left">mid 50%</td>
+<td align="left">mid 50%</td>
+<td align="right">0.2058022</td>
+<td align="left">F</td>
+<td align="left">Mxd</td>
+<td align="left">145</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">-1.7238820</td>
+<td align="left">mixed</td>
+<td align="right">0.1661752</td>
+<td align="left">mid 50%</td>
+<td align="left">top 25%</td>
+<td align="right">-1.3645760</td>
+<td align="left">M</td>
+<td align="left">Mxd</td>
+<td align="left">142</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="right">0.9675862</td>
+<td align="left">mixed</td>
+<td align="right">0.1661752</td>
+<td align="left">mid 50%</td>
+<td align="left">mid 50%</td>
+<td align="right">0.2058022</td>
+<td align="left">F</td>
+<td align="left">Mxd</td>
+<td align="left">141</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">0.5443412</td>
+<td align="left">mixed</td>
+<td align="right">0.1661752</td>
+<td align="left">mid 50%</td>
+<td align="left">mid 50%</td>
+<td align="right">0.3711052</td>
+<td align="left">F</td>
+<td align="left">Mxd</td>
+<td align="left">138</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="right">1.7348992</td>
+<td align="left">mixed</td>
+<td align="right">0.1661752</td>
+<td align="left">mid 50%</td>
+<td align="left">bottom 25%</td>
+<td align="right">2.1894372</td>
+<td align="left">M</td>
+<td align="left">Mxd</td>
+<td align="left">155</td>
+</tr>
+</tbody>
+</table>
+
+Zufälliger Intercept und fixed predictor auf individeller Ebene
+---------------------------------------------------------------
+
+-   Ein Prädiktor wird auf jeder Ebene hinzugefügt
+-   Dazu wird die '1' im Nullmodell durch den Prädiktor (hier:
+    `standLRT`) ersetzen.
+-   Es wird immer ein Intercept angenommen
 -   Da wir nicht wollen, dass der Effekt des Prädiktors zwischen den
     Gruppen variiert, bleibt die Spezifikation des zufälligen Teils des
     Modells mit dem vorherigen Modell identisch.
@@ -349,37 +485,46 @@ random intercept, fixed predictor in individual level
 
     lmer(normexam ~ standLRT + (1 | school), data=Exam)
 
-random intercept, random slope
+Random intercept, Random slope
 ------------------------------
 
-Das nächste Modell, das angegeben wird, ist ein Modell mit einem
-zufälligen Intercept auf individueller Ebene und ein Prädiktor, der
-zwischen Gruppen variieren darf. Mit anderen Worten, die Wirkung der
-Hausaufgaben auf die Partitur auf einem Mathe-Test variiert zwischen den
-Schulen. Um dieses Modell zu schätzen, wird das '1', das den Intercept
-im zufälligen Teil der Modellspezifikation angibt, durch die Variable
-ersetzt, von der wir den Effekt zwischen den Gruppen variieren wollen.
+-   Modell mit zufälligen Intercept auf individueller Ebene und
+-   einem Prädiktor, der zwischen Gruppen variieren darf.
+
+-   Mit anderen Worten: die Wirkung der Hausaufgaben auf das Ergebnis
+    der Klausur (Mathe-Test) variiert zwischen den Schulen.
+
+-   Zur Schätzung wird '1' - der Intercept im zufälligen Teil der
+    Modellspezifikation
+-   ...durch die Variable ersetzt, von der wir den Effekt zwischen den
+    Gruppen variieren wollen.
 
 [Varying intercept model](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
 ------------------------------------------------------------------------------------------------------------------------
 
-    MLexamp.6 <- lmer(extro ~ open + agree + social + (1 | school), data = lmm.data)
+    MLexamp.6<-lmer(extro~open+agree+ social + (1 | school), 
+                    data = lmm.data)
 
 Varying slope model
 -------------------
 
-    MLexamp.9 <- lmer(extro ~ open + agree + social + (1 + open | school/class), data = lmm.data)
+    MLexamp.9<-lmer(extro~open + agree + social + 
+                      (1 + open | school/class), 
+                    data = lmm.data)
 
-[Paket lmer](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
---------------------------------------------------------------------------
+<!--
 
-    lmer(y ~ 1 + (1 | subjects), data=data)
-    # nlme
-    lme(y ~ 1, random = ~ 1 | subjects, data=data)
-
+```r
+lmer(y ~ 1 + (1 | subjects), data=data)
+# nlme
+lme(y ~ 1, random = ~ 1 | subjects, data=data)
+```
+-->
 Links
 -----
 
+-   [Paket
+    lmer](https://cran.r-project.org/doc/contrib/Bliese_Multilevel.pdf)
 -   [Uncertainty in parameter estimates using multilevel
     models](https://www.r-bloggers.com/uncertainty-in-parameter-estimates-using-multilevel-models/)
 

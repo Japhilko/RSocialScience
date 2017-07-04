@@ -48,7 +48,7 @@ Wir erstellen ein Histogramm der Variable gcsescore:
 
     hist(Chem97$gcsescore)
 
-![](index_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
 Graphik speichern
 -----------------
@@ -114,7 +114,7 @@ Histogramm
     hist(Chem97$gcsescore,col="blue",
          main="Hallo Welt",ylab="y-Werte", xlab="x-Werte")
 
-![](index_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-6-1.png)
 
 Weitere Argumente:
 
@@ -141,35 +141,75 @@ Barplots und barcharts
 
     barplot(tabScore)
 
-![](index_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
 Mehr Farben:
 ------------
 
     barplot(tabScore,col=rgb(0,0,1))
 
-![](index_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
 Grüne Farbe
 -----------
 
     barplot(tabScore,col=rgb(0,1,0))
 
-![](index_files/figure-markdown_strict/unnamed-chunk-11-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-12-1.png)
 
 Rote Farbe
 ----------
 
     barplot(tabScore,col=rgb(1,0,0))
 
-![](index_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-13-1.png)
 
 Transparent
 -----------
 
     barplot(tabScore,col=rgb(1,0,0,.3))
 
-![](index_files/figure-markdown_strict/unnamed-chunk-13-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-14-1.png)
+
+Scatterplots
+------------
+
+-   Ein einfacher two-way Scatterplot kann mit der Funktion plot()
+    erstellt werden
+-   plot() muss mindestens ein x und ein y Beobachtungsvektor übergeben
+    werden
+-   Um die Farbe der Plot-Symbole anzupassen gibt es die Option col
+    (Farbe als character oder numerisch)
+-   Die Plot-Symbole selbst können mit pch (plotting character)
+    angepasst werden (character oder numerisch)
+-   Die Achenbeschriftungen (labels) werden mit xlab und ylab definiert
+
+Beispieldaten für Scatterplot
+-----------------------------
+
+    x <- runif(100)
+    y <- runif(100)
+
+Einfacher Scatterplot
+---------------------
+
+    plot(x,y)
+
+![](index_files/figure-markdown_strict/unnamed-chunk-16-1.png)
+
+Einfacher Scatterplot II
+------------------------
+
+    plot(x,y,pch=20)
+
+![](index_files/figure-markdown_strict/unnamed-chunk-17-1.png)
+
+Einfacher Scatterplot III
+-------------------------
+
+    plot(x,y,pch=20)
+
+![](index_files/figure-markdown_strict/unnamed-chunk-18-1.png)
 
 Boxplot
 -------
@@ -188,7 +228,7 @@ Horizontaler Boxplot
     boxplot(Chem97$gcsescore,
     horizontal=TRUE)
 
-![](index_files/figure-markdown_strict/unnamed-chunk-15-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-20-1.png)
 
 -   [Erklärung zu
     Boxplots](http://edoc.hu-berlin.de/dissertationen/gruenwald-andreas-2005-01-17/HTML/chapter2.html)
@@ -208,7 +248,7 @@ Beispiel grupierter Boxplot
 
     boxplot(Chem97$gcsescore~Chem97$gender)
 
-![](index_files/figure-markdown_strict/unnamed-chunk-16-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-21-1.png)
 
 Alternativen zu Boxplot
 -----------------------
@@ -241,7 +281,7 @@ Die Bibliothek `vioplot`
 `vioplot` - Das Ergebnis
 ------------------------
 
-![](index_files/figure-markdown_strict/unnamed-chunk-19-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-24-1.png)
 
 Alternativen zum Boxplot
 ------------------------
@@ -251,20 +291,19 @@ Alternativen zum Boxplot
     boxplot(count~spray,data=InsectSprays,col="blue")
     beanplot(count~spray,data=InsectSprays,col="orange")
 
-![](index_files/figure-markdown_strict/unnamed-chunk-20-1.png)
+![](index_files/figure-markdown_strict/unnamed-chunk-25-1.png)
 
-Grafiken für bedingte, bi- und multivariate Verteilungen
-========================================================
+[CMYK Farbschema](https://www.r-bloggers.com/draw-figures-in-cmyk-mode-in-r/)
+-----------------------------------------------------------------------------
 
-Scatterplots
-------------
+    pdf("test.cmyk.pdf", colormodel='cmyk')
+    pie(1:10, col=1:10)
+    dev.off() 
 
--   Ein einfacher two-way scatterplot kann mit der Funktion plot()
-    erstellt werden
--   plot() muss mindestens ein x und ein y Beobachtungsvektor übergeben
-    werden
--   Um die Farbe der Plot-Symbole anzupassen gibt es die Option col
-    (Farbe als character oder numerisch)
--   Die Plot-Symbole selbst können mit pch} (plotting character)
-    angepasst werden (character oder numerisch)
--   Die Achenbeschriftungen (labels) werden mit xlab und ylab definiert
+Aufgabe - einfache Grafiken
+---------------------------
+
+-   Laden Sie den Datensatz `VADeaths` und erzeugen Sie den folgenden
+    plot:
+
+![](index_files/figure-markdown_strict/unnamed-chunk-27-1.png)

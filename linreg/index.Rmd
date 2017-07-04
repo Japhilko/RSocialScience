@@ -252,7 +252,27 @@ visreg2d(fit2,"Wind","Temp",plot.type="image")
 visreg2d(fit2, "Wind", "Temp", plot.type = "persp")
 ```
 
+## Regression mit dem `survey` Paket
 
+```{r}
+library(survey)
+data(api)
+head(apipop)
+```
+
+## [Das Survey Design spezifizieren](https://www.r-bloggers.com/linear-models-with-weighted-observations/)
+
+```{r}
+dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, 
+                  data=apistrat, fpc=~fpc)
+```
+
+### Die Regression rechnen
+
+```{r}
+summary(svyglm(api00~ell+meals+mobility, 
+               design=dstrat))
+```
 
 
 ## Linkliste - lineare Regression
@@ -265,9 +285,27 @@ visreg2d(fit2, "Wind", "Temp", plot.type = "persp")
 
 - [Multiple Regression](https://www.r-bloggers.com/multiple-regression-part-1/)
 
-
-
-
-
 - Basis Regression - [How to go about interpreting regression cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)
+
+## Aufgabe - lineare Regression
+
+<!--
+[Mietspiegel München](http://data.ub.uni-muenchen.de/2/)
+-->
+
+Beschrieben wird Wegstrecke, dreier Spielzeugautos die in unterschiedlichen Winkeln Rampe herunterfuhren.
+
+- angle: Winkel der Rampe
+- distance: Zurückgelegte Strecke des Spielzeugautos
+- car: Autotyp (1, 2 oder 3)
+
+(a) Lesen Sie den  Datensatz `toycars` (Paket `DAAG`) in einen dataframe `data` ein und  wandeln Sie die Variable `car` des Datensatzes  in  einen Faktor  (`as.factor`) um.
+
+(b) Erstellen  Sie  drei Boxplots,  die die zurückgelegte Strecke  getrennt  nach  dem Faktor car darstellen.
+
+(c) Schätzen Sie für die Autos die Parameter  des folgenden linearen Modells mit  Hilfe der Funktion `lm()`
+
+$$ distance_i= \beta_0 + \beta_1 \cdot angle_i + \epsilon_i$$
+
+(d) Überprüfen  Sie deskriptiv  die Anpassung der drei  Modelle. Deutet das $$ R^2 $$ jeweils auf eine gute Modellanpassung hin?
 

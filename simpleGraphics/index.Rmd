@@ -265,3 +265,24 @@ boxplot(count~spray,data=InsectSprays,col="blue")
 beanplot(count~spray,data=InsectSprays,col="orange")
 ```
 
+## [CMYK Farbschema](https://www.r-bloggers.com/draw-figures-in-cmyk-mode-in-r/)
+
+```{r,eval=F}
+pdf("test.cmyk.pdf", colormodel='cmyk')
+pie(1:10, col=1:10)
+dev.off() 
+```
+
+
+
+## Aufgabe - einfache Grafiken
+
+- Laden Sie den Datensatz `VADeaths` und erzeugen Sie den
+folgenden plot:
+
+```{r,echo=F}
+library(datasets)
+data(VADeaths)
+barplot(VADeaths, border = "dark blue",beside=T,
+        col=c(1,2,3,4,5)) 
+```

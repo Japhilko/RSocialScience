@@ -170,12 +170,12 @@ Modellvorhersage machen
     pre <- predict(mod1)
     y
 
-    ## [1] 0.2046691 0.8972158 0.7185365 0.4764891 0.4037503
+    ## [1] 0.2922439 0.3218071 0.3528771 0.8962026 0.2060495
 
     pre
 
     ##         1         2         3         4         5 
-    ## 0.5016584 0.6041987 0.7897905 0.4575561 0.3474571
+    ## 0.3554356 0.4134421 0.5003626 0.4203371 0.3796029
 
 Regressionsdiagnostik mit Basis-R
 ---------------------------------
@@ -371,6 +371,81 @@ Das Paket visreg - surface
 
 ![](index_files/figure-markdown_strict/unnamed-chunk-29-1.png)
 
+Regression mit dem `survey` Paket
+---------------------------------
+
+    library(survey)
+    data(api)
+    head(apipop)
+
+    ##              cds stype            name                      sname snum
+    ## 1 01611190130229     H    Alameda High               Alameda High    1
+    ## 2 01611190132878     H    Encinal High               Encinal High    2
+    ## 3 01611196000004     M  Chipman Middle             Chipman Middle    3
+    ## 4 01611196090005     E Lum (Donald D.) Lum (Donald D.) Elementary    4
+    ## 5 01611196090013     E Edison Elementa          Edison Elementary    5
+    ## 6 01611196090021     E Otis (Frank) El    Otis (Frank) Elementary    6
+    ##                  dname dnum   cname cnum flag pcttest api00 api99 target
+    ## 1 Alameda City Unified    6 Alameda    1   NA      96   731   693      5
+    ## 2 Alameda City Unified    6 Alameda    1   NA      99   622   589     11
+    ## 3 Alameda City Unified    6 Alameda    1   NA      99   622   572     11
+    ## 4 Alameda City Unified    6 Alameda    1   NA      99   774   732      3
+    ## 5 Alameda City Unified    6 Alameda    1   NA      99   811   784      1
+    ## 6 Alameda City Unified    6 Alameda    1   NA     100   780   725      4
+    ##   growth sch.wide comp.imp both awards meals ell yr.rnd mobility acs.k3
+    ## 1     38      Yes      Yes  Yes    Yes    14  16   <NA>        9     NA
+    ## 2     33      Yes       No   No     No    20  18   <NA>       13     NA
+    ## 3     50      Yes      Yes  Yes    Yes    55  25   <NA>       20     NA
+    ## 4     42      Yes      Yes  Yes    Yes    35  26   <NA>       21     20
+    ## 5     27      Yes      Yes  Yes    Yes    15   9   <NA>       11     20
+    ## 6     55      Yes      Yes  Yes    Yes    25  18   <NA>       12     20
+    ##   acs.46 acs.core pct.resp not.hsg hsg some.col col.grad grad.sch avg.ed
+    ## 1     NA       25       91       6  16       22       38       18   3.45
+    ## 2     NA       27       84      11  20       29       31        9   3.06
+    ## 3     26       27       86      11  31       30       20        8   2.82
+    ## 4     30       NA       96       3  22       29       31       15   3.32
+    ## 5     29       NA       96       3   9       29       26       33   3.76
+    ## 6     29       NA       87       6  11       28       41       13   3.44
+    ##   full emer enroll api.stu
+    ## 1   85   16   1278    1090
+    ## 2   90   10   1113     840
+    ## 3   80   12    546     472
+    ## 4   96    4    330     272
+    ## 5   95    5    233     216
+    ## 6   90    5    276     247
+
+[Das Survey Design spezifizieren](https://www.r-bloggers.com/linear-models-with-weighted-observations/)
+-------------------------------------------------------------------------------------------------------
+
+    dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, 
+                      data=apistrat, fpc=~fpc)
+
+### Die Regression rechnen
+
+    summary(svyglm(api00~ell+meals+mobility, 
+                   design=dstrat))
+
+    ## 
+    ## Call:
+    ## svyglm(formula = api00 ~ ell + meals + mobility, design = dstrat)
+    ## 
+    ## Survey design:
+    ## svydesign(id = ~1, strata = ~stype, weights = ~pw, data = apistrat, 
+    ##     fpc = ~fpc)
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept) 820.8873    10.0777  81.456   <2e-16 ***
+    ## ell          -0.4806     0.3920  -1.226    0.222    
+    ## meals        -3.1415     0.2839 -11.064   <2e-16 ***
+    ## mobility      0.2257     0.3932   0.574    0.567    
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## (Dispersion parameter for gaussian family taken to be 5171.966)
+    ## 
+    ## Number of Fisher Scoring iterations: 2
+
 Linkliste - lineare Regression
 ------------------------------
 
@@ -389,3 +464,32 @@ Linkliste - lineare Regression
 
 -   Basis Regression - [How to go about interpreting regression
     cofficients](https://www.r-bloggers.com/how-to-go-about-interpreting-regression-cofficients/)
+
+Aufgabe - lineare Regression
+----------------------------
+
+<!--
+[Mietspiegel München](http://data.ub.uni-muenchen.de/2/)
+-->
+Beschrieben wird Wegstrecke, dreier Spielzeugautos die in
+unterschiedlichen Winkeln Rampe herunterfuhren.
+
+-   angle: Winkel der Rampe
+-   distance: Zurückgelegte Strecke des Spielzeugautos
+-   car: Autotyp (1, 2 oder 3)
+
+1.  Lesen Sie den Datensatz `toycars` (Paket `DAAG`) in einen dataframe
+    `data` ein und wandeln Sie die Variable `car` des Datensatzes in
+    einen Faktor (`as.factor`) um.
+
+2.  Erstellen Sie drei Boxplots, die die zurückgelegte Strecke getrennt
+    nach dem Faktor car darstellen.
+
+3.  Schätzen Sie für die Autos die Parameter des folgenden linearen
+    Modells mit Hilfe der Funktion `lm()`
+
+*d**i**s**t**a**n**c**e*<sub>*i*</sub> = *β*<sub>0</sub> + *β*<sub>1</sub> ⋅ *a**n**g**l**e*<sub>*i*</sub> + *ϵ*<sub>*i*</sub>
+
+1.  Überprüfen Sie deskriptiv die Anpassung der drei Modelle. Deutet das
+    *R*<sup>2</sup>
+     jeweils auf eine gute Modellanpassung hin?

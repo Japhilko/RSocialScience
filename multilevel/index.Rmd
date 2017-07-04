@@ -71,12 +71,10 @@ install.packages("sjPlot")
 
 ```{r}
 library(ggplot2)
-
 # Miscellaneous Functions for "Grid" Graphics
 library(gridExtra)
 library(lme4)
 library(sjPlot)
-
 # A Grammar of Data Manipulation
 library(dplyr)
 ```
@@ -143,10 +141,15 @@ HLM0 <- lmer(Score ~ (1 | ID), data = mlexdat)
 ```
 
 
-## Nullmodell Ergebnis 
+## Nullmodell Ergebnis - Koeffizienten
 
 ```{r}
 coef(HLM0)
+```
+
+## Nullmodell Ergebnis - Zusammenfassung
+
+```{r}
 summary(HLM0)
 ```
 
@@ -205,8 +208,15 @@ $$\beta{j} = \beta_0 + v_{j}$$
 ```{r}
 HLM1 <- lmer(Score ~ SES + (SES | ID), data = mlexdat)
 coef(HLM1)
+```
+
+## Zusammenfassung zweites Modell
+
+```{r}
 summary(HLM1)
 ```
+
+
 
 ## 
 
@@ -284,13 +294,16 @@ lmer(normexam ~ standLRT + (1 | school), data=Exam)
 ## [Varying intercept model](https://www.jaredknowles.com/journal/2013/11/25/getting-started-with-mixed-effect-models-in-r)
 
 ```{r,eval=F}
-MLexamp.6 <- lmer(extro ~ open + agree + social + (1 | school), data = lmm.data)
+MLexamp.6<-lmer(extro~open+agree+ social + (1 | school), 
+                data = lmm.data)
 ```
 
 ## Varying slope model
 
 ```{r,eval=F}
-MLexamp.9 <- lmer(extro ~ open + agree + social + (1 + open | school/class), data = lmm.data)
+MLexamp.9<-lmer(extro~open + agree + social + 
+                  (1 + open | school/class), 
+                data = lmm.data)
 ```
 
 
